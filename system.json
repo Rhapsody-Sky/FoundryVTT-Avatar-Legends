@@ -7,26 +7,55 @@
     {
       "name": "aniki21",
       "url": "https://dice.camp/@aniki21",
-      "flags": {}
+      "discord": "demondownload#5359"
     }
   ],
-  "version": "1.0.0",
+  "version": "1.0.1",
   "minimumCoreVersion": "10",
-  "compatibleCoreVersion": "10.286",
+  "compatibleCoreVersion": "10.291",
   "compatibility": {
     "minimum": "10",
     "verified": "10"
   },
   "url": "https://gitlab.com/pacosgrove1/legends/",
   "manifest": "https://gitlab.com/api/v4/projects/pacosgrove1%2Flegends/packages/generic/legends/latest/system.json",
-  "download": "https://gitlab.com/pacosgrove1/legends/-/releases/v1.0.0/downloads/legends-v1.0.0.zip",
+  "download": "https://gitlab.com/pacosgrove1/legends/-/releases/v1.0.1/downloads/legends-v1.0.1.zip",
   "esmodules":[
     "legends.js"
   ],
   "styles": [
     "styles/legends.css"
   ],
-  "packs": [],
+  "packs": [
+    {
+      "label": "Playbooks",
+      "type": "Item",
+      "name": "playbooks",
+      "path": "packs/playbooks.db",
+      "private": false
+    },
+    {
+      "label": "WSTAG Playbooks",
+      "type": "Item",
+      "name": "wstag-playbooks",
+      "path": "packs/wstag-playbooks.db",
+      "private": false
+    },
+    {
+      "label": "Common Items",
+      "type": "Item",
+      "name": "common-items",
+      "path": "packs/common-items.db",
+      "private": false
+    },
+    {
+      "label": "Reference",
+      "type": "JournalEntry",
+      "name": "reference",
+      "path": "packs/reference.db",
+      "private": false
+    }
+  ],
   "languages": [
     {
       "lang": "en",
@@ -39,6 +68,18 @@
       "path": "lang/es.json"
     }
   ],
+  "relationships": {
+    "requires": [
+      {
+        "id": "compendium-folders",
+        "type": "module"
+      },
+      {
+        "id": "lib-wrapper",
+        "type": "module"
+      }
+    ]
+  },
   "primaryTokenAttribute": "fatigueRemaining",
   "initiative": "2d6"
 }
