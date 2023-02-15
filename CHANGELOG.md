@@ -1,17 +1,6 @@
-## v1.0.2
-* CSS tweaks
-  * Update pause notice font
-  * Grandients on balance tracks
-  * Diamond on Technique separators
-
-## v1.0.1
-* Add compendia for Common Items, Playbooks and Reference Material
-* Add dependencies for Compendium Folders and libWrapper modules
-
 ## v1.0.0
 * Additional fixes to styling in chat
 * Force async on roll.roll() call to avoid deprecation warning
-* Various styling and layout tweaks for first full release
 
 ## v0.3.17
 
