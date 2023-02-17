@@ -1,4 +1,12 @@
 <form>
+  {{#if statName}}
+    <div class="form-group pad-bottom">
+      <label class="title">
+        {{statName}}
+      </label>
+      <input type="number" class="hand" value="{{statValue}}" disabled />
+    </div>
+  {{/if}}
   <div class="form-group pad-bottom">
     <label for="bonus" class="title">
       {{localize "legends.roll.dialog.bonus"}}
