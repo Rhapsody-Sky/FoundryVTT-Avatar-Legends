@@ -8,14 +8,19 @@ A FoundryVTT system for [Avatar Legends RPG](https://magpiegames.com/pages/avata
 
 Additional screenshots: https://imgur.com/a/wWJLdor
 
+## Features
+
+* Player character and NPC character sheets
+* Campaign Worksheet
+* Supports Dice So Nice! for custom 3D dice
+* Compendiums of publicly-available Playbooks and reference material
+
 ## Installation
 To install the system, paste the manifest URL below into the Install System dialog on the Setup menu:
   * `https://gitlab.com/api/v4/projects/pacosgrove1%2Flegends/packages/generic/legends/latest/system.json`
 
 ## Usage
 See [the Wiki](https://gitlab.com/pacosgrove1/legends/-/wikis/home) for specific usage examples.
-
-**Please note:** there is **no** game content included in this system, but I do have [a separate Foundry module](https://gitlab.com/pacosgrove1/legends-compendia) that contains all the Playbook and Play Material data available on the [official site](https://magpiegames.com/pages/avatarrpg) downloads, formatted for easy adding to Player and NPC sheets.
 
 ## Credits
 This system exists thanks to the excellent YouTube tutorial series by [Cédric Hauteville](https://www.youtube.com/user/LieutenantRazak).
