@@ -1,4 +1,4 @@
-# v1.0.4
+## v1.0.4
 * Adds missing items for The Elder in the WSTAG Playbooks Compendium
 * Adds Playbook entries to the Reference Compendium with initial stats, demeanor etc.
 
