@@ -1,3 +1,10 @@
+# v1.0.4
+* Adds missing items for The Elder in the WSTAG Playbooks Compendium
+* Adds Playbook entries to the Reference Compendium with initial stats, demeanor etc.
+
+## v1.0.3
+* Update CI script to include compendia packs.
+
 ## v1.0.2
 * Add stat display to roll dialog
 * CSS tweaks
