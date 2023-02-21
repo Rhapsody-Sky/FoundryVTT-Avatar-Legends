@@ -26,7 +26,7 @@ export async function RollStat({
   }
 
   // Basic roll formula
-  const rollFormula = "2d6 @oStat @vStat";
+  let rollFormula = "2d6 @oStat @vStat";
 
   // If a non-zero bonus was set
   const bonus = rollOptions.bonus;
