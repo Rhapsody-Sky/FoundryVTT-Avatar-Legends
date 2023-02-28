@@ -1,3 +1,10 @@
+## v1.0.6
+* Spanish translation file matches the updated file structure
+* Clean up Handlebars helper code
+
+## v1.0.5
+* Fix rolls
+
 ## v1.0.4
 * Adds missing items for The Elder in the WSTAG Playbooks Compendium
 * Adds Playbook entries to the Reference Compendium with initial stats, demeanor etc.

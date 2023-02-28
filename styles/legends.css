@@ -326,8 +326,11 @@
 .legends .technique h3 .data .specialty.water {
   background-color: #4d63a9;
 }
-.legends .technique h3 .data .specialty.weapon {
+.legends .technique h3 .data .specialty.weapons {
   background-color: #4d4d4f;
+}
+.legends .technique h3 .data .specialty.group {
+  background-color: #111;
 }
 .legends.sheet.quickstart {
   background-color: #f3efdc;

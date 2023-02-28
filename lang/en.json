@@ -3,7 +3,8 @@
     "common": {
       "description": "Description",
       "none": "None",
-      "to-chat": "To chat"
+      "to-chat": "To chat",
+      "documentation": "System Documentation"
     },
     "context-menu": {
       "edit": "Edit",
@@ -73,12 +74,13 @@
         "scope": "Scope",
         "eras": {
           "custom": "Custom",
-          "kyoshi": "Kyoshi's",
-          "roku": "Roku's",
+          "kyoshi": "Kyoshi",
+          "roku": "Roku",
           "100years": "Hundred Year War",
-          "aang": "Aang's",
-          "korra": "Korra's",
-          "era": "Era"
+          "aang": "Aang",
+          "korra": "Korra",
+          "era": "Era",
+          "eraDisplayName": "{name} {era}"
         }
       }
     },
@@ -110,11 +112,11 @@
         "balance": "Balance",
         "playbook": "Playbook"
       },
-      "none": "No Moves have been added. Drag some from the Item sidebar or compendium."
+      "none": "No Moves have been added. Drag some from the Item sidebar or Compendium."
     },
     "condition": {
       "add": "New Condition",
-      "none": "No Conditions have been added. Drag some from the Item sidebar or a compendium."
+      "none": "No Conditions have been added. Drag some from the Item sidebar or a Compendium."
     },
     "status": {
       "title": "Statuses",
@@ -122,7 +124,7 @@
       "positive": "Positive",
       "negative": "Negative",
       "type": "Type",
-      "none": "No Statuses have been added. Drag some from the Item sidebar or a compendium."
+      "none": "No Statuses have been added. Drag some from the Item sidebar or a Compendium."
     },
     "techniques": {
       "title": "Techniques",
@@ -142,7 +144,7 @@
         "mastered": "M"
       },
       "add": "New Technique",
-      "none": "No Techniques have been added. Drag some from the Item sidebar or a compendium."
+      "none": "No Techniques have been added. Drag some from the Item sidebar or a Compendium."
     },
     "training": {
       "specialty": "Specialty",
@@ -157,18 +159,18 @@
     },
     "feature": {
       "title": "Playbook Feature",
-      "none": "No Playbook Feature has been added. Drag one from the Item sidebar or a compendium."
+      "none": "No Playbook Feature has been added. Drag one from the Item sidebar or a Compendium."
     },
     "moment-of-balance": {
       "title": "Moment of Balance",
       "add": "Add Moment of Balance",
-      "none": "No Moment of Balance has been added. Drag one from the Item sidebar or a compendium."
+      "none": "No Moment of Balance has been added. Drag one from the Item sidebar or a Compendium."
     },
     "growth": {
       "title": "Growth",
       "question": {
         "title": "Growth Questions",
-        "none": "No Growth Questions have been added. Drag some from the Item sidebar or compendium."
+        "none": "No Growth Questions have been added. Drag some from the Item sidebar or Compendium."
       },
       "advancement": {
         "title": "Growth Advancements",
@@ -181,9 +183,9 @@
     },
     "principle": {
       "title": "Principle",
-      "none": "No NPC Principle has been added. Drag one from the Item sidebar or a compendium."
+      "none": "No NPC Principle has been added. Drag one from the Item sidebar or a Compendium."
     },
-    "roll":{
+    "roll": {
       "with": "Roll with <a class=\"fire-dark move-roll\" data-move-name=\"{approach}\" data-move-stat=\"{stat}\" data-move-approach=\"yes\"><i class=\"fas fa-dice small\"></i> {name}</a>",
       "evade-observe": "Clear 1-fatigue &amp; roll with <a class=\"fire-dark move-roll\" data-move-name=\"Evade & Observe\" data-move-stat=\"creativity\" data-move-approach=\"yes\"><i class=\"fas fa-dice small\"></i> Creativity</a> or <a class=\"fire-dark move-roll\" data-move-name=\"Evade & Observe\" data-move-stat=\"harmony\" data-move-approach=\"yes\"><i class=\"fas fa-dice small\"></i> Harmony</a>",
       "stat": "Rolling {stat}",

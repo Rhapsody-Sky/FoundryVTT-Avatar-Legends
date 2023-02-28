@@ -1,10 +1,12 @@
-{{#unless inSheet}}<div class="legends">{{/unless}}
+{{#unless inSheet}}
+  <div class="legends">
+{{/unless}}
 <section class="item feature" data-item-id="{{_id}}">
   <h3 class="title">
     {{#if inSheet}}
-    <a class="item-roll black menu">{{name}}</a>
+      <a class="item-roll black menu">{{name}}</a>
     {{else}}
-    {{name}}
+      {{name}}
     {{/if}}
   </h3>
   {{{enrichHTML system.description}}}
