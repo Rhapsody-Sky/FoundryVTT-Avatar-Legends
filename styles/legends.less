@@ -14,6 +14,7 @@
   img {
     content: url(images/pause.png);
   }
+
   figcaption {
     .title-font();
     text-shadow: 0 0 4px @text-color;
@@ -21,18 +22,51 @@
 }
 
 .legends {
+
   // colours
-  .water { color: @waterbender; }
-  .fire { color: @firebender; }
-  .earth { color: @earthbender; }
-  .air { color: @airbender; }
-  .weapons { color: @weaponsmith; }
-  .technology { color: @technologist; }
-  .black { color: @text-color; }
-  .white { color: white; }
-  .accent { color: @accent-color; }
-  .accent-dark { color: @accent-dark; }
-  .fire-dark { color: @dark-fire; }
+  .water {
+    color: @waterbender;
+  }
+
+  .fire {
+    color: @firebender;
+  }
+
+  .earth {
+    color: @earthbender;
+  }
+
+  .air {
+    color: @airbender;
+  }
+
+  .weapons {
+    color: @weaponsmith;
+  }
+
+  .technology {
+    color: @technologist;
+  }
+
+  .black {
+    color: @text-color;
+  }
+
+  .white {
+    color: white;
+  }
+
+  .accent {
+    color: @accent-color;
+  }
+
+  .accent-dark {
+    color: @accent-dark;
+  }
+
+  .fire-dark {
+    color: @dark-fire;
+  }
 
   .main-font();
 
@@ -49,12 +83,21 @@
     flex: 1;
     flex-direction: column;
   }
+
   .cell {
     flex: 1;
 
-    &.cell-2 { flex: 2 !important; }
-    &.cell-3 { flex: 3 !important; }
-    &.cell-4 { flex: 4 !important; }
+    &.cell-2 {
+      flex: 2 !important;
+    }
+
+    &.cell-3 {
+      flex: 3 !important;
+    }
+
+    &.cell-4 {
+      flex: 4 !important;
+    }
   }
 
   .flex-none {
@@ -62,14 +105,19 @@
   }
 
   // Basic text
-  p, li { .main-font(); }
+  p,
+  li {
+    .main-font();
+  }
 
   p {
     margin: 0;
     margin-bottom: 0.7rem;
   }
 
-  input, textarea, select {
+  input,
+  textarea,
+  select {
     .main-font();
   }
 
@@ -78,7 +126,10 @@
   }
 
   // Headings
-  h1, h2, h3, h4 {
+  h1,
+  h2,
+  h3,
+  h4 {
     border: none;
     .title-font();
 
@@ -89,14 +140,27 @@
       text-transform: inherit;
     }
   }
-  h1 { font-size: 1.8rem; }
-  h2 { font-size: 1.6rem; }
-  h3 { font-size: 1.3rem; }
-  h4 { font-size: 1rem; }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  h2 {
+    font-size: 1.6rem;
+  }
+
+  h3 {
+    font-size: 1.3rem;
+  }
+
+  h4 {
+    font-size: 1rem;
+  }
 
   // Links
   a {
     color: @accent-dark;
+
     &:hover {
       color: black;
       text-shadow: 0 0 6px @accent-color;
@@ -109,36 +173,92 @@
   }
 
   // Font classes
-  .block { .block-font(); }
-  .brush { .brush-font(); }
-  .title { .title-font(); }
-  .hand { .hand-font(); }
-  .text { .main-font(); }
+  .block {
+    .block-font();
+  }
+
+  .brush {
+    .brush-font();
+  }
+
+  .title {
+    .title-font();
+  }
+
+  .hand {
+    .hand-font();
+  }
+
+  .text {
+    .main-font();
+  }
 
   // Sizes
-  .large { font-size: 1.5em; }
-  .small { font-size: 0.8rem; }
+  .large {
+    font-size: 1.5em;
+  }
+
+  .small {
+    font-size: 0.8rem;
+  }
 
   // Alignment && position
-  .left { text-align: left !important; }
-  .center { text-align: center !important; }
-  .right { text-align: right !important; }
-  .float-right { float: right; }
-  .float-left { float: left; }
-  .pad-25 { margin: 0.25rem; }
-  .pad-50 { margin: 0.5rem; }
-  .pad-75 { margin: 0.75rem; }
-  .pad-top { margin-top: 1rem; }
-  .pad-bottom { margin-bottom: 1rem; }
-  .pad-sides { margin-left: 0.5rem; margin-right: 0.5rem; }
-  
-  .no-margin { margin: 0 !important; }
+  .left {
+    text-align: left !important;
+  }
+
+  .center {
+    text-align: center !important;
+  }
+
+  .right {
+    text-align: right !important;
+  }
+
+  .float-right {
+    float: right;
+  }
+
+  .float-left {
+    float: left;
+  }
+
+  .pad-25 {
+    margin: 0.25rem;
+  }
+
+  .pad-50 {
+    margin: 0.5rem;
+  }
+
+  .pad-75 {
+    margin: 0.75rem;
+  }
+
+  .pad-top {
+    margin-top: 1rem;
+  }
+
+  .pad-bottom {
+    margin-bottom: 1rem;
+  }
+
+  .pad-sides {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+  }
+
+  .no-margin {
+    margin: 0 !important;
+  }
 
   .underline {
     border-bottom: 2px solid @accent-color;
+
     &.underline-fire {
       border-bottom: 2px solid @dark-fire;
     }
+
     &.underline-thin {
       border-width: 1px;
     }
@@ -148,10 +268,11 @@
     color: @accent-dark;
     .title-font();
     font-weight: bold;
-    font-size:0.85rem;
+    font-size: 0.85rem;
   }
 
   .kanji {
+
     &::before,
     &::after {
       .kanji-font();
@@ -175,6 +296,7 @@
       &::before {
         content: '平';
       }
+
       &::after {
         content: '衡';
       }
@@ -182,8 +304,14 @@
   }
 
   .col {
-    &.col-2 { columns: 2; }
-    &.col-3 { columns: 3; }
+    &.col-2 {
+      columns: 2;
+    }
+
+    &.col-3 {
+      columns: 3;
+    }
+
     .item {
       break-inside: avoid;
       page-break-inside: avoid;
@@ -208,12 +336,33 @@
           text-transform: uppercase;
           padding: 0 0.5rem;
 
-          &.air { background-color: @airbender; }
-          &.earth { background-color: @earthbender; }
-          &.fire { background-color: @firebender; }
-          &.technology { background-color: @technologist; }
-          &.water { background-color: @waterbender; }
-          &.weapon { background-color: @weaponsmith; }
+          &.air {
+            background-color: @airbender;
+          }
+
+          &.earth {
+            background-color: @earthbender;
+          }
+
+          &.fire {
+            background-color: @firebender;
+          }
+
+          &.technology {
+            background-color: @technologist;
+          }
+
+          &.water {
+            background-color: @waterbender;
+          }
+
+          &.weapons {
+            background-color: @weaponsmith;
+          }
+
+          &.group {
+            background-color: @text-color;
+          }
         }
       }
     }

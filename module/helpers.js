@@ -5,21 +5,21 @@
  * @returns The filtered, sorted list
  */
 export function filter_items(collection, type, sort = false) {
-  var items = collection.filter(element => {
-    return element.type == type;
-  });
+  var items = collection.filter((element) => {
+    return element.type == type
+  })
 
-  if(sort){
-    return items.sort((a,b) => {
-      if(a.name < b.name){
-        return -1;
+  if (sort) {
+    return items.sort((a, b) => {
+      if (a.name < b.name) {
+        return -1
       }
-      return 1;
-    });
+      return 1
+    })
   }
 
-  return items;
-};
+  return items
+}
 
 /**
  * Filter a collection of Techniques by approach
@@ -28,13 +28,13 @@ export function filter_items(collection, type, sort = false) {
  * @returns The items in the collection matching the specified approach
  */
 export function filter_techniques(collection, approach) {
-  return collection.filter(element => {
+  return collection.filter((element) => {
     return element.type === 'technique' && element.system.approach === approach
-  });
+  })
 }
 
-export function filter_statuses(collection, type){
-  return collection.filter(e => {
-    return e.type === 'status' && e.system.type === type;
-  });
+export function filter_statuses(collection, type) {
+  return collection.filter((e) => {
+    return e.type === 'status' && e.system.type === type
+  })
 }

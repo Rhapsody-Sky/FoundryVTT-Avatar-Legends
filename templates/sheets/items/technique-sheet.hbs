@@ -3,7 +3,7 @@
     <h1 class="title">
       <input name="name" type="text" value="{{item.name}}" placeholder="Name" class="editable" />
     </h1>
-    <img src="{{item.img}}" data-edit="img" title="{{item.name}}" height="64" width="64"/>
+    <img src="{{item.img}}" data-edit="img" title="{{item.name}}" height="64" width="64" />
   </header>
   <div>
     <section class="approach-basic">
@@ -38,7 +38,7 @@
                 {{#each config.training as |name type|}}
                   <option value="{{type}}">{{localize name}}</option>
                 {{/each}}
-              <option value="group">{{localize "legends.training.group"}}</option>
+                <option value="group">{{localize "legends.training.group"}}</option>
               {{/select}}
             </select>
           </td>

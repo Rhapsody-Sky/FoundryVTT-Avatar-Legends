@@ -3,7 +3,8 @@
     "common": {
       "description": "Descripción",
       "none": "Nada",
-      "to-chat": "Al Chat"
+      "to-chat": "Al Chat",
+      "documentation": "Documentación del sistema"
     },
     "context-menu": {
       "edit": "Editar",
@@ -12,7 +13,6 @@
     "actor-sheet": {
       "clear-track": "Click derecho para limpiar",
       "name": "Nombre",
-      "principle": "Principio",
       "stats": "Estadisticas",
       "fatigue": "Fatiga",
       "clear-fatigue": "Limpiar Fatiga",
@@ -24,28 +24,13 @@
       "set-value": "Dejar en {value}",
       "player": {
         "about": "Tu Personaje",
-        "look": "Apariencia, Historia y conexiones",
+        "look": "Apariencia, Historia y Conexiones",
         "training": "Entrenamiento",
-        "fighting-style": "Estilo de Combate",
+        "fighting-style": "Estilo&nbsp;de&nbsp;Combate",
         "background": "Trasfondo",
         "demeanor": "Actitud",
-        "hometown": "Pueblo de Origen",
-        "playbook": "Libreto",
-        "momentOfBalance": "Momento de Balance",
-        "add-moment": "Agregar Momento de Balance",
-        "growth": "Mejora",
-        "advancements": {
-          "title": "Avances de Mejora",
-          "playbook-move": "Toma un movimiento nuevo de tu libreto",
-          "other-move": "Toma un movimiento nuevo de otro libreto",
-          "raise-stat": "Aumenta una estadística +1 (máximo +2)",
-          "shift-center": "Cambia tu Centro en una dirección",
-          "moment": "Desbloquea tu Momento de Balance"
-        },
-        "feature": {
-          "title": "Ventaja",
-          "add": "Agrega una Ventaja"
-        }
+        "hometown": "Pueblo&nbsp;de&nbsp;Origen",
+        "playbook": "Libreto"
       },
       "npc": {
         "drive": "Impulso",
@@ -58,7 +43,6 @@
           "group": "Grupo de PNJs",
           "npc": "PNJ"
         },
-        "add-principle": "Agregar Principio",
         "fatigue": {
           "add": "Aumentar Fatiga Máxima",
           "remove": "Sustraer Fatiga Máxima"
@@ -95,7 +79,8 @@
           "100years": "de la Guerra de los Cien Años",
           "aang": "de Aang",
           "korra": "de Korra",
-          "era": "Era"
+          "era": "Era",
+          "eraDisplayName": "{era} {name}"
         }
       }
     },
@@ -109,7 +94,8 @@
       "new": {
         "name": "Nuevo {type}",
         "description": "<p>Descripción acá.</p>"
-      }
+      },
+      "not-allowed": "Este tipo de elemento no se puede agregar a este actor."
     },
     "moves": {
       "add": "Nuevo Movimiento",
@@ -121,21 +107,27 @@
       "with": "Estadística",
       "category": {
         "label": "Categoría",
+        "all": "Todos",
         "basic": "Basico",
         "balance": "Balance",
         "playbook": "Libreto"
-      }
+      },
+      "none": "No Moves have been added. Drag some from the Item sidebar or Compendium."
     },
     "condition": {
-      "add": "Nueva Condición"
+      "add": "Nueva Condición",
+      "none": "No Conditions have been added. Drag some from the Item sidebar or a Compendium."
     },
     "status": {
+      "title": "Estados",
       "add": "Nuevo Estado",
       "positive": "Positivo",
       "negative": "Negativo",
-      "type": "Tipo"
+      "type": "Tipo",
+      "none": "No Statuses have been added. Drag some from the Item sidebar or a Compendium."
     },
     "techniques": {
+      "title": "Técnicas de Combate",
       "approach": "Acercamiento",
       "basic": "Basico",
       "approaches": {
@@ -151,7 +143,8 @@
         "master": "Dominada",
         "mastered": "D"
       },
-      "add": "Nueva Técnica"
+      "add": "Nueva Técnica",
+      "none": "No Techniques have been added. Drag some from the Item sidebar or a Compendium."
     },
     "training": {
       "specialty": "Especialidad",
@@ -164,7 +157,35 @@
       "none": "Universal",
       "group": "Grupo"
     },
-    "roll":{
+    "feature": {
+      "title": "Ventaja",
+      "none": "No Playbook Feature has been added. Drag one from the Item sidebar or a Compendium."
+    },
+    "moment-of-balance": {
+      "title": "Momento de Balance",
+      "add": "Agregar Momento de Balance",
+      "none": "No Moment of Balance has been added. Drag one from the Item sidebar or a Compendium."
+    },
+    "growth": {
+      "title": "Mejora",
+      "question": {
+        "title": "Growth Questions",
+        "none": "No Growth Questions have been added. Drag some from the Item sidebar or Compendium."
+      },
+      "advancement": {
+        "title": "Avances de Mejora",
+        "playbook-move": "Toma un movimiento nuevo de tu libreto",
+        "other-move": "Toma un movimiento nuevo de otro libreto",
+        "raise-stat": "Aumenta una estadística +1 (máximo +2)",
+        "shift-center": "Cambia tu Centro en una dirección",
+        "moment": "Desbloquea tu Momento de Balance"
+      }
+    },
+    "principle": {
+      "title": "Principio",
+      "none": "No NPC Principle has been added. Drag one from the Item sidebar or a Compendium."
+    },
+    "roll": {
       "with": "Lanza con <a class=\"accent-dark move-roll\" data-move-name=\"{approach}\" data-move-stat=\"{stat}\"><i class=\"fas fa-dice small\"></i>{name}</a>",
       "evade-observe": "Elimina 1 Fatiga y lanza con <a class=\"accent-dark move-roll\" data-move-name=\"Evade & Observe\" data-move-stat=\"creativity\"><i class=\"fas fa-dice small\"></i>Creativity</a> or <a class=\"accent-dark move-roll\" data-move-name=\"Evade & Observe\" data-move-stat=\"harmony\"><i class=\"fas fa-dice small\"></i>Harmony</a>",
       "stat": "Lanzando {stat}",
@@ -179,7 +200,12 @@
         "bonus-description": "Total de Conservados, Ayudas y Apoyo",
         "submit": "Lanzar"
       },
-      "no-actor": "No puedes usar Movimientos sin un Actor asignado."
+      "no-actor": "No puedes usar Movimientos sin un Actor asignado.",
+      "approach": {
+        "full": "<p>Choose one from this list:</p><ul><li>Mark 1-fatigue to use a learned technique</li><li>Use one practiced technique</li><li>Use two different basic or mastered techniques</li></ul>",
+        "hit": "<p>Use one basic or mastered technique</p>",
+        "miss": "<p>You stumble, but you can shift your balance away from center to use one basic technique.</p>"
+      }
     },
     "dialog": {
       "cancel": "Cancelar"

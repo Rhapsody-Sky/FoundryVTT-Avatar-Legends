@@ -7,14 +7,17 @@
       </a>
       {{#if system.rollable}}
         <a class="move-roll small fire" data-move-stat="{{system.rollStat}}" data-move-name="{{name}}">
-          <i class="fas fa-dice" title="{{#if system.rollStat}}{{localize (tr_path "legends.stats" system.rollStat)}}{{else}}{{localize "legends.roll.dialog.submit"}}{{/if}}"></i>
+          <i class="fas fa-dice"
+            title="{{#if system.rollStat}}{{localize (tr_path "legends.stats" system.rollStat)}}{{else}}{{localize "legends.roll.dialog.submit"}}{{/if}}"></i>
         </a>
       {{/if}}
     {{else}}
       {{name}}
     {{/if}}
   </h3>
-  {{#if inSheet}}<div class="drawer">{{/if}}
-    {{{enrichHTML system.description}}}
+  {{#if inSheet}}
+    <div class="drawer">
+  {{/if}}
+  {{{enrichHTML system.description}}}
   {{#if inSheet}}</div>{{/if}}
 </section>

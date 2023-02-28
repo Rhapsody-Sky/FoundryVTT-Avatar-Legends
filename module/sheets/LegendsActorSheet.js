@@ -1,45 +1,47 @@
-import { filter_items, filter_statuses, filter_techniques } from "../helpers.js";
-import * as Dice from "../dice.js";
+import { filter_items, filter_statuses, filter_techniques } from '../helpers.js'
+import * as Dice from '../dice.js'
 
 export default class LegendsActorSheet extends ActorSheet {
-  static get defaultOptions(){
+  static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
       width: 900,
       height: 850,
-      tabs: [{
-        navSelector: ".tabs",
-        contentSelector: ".body",
-        initial: "main"
-      }]
-    });
+      tabs: [
+        {
+          navSelector: '.tabs',
+          contentSelector: '.body',
+          initial: 'main',
+        },
+      ],
+    })
   }
 
-  get template(){
-    return `systems/legends/templates/sheets/actors/${this.actor.type}-sheet.hbs`;
-  };
+  get template() {
+    return `systems/legends/templates/sheets/actors/${this.actor.type}-sheet.hbs`
+  }
 
   /**
    * Define the options in the Item context menu
    */
   itemContextMenu = [
     {
-      name: game.i18n.localize("legends.context-menu.edit"),
+      name: game.i18n.localize('legends.context-menu.edit'),
       icon: '<i class="fas fa-edit"></i>',
-      callback: element => {
-        let itemId = element.closest('.item').data('item-id');
-        const item = this.actor.items.get(itemId);
-        item.sheet.render(true);
-      }
+      callback: (element) => {
+        let itemId = element.closest('.item').data('item-id')
+        const item = this.actor.items.get(itemId)
+        item.sheet.render(true)
+      },
     },
     {
-      name: game.i18n.localize("legends.context-menu.delete"),
+      name: game.i18n.localize('legends.context-menu.delete'),
       icon: '<i class="fas fa-trash"></i>',
-      callback: element => {
-        let itemId = element.closest('.item').data('item-id');
-        this.actor.deleteEmbeddedDocuments("Item", [itemId])
-      }
-    }
-  ];
+      callback: (element) => {
+        let itemId = element.closest('.item').data('item-id')
+        this.actor.deleteEmbeddedDocuments('Item', [itemId])
+      },
+    },
+  ]
 
   /**
    * Run validation on an Item before adding it to an Actor's sheet.
@@ -47,231 +49,255 @@ export default class LegendsActorSheet extends ActorSheet {
    * @returns
    */
   async _onDropItemCreate(itemData) {
-    const items = Array.isArray(itemData) ? itemData : [ itemData ];
-    const permittedNpcItems = ['technique', 'npc-principle', 'condition', 'status'];
+    const items = Array.isArray(itemData) ? itemData : [itemData]
+    const permittedNpcItems = [
+      'technique',
+      'npc-principle',
+      'condition',
+      'status',
+    ]
 
-    if(this.actor.type === "npc") {
+    if (this.actor.type === 'npc') {
       for (const item of items) {
-        if(!permittedNpcItems.includes(item.type)) {
-          ui.notifications.error(game.i18n.format('legends.items.not-allowed'));
-          return null;
+        if (!permittedNpcItems.includes(item.type)) {
+          ui.notifications.error(game.i18n.format('legends.items.not-allowed'))
+          return null
         }
       }
     }
-    return await super._onDropItemCreate(itemData);
+    return await super._onDropItemCreate(itemData)
   }
 
-  getData(){
-    const context = super.getData();
-    context.config = CONFIG.legends;
-    context.cssClass = game.settings.get('legends', 'sheetColour') || 'default';
+  getData() {
+    const context = super.getData()
+    context.config = CONFIG.legends
+    context.cssClass = game.settings.get('legends', 'sheetColour') || 'default'
 
-    context.feature = filter_items(context.items, 'feature')[0];
-    context.conditions = filter_items(context.items, 'condition', true);
-    context.moves = filter_items(context.items, 'move');
-    context.momentOfBalance = filter_items(context.items, 'moment-of-balance')[0];
+    context.feature = filter_items(context.items, 'feature')[0]
+    context.conditions = filter_items(context.items, 'condition')
+    context.moves = filter_items(context.items, 'move')
+    context.momentOfBalance = filter_items(
+      context.items,
+      'moment-of-balance',
+    )[0]
     context.statuses = {
       positive: filter_statuses(context.items, 'positive'),
-      negative: filter_statuses(context.items, 'negative')
+      negative: filter_statuses(context.items, 'negative'),
     }
-    context.techniques = filter_items(context.items, 'technique');
+    context.techniques = filter_items(context.items, 'technique')
 
-    if(this.actor.type == 'player'){
-      context.displayTabbed = game.settings.get('legends','tabbedPlayerSheet');
-      context.growthQuestions = filter_items(context.items, 'growth-question');
+    if (this.actor.type == 'player') {
+      context.displayTabbed = game.settings.get('legends', 'tabbedPlayerSheet')
+      context.growthQuestions = filter_items(context.items, 'growth-question')
 
       context.techniquesByApproach = {}
-      Object.keys(CONFIG.legends.approaches).forEach(k => {
-        context.techniquesByApproach[k] ||= [];
-        context.techniquesByApproach[k] = filter_techniques(context.techniques, k);
+      Object.keys(CONFIG.legends.approaches).forEach((k) => {
+        context.techniquesByApproach[k] ||= []
+        context.techniquesByApproach[k] = filter_techniques(
+          context.techniques,
+          k,
+        )
       })
 
-      context.moveCategories = ['basic','balance', 'playbook'];
-      context.selectedMoveCategory = this.actor.getFlag('legends', 'moveCategory') || 'all';
+      context.moveCategories = ['basic', 'balance', 'playbook']
+      context.selectedMoveCategory =
+        this.actor.getFlag('legends', 'moveCategory') || 'all'
     }
-    return context;
+    return context
   }
 
   activateListeners(html) {
-    if(this.isEditable){
+    if (this.isEditable) {
       //Generic value tracks
-      html.find('.set-value').click(this._onSetValue.bind(this));
-      html.find('.set-value').contextmenu(this._onClearValue.bind(this));
+      html.find('.set-value').click(this._onSetValue.bind(this))
+      html.find('.set-value').contextmenu(this._onClearValue.bind(this))
 
       // Fatigue tracks
-      html.find('.set-fatigue').click(this._onSetFatigue.bind(this));
-      html.find('.set-fatigue').contextmenu(this._onClearFatigue.bind(this));
+      html.find('.set-fatigue').click(this._onSetFatigue.bind(this))
+      html.find('.set-fatigue').contextmenu(this._onClearFatigue.bind(this))
 
-      if(this.actor.type == 'player'){
+      if (this.actor.type == 'player') {
         //trainings
-        html.find('.training-type').click(this._onToggleTrainingType.bind(this));
+        html.find('.training-type').click(this._onToggleTrainingType.bind(this))
 
         // Set balance and center
-        html.find('.set-balance').click(this._onSetBalanceValue.bind(this));
-        html.find('.set-balance-center').click(this._onSetBalanceCenter.bind(this));
+        html.find('.set-balance').click(this._onSetBalanceValue.bind(this))
+        html
+          .find('.set-balance-center')
+          .click(this._onSetBalanceCenter.bind(this))
 
         // Techniques proficiency
-        html.find('.set-proficiency').click(this._onSetTechniqueProficiency.bind(this));
+        html
+          .find('.set-proficiency')
+          .click(this._onSetTechniqueProficiency.bind(this))
 
         // Advancements
-        html.find('.set-adv-value').click(this._onSetAdvancementValue.bind(this));
-        html.find('.set-adv-value').contextmenu(this._onClearAdvancement.bind(this));
+        html
+          .find('.set-adv-value')
+          .click(this._onSetAdvancementValue.bind(this))
+        html
+          .find('.set-adv-value')
+          .contextmenu(this._onClearAdvancement.bind(this))
 
         // Filter Moves
-        html.find('.moveCategorySelect').change(this._onSelectMoveCategory.bind(this));
+        html
+          .find('.moveCategorySelect')
+          .change(this._onSelectMoveCategory.bind(this))
       }
 
       // toggle collapsible moves
-      html.find('.toggle-drawer').click(this._onToggleCollapsible.bind(this));
+      html.find('.toggle-drawer').click(this._onToggleCollapsible.bind(this))
 
       //Remove and Toggle Conditions
-      html.find('.condition-toggle').click(this._onConditionToggle.bind(this));
+      html.find('.condition-toggle').click(this._onConditionToggle.bind(this))
 
       // Create, Edit and Delete Moves and Techniques
-      html.find('.item-edit').click(this._onItemEdit.bind(this));
-      html.find('.item-delete').click(this._onItemDelete.bind(this));
+      html.find('.item-edit').click(this._onItemEdit.bind(this))
+      html.find('.item-delete').click(this._onItemDelete.bind(this))
 
       // Context Menus
-      new ContextMenu(html, ".item .menu", this.itemContextMenu);
+      new ContextMenu(html, '.item .menu', this.itemContextMenu)
     }
 
-    if(this.actor.isOwner){
-      if(this.actor.type == 'player'){
+    if (this.actor.isOwner) {
+      if (this.actor.type == 'player') {
         // Only players need to roll
-        html.find('.stat-roll').click(this._onStatRoll.bind(this));
-        html.find('.principle-roll').click(this._onPrincipleRoll.bind(this));
-        html.find('.move-roll').click(this._onMoveRoll.bind(this));
+        html.find('.stat-roll').click(this._onStatRoll.bind(this))
+        html.find('.principle-roll').click(this._onPrincipleRoll.bind(this))
+        html.find('.move-roll').click(this._onMoveRoll.bind(this))
       }
       // TODO: Maybe rename this as it's not actually rolling anything.
-      html.find('.item-roll').click(this._onItemRoll.bind(this));
+      html.find('.item-roll').click(this._onItemRoll.bind(this))
     }
 
-    super.activateListeners(html);
+    super.activateListeners(html)
   }
 
   /**
    * Update the Actor's Balance value (used for both tracks)
    * @param {Event} event
    */
-  _onSetBalanceValue(event){
-    event.preventDefault();
-    
-    let element = event.currentTarget;
+  _onSetBalanceValue(event) {
+    event.preventDefault()
+
+    let element = event.currentTarget
     this.actor.update({
-      data: {
+      system: {
         balance: {
-          value: parseInt(element.dataset.currentBalance)
-        }
-      }
-    });
+          value: parseInt(element.dataset.currentBalance),
+        },
+      },
+    })
   }
 
   /**
    * Update the Actor's Center on the Balance track
    * @param {Event} event
    */
-  _onSetBalanceCenter(event){
-    event.preventDefault();
+  _onSetBalanceCenter(event) {
+    event.preventDefault()
 
-    let element = event.currentTarget;
+    let element = event.currentTarget
     this.actor.update({
-      data: {
+      system: {
         balance: {
-          center: parseInt(element.dataset.currentCenter)
-        }
-      }
-    });
+          center: parseInt(element.dataset.currentCenter),
+        },
+      },
+    })
   }
 
   /**
    * Send an Item's description to the chat
    * @param {Event} event
    */
-  _onItemRoll(event){
-    event.preventDefault();
-    let element = event.currentTarget;
-    let dataset = element.closest('.item').dataset;
-    let itemId = dataset.itemId;
-    let item = this.actor.items.get(itemId);
-    let npc = dataset.npc;
+  _onItemRoll(event) {
+    event.preventDefault()
+    let element = event.currentTarget
+    let dataset = element.closest('.item').dataset
+    let itemId = dataset.itemId
+    let item = this.actor.items.get(itemId)
+    let npc = dataset.npc
 
-    item.roll(npc);
+    item.roll(npc)
   }
 
   /**
    * Roll the stat for a Move. Calls the Dice#RollStat method with the name of the Move for display.
    * @param {Event} event
    */
-  _onMoveRoll(event){
-    event.preventDefault();
+  _onMoveRoll(event) {
+    event.preventDefault()
 
-    const moveName = event.currentTarget.dataset.moveName;
-    const statName = event.currentTarget.dataset.moveStat;
-    const statValue = this.actor.system.stats[statName];
-    const approach = event.currentTarget.dataset.moveApproach;
+    const moveName = event.currentTarget.dataset.moveName
+    const statName = event.currentTarget.dataset.moveStat
+    const statValue = this.actor.system.stats[statName]
+    const approach = event.currentTarget.dataset.moveApproach
 
-    const name = statName ? game.i18n.localize(`legends.stats.${statName}`) : null;
+    const name = statName
+      ? game.i18n.localize(`legends.stats.${statName}`)
+      : null
 
     Dice.RollStat({
       statValue: statValue,
       statName: name,
       moveName: moveName,
-      approach: approach
-    });
+      approach: approach,
+    })
   }
 
   /**
    * Send an Actor's stat roll to the Chat.
    * @param {Event} event
    */
-  _onStatRoll(event){
-    event.preventDefault();
+  _onStatRoll(event) {
+    event.preventDefault()
 
-    const name = event.currentTarget.dataset.statName;
+    const name = event.currentTarget.dataset.statName
 
     Dice.RollStat({
       statValue: this.actor.system.stats[name],
-      statName: game.i18n.localize(`legends.stats.${name}`)
-    });
+      statName: game.i18n.localize(`legends.stats.${name}`),
+    })
   }
 
   /**
    * Roll with a Principle and send it to the Chat.
    * @param {Event} event
    */
-  _onPrincipleRoll(event){
-    event.preventDefault();
-    const name = event.currentTarget.dataset.name;
-    const negative = event.currentTarget.dataset.negative;
-    let value = event.currentTarget.dataset.value;
+  _onPrincipleRoll(event) {
+    event.preventDefault()
+    const name = event.currentTarget.dataset.name
+    const negative = event.currentTarget.dataset.negative
+    let value = event.currentTarget.dataset.value
 
-    if(negative === 'true'){
-      value = -value;
+    if (negative === 'true') {
+      value = -value
     }
 
     Dice.RollStat({
       statValue: value,
-      statName: name
-    });
+      statName: name,
+    })
   }
 
   /**
    * Toggle a plsyer Actor's training
    * @param {Event} event
    */
-  _onToggleTrainingType(event){
-    event.preventDefault();
-    let element = event.currentTarget;
-    let type = element.dataset.type;
-    let newValue = !this.actor.system.training[type];
+  _onToggleTrainingType(event) {
+    event.preventDefault()
+    let element = event.currentTarget
+    let type = element.dataset.type
+    let newValue = !this.actor.system.training[type]
 
     this.actor.update({
-      data: {
+      system: {
         training: {
-          [type]: newValue
-        }
-      }
-    });
+          [type]: newValue,
+        },
+      },
+    })
   }
 
   /**
@@ -279,49 +305,49 @@ export default class LegendsActorSheet extends ActorSheet {
    * adjusted on this Actor.
    * @param {Event} event The triggering event
    */
-   _onSetFatigue(event){
-    event.preventDefault();
-    let element = event.currentTarget;
-    let checked = element.classList.contains('filled');
-    let currentValue = parseInt(this.actor.system.fatigue.value);
+  _onSetFatigue(event) {
+    event.preventDefault()
+    let element = event.currentTarget
+    let checked = element.classList.contains('filled')
+    let currentValue = parseInt(this.actor.system.fatigue.value)
 
-    let max = this.actor.system.fatigue.max;
+    let max = this.actor.system.fatigue.max
 
-    let newValue = checked ? currentValue - 1 : currentValue + 1;
-    let newRemaining = max - newValue;
+    let newValue = checked ? currentValue - 1 : currentValue + 1
+    let newRemaining = max - newValue
 
     this.actor.update({
-      data: {
+      system: {
         fatigue: {
-          value: newValue
+          value: newValue,
         },
         fatigueRemaining: {
           value: newRemaining,
-          max: max
-        }
-      }
-    });
+          max: max,
+        },
+      },
+    })
   }
 
   /**
    * Set an Actor's Fatigue to 0 and fatigueRemaining to max.
    * @param {Event} event The triggering Event
    */
-  _onClearFatigue(event){
-    event.preventDefault();
-    let max = this.actor.system.fatigue.max;
+  _onClearFatigue(event) {
+    event.preventDefault()
+    let max = this.actor.system.fatigue.max
 
     this.actor.update({
-      data: {
+      system: {
         fatigue: {
-          value: 0
+          value: 0,
         },
         fatigueRemaining: {
           value: max,
-          max: max
-        }
-      }
-    });
+          max: max,
+        },
+      },
+    })
   }
 
   /**
@@ -329,214 +355,212 @@ export default class LegendsActorSheet extends ActorSheet {
    * the triggering event's target's data attributes.
    * @param {Event} event The triggering Event
    */
-  _onSetValue(event){
-    event.preventDefault();
-    let element = event.currentTarget;
-    let param = element.dataset.param;
-    let obj = null;
-    let newValue = null;
-    
-    if(element.dataset.type == 'item'){
-      let dataset = element.closest('.item').dataset;
-      let itemId = dataset.itemId;
+  _onSetValue(event) {
+    event.preventDefault()
+    let element = event.currentTarget
+    let param = element.dataset.param
+    let obj = null
+    let newValue = null
 
-      obj = this.actor.items.get(itemId);
-      newValue = element.dataset.newValue;
-    }
-    else{
-      let checked = element.classList.contains('filled');
-      let currentValue = this.actor.system[param].value;
+    if (element.dataset.type == 'item') {
+      let dataset = element.closest('.item').dataset
+      let itemId = dataset.itemId
 
-      newValue = checked ? currentValue - 1 : currentValue + 1;
+      obj = this.actor.items.get(itemId)
+      newValue = element.dataset.newValue
+    } else {
+      let checked = element.classList.contains('filled')
+      let currentValue = this.actor.system[param].value
+
+      newValue = checked ? currentValue - 1 : currentValue + 1
       obj = this.actor
     }
 
     obj.update({
-      data: {
+      system: {
         [param]: {
-          value: parseInt(newValue)
-        }
-      }
-    });
+          value: parseInt(newValue),
+        },
+      },
+    })
   }
 
   /**
    * Set an arbitrary parameter's value to zero.
    * @param {Event} event The triggering Event
    */
-  _onClearValue(event){
-    event.preventDefault();
-    let element = event.currentTarget;
-    let param = element.dataset.param;
+  _onClearValue(event) {
+    event.preventDefault()
+    let element = event.currentTarget
+    let param = element.dataset.param
 
-    if(element.dataset.type == 'item'){
+    if (element.dataset.type == 'item') {
       // Currently only used for NPC Principle tracks
-      let dataset = element.closest('.item').dataset;
-      let itemId = dataset.itemId;
-      let item = this.actor.items.get(itemId);
+      let dataset = element.closest('.item').dataset
+      let itemId = dataset.itemId
+      let item = this.actor.items.get(itemId)
 
       item.update({
-        data: {
+        system: {
           [param]: {
-            value: 0
-          }
-        }
-      });
-    }
-    else{
+            value: 0,
+          },
+        },
+      })
+    } else {
       this.actor.update({
-        data: {
+        system: {
           [param]: {
-            value: 0
-          }
-        }
-      });
+            value: 0,
+          },
+        },
+      })
     }
   }
 
   /**
    * Update the progress on a Growth Advancement track.
-   * 
+   *
    * This needed its own custom method due to nesting in the
    * object template.
    * @param {Event} event
    */
-  _onSetAdvancementValue(event){
-    event.preventDefault();
-    let element = event.currentTarget;
-    let name = element.dataset.param;
-    let checked = element.classList.contains('filled');
-    let currentValue = this.actor.system.growth.advancements[name].value;
-    let newValue = checked ? currentValue - 1 : currentValue + 1;
+  _onSetAdvancementValue(event) {
+    event.preventDefault()
+    let element = event.currentTarget
+    let name = element.dataset.param
+    let checked = element.classList.contains('filled')
+    let currentValue = this.actor.system.growth.advancements[name].value
+    let newValue = checked ? currentValue - 1 : currentValue + 1
 
     this.actor.update({
-      data: {
+      system: {
         growth: {
           advancements: {
             [name]: {
-              value: newValue
-            }
-          }
-        }
-      }
-    });
+              value: newValue,
+            },
+          },
+        },
+      },
+    })
   }
 
   /**
    * Clear the progress on a Growth Advancement track.
-   * 
+   *
    * This needed its own custom method due to nesting in the
    * object template.
    * @param {Event} event
    */
-  _onClearAdvancement(event){
-    event.preventDefault();
-    let element = event.currentTarget;
-    let name = element.dataset.param;
+  _onClearAdvancement(event) {
+    event.preventDefault()
+    let element = event.currentTarget
+    let name = element.dataset.param
 
     this.actor.update({
-      data: {
+      system: {
         growth: {
           advancements: {
             [name]: {
-              value: 0
-            }
-          }
-        }
-      }
-    });
+              value: 0,
+            },
+          },
+        },
+      },
+    })
   }
 
   /**
    * Toggle a Condition
    * @param {Event} event
    */
-  _onConditionToggle(event){
-    event.preventDefault();
+  _onConditionToggle(event) {
+    event.preventDefault()
 
-    let element = event.currentTarget;
-    let itemId = element.closest('.item').dataset.itemId;
-    let item = this.actor.items.get(itemId);
+    let element = event.currentTarget
+    let itemId = element.closest('.item').dataset.itemId
+    let item = this.actor.items.get(itemId)
 
-    let state = !item.system.checked;
+    let state = !item.system.checked
 
     item.update({
-      data: { "checked": state }
-    });
+      system: { checked: state },
+    })
   }
 
   /**
    * Show the sheet for an Item
    * @param {Event} event
    */
-  _onItemEdit(event){
-    event.preventDefault();
-    let element = event.currentTarget;
-    let itemId = element.closest('.item').dataset.itemId;
-    let item = this.actor.items.get(itemId);
+  _onItemEdit(event) {
+    event.preventDefault()
+    let element = event.currentTarget
+    let itemId = element.closest('.item').dataset.itemId
+    let item = this.actor.items.get(itemId)
 
-    item.sheet.render(true);
+    item.sheet.render(true)
   }
 
   /**
    * Delete an owned item
-   * @param {Event} event 
+   * @param {Event} event
    */
-  _onItemDelete(event){
-    event.preventDefault();
-    let element = event.currentTarget;
-    let itemId = element.closest('.item').dataset.itemId;
-    this.actor.deleteEmbeddedDocuments("Item", [itemId]);
+  _onItemDelete(event) {
+    event.preventDefault()
+    let element = event.currentTarget
+    let itemId = element.closest('.item').dataset.itemId
+    this.actor.deleteEmbeddedDocuments('Item', [itemId])
   }
 
   /**
    * Update the Proficiency level on an Actor's owned Technique
    * @param {Event} event
    */
-  _onSetTechniqueProficiency(event){
-    event.preventDefault();
-    let element = event.currentTarget;
-    let itemId = element.closest('.item').dataset.itemId;
-    let item = this.actor.items.get(itemId);
-    let level = element.dataset.level;
+  _onSetTechniqueProficiency(event) {
+    event.preventDefault()
+    let element = event.currentTarget
+    let itemId = element.closest('.item').dataset.itemId
+    let item = this.actor.items.get(itemId)
+    let level = element.dataset.level
 
-    let mastered = false;
-    let practiced = false;
+    let mastered = false
+    let practiced = false
 
-    switch(level) {
+    switch (level) {
       case 'mastered':
-        mastered = true;
-        practiced = true;
-        break;
+        mastered = true
+        practiced = true
+        break
       case 'practiced':
-        practiced = true;
-        break;
+        practiced = true
+        break
     }
     item.update({
-      data: {
+      system: {
         learned: true,
         practiced: practiced,
-        mastered: mastered
-      }
-    });
+        mastered: mastered,
+      },
+    })
   }
 
   /**
    * Toggle the content drawer for a move or technique
-   * @param {Event} event 
+   * @param {Event} event
    */
-  _onToggleCollapsible(event){
-    event.preventDefault();
+  _onToggleCollapsible(event) {
+    event.preventDefault()
 
-    let element = event.currentTarget;
-    $(element.closest('.item')).find('.drawer').slideToggle();
+    let element = event.currentTarget
+    $(element.closest('.item')).find('.drawer').slideToggle()
   }
 
   /**
    * Select move category to display
    * @param {Event} event
    */
-  _onSelectMoveCategory(event){
-    this.actor.setFlag('legends', 'moveCategory', event.currentTarget.value);
+  _onSelectMoveCategory(event) {
+    this.actor.setFlag('legends', 'moveCategory', event.currentTarget.value)
   }
-};
+}

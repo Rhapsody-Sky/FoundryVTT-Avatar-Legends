@@ -1,25 +1,29 @@
-{{#unless inSheet}}<div class="legends">{{/unless}}
-  <section class="item condition cell" data-item-id="{{_id}}" data-npc="{{npc}}">
-    <h4 class="title no-margin">
-      {{#if inSheet}}
-        <a class="condition-toggle check-box{{#if system.checked}} filled{{/if}}"></a>
-        {{#if npc}}
-          <a class="black menu">{{name}}</a>
-        {{else}}
-          <a class="black menu{{#if inSheet}} toggle-drawer{{/if}}">{{name}}</a>
-          <a class="item-roll small weapons">
-            <i class="fas fa-comment" title="{{localize "legends.common.to-chat"}}"></i>
-          </a>
-        {{/if}}
+{{#unless inSheet}}
+  <div class="legends">
+{{/unless}}
+<section class="item condition cell" data-item-id="{{_id}}" data-npc="{{npc}}">
+  <h4 class="title no-margin">
+    {{#if inSheet}}
+      <a class="condition-toggle check-box{{#if system.checked}} filled{{/if}}"></a>
+      {{#if npc}}
+        <a class="black menu">{{name}}</a>
       {{else}}
-        {{name}}
+        <a class="black menu{{#if inSheet}} toggle-drawer{{/if}}">{{name}}</a>
+        <a class="item-roll small weapons">
+          <i class="fas fa-comment" title="{{localize "legends.common.to-chat"}}"></i>
+        </a>
       {{/if}}
-    </h4>
-    
-    {{#unless npc}}
-      {{#if inSheet}}<div class="drawer">{{/if}}
-        {{{enrichHTML system.description}}}
-      {{#if inSheet}}</div>{{/if}}
-    {{/unless}}
-  </section>
+    {{else}}
+      {{name}}
+    {{/if}}
+  </h4>
+
+  {{#unless npc}}
+    {{#if inSheet}}
+      <div class="drawer">
+    {{/if}}
+    {{{enrichHTML system.description}}}
+    {{#if inSheet}}</div>{{/if}}
+  {{/unless}}
+</section>
 {{#unless inSheet}}</div>{{/unless}}
