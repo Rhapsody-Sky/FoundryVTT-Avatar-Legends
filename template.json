@@ -54,7 +54,8 @@
           "shift-center": { "max": 2, "value": 0 },
           "moment": { "max": 2, "value": 0 }
         }
-      }
+      },
+      "notes": ""
     },
     "npc": {
       "templates": ["hasDescription", "hasFatigue"],

@@ -39,6 +39,15 @@ function registerSystemSettings() {
     },
     default: 'default',
   })
+
+  game.settings.register('legends', 'playerNotes', {
+    config: true,
+    scope: 'client',
+    name: 'SETTINGS.playerNotes.label',
+    hint: 'SETTINGS.playerNotes.hint',
+    type: Boolean,
+    default: false,
+  })
 }
 
 Hooks.once('init', function () {
