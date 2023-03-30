@@ -214,7 +214,8 @@
       "main": "Main",
       "moves": "Moves",
       "techniques": "Training & Techniques",
-      "detail": "Details & Growth"
+      "detail": "Details & Growth",
+      "notes": "Notes"
     }
   },
   "SETTINGS": {
@@ -228,6 +229,10 @@
       "hint": "The color scheme used by Player character sheets",
       "default": "Default",
       "quickstart": "Quickstart"
+    },
+    "playerNotes": {
+      "label": "Player Notes",
+      "hint": "Show the Notes section on the Player character sheet"
     }
   }
 }

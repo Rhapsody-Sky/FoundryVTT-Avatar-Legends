@@ -6,13 +6,20 @@
   .bg-fade(100px, @bg-color-quickstart, @bg-fade-color-quickstart);
 
   .balance .balance-track {
-    &.black, &.white{
+
+    &.black,
+    &.white {
       box-shadow: inset 1rem 1.4rem 0 @bg-color-quickstart, inset -1rem -1.4rem 0 @bg-color-quickstart;
     }
   }
 
-  .accent { color: @accent-color-quickstart; }
-  .accent-dark { color: @accent-dark-quickstart; }
+  .accent {
+    color: @accent-color-quickstart;
+  }
+
+  .accent-dark {
+    color: @accent-dark-quickstart;
+  }
 
   .underline,
   input,
@@ -26,19 +33,20 @@
     border-color: @accent-color-quickstart;
   }
 
-  .navigation{
-    .sheet-tabs.tabs{
-      .item{
+  .navigation {
+    .sheet-tabs.tabs {
+      .item {
         color: @accent-dark-quickstart;
 
-        &:hover, &.active{
+        &:hover,
+        &.active {
           text-shadow: 0 0 10px @accent-color-quickstart;
         }
       }
     }
   }
 
-  a{
+  a {
     &:hover {
       text-shadow: 0 0 6px @accent-color-quickstart;
     }
@@ -59,72 +67,79 @@
   padding: 0.5rem;
   .bg-fade(100px);
 
-  &.item-sheet, &.npc-sheet{
-    header.sheet-header{
-      input, select{
-        background: rgba(255,255,255,0.7);
+  &.item-sheet,
+  &.npc-sheet {
+    header.sheet-header {
+
+      input,
+      select {
+        background: rgba(255, 255, 255, 0.7);
       }
     }
   }
 
-  .sheet-header{
+  .sheet-header {
     flex: none;
 
-    select{
-      width:96%;
+    select {
+      width: 96%;
       height: 48px;
       margin: 8px 2%;
       font-size: 1.2rem;
     }
 
-    .playbook{
-      input{
+    .playbook {
+      input {
         border: none;
         background: transparent;
       }
     }
-    .name{
+
+    .name {
       background: white;
       border: 2px solid @accent-color;
       border-radius: 0.25rem;
       width: 98px;
       margin: 8px 2%;
-      .name-label{
+
+      .name-label {
         font-size: 0.9rem;
         padding: 4px 0 0 4px;
       }
-      input{
+
+      input {
         border: none;
-        width:100%;
-        height:100%;
+        width: 100%;
+        height: 100%;
         font-size: 1.5rem;
         padding: 0.5rem;
       }
     }
   }
 
-  .navigation{
+  .navigation {
     flex-grow: 0;
 
-    .sheet-tabs.tabs{
+    .sheet-tabs.tabs {
       border: none;
-      background: rgba(255,255,255,0.5);
+      background: rgba(255, 255, 255, 0.5);
       margin: 0.5rem -0.5rem;
       padding: 0.5rem;
       border-top: 1px solid @accent-color;
       border-bottom: 1px solid @accent-color;
 
-      .item{
+      .item {
         display: block;
         width: 100%;
         color: @accent-dark;
         border-left: 1px solid @accent-color;
 
-        &:first-child{
+        &:first-child {
           border-left: none;
         }
 
-        &:hover, &.active{
+        &:hover,
+        &.active {
           color: @text-color;
           text-shadow: 0 0 10px @accent-color;
         }
@@ -132,18 +147,19 @@
     }
   }
 
-  .tab[data-tab]{
+  .tab[data-tab] {
     display: none;
-    &.active{
+
+    &.active {
       display: block;
     }
   }
 
-  &.player-sheet .tab[data-tab].active{
+  &.player-sheet .tab[data-tab].active {
     display: flex;
   }
 
-  .stats{
+  .stats {
     input {
       text-align: center;
       width: 2rem;
@@ -156,10 +172,13 @@
   }
 
   .balance {
-    .balance-black, .balance-white{
+
+    .balance-black,
+    .balance-white {
       padding: 0.5rem;
       border-radius: 0.5rem;
-      input{
+
+      input {
         border: none;
         padding: 0.25rem 0.5rem;
         margin: 0;
@@ -168,32 +187,35 @@
       }
     }
 
-    .balance-black{
+    .balance-black {
       color: white;
       background-image: linear-gradient(115deg, @text-color 20%, rgba(17, 17, 17, 0) 90%);
       margin-bottom: 0;
-      
-      input{
+
+      input {
         color: white;
       }
     }
-    .balance-white{
+
+    .balance-white {
       background-image: linear-gradient(-115deg, white 20%, rgba(255, 255, 255, 0) 90%);
       color: @text-color;
-      input{
+
+      input {
         color: @text-color;
         text-align: right;
       }
     }
 
-    ul.balance-track, ul.balance-center-track{
+    ul.balance-track,
+    ul.balance-center-track {
       display: flex;
       flex-direction: row;
       flex-wrap: none;
       margin: 0;
       padding: 0;
 
-      li{
+      li {
         list-style: none;
         flex: 1;
         text-align: center;
@@ -201,8 +223,8 @@
         &.text {
           flex: 0;
           font-size: 0.6rem;
-          line-height:1.5rem;
-          text-align:center;
+          line-height: 1.5rem;
+          text-align: center;
           color: @accent-dark;
           margin: 0 -4px;
           .title-font();
@@ -214,9 +236,11 @@
       height: 1.2rem;
     }
 
-    ul.balance-track{
-      &.black li, &.white li{
-        .num{
+    ul.balance-track {
+
+      &.black li,
+      &.white li {
+        .num {
           display: inline-block;
           border-radius: 50%;
           width: 2rem;
@@ -227,40 +251,46 @@
           font-weight: bold;
         }
 
-        &.selected{
-          .num{
+        &.selected {
+          .num {
             background: @firebender;
             color: white;
           }
         }
       }
 
-      &.black, &.white{
+      &.black,
+      &.white {
         box-shadow: inset 1rem 1.4rem 0 @bg-color, inset -1rem -1.4rem 0 @bg-color;
       }
-      &.black{
+
+      &.black {
         background: black;
-        li{
-          .num{
+
+        li {
+          .num {
             background: @text-color;
             color: white;
             border-color: @text-color;
           }
-          &:hover .num{
+
+          &:hover .num {
             border-color: @firebender;
           }
         }
       }
 
-      &.white{
+      &.white {
         background: white;
-        li{
-          .num{
+
+        li {
+          .num {
             background: white;
             color: @text-color;
             border-color: white;
           }
-          &:hover .num{
+
+          &:hover .num {
             border-color: @firebender;
           }
         }
@@ -271,12 +301,14 @@
   .item.technique {
     margin-bottom: 1rem;
 
-    h3, h4, p {
+    h3,
+    h4,
+    p {
       margin: 0;
     }
 
     h4 {
-      a.set-proficiency{
+      a.set-proficiency {
         color: @text-color;
 
         .fa-times-circle {
@@ -286,12 +318,12 @@
     }
   }
 
-  h4.roll-approach{
+  h4.roll-approach {
     padding-bottom: 0.25rem;
     border-color: #65110c;
     position: relative;
 
-    &:before{
+    &:before {
       content: '◆';
       position: absolute;
       bottom: 0;
@@ -304,93 +336,107 @@
   }
 
   @editor-height: 100px;
-  .description{
+
+  .description {
     flex: 1;
     display: flex;
     min-height: @editor-height;
     border: 1px solid @accent-color;
     border-radius: 0.25rem;
-    background: rgba(255,255,255,0.5);
+    background: rgba(255, 255, 255, 0.5);
     padding: 0.5rem;
 
-    h1,h2,h3,h4{
+    h1,
+    h2,
+    h3,
+    h4 {
       .title-font();
     }
-    
-    .editor{
+
+    .editor {
       min-height: @editor-height;
       width: 100%;
-      .editor-content{
+
+      .editor-content {
         min-height: @editor-height;
       }
-      .tox.tox-tinymce{
+
+      .tox.tox-tinymce {
         min-height: @editor-height * 2;
       }
     }
-    &:hover .editor-edit{
+
+    &:hover .editor-edit {
       color: black;
     }
   }
 
-  input, select, textarea {
+  input,
+  select,
+  textarea {
     border: 1px solid @accent-color;
     border-radius: 0.25rem;
     width: calc(100% - 1rem);
     margin: 0 0.5rem;
     padding: 0 0.25rem;
-    background: rgba(255,255,255,0.7);
-    &:focus{
+    background: rgba(255, 255, 255, 0.7);
+
+    &:focus {
       box-shadow: 0 0 3px @accent-dark;
     }
   }
 
-  select option{
+  select option {
     background: white;
   }
-  
-  .labelled-input{
+
+  .labelled-input {
     display: flex;
     flex-direction: row;
     margin: 0.5rem 0;
-    
-    label{
+
+    label {
       font-weight: bold;
       line-height: 1.5rem;
     }
-    input{
+
+    input {
       .main-font();
       margin: 0 0 0 0.5rem;
     }
   }
 
-  .balance-box, .fatigue-box, .check-box{
+  .balance-box,
+  .fatigue-box,
+  .check-box {
     display: inline-block;
     border: 2px solid black;
     background: white;
 
-    &.filled{
+    &.filled {
       background: @firebender;
       box-shadow: inset 2px 2px 0 white, inset -2px -2px 0 white;
     }
 
-    &.mini{
+    &.mini {
       width: 1rem;
       height: 1rem;
     }
   }
 
-  .check-box{
+  .check-box {
     width: 1.2rem;
     height: 1.2rem;
     border-radius: 2px;
     margin: 0 0 -2px;
   }
 
-  .balance-box, .fatigue-box{
+  .balance-box,
+  .fatigue-box {
     transform: rotate(45deg);
   }
 
-  .fatigue-box{
+  .fatigue-box {
     width: 1.5rem;
     height: 1.5rem;
     margin: 0 0.2rem;
@@ -399,6 +445,7 @@
   .training {
     display: block;
     flex: none;
+
     .trainings {
       text-align: center;
       margin: 2rem 0 1rem;
@@ -412,14 +459,16 @@
         flex: 1;
         .title-font();
         opacity: 0.25;
-        &:hover{
+
+        &:hover {
           opacity: 0.75;
         }
-        &.selected{
+
+        &.selected {
           opacity: 1 !important;
         }
 
-        img{
+        img {
           width: 2rem;
           border: none;
         }
@@ -427,13 +476,17 @@
     }
   }
 
-  .statuses{
-    .positive{
-      .title a.menu { color: @waterbender; }
+  .statuses {
+    .positive {
+      .title a.menu {
+        color: @waterbender;
+      }
     }
 
-    .negative{
-      .title a.menu { color: @firebender; }
+    .negative {
+      .title a.menu {
+        color: @firebender;
+      }
     }
   }
 }
@@ -442,8 +495,8 @@
   max-width: 23%;
 }
 
-.sheet.journal-entry.legends-journal-sheet .journal-entry-content{
-  .journal-header input{
+.sheet.journal-entry.legends-journal-sheet .journal-entry-content {
+  .journal-header input {
     .title-font();
     font-variant: small-caps;
   }
@@ -451,7 +504,11 @@
   .bg-fade(100px);
   .main-font();
 
-  h1, h2, h3, h4, h5 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
     border: none;
     .title-font();
   }
@@ -460,17 +517,18 @@
     border-bottom: 2px solid @accent-color;
   }
 
-  a{
+  a {
+
     &.content-link,
     &.inline-roll {
       color: @accent-dark;
     }
   }
 
-  .skill-name{
+  .skill-name {
     color: @accent-dark;
     .title-font();
     font-weight: bold;
-    font-size:0.85rem;
+    font-size: 0.85rem;
   }
 }
