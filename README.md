@@ -13,7 +13,7 @@ Additional screenshots: https://imgur.com/a/wWJLdor
 - Player character and NPC character sheets
 - Campaign Worksheet
 - Supports Dice So Nice! for custom 3D dice
-- Compendiums of publicly-available Playbooks and reference material
+- Compendia of publicly-available Playbooks and reference material
 
 ## Installation
 
@@ -53,4 +53,6 @@ _Licence details are included in the font folders._
 
 ### Disclaimer
 
-Avatar: The Last Airbender, Nickelodeon, and all related marks, logos, and characters are owned by Viacom International Inc. This VTT system is not endorsed by, sponsored by, nor affiliated with Viacom International Inc., Magpie Games, or any other Avatar franchise, and is intended for private use only.
+This digital tool has been created in keeping with the guidelines for fan-created digital tools provided by Magpie Games at [www.magpiegames.com/avatarrpg](https://magpiegames.com/pages/avatarrpg)
+
+Viacom is the owner of the original content and any derivatives created with such content associated with these tools, including rules for game play, are ©2023 Viacom International Inc. All Rights Reserved. Nickelodeon, Avatar Legends and all related titles, logos and characters are trademarks of Viacom International Inc.
