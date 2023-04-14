@@ -5,6 +5,8 @@ import LegendsActorSheet from './module/sheets/LegendsActorSheet.js'
 import LegendsNpcActorSheet from './module/sheets/LegendsNpcActorSheet.js'
 import LegendsCampaignActorSheet from './module/sheets/LegendsCampaignActorSheet.js'
 import LegendsItemSheet from './module/sheets/LegendsItemSheet.js'
+import LegendsNpcPrincipleSheet from './module/sheets/LegendsNpcPrincipleSheet.js'
+import LegendsPlaybookSheet from './module/sheets/LegendsPlaybookSheet.js'
 import preloadHandlebarsTemplates from './module/preload.js'
 import * as Chat from './module/chat.js'
 import * as Migrations from './module/migrations.js'
@@ -62,6 +64,14 @@ Hooks.once('init', function () {
 
   // Item sheets
   Items.registerSheet('legends', LegendsItemSheet, { makeDefault: true })
+  Items.registerSheet('legends', LegendsNpcPrincipleSheet, {
+    makeDefault: true,
+    types: ['npc-principle'],
+  })
+  Items.registerSheet('legends', LegendsPlaybookSheet, {
+    makeDefault: true,
+    types: ['playbook'],
+  })
 
   // Actor sheets
   Actors.unregisterSheet('core', ActorSheet)

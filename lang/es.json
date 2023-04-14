@@ -95,7 +95,21 @@
         "name": "Nuevo {type}",
         "description": "<p>Descripción acá.</p>"
       },
-      "not-allowed": "Este tipo de elemento no se puede agregar a este actor."
+      "not-allowed": "Este tipo de elemento no se puede agregar a este actor.",
+      "playbook-applied": "Playbook '{name}' has been applied",
+      "types": {
+        "condition": "Condición",
+        "move": "Movimiento",
+        "technique": "Técnica de Combate",
+        "feature": "Ventaja",
+        "moment-of-balance": "Momento de Balance",
+        "growth-question": "Pregunta de Mejora",
+        "status": "Estados"
+      }
+    },
+    "attachments": {
+      "none": "No Attachments have been added. Drag some from the Item sidebar or Compendium.",
+      "title": "Attachments"
     },
     "moves": {
       "add": "Nuevo Movimiento",
@@ -169,7 +183,7 @@
     "growth": {
       "title": "Mejora",
       "question": {
-        "title": "Growth Questions",
+        "title": "Preguntas de Mejora",
         "none": "No Growth Questions have been added. Drag some from the Item sidebar or Compendium."
       },
       "advancement": {
@@ -183,7 +197,9 @@
     },
     "principle": {
       "title": "Principio",
-      "none": "No NPC Principle has been added. Drag one from the Item sidebar or a Compendium."
+      "none": "No NPC Principle has been added. Drag one from the Item sidebar or a Compendium.",
+      "add": "Agregar Principio",
+      "maximum": "Maximum"
     },
     "roll": {
       "with": "Lanza con <a class=\"accent-dark move-roll\" data-move-name=\"{approach}\" data-move-stat=\"{stat}\"><i class=\"fas fa-dice small\"></i>{name}</a>",

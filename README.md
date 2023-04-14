@@ -17,7 +17,9 @@ Additional screenshots: https://imgur.com/a/wWJLdor
 
 ## Installation
 
-To install the system, paste the manifest URL below into the Install System dialog on the Setup menu:
+The system can be found in the FoundryVTT Game Systems directory within the application - click `Install System` and search for `avatar`, then click the `Install` button next to the **Avatar Legends RPG (Unofficial)** system.
+
+To install the system manually, paste the manifest URL below into the `Install System` dialog on the Setup menu:
 
 - `https://gitlab.com/api/v4/projects/pacosgrove1%2Flegends/packages/generic/legends/latest/system.json`
 
@@ -48,7 +50,7 @@ _Licence details are included in the font folders._
 - Icons from [Game-icons.net](https://game-icons.net/) under [CC BY 3.0](http://creativecommons.org/licenses/by/3.0/)
   - [Acrobatic](https://game-icons.net/1x1/darkzaitzev/acrobatic.html) and [Big gear](https://game-icons.net/1x1/darkzaitzev/big-gear.html) by [DarkZaitzey](http://darkzaitzev.deviantart.com/)
   - [Boomerang](https://game-icons.net/1x1/delapouite/boomerang.html), [Love mystery](https://game-icons.net/1x1/delapouite/love-mystery.html), [Person](https://game-icons.net/1x1/delapouite/person.html), [Summits](https://game-icons.net/1x1/delapouite/summits.html) and [Yin yang](https://game-icons.net/1x1/delapouite/yin-yang.html) by [Delapouite](https://delapouite.com/)
-  - [Backup](https://game-icons.net/1x1/lorc/backup.html), [Compass](https://game-icons.net/1x1/lorc/compass.html), [Ink swirl](https://game-icons.net/1x1/lorc/ink-swirl.html), [Waves](https://game-icons.net/1x1/lorc/waves.html), [Wind hole](https://game-icons.net/1x1/lorc/wind-hole.html) and [World](https://game-icons.net/1x1/lorc/world.html) by [Lorc](https://lorcblog.blogspot.com/)
+  - [Backup](https://game-icons.net/1x1/lorc/backup.html), [Compass](https://game-icons.net/1x1/lorc/compass.html), [Ink swirl](https://game-icons.net/1x1/lorc/ink-swirl.html), [Tied scroll](https://game-icons.net/1x1/lorc/tied-scroll.html), [Waves](https://game-icons.net/1x1/lorc/waves.html), [Wind hole](https://game-icons.net/1x1/lorc/wind-hole.html) and [World](https://game-icons.net/1x1/lorc/world.html) by [Lorc](https://lorcblog.blogspot.com/)
   - [Expander](https://game-icons.net/1x1/sbed/expander.html), [Flamer](https://game-icons.net/1x1/sbed/flamer.html) and [Poison cloud](https://game-icons.net/1x1/sbed/poison-cloud.html) by [sbed](http://opengameart.org/content/95-game-icons)
 
 ### Disclaimer

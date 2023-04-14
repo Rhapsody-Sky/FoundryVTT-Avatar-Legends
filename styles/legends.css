@@ -350,12 +350,15 @@
 .legends.sheet.quickstart input,
 .legends.sheet.quickstart select,
 .legends.sheet.quickstart textarea,
-.legends.sheet.quickstart table,
 .legends.sheet.quickstart .description,
 .legends.sheet.quickstart .sheet-header .name,
 .legends.sheet.quickstart .navigation .sheet-tabs.tabs,
 .legends.sheet.quickstart .navigation .sheet-tabs.tabs .item {
   border-color: #baaf6b;
+}
+.legends.sheet.quickstart table {
+  border-top: 1px solid #baaf6b;
+  border-bottom: 1px solid #baaf6b;
 }
 .legends.sheet.quickstart .navigation .sheet-tabs.tabs .item {
   color: #6e4e27;
@@ -385,6 +388,10 @@
 .legends.sheet.item-sheet header.sheet-header select,
 .legends.sheet.npc-sheet header.sheet-header select {
   background: rgba(255, 255, 255, 0.7);
+}
+.legends.sheet table {
+  border-top: 1px solid #99bbe3;
+  border-bottom: 1px solid #99bbe3;
 }
 .legends.sheet .sheet-header {
   flex: none;
@@ -473,16 +480,20 @@
   width: auto;
   background: transparent;
 }
+.legends.sheet .balance .balance-black input.full-width,
+.legends.sheet .balance .balance-white input.full-width {
+  width: 100%;
+}
 .legends.sheet .balance .balance-black {
   color: white;
-  background-image: linear-gradient(115deg, #111 20%, rgba(17, 17, 17, 0) 90%);
+  background-image: linear-gradient(115deg, #111 50%, rgba(17, 17, 17, 0) 100%);
   margin-bottom: 0;
 }
 .legends.sheet .balance .balance-black input {
   color: white;
 }
 .legends.sheet .balance .balance-white {
-  background-image: linear-gradient(-115deg, white 20%, rgba(255, 255, 255, 0) 90%);
+  background-image: linear-gradient(-115deg, white 50%, rgba(255, 255, 255, 0) 100%);
   color: #111;
 }
 .legends.sheet .balance .balance-white input {
@@ -619,7 +630,8 @@
 }
 .legends.sheet input,
 .legends.sheet select,
-.legends.sheet textarea {
+.legends.sheet textarea,
+.legends.sheet .description-scroll {
   border: 1px solid #99bbe3;
   border-radius: 0.25rem;
   width: calc(100% - 1rem);
@@ -629,8 +641,19 @@
 }
 .legends.sheet input:focus,
 .legends.sheet select:focus,
-.legends.sheet textarea:focus {
+.legends.sheet textarea:focus,
+.legends.sheet .description-scroll:focus {
   box-shadow: 0 0 3px #0d2d5d;
+}
+.legends.sheet .description-scroll {
+  max-height: 100px;
+  overflow-y: auto;
+  width: 100%;
+  margin: 0;
+  padding: 0.25rem;
+}
+.legends.sheet .item.attachment {
+  margin: 1rem 0;
 }
 .legends.sheet select option {
   background: white;

@@ -38,3 +38,7 @@ export function filter_statuses(collection, type) {
     return e.type === 'status' && e.system.type === type
   })
 }
+
+export function onlyUnique(array) {
+  return array.filter((value, index, array) => array.indexOf(value) === index)
+}
