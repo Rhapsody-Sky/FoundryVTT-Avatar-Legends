@@ -95,7 +95,21 @@
         "name": "New {type}",
         "description": "<p>Description goes here.</p>"
       },
-      "not-allowed": "This Item type cannot be added to this Actor."
+      "not-allowed": "This Item type cannot be added to this Actor",
+      "playbook-applied": "Playbook '{name}' has been applied",
+      "types": {
+        "condition": "Condition",
+        "move": "Move",
+        "technique": "Technique",
+        "feature": "Feature",
+        "moment-of-balance": "Moment of Balance",
+        "growth-question": "Growth Question",
+        "status": "Status"
+      }
+    },
+    "attachments": {
+      "none": "No Attachments have been added. Drag some from the Item sidebar or Compendium.",
+      "title": "Attachments"
     },
     "moves": {
       "add": "New Move",
@@ -183,7 +197,9 @@
     },
     "principle": {
       "title": "Principle",
-      "none": "No NPC Principle has been added. Drag one from the Item sidebar or a Compendium."
+      "none": "No NPC Principle has been added.",
+      "add": "Add Principle",
+      "maximum": "Maximum"
     },
     "roll": {
       "with": "Roll with <a class=\"fire-dark move-roll\" data-move-name=\"{approach}\" data-move-stat=\"{stat}\" data-move-approach=\"yes\"><i class=\"fas fa-dice small\"></i> {name}</a>",

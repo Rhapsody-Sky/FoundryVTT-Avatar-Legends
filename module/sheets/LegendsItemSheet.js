@@ -14,11 +14,18 @@ export default class LegendsItemSheet extends ItemSheet {
     const context = await super.getData()
     context.config = CONFIG.legends
     context.cssClass = game.settings.get('legends', 'sheetColour') || 'default'
+
+    context.system = this.item.system
     return context
+  }
+
+  async loadItemFromUuid(uuid) {
+    await fromUuid(uuid)
   }
 
   activateListeners(html) {
     html.find('.item-roll').click(this._onItemRoll.bind(this))
+
     super.activateListeners(html)
   }
 

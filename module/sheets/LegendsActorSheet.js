@@ -50,17 +50,32 @@ export default class LegendsActorSheet extends ActorSheet {
    */
   async _onDropItemCreate(itemData) {
     const items = Array.isArray(itemData) ? itemData : [itemData]
-    const permittedNpcItems = [
-      'technique',
-      'npc-principle',
-      'condition',
-      'status',
-    ]
 
     if (this.actor.type === 'npc') {
+      const permittedNpcItems = [
+        'technique',
+        'npc-principle',
+        'condition',
+        'status',
+      ]
+
       for (const item of items) {
         if (!permittedNpcItems.includes(item.type)) {
           ui.notifications.error(game.i18n.format('legends.items.not-allowed'))
+          return null
+        }
+      }
+    }
+
+    if (this.actor.type === 'player') {
+      for (const item of items) {
+        if (item.type === 'playbook') {
+          this.applyPlaybook(item)
+          ui.notifications.info(
+            game.i18n.format('legends.items.playbook-applied', {
+              name: item.name,
+            }),
+          )
           return null
         }
       }
@@ -144,6 +159,9 @@ export default class LegendsActorSheet extends ActorSheet {
         html
           .find('.moveCategorySelect')
           .change(this._onSelectMoveCategory.bind(this))
+      } else if (this.actor.type == 'npc') {
+        // add item button
+        html.find('.add-item').click(this._onItemCreate.bind(this))
       }
 
       // toggle collapsible moves
@@ -491,6 +509,28 @@ export default class LegendsActorSheet extends ActorSheet {
   }
 
   /**
+   * Add a new item to the Actor
+   * @param {Event} event
+   */
+  _onItemCreate(event) {
+    event.preventDefault()
+    const element = event.currentTarget
+    const itemType = element.dataset.itemType
+    const defaultData = {}
+
+    const itemData = {
+      name: game.i18n.format('legends.items.new.name', { type: itemType }),
+      type: itemType,
+      data: {
+        description: game.i18n.localize('legends.items.new.description'),
+        ...defaultData,
+      },
+    }
+
+    this.actor.createEmbeddedDocuments('Item', [itemData])
+  }
+
+  /**
    * Show the sheet for an Item
    * @param {Event} event
    */
@@ -563,5 +603,32 @@ export default class LegendsActorSheet extends ActorSheet {
    */
   _onSelectMoveCategory(event) {
     this.actor.setFlag('legends', 'moveCategory', event.currentTarget.value)
+  }
+
+  /**
+   * Apply a playbook to the Actor
+   * @param {LegendsItem} playbook
+   */
+  async applyPlaybook(playbook) {
+    this.actor.update({
+      system: {
+        playbook: playbook.name,
+        stats: playbook.system.stats,
+        balance: playbook.system.balance,
+      },
+    })
+
+    for (const uuid of playbook.system.attachedItems) {
+      const attachment = await fromUuid(uuid)
+      const itemData = {
+        name: attachment.name,
+        type: attachment.type,
+        system: {
+          ...attachment.system,
+        },
+      }
+
+      await this.actor.createEmbeddedDocuments('Item', [itemData])
+    }
   }
 }

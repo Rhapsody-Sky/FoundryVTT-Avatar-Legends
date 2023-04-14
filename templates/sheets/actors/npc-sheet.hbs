@@ -33,7 +33,10 @@
           {{localize "legends.principle.title"}}:
           {{localize "legends.common.none"}}
         </h1>
-        <p>{{localize "legends.principle.none" }}</em></p>
+        <p>
+          {{localize "legends.principle.none" }}
+          <a class="add-item" data-item-type="npc-principle">{{localize "legends.principle.add"}}</a>
+        </p>
       {{/if}}
     </section>
 
@@ -74,15 +77,20 @@
       </section>
 
       <section class="conditions cell cell-2">
-        <h1 class="title underline">{{ localize "legends.actor-sheet.conditions" }}</h1>
+        <h1 class="title underline">
+          {{ localize "legends.actor-sheet.conditions" }}
+        </h1>
+        <p class="small">
+          <a class="add-item" data-item-type="condition">
+            <i class="fas fa-plus"></i> {{localize "legends.condition.add"}}
+          </a>
+        </p>
         {{#if conditions}}
           <section class="item-list">
             {{#each conditions as |condition id|}}
               {{> "systems/legends/templates/partials/condition-card.hbs" condition inSheet=true npc=true}}
             {{/each}}
           </section>
-        {{else}}
-          <p>{{localize "legends.condition.none" }}</p>
         {{/if}}
 
         <h1 class="title underline pad-top">

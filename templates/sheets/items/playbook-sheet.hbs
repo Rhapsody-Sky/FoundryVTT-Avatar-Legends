@@ -1,0 +1,67 @@
+<form class="legends sheet item-sheet playbook-sheet {{cssClass}}" autocomplete="off">
+  <header class="sheet-header">
+    <h1 class="title">
+      <input name="name" type="text" value="{{item.name}}" placeholder="Name" class="editable" />
+    </h1>
+    <img src="{{item.img}}" data-edit="img" title="{{item.name}}" height="64" width="64" />
+  </header>
+  <section class="sheet-body">
+    <section class="cell">
+      <h2 class="title center underline">{{localize "legends.actor-sheet.balance"}}</h2>
+      <table>
+        <tr class="balance">
+          <td class="balance-black">
+            <input type="text" name="system.balance.topTrack" value="{{system.balance.topTrack}}"
+              class="center full-width" />
+          </td>
+          <td class="balance-white">
+            <input type="text" name="system.balance.bottomTrack" value="{{system.balance.bottomTrack}}"
+              class="center full-width" />
+          </td>
+        </tr>
+      </table>
+    </section>
+
+    <section class="cell">
+      <h2 class="title center underline">{{localize "legends.actor-sheet.stats"}}</h2>
+      <table>
+        <tr>
+          {{#each system.stats as |val type|}}
+            <th class="title">{{localize (tr_path "legends.stats" type) }}</th>
+          {{/each}}
+        </tr>
+        <tr>
+          {{#each system.stats as |val type|}}
+            <td>
+              <input name="system.stats.{{type}}" value="{{val}}" type="number" max="3" min="-1" class="center" />
+            </td>
+          {{/each}}
+        </tr>
+      </table>
+    </section>
+
+    <section class="cell attachedItems">
+      <h2 class="title center underline">{{localize "legends.attachments.title"}}</h2>
+      <section class="item-list">
+        {{#if system.attachedItems}}
+          {{#each attachments as |attachment uuid|}}
+            <div class="item attachment" data-uuid="{{uuid}}">
+              <h3 class="menu">
+                <img src="{{attachment.img}}" alt="{{attachment.name}}" style="height: 1.2rem;" />
+                {{attachment.name}}
+                <small class="small fire-dark">{{localize (tr_path "legends.items.types" attachment.type)}}</small>
+              </h3>
+              {{#if attachment.system.description}}
+                <div class="description-scroll" style="">
+                  {{{enrichHTML attachment.system.description}}}
+                </div>
+              {{/if}}
+            </div>
+          {{/each}}
+        {{else}}
+          <p>{{localize "legends.attachments.none"}}</p>
+        {{/if}}
+      </section>
+    </section>
+  </section>
+</form>
