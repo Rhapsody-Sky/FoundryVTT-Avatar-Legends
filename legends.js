@@ -50,6 +50,15 @@ function registerSystemSettings() {
     type: Boolean,
     default: false,
   })
+
+  game.settings.register('legends', 'start-collapsed', {
+    config: true,
+    scope: 'client',
+    name: 'SETTINGS.startCollapsed.label',
+    hint: 'SETTINGS.startCollapsed.hint',
+    type: Boolean,
+    default: false,
+  })
 }
 
 Hooks.once('init', function () {
@@ -168,7 +177,7 @@ Hooks.once('ready', () => {
   if (!game.user.isGM) return
 
   const currentVersion = game.settings.get('legends', 'systemMigrationVersion')
-  const NEEDS_MIGRATION_VERSION = '0.2.2'
+  const NEEDS_MIGRATION_VERSION = '1.0.10'
 
   const needsMigration =
     !currentVersion || isNewerVersion(NEEDS_MIGRATION_VERSION, currentVersion)
@@ -281,8 +290,8 @@ Hooks.once('diceSoNiceReady', (dice3d) => {
   )
   dice3d.addDicePreset({
     type: 'd6',
-    labels: ['1', '2', '3', '4', '5', 'systems/legends/images/dice/air.png'],
-    bumpMaps: [, , , , , 'systems/legends/images/dice/air-b.png'],
+    labels: ['1', '2', '3', '4', '5', 'systems/legends/images/dice/air.webp'],
+    bumpMaps: [, , , , , 'systems/legends/images/dice/air-b.webp'],
     system: 'legends-air',
     colorset: 'airbending',
   })
@@ -293,8 +302,8 @@ Hooks.once('diceSoNiceReady', (dice3d) => {
   )
   dice3d.addDicePreset({
     type: 'd6',
-    labels: ['1', '2', '3', '4', '5', 'systems/legends/images/dice/earth.png'],
-    bumpMaps: [, , , , , 'systems/legends/images/dice/earth-b.png'],
+    labels: ['1', '2', '3', '4', '5', 'systems/legends/images/dice/earth.webp'],
+    bumpMaps: [, , , , , 'systems/legends/images/dice/earth-b.webp'],
     system: 'legends-earth',
     colorset: 'earthbending',
   })
@@ -305,8 +314,8 @@ Hooks.once('diceSoNiceReady', (dice3d) => {
   )
   dice3d.addDicePreset({
     type: 'd6',
-    labels: ['1', '2', '3', '4', '5', 'systems/legends/images/dice/fire.png'],
-    bumpMaps: [, , , , , 'systems/legends/images/dice/fire-b.png'],
+    labels: ['1', '2', '3', '4', '5', 'systems/legends/images/dice/fire.webp'],
+    bumpMaps: [, , , , , 'systems/legends/images/dice/fire-b.webp'],
     system: 'legends-fire',
     colorset: 'firebending',
   })
@@ -320,8 +329,8 @@ Hooks.once('diceSoNiceReady', (dice3d) => {
   )
   dice3d.addDicePreset({
     type: 'd6',
-    labels: ['1', '2', '3', '4', '5', 'systems/legends/images/dice/tech.png'],
-    bumpMaps: [, , , , , 'systems/legends/images/dice/tech-b.png'],
+    labels: ['1', '2', '3', '4', '5', 'systems/legends/images/dice/tech.webp'],
+    bumpMaps: [, , , , , 'systems/legends/images/dice/tech-b.webp'],
     system: 'legends-tech',
     colorset: 'technology',
   })
@@ -332,8 +341,8 @@ Hooks.once('diceSoNiceReady', (dice3d) => {
   )
   dice3d.addDicePreset({
     type: 'd6',
-    labels: ['1', '2', '3', '4', '5', 'systems/legends/images/dice/water.png'],
-    bumpMaps: [, , , , , 'systems/legends/images/dice/water-b.png'],
+    labels: ['1', '2', '3', '4', '5', 'systems/legends/images/dice/water.webp'],
+    bumpMaps: [, , , , , 'systems/legends/images/dice/water-b.webp'],
     system: 'legends-water',
     colorset: 'waterbending',
   })
@@ -347,8 +356,15 @@ Hooks.once('diceSoNiceReady', (dice3d) => {
   )
   dice3d.addDicePreset({
     type: 'd6',
-    labels: ['1', '2', '3', '4', '5', 'systems/legends/images/dice/weapon.png'],
-    bumpMaps: [, , , , , 'systems/legends/images/dice/weapon-b.png'],
+    labels: [
+      '1',
+      '2',
+      '3',
+      '4',
+      '5',
+      'systems/legends/images/dice/weapon.webp',
+    ],
+    bumpMaps: [, , , , , 'systems/legends/images/dice/weapon-b.webp'],
     system: 'legends-weapons',
     colorset: 'weapons',
   })

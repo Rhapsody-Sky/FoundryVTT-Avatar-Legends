@@ -10,16 +10,23 @@
       "discord": "demondownload#5359"
     }
   ],
-  "version": "1.0.9",
+  "version": "1.0.10",
   "minimumCoreVersion": "10",
-  "compatibleCoreVersion": "10.291",
+  "compatibleCoreVersion": "11",
   "compatibility": {
     "minimum": "10",
-    "verified": "10"
+    "verified": "11"
   },
+  "media": [
+    {
+      "type": "setup",
+      "url": "systems/legends/images/setup.webp",
+      "thumbnail": "systems/legends/images/setup.webp"
+    }
+  ],
   "url": "https://gitlab.com/pacosgrove1/legends/",
   "manifest": "https://gitlab.com/api/v4/projects/pacosgrove1%2Flegends/packages/generic/legends/latest/system.json",
-  "download": "https://gitlab.com/pacosgrove1/legends/-/releases/v1.0.9/downloads/legends-v1.0.9.zip",
+  "download": "https://gitlab.com/pacosgrove1/legends/-/releases/v1.0.10/downloads/legends-v1.0.10.zip",
   "esmodules": ["legends.js"],
   "styles": ["styles/legends.css"],
   "packs": [
@@ -64,18 +71,7 @@
       "path": "lang/es.json"
     }
   ],
-  "relationships": {
-    "requires": [
-      {
-        "id": "compendium-folders",
-        "type": "module"
-      },
-      {
-        "id": "lib-wrapper",
-        "type": "module"
-      }
-    ]
-  },
+  "relationships": {},
   "primaryTokenAttribute": "fatigueRemaining",
   "initiative": "2d6"
 }

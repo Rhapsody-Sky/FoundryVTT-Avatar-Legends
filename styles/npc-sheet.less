@@ -3,40 +3,45 @@
 @import "./config.less";
 @import "./sheets.less";
 
-.legends.sheet.npc-sheet{
-  .body{
-    h1{ font-size: 1.5rem; }
-    h2{ font-size: 1.2rem;}
+.legends.sheet.npc-sheet {
+  .body {
+    h1 {
+      font-size: 1.5rem;
+    }
 
-    .description-drive{
+    h2 {
+      font-size: 1.2rem;
+    }
+
+    .description-drive {
       margin: 1rem 0.5rem;
 
-      .description{
+      .description {
         flex: 1;
         display: flex;
         height: 100%;
-        
-        .editor{
+
+        .editor {
           height: 100%;
           width: 100%;
         }
       }
     }
 
-    .principle{
+    .principle {
       margin: 1rem 0.5rem;
 
-      input{
+      input {
         border: none;
         padding: 0 0.25rem;
       }
 
-      .track{
+      .track {
         text-align: right;
         margin-bottom: -1.5rem;
       }
 
-      .check-box{
+      .check-box {
         width: 2rem;
         height: 2rem;
         transform: rotate(45deg);
@@ -44,7 +49,7 @@
         position: relative;
         margin: 0.25rem;
 
-        .num{
+        .num {
           position: absolute;
           top: 0;
           left: 0;
@@ -57,22 +62,31 @@
           line-height: 1.5rem;
         }
 
-        &.filled .num{
+        &.filled .num {
           color: white;
         }
       }
     }
 
-    .technique-conditions{
-      .technique-container, .conditions{
+    .technique-conditions {
+
+      .technique-container,
+      .conditions {
         margin: 1rem 0.5rem 0;
 
-        .technique{
+        .technique {
           margin-bottom: 1rem;
 
-          h3, h4{ margin: 0;}
-          h3{ font-size: 1.2rem; }
-          h4{
+          h3,
+          h4 {
+            margin: 0;
+          }
+
+          h3 {
+            font-size: 1.2rem;
+          }
+
+          h4 {
             font-size: 0.9rem;
           }
         }
@@ -80,7 +94,7 @@
 
     }
 
-    .fatigue{
+    .fatigue {
       margin: 1rem 0.5rem 0;
     }
   }

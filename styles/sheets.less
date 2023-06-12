@@ -71,6 +71,16 @@
   padding: 0.5rem;
   .bg-fade(100px);
 
+  &.start-collapsed {
+
+    .item.move,
+    .item.technique {
+      .drawer {
+        display: none;
+      }
+    }
+  }
+
   &.item-sheet,
   &.npc-sheet {
     header.sheet-header {

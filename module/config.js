@@ -50,18 +50,18 @@ legends.campaignFocus = {
 }
 
 legends.defaultTokens = {
-  campaign: 'systems/legends/images/tokens/campaign.png',
-  condition: 'systems/legends/images/tokens/condition.png',
-  'moment-of-balance': 'systems/legends/images/tokens/moment-of-balance.png',
-  move: 'systems/legends/images/tokens/move.png',
-  npc: 'systems/legends/images/tokens/npc.png',
-  player: 'systems/legends/images/tokens/player.png',
-  status: 'systems/legends/images/tokens/condition.png',
-  technique: 'systems/legends/images/tokens/technique.png',
-  feature: 'systems/legends/images/tokens/feature.png',
-  'npc-principle': 'systems/legends/images/tokens/npc-principle.png',
-  'growth-question': 'systems/legends/images/tokens/growth-question.png',
-  playbook: 'systems/legends/images/tokens/playbook.png',
+  campaign: 'systems/legends/images/tokens/campaign.webp',
+  condition: 'systems/legends/images/tokens/condition.webp',
+  'moment-of-balance': 'systems/legends/images/tokens/moment-of-balance.webp',
+  move: 'systems/legends/images/tokens/move.webp',
+  npc: 'systems/legends/images/tokens/npc.webp',
+  player: 'systems/legends/images/tokens/player.webp',
+  status: 'systems/legends/images/tokens/condition.webp',
+  technique: 'systems/legends/images/tokens/technique.webp',
+  feature: 'systems/legends/images/tokens/feature.webp',
+  'npc-principle': 'systems/legends/images/tokens/npc-principle.webp',
+  'growth-question': 'systems/legends/images/tokens/growth-question.webp',
+  playbook: 'systems/legends/images/tokens/playbook.webp',
 }
 
 legends.moveCategories = {

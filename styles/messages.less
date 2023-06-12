@@ -21,10 +21,12 @@
     background-color: @bg-color;
     background-image: linear-gradient(@bg-fade-color, @bg-color);
     border-bottom: 2px solid @accent-color;
+
     .message-sender {
       .title-font();
       font-size: 1rem;
     }
+
     .whisper-to {
       .title-font();
       font-size: 0.8rem;
@@ -51,6 +53,7 @@
 .message-content {
   .legends {
     .kanji {
+
       &::before,
       &::after {
         .kanji-font();
@@ -64,13 +67,17 @@
     .moment-of-balance {
       .kanji {
         text-align: center;
-        &::before, &::after {
+
+        &::before,
+        &::after {
           position: relative;
           top: 4px;
         }
+
         &::before {
           content: '平';
         }
+
         &::after {
           content: '衡';
         }
@@ -103,6 +110,7 @@
         .part-total {
           .title-font();
         }
+
         .dice-rolls .roll.die {
           .title-font();
         }
@@ -113,12 +121,15 @@
 
 #chat-controls {
   .main-font();
+
   .roll-type-select {
     .bg-default();
   }
+
   i {
     color: @bg-color;
   }
+
   a:hover {
     text-shadow: 0 0 8px @accent-color;
   }
@@ -127,6 +138,7 @@
 #chat-form #chat-message {
   .main-font();
   .bg-default();
+
   &:focus {
     box-shadow: 0 0 8px @accent-color;
   }
