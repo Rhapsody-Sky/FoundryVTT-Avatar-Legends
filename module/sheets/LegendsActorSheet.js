@@ -28,7 +28,7 @@ export default class LegendsActorSheet extends ActorSheet {
       name: game.i18n.localize('legends.context-menu.edit'),
       icon: '<i class="fas fa-edit"></i>',
       callback: (element) => {
-        let itemId = element.closest('.item').data('item-id')
+        const itemId = element.closest('.item').data('item-id')
         const item = this.actor.items.get(itemId)
         item.sheet.render(true)
       },
@@ -37,7 +37,7 @@ export default class LegendsActorSheet extends ActorSheet {
       name: game.i18n.localize('legends.context-menu.delete'),
       icon: '<i class="fas fa-trash"></i>',
       callback: (element) => {
-        let itemId = element.closest('.item').data('item-id')
+        const itemId = element.closest('.item').data('item-id')
         this.actor.deleteEmbeddedDocuments('Item', [itemId])
       },
     },
@@ -86,7 +86,12 @@ export default class LegendsActorSheet extends ActorSheet {
   getData() {
     const context = super.getData()
     context.config = CONFIG.legends
-    context.cssClass = game.settings.get('legends', 'sheetColour') || 'default'
+    context.cssClass = [
+      game.settings.get('legends', 'sheetColour') || 'default',
+      game.settings.get('legends', 'start-collapsed') ? 'start-collapsed' : '',
+    ]
+      .join(' ')
+      .trim()
 
     context.feature = filter_items(context.items, 'feature')[0]
     context.conditions = filter_items(context.items, 'condition')
@@ -199,7 +204,7 @@ export default class LegendsActorSheet extends ActorSheet {
   _onSetBalanceValue(event) {
     event.preventDefault()
 
-    let element = event.currentTarget
+    const element = event.currentTarget
     this.actor.update({
       system: {
         balance: {
@@ -216,7 +221,7 @@ export default class LegendsActorSheet extends ActorSheet {
   _onSetBalanceCenter(event) {
     event.preventDefault()
 
-    let element = event.currentTarget
+    const element = event.currentTarget
     this.actor.update({
       system: {
         balance: {
@@ -232,11 +237,11 @@ export default class LegendsActorSheet extends ActorSheet {
    */
   _onItemRoll(event) {
     event.preventDefault()
-    let element = event.currentTarget
-    let dataset = element.closest('.item').dataset
-    let itemId = dataset.itemId
-    let item = this.actor.items.get(itemId)
-    let npc = dataset.npc
+    const element = event.currentTarget
+    const dataset = element.closest('.item').dataset
+    const itemId = dataset.itemId
+    const item = this.actor.items.get(itemId)
+    const npc = dataset.npc
 
     item.roll(npc)
   }
@@ -306,9 +311,9 @@ export default class LegendsActorSheet extends ActorSheet {
    */
   _onToggleTrainingType(event) {
     event.preventDefault()
-    let element = event.currentTarget
-    let type = element.dataset.type
-    let newValue = !this.actor.system.training[type]
+    const element = event.currentTarget
+    const type = element.dataset.type
+    const newValue = !this.actor.system.training[type]
 
     this.actor.update({
       system: {
@@ -326,14 +331,14 @@ export default class LegendsActorSheet extends ActorSheet {
    */
   _onSetFatigue(event) {
     event.preventDefault()
-    let element = event.currentTarget
-    let checked = element.classList.contains('filled')
-    let currentValue = parseInt(this.actor.system.fatigue.value)
+    const element = event.currentTarget
+    const checked = element.classList.contains('filled')
+    const currentValue = parseInt(this.actor.system.fatigue.value)
 
-    let max = this.actor.system.fatigue.max
+    const max = this.actor.system.fatigue.max
 
-    let newValue = checked ? currentValue - 1 : currentValue + 1
-    let newRemaining = max - newValue
+    const newValue = checked ? currentValue - 1 : currentValue + 1
+    const newRemaining = max - newValue
 
     this.actor.update({
       system: {
@@ -610,6 +615,7 @@ export default class LegendsActorSheet extends ActorSheet {
    * @param {LegendsItem} playbook
    */
   async applyPlaybook(playbook) {
+    // Overwrite text fields for Playbook name, default stats and Principles
     this.actor.update({
       system: {
         playbook: playbook.name,
@@ -618,17 +624,39 @@ export default class LegendsActorSheet extends ActorSheet {
       },
     })
 
+    // Delete existing unique items
+    this.deleteItemsByType(['feature', 'moment-of-balance', 'growth-question'])
+
+    // Re-add default Growth Questions
+    const growthQuestions = game.packs
+      .get('legends.common-items')
+      .index.filter((item) => item.type === 'growth-question')
+      .sort((a, b) => (a.name > b.name ? 1 : -1))
+
+    for (const growthQuestion of growthQuestions) {
+      const question = await fromUuid(
+        `Compendium.legends.common-items.${growthQuestion._id}`,
+      )
+      if (question) {
+        // We await this to make sure they're added in the correct order
+        await this.actor.createEmbeddedDocuments('Item', [question])
+      }
+    }
+
     for (const uuid of playbook.system.attachedItems) {
       const attachment = await fromUuid(uuid)
-      const itemData = {
-        name: attachment.name,
-        type: attachment.type,
-        system: {
-          ...attachment.system,
-        },
-      }
-
-      await this.actor.createEmbeddedDocuments('Item', [itemData])
+      this.actor.createEmbeddedDocuments('Item', [attachment])
     }
+  }
+
+  /**
+   * Delete items from an Actor based on their type
+   * @param {Array} types An array of strings indicating the types to delete
+   */
+  deleteItemsByType(types) {
+    const items = this.actor.items
+      .filter((item) => types.includes(item.type))
+      .map((item) => item.id)
+    this.actor.deleteEmbeddedDocuments('Item', items)
   }
 }

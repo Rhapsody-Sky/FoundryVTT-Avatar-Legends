@@ -44,6 +44,9 @@
 /**
 * Colours
 **/
+.bg-default {
+  background: #f0f1f5;
+}
 body {
   font-family: "Noto Sans";
   font-size: 0.8rem;
