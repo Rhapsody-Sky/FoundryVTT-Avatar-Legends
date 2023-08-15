@@ -31,7 +31,8 @@ See [the Wiki](https://gitlab.com/pacosgrove1/legends/-/wikis/home) for specific
 
 This system exists thanks to the excellent YouTube tutorial series by [Cédric Hauteville](https://www.youtube.com/user/LieutenantRazak).
 
-Spanish translation by [Ruy Leon](https://gitlab.com/Amharem).
+- French translation by [ZUBER Lionel](https://gitlab.com/armaklan)
+- Spanish translation by [Ruy Leon](https://gitlab.com/Amharem)
 
 ### Fonts
 
