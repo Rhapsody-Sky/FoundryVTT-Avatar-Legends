@@ -1,5 +1,10 @@
 # Changelog
 
+## v1.1.0
+
+- Remove Foundry v10 support
+- Update Compendium Packs to v11 with folders
+
 ## v1.0.10
 
 - FoundryVTT v11 support

@@ -1,6 +1,6 @@
 <form class="legends sheet campaign-sheet {{cssClass}}" autocomplete="off">
   <header class="sheet-header">
-    <img src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="64" width="64" />
+    <img src="{{actor.img}}" data-edit="img" data-tooltip="{{actor.name}}" height="64" width="64" />
     <section class="row">
       <section class="cell cell-3">
         <h1 class="block charname"><input name="name" type="text" value="{{actor.name}}"
@@ -85,7 +85,8 @@
         {{#each data.system.acts as |act id|}}
           <section class="cell act">
             <h2 class="title center underline single-line" contenteditable="true" data-edit="system.acts.{{id}}.name">
-              {{{act.name}}}</h2>
+              {{{act.name}}}
+            </h2>
             <div class="description">
               {{editor act.description target=(concat 'system.acts.' id '.description') button=true owner=../owner editable=../editable}}
             </div>

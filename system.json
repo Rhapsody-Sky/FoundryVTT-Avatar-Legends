@@ -2,20 +2,19 @@
   "name": "legends",
   "id": "legends",
   "title": "Avatar Legends RPG (Unofficial)",
-  "description": "Unofficial system for Avatar Legends RPG character sheets.",
+  "description": "Unofficial system for Avatar Legends RPG player and NPC sheets.",
   "authors": [
     {
-      "name": "aniki21",
+      "name": "demondownload",
       "url": "https://dice.camp/@aniki21",
       "discord": "demondownload#5359"
     }
   ],
-  "version": "1.0.10",
-  "minimumCoreVersion": "10",
-  "compatibleCoreVersion": "11",
+  "version": "1.1.0",
   "compatibility": {
-    "minimum": "10",
-    "verified": "11"
+    "minimum": "11.307",
+    "maximum": "11",
+    "verified": "11.308"
   },
   "media": [
     {
@@ -26,7 +25,7 @@
   ],
   "url": "https://gitlab.com/pacosgrove1/legends/",
   "manifest": "https://gitlab.com/api/v4/projects/pacosgrove1%2Flegends/packages/generic/legends/latest/system.json",
-  "download": "https://gitlab.com/pacosgrove1/legends/-/releases/v1.0.10/downloads/legends-v1.0.10.zip",
+  "download": "https://gitlab.com/pacosgrove1/legends/-/releases/v1.1.0/downloads/legends-v1.1.0.zip",
   "esmodules": ["legends.js"],
   "styles": ["styles/legends.css"],
   "packs": [
@@ -34,28 +33,28 @@
       "label": "Playbooks",
       "type": "Item",
       "name": "playbooks",
-      "path": "packs/playbooks.db",
+      "path": "packs/playbooks",
       "private": false
     },
     {
       "label": "WSTAG Playbooks",
       "type": "Item",
       "name": "wstag-playbooks",
-      "path": "packs/wstag-playbooks.db",
+      "path": "packs/wstag-playbooks",
       "private": false
     },
     {
       "label": "Common Items",
       "type": "Item",
       "name": "common-items",
-      "path": "packs/common-items.db",
+      "path": "packs/common-items",
       "private": false
     },
     {
       "label": "Reference",
       "type": "JournalEntry",
       "name": "reference",
-      "path": "packs/reference.db",
+      "path": "packs/reference",
       "private": false
     }
   ],

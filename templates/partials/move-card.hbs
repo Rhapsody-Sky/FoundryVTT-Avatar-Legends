@@ -3,12 +3,12 @@
     {{#if inSheet}}
       <a class="toggle-drawer black menu">{{name}}</a>
       <a class="item-roll small weapons">
-        <i class="fas fa-comment" title="{{localize "legends.common.to-chat"}}"></i>
+        <i class="fas fa-comment" data-tooltip="{{localize "legends.common.to-chat"}}"></i>
       </a>
       {{#if system.rollable}}
         <a class="move-roll small fire" data-move-stat="{{system.rollStat}}" data-move-name="{{name}}">
           <i class="fas fa-dice"
-            title="{{#if system.rollStat}}{{localize (tr_path "legends.stats" system.rollStat)}}{{else}}{{localize "legends.roll.dialog.submit"}}{{/if}}"></i>
+            data-tooltip="{{#if system.rollStat}}{{localize (tr_path "legends.stats" system.rollStat)}}{{else}}{{localize "legends.roll.dialog.submit"}}{{/if}}"></i>
         </a>
       {{/if}}
     {{else}}

@@ -6,7 +6,7 @@
     {{#if inSheet}}
       <a class="toggle-drawer black menu">{{name}}</a>
       <a class="item-roll small weapons">
-        <i class="fas fa-comment" title="{{localize "legends.common.to-chat"}}"></i>
+        <i class="fas fa-comment" data-tooltip="{{localize "legends.common.to-chat"}}"></i>
       </a>
     {{else}}
       {{name}}
@@ -18,7 +18,7 @@
           <span class="specialty {{system.training}}">{{system.specialty}}</span>
         {{/if}}
         <img src="systems/legends/images/{{system.training}}.webp"
-          title="{{localize (tr_path "legends.training" system.training)}}"
+          data-tooltip="{{localize (tr_path "legends.training" system.training)}}"
           alt="{{localize (tr_path "legends.training" system.training)}}" class="icon" />
       {{/if}}
     </span>
@@ -29,15 +29,15 @@
       <div class="float-right">
         {{#if inSheet}}
           <a class="set-proficiency" data-level="learned"
-            title="{{localize 'legends.techniques.proficiency.learn'}}">{{localize "legends.techniques.proficiency.learned"}}
+            data-tooltip="{{localize 'legends.techniques.proficiency.learn'}}">{{localize "legends.techniques.proficiency.learned"}}
             <i class="far fa-{{#if system.learned}}times-{{/if}}circle"></i></a>
           &nbsp;
           <a class="set-proficiency" data-level="practiced"
-            title="{{localize 'legends.techniques.proficiency.practice'}}">{{localize "legends.techniques.proficiency.practiced"}}
+            data-tooltip="{{localize 'legends.techniques.proficiency.practice'}}">{{localize "legends.techniques.proficiency.practiced"}}
             <i class="far fa-{{#if system.practiced}}times-{{/if}}circle"></i></a>
           &nbsp;
           <a class="set-proficiency" data-level="mastered"
-            title="{{localize 'legends.techniques.proficiency.master'}}">{{localize "legends.techniques.proficiency.mastered"}}
+            data-tooltip="{{localize 'legends.techniques.proficiency.master'}}">{{localize "legends.techniques.proficiency.mastered"}}
             <i class="far fa-{{#if system.mastered}}times-{{/if}}circle"></i></a>
         {{else}}
           {{#if system.mastered}}
