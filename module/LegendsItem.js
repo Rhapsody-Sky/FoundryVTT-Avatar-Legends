@@ -35,8 +35,9 @@ export default class LegendsItem extends Item {
     return ChatMessage.create(chatData)
   }
 
-  _preCreate(data, _options, _userId) {
-    const img = CONFIG.legends.defaultTokens[data.type]
-    this.updateSource({ img: img })
+  static getDefaultArtwork(data) {
+    return {
+      img: CONFIG.legends.defaultTokens[data.type],
+    }
   }
 }

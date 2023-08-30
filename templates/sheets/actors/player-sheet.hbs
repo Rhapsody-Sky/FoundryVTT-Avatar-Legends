@@ -203,7 +203,8 @@
               {{localize "legends.growth.title"}}
               {{#times 4}}
                 <a class="check-box set-value{{#if (gte ../data.system.growth.value @index)}} filled{{/if}}"
-                  data-param="growth" data-new-value="{{@index}}"></a>
+                  data-param="growth" data-new-value="{{@index}}"
+                  data-tooltip="{{localize "legends.actor-sheet.clear-track"}}"></a>
               {{/times}}
             </h2>
 
@@ -230,7 +231,8 @@
                   &nbsp;
                   {{#times track.max}}
                     <a class="check-box mini set-adv-value{{#if (gte track.value @index)}} filled{{/if}}"
-                      data-param="{{name}}" data-new-value="{{@index}}"></a>
+                      data-param="{{name}}" data-new-value="{{@index}}"
+                      data-tooltip="{{localize "legends.actor-sheet.clear-track"}}"></a>
                   {{/times}}
                 </li>
               {{/each}}
