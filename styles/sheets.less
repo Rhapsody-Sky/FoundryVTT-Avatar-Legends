@@ -567,4 +567,9 @@
     font-weight: bold;
     font-size: 0.85rem;
   }
+
+  .inline-item + p,
+  p:has(+.inline-item) {
+    display: none;
+  }
 }

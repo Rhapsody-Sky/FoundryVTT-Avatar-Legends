@@ -8,6 +8,12 @@ export default class LegendsItem extends Item {
     status: 'systems/legends/templates/partials/condition-card.hbs',
   }
 
+  prepareData() {
+    super.prepareData()
+
+    this.system.uuid = this.uuid
+  }
+
   /**
    * Send an Item to the chat
    * @param {Boolean} npc If this represents an NPC's Item

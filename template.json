@@ -138,7 +138,11 @@
     },
     "condition": {
       "templates": ["hasDescription"],
-      "checked": false
+      "checked": false,
+      "affectedMoves": [
+        { "name": "", "penalty": -2 },
+        { "name": "", "penalty": -2 }
+      ]
     },
     "moment-of-balance": {
       "templates": ["hasDescription"]
