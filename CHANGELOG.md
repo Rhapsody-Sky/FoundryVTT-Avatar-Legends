@@ -1,5 +1,10 @@
 # Changelog
 
+## v1.1.1
+
+- Improve playbook listings in Compendiums with enrichers
+- Allow Condition penalties to automatically apply when rolling Moves
+
 ## v1.1.0
 
 - Remove Foundry v10 support
