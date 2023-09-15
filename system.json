@@ -10,7 +10,7 @@
       "discord": "demondownload#5359"
     }
   ],
-  "version": "1.1.0",
+  "version": "1.1.1",
   "compatibility": {
     "minimum": "11.307",
     "maximum": "11",
@@ -25,7 +25,7 @@
   ],
   "url": "https://gitlab.com/pacosgrove1/legends/",
   "manifest": "https://gitlab.com/api/v4/projects/pacosgrove1%2Flegends/packages/generic/legends/latest/system.json",
-  "download": "https://gitlab.com/pacosgrove1/legends/-/releases/v1.1.0/downloads/legends-v1.1.0.zip",
+  "download": "https://gitlab.com/pacosgrove1/legends/-/releases/v1.1.1/downloads/legends-v1.1.1.zip",
   "esmodules": ["legends.js"],
   "styles": ["styles/legends.css"],
   "packs": [

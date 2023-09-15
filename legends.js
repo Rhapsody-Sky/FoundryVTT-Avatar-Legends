@@ -7,7 +7,7 @@ import LegendsCampaignActorSheet from './module/sheets/LegendsCampaignActorSheet
 import LegendsItemSheet from './module/sheets/LegendsItemSheet.js'
 import LegendsNpcPrincipleSheet from './module/sheets/LegendsNpcPrincipleSheet.js'
 import LegendsPlaybookSheet from './module/sheets/LegendsPlaybookSheet.js'
-import preloadHandlebarsTemplates from './module/preload.js'
+import { preloadHandlebarsTemplates, setupEnrichers } from './module/preload.js'
 import * as Chat from './module/chat.js'
 import * as Migrations from './module/migrations.js'
 import LegendsJournalSheet from './module/sheets/LegendsJournalSheet.js'
@@ -162,6 +162,8 @@ Hooks.once('init', function () {
   Handlebars.registerHelper('enrichHTML', (html) => {
     return TextEditor.enrichHTML(html, { async: false })
   })
+
+  setupEnrichers()
 
   CONFIG.TinyMCE.content_css = 'systems/legends/styles/tinymce.css'
   CONFIG.TinyMCE.style_formats.push({

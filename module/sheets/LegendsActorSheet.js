@@ -189,6 +189,7 @@ export default class LegendsActorSheet extends ActorSheet {
         html.find('.stat-roll').click(this._onStatRoll.bind(this))
         html.find('.principle-roll').click(this._onPrincipleRoll.bind(this))
         html.find('.move-roll').click(this._onMoveRoll.bind(this))
+        html.find('.approach-roll').click(this._onApproachRoll.bind(this))
       }
       // TODO: Maybe rename this as it's not actually rolling anything.
       html.find('.item-roll').click(this._onItemRoll.bind(this))
@@ -253,21 +254,8 @@ export default class LegendsActorSheet extends ActorSheet {
   _onMoveRoll(event) {
     event.preventDefault()
 
-    const moveName = event.currentTarget.dataset.moveName
-    const statName = event.currentTarget.dataset.moveStat
-    const statValue = this.actor.system.stats[statName]
-    const approach = event.currentTarget.dataset.moveApproach
-
-    const name = statName
-      ? game.i18n.localize(`legends.stats.${statName}`)
-      : null
-
-    Dice.RollStat({
-      statValue: statValue,
-      statName: name,
-      moveName: moveName,
-      approach: approach,
-    })
+    const uuid = event.currentTarget.dataset.uuid
+    Dice.rollMove(uuid)
   }
 
   /**
@@ -277,12 +265,9 @@ export default class LegendsActorSheet extends ActorSheet {
   _onStatRoll(event) {
     event.preventDefault()
 
-    const name = event.currentTarget.dataset.statName
+    const stat = event.currentTarget.dataset.statName
 
-    Dice.RollStat({
-      statValue: this.actor.system.stats[name],
-      statName: game.i18n.localize(`legends.stats.${name}`),
-    })
+    Dice.rollStat(this.actor, stat)
   }
 
   /**
@@ -291,18 +276,13 @@ export default class LegendsActorSheet extends ActorSheet {
    */
   _onPrincipleRoll(event) {
     event.preventDefault()
-    const name = event.currentTarget.dataset.name
-    const negative = event.currentTarget.dataset.negative
-    let value = event.currentTarget.dataset.value
+    Dice.rollPrinciple(this.actor, event.currentTarget.dataset.name)
+  }
 
-    if (negative === 'true') {
-      value = -value
-    }
-
-    Dice.RollStat({
-      statValue: value,
-      statName: name,
-    })
+  _onApproachRoll(event) {
+    event.preventDefault()
+    const target = event.currentTarget.dataset
+    Dice.rollApproach(this.actor, target.stat, target.approach)
   }
 
   /**

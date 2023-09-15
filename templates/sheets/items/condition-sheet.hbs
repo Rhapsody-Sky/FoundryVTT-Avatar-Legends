@@ -6,5 +6,35 @@
     <img src="{{item.img}}" data-edit="img" title="{{item.name}}" height="64" width="64" />
   </header>
 
-  {{> "systems/legends/templates/partials/description-editor.hbs" }}
+  <section class="sheet-body">
+    <h1 class="title center underline">Penalties</h1>
+    <section class="row">
+      <table>
+        <tr>
+          <td>
+            <select name="system.affectedMoves.0.penalty" class="center">
+              {{#select system.affectedMoves.0.penalty}}
+                <option value="-2">-2</option>
+                <option value="2">+2</option>
+              {{/select}}
+            </select>
+          </td>
+          <td><input type="text" name="system.affectedMoves.0.name" value="{{system.affectedMoves.0.name}}"></td>
+        </tr>
+        <tr>
+          <td>
+            <select name="system.affectedMoves.1.penalty" class="center">
+              {{#select system.affectedMoves.1.penalty}}
+                <option value="-2">-2</option>
+                <option value="1">+1</option>
+                <option value="2">+2</option>
+              {{/select}}
+            </select>
+          </td>
+          <td><input type="text" name="system.affectedMoves.1.name" value="{{system.affectedMoves.1.name}}"></td>
+        </tr>
+      </table>
+    </section>
+    {{> "systems/legends/templates/partials/description-editor.hbs" }}
+  </section>
 </form>

@@ -1,34 +1,162 @@
 /**
- * Roll a stat with the given statValue, and render it
- * in the Chat with the statName (and moveName, if
- * provided.)
- * @returns
+ * Roll a Move by UUID
+ * @param {String} uuid The Item's UUID
+ * @returns null
  */
-export async function RollStat({
-  statValue = null,
-  statName = null,
-  moveName = null,
-  approach = null,
-} = {}) {
-  // Fetch the bonus/penalty values from the dialog
-  const rollOptions = await GetRollOptions(statName, moveName, statValue)
+export const rollMove = async (uuid) => {
+  const move = await fromUuid(uuid)
+  const actor = move.parent || game.user.character
 
-  // Don't bother continuing if the roll was cancelled.
-  if (rollOptions.cancelled) {
-    return
-  }
+  const title = game.i18n.format('legends.roll.stat', {
+    stat: move.name,
+  })
+  const rollOptions = await newGetRollOptions(actor, {
+    title: title,
+    move: move,
+  })
 
-  // Set up the default roll values
+  if (rollOptions.cancelled) return
+
+  doRoll(actor, rollOptions, { move: move })
+}
+
+/**
+ * Roll a Stat by name for a specific actor
+ * @param {Object} actor The Actor to roll for
+ * @param {String} stat The stat name to roll
+ * @returns null
+ */
+export const rollStat = async (actor, stat) => {
+  const title = game.i18n.format('legends.roll.stat', {
+    stat: game.i18n.localize(`legends.stats.${stat}`),
+  })
+  const rollOptions = await newGetRollOptions(actor, {
+    title: title,
+    stat: stat,
+  })
+
+  if (rollOptions.cancelled) return
+
+  doRoll(actor, rollOptions, { stat: stat })
+}
+
+export const rollApproach = async (actor, stat, approach) => {
+  const title = game.i18n.format('legends.roll.stat', {
+    stat: approach,
+  })
+  const rollOptions = await newGetRollOptions(actor, {
+    title: title,
+    stat: stat,
+    approach: approach,
+  })
+
+  if (rollOptions.cancelled) return
+
+  doRoll(actor, rollOptions, { stat: stat, approach: approach })
+}
+
+export const rollPrinciple = async (actor, principle) => {
+  const title = game.i18n.format('legends.roll.stat', {
+    stat: principle,
+  })
+  const rollOptions = await newGetRollOptions(actor, {
+    title: title,
+    principle: principle,
+  })
+
+  if (rollOptions.cancelled) return
+
+  doRoll(actor, rollOptions, { principle: principle })
+}
+
+const newGetRollOptions = async (actor, options = {}) => {
+  const template = 'systems/legends/templates/partials/dialog/roll-dialog.hbs'
+
+  const move = options.move
+  const principle = options.principle
+  const stat = options.stat || move?.system?.rollStat
+  const title = options.title || game.i18n.localize('legends.roll.no-stat')
+
+  const statValue = principle
+    ? actor.getPrincipleValue(principle)
+    : actor.system.stats[stat]
+
+  const condition = move ? actor.getConditionForMove(move?.name) : null
+
+  const statName = principle
+    ? principle
+    : statValue !== undefined
+    ? game.i18n.localize(`legends.stats.${stat}`)
+    : ''
+
+  const html = await renderTemplate(template, {
+    statName: statName,
+    moveName: move?.name,
+    statValue: statValue,
+    condition: condition,
+  })
+
+  return new Promise((resolve) => {
+    const data = {
+      title: title,
+      content: html,
+      buttons: {
+        normal: {
+          label: `<i class="fas fa-dice"></i> ${game.i18n.localize(
+            'legends.roll.dialog.submit',
+          )}`,
+          callback: (html) => resolve(_processRollOptions(html)),
+        },
+        cancel: {
+          label: `<i class="fas fa-times"></i> ${game.i18n.localize(
+            'legends.dialog.cancel',
+          )}`,
+          callback: (_html) => resolve({ cancelled: true }),
+        },
+      },
+      default: 'normal',
+      close: () => resolve({ cancelled: true }),
+    }
+    new Dialog(data, { classes: ['dialog', 'legends-dialog'] }).render(true)
+  })
+}
+
+const doRoll = async (actor, rollOptions, options = {}) => {
+  const move = options.move
+  const principle = options.principle
+  const stat = move?.system?.rollStat || options.stat
+
+  const statValue = principle
+    ? actor.getPrincipleValue(principle)
+    : actor.system.stats[stat]
+
+  const statName =
+    stat !== undefined
+      ? principle
+        ? principle
+        : game.i18n.localize(`legends.stats.${stat}`)
+      : null
+
+  const condition = move ? actor.getConditionForMove(move?.name) : null
+
   const neg = statValue < 0
-  const abs_stat = Math.abs(statValue)
+  const absStat = Math.abs(statValue || 0)
 
   const rollData = {
     oStat: neg ? '-' : '+',
-    vStat: abs_stat,
+    vStat: absStat,
   }
 
   // Basic roll formula
   let rollFormula = '2d6 @oStat @vStat'
+
+  // Condition
+  if (condition) {
+    rollData.conditionValue = condition.penalty.penalty
+    const conditionValue =
+      condition.penalty.penalty >= 0 ? ' + @conditionValue' : ' @conditionValue'
+    rollFormula += conditionValue
+  }
 
   // If a non-zero bonus was set
   const bonus = rollOptions.bonus
@@ -54,10 +182,10 @@ export async function RollStat({
     'systems/legends/templates/partials/chat/stat-roll.hbs'
   const templateContext = {
     name: statName,
-    move: moveName,
+    move: move?.name || options.approach,
     roll: renderedRoll,
     total: rollResult._total,
-    approach: approach,
+    approach: options.approach,
   }
 
   // Setup the chat message
@@ -71,47 +199,6 @@ export async function RollStat({
   }
 
   return ChatMessage.create(chatData)
-}
-
-/**
- * Display a Dialog to collect roll options (bonuses, penalties, etc.)
- * @param {String} statName The name of the Stat being rolled
- * @param {String} [moveName] The name of the Move used (optional)
- * @param {Number} [statValue] The value of the Stat being rolled (optional)
- * @returns A Promise representing the Dialog to be displayed
- */
-async function GetRollOptions(statName, moveName = null, statValue = null) {
-  const template = 'systems/legends/templates/partials/dialog/roll-dialog.hbs'
-  const html = await renderTemplate(template, {
-    statName: statName,
-    statValue: statValue,
-  })
-  const title =
-    moveName !== null ? moveName : game.i18n.format('legends.roll.no-stat')
-
-  return new Promise((resolve) => {
-    const data = {
-      title: title,
-      content: html,
-      buttons: {
-        normal: {
-          label: `<i class="fas fa-dice"></i> ${game.i18n.localize(
-            'legends.roll.dialog.submit',
-          )}`,
-          callback: (html) => resolve(_processRollOptions(html)),
-        },
-        cancel: {
-          label: `<i class="fas fa-times"></i> ${game.i18n.localize(
-            'legends.dialog.cancel',
-          )}`,
-          callback: (html) => resolve({ cancelled: true }),
-        },
-      },
-      default: 'normal',
-      close: () => resolve({ cancelled: true }),
-    }
-    new Dialog(data, { classes: ['dialog', 'legends-dialog'] }).render(true)
-  })
 }
 
 /**
