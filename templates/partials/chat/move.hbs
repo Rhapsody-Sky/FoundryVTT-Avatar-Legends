@@ -2,7 +2,7 @@
   {{> "systems/legends/templates/partials/move-card.hbs"}}
 
   {{#if system.rollable}}
-    <a class="move-roll text" data-move-name="{{name}}" data-stat-name="{{system.rollStat}}">
+    <a class="move-roll text" data-move-name="{{name}}">
       <i class="fas fa-dice"></i>
       {{#if system.rollStat}}
         {{localize (tr_path 'legends.stats' system.rollStat)}}

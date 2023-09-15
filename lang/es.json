@@ -202,8 +202,8 @@
       "maximum": "Maximum"
     },
     "roll": {
-      "with": "Lanza con <a class=\"accent-dark move-roll\" data-move-name=\"{approach}\" data-move-stat=\"{stat}\"><i class=\"fas fa-dice small\"></i>{name}</a>",
-      "evade-observe": "Elimina 1 Fatiga y lanza con <a class=\"accent-dark move-roll\" data-move-name=\"Evade & Observe\" data-move-stat=\"creativity\"><i class=\"fas fa-dice small\"></i>Creativity</a> or <a class=\"accent-dark move-roll\" data-move-name=\"Evade & Observe\" data-move-stat=\"harmony\"><i class=\"fas fa-dice small\"></i>Harmony</a>",
+      "with": "Lanza con <a class=\"fire-dark approach-roll\" data-approach=\"{approach}\" data-stat=\"{stat}\"><i class=\"fas fa-dice small\"></i>{name}</a>",
+      "evade-observe": "Elimina 1 Fatiga y lanza con <a class=\"fire-dark approach-roll\" data-approach=\"Evadir y Observar\" data-stat=\"creativity\"><i class=\"fas fa-dice small\"></i>Creativity</a> or <a class=\"fire-dark approach-roll\" data-approach=\"Evadir y Observar\" data-stat=\"harmony\"><i class=\"fas fa-dice small\"></i>Harmony</a>",
       "stat": "Lanzando {stat}",
       "no-stat": "Lanzando",
       "miss": "Fallo",

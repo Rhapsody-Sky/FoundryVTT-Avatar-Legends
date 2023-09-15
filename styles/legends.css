@@ -152,6 +152,7 @@
   border: none;
   font-family: "Village";
   font-variant: small-caps;
+  line-height: 1.2em;
 }
 .legends h1 input,
 .legends h2 input,
@@ -780,6 +781,10 @@
   font-variant: small-caps;
   font-weight: bold;
   font-size: 0.85rem;
+}
+.sheet.journal-entry.legends-journal-sheet .journal-entry-content .inline-item + p,
+.sheet.journal-entry.legends-journal-sheet .journal-entry-content p:has(+.inline-item) {
+  display: none;
 }
 .legends.sheet.npc-sheet .body h1 {
   font-size: 1.5rem;

@@ -7,6 +7,22 @@
       <input type="number" class="hand" value="{{statValue}}" disabled />
     </div>
   {{/if}}
+  {{#if principle}}
+    <div class="form-group pad-bottom">
+      <label class="title">
+        {{principle}}
+      </label>
+      <input type="number" class="hand" value="{{statValue}}" disabled />
+    </div>
+  {{/if}}
+  {{#if condition}}
+    <div class="form-group pad-bottom">
+      <label class="title">
+        {{condition.name}}
+      </label>
+      <input type="number" class="hand" value="{{condition.penalty.penalty}}" disabled />
+    </div>
+  {{/if}}
   <div class="form-group pad-bottom">
     <label for="bonus" class="title">
       {{localize "legends.roll.dialog.bonus"}}
