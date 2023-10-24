@@ -102,6 +102,9 @@
     "templates": {
       "hasDescription": {
         "description": ""
+      },
+      "toggleable": {
+        "visible": true
       }
     },
     "playbook": {
@@ -118,7 +121,7 @@
       "attachedItems": []
     },
     "move": {
-      "templates": ["hasDescription"],
+      "templates": ["hasDescription", "toggleable"],
       "rollable": false,
       "rollStat": "",
       "category": ""
@@ -127,7 +130,7 @@
       "templates": ["hasDescription"]
     },
     "technique": {
-      "templates": ["hasDescription"],
+      "templates": ["hasDescription", "toggleable"],
       "approach": "defend-maneuver",
       "basic": false,
       "learned": false,
@@ -137,7 +140,7 @@
       "specialty": ""
     },
     "condition": {
-      "templates": ["hasDescription"],
+      "templates": ["hasDescription", "toggleable"],
       "checked": false,
       "affectedMoves": [
         { "name": "", "penalty": -2 },
@@ -154,7 +157,7 @@
       }
     },
     "status": {
-      "templates": ["hasDescription"],
+      "templates": ["hasDescription", "toggleable"],
       "checked": false,
       "type": "positive"
     },

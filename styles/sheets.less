@@ -1,15 +1,15 @@
 // out: false
 
-@import "./config.less";
+@import './config.less';
 
 .legends.sheet.quickstart {
   .bg-fade(100px, @bg-color-quickstart, @bg-fade-color-quickstart);
 
   .balance .balance-track {
-
     &.black,
     &.white {
-      box-shadow: inset 1rem 1.4rem 0 @bg-color-quickstart, inset -1rem -1.4rem 0 @bg-color-quickstart;
+      box-shadow: inset 1rem 1.4rem 0 @bg-color-quickstart,
+        inset -1rem -1.4rem 0 @bg-color-quickstart;
     }
   }
 
@@ -57,7 +57,7 @@
 
     &.content-link,
     &.inline-roll {
-      color: @accent-dark-quickstart;
+      color: @text-color;
     }
   }
 
@@ -71,20 +71,16 @@
   padding: 0.5rem;
   .bg-fade(100px);
 
-  &.start-collapsed {
-
-    .item.move,
-    .item.technique {
-      .drawer {
-        display: none;
-      }
+  .item.move,
+  .item.technique {
+    .drawer.hidden {
+      display: none;
     }
   }
 
   &.item-sheet,
   &.npc-sheet {
     header.sheet-header {
-
       input,
       select {
         background: rgba(255, 255, 255, 0.7);
@@ -95,6 +91,16 @@
   table {
     border-top: 1px solid @accent-color;
     border-bottom: 1px solid @accent-color;
+  }
+
+  a {
+    &.content-link,
+    &.inline-roll {
+      color: @text-color;
+      .title-font();
+      border: none;
+      background: none;
+    }
   }
 
   .sheet-header {
@@ -191,7 +197,6 @@
   }
 
   .balance {
-
     .balance-black,
     .balance-white {
       padding: 0.5rem;
@@ -212,7 +217,11 @@
 
     .balance-black {
       color: white;
-      background-image: linear-gradient(115deg, @text-color 50%, rgba(17, 17, 17, 0) 100%);
+      background-image: linear-gradient(
+        115deg,
+        @text-color 50%,
+        rgba(17, 17, 17, 0) 100%
+      );
       margin-bottom: 0;
 
       input {
@@ -221,7 +230,11 @@
     }
 
     .balance-white {
-      background-image: linear-gradient(-115deg, white 50%, rgba(255, 255, 255, 0) 100%);
+      background-image: linear-gradient(
+        -115deg,
+        white 50%,
+        rgba(255, 255, 255, 0) 100%
+      );
       color: @text-color;
 
       input {
@@ -260,7 +273,6 @@
     }
 
     ul.balance-track {
-
       &.black li,
       &.white li {
         .num {
@@ -284,7 +296,8 @@
 
       &.black,
       &.white {
-        box-shadow: inset 1rem 1.4rem 0 @bg-color, inset -1rem -1.4rem 0 @bg-color;
+        box-shadow: inset 1rem 1.4rem 0 @bg-color,
+          inset -1rem -1.4rem 0 @bg-color;
       }
 
       &.black {
@@ -537,6 +550,16 @@
     font-variant: small-caps;
   }
 
+  img {
+    border: 0;
+
+    &.portrait {
+      width: 100px;
+      float: right;
+      margin: 0 0 0 1rem;
+    }
+  }
+
   .bg-fade(100px);
   .main-font();
 
@@ -546,19 +569,47 @@
   h4,
   h5 {
     border: none;
+    margin-top: 0;
     .title-font();
   }
 
   h1 {
+    font-size: 1.8rem;
     border-bottom: 2px solid @accent-color;
   }
 
-  a {
+  h2 {
+    font-size: 1.6rem;
+  }
 
+  h3 {
+    font-size: 1.3rem;
+  }
+
+  h4 {
+    font-size: 1.1rem;
+  }
+
+  a {
     &.content-link,
     &.inline-roll {
-      color: @accent-dark;
+      color: @text-color;
+      .title-font();
+      border: none;
+      background: none;
     }
+  }
+
+  p {
+    margin: 0 0 0.7rem;
+  }
+
+  .title {
+    .title-font();
+  }
+
+  .fire-dark {
+    color: @dark-fire;
   }
 
   .skill-name {
@@ -568,8 +619,31 @@
     font-size: 0.85rem;
   }
 
-  .inline-item + p,
-  p:has(+.inline-item) {
-    display: none;
+  .inline-npc {
+    margin-bottom: 0.5rem;
+    h3 {
+      margin: 0;
+    }
+
+    .boxout {
+      padding: 0.5rem calc(0.5rem + 2px);
+      background-image: linear-gradient(90deg, @bg-fade-light, transparent);
+      border-top: 2px solid @accent-dark;
+      border-bottom: 2px solid @accent-dark;
+
+      p {
+        margin-bottom: 0.25rem;
+      }
+    }
+
+    .fatigue-box {
+      display: inline-block;
+      border: 1px solid black;
+      background: white;
+      width: 0.75rem;
+      height: 0.75rem;
+      transform: rotate(45deg);
+      margin: 0 0.15rem;
+    }
   }
 }

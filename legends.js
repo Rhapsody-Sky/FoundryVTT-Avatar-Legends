@@ -50,15 +50,6 @@ function registerSystemSettings() {
     type: Boolean,
     default: false,
   })
-
-  game.settings.register('legends', 'start-collapsed', {
-    config: true,
-    scope: 'client',
-    name: 'SETTINGS.startCollapsed.label',
-    hint: 'SETTINGS.startCollapsed.hint',
-    type: Boolean,
-    default: false,
-  })
 }
 
 Hooks.once('init', function () {
@@ -70,6 +61,24 @@ Hooks.once('init', function () {
   CONFIG.legends = legends
   CONFIG.Actor.documentClass = LegendsActor
   CONFIG.Item.documentClass = LegendsItem
+
+  CONFIG.Item.typeIcons = {
+    move: 'fas fa-arrows-maximize',
+    technique: 'fas fa-person-running fa-rotate-180 fa-flip-vertical',
+    condition: 'fas fa-cloud-xmark',
+    feature: 'fas fa-heart',
+    'moment-of-balance': 'fas fa-yin-yang',
+    'npc-principle': 'fas fa-compass',
+    status: 'fas fa-cloud-xmark',
+    'growth-question': 'fas fa-question',
+    playbook: 'fas fa-scroll-old',
+  }
+
+  CONFIG.Actor.typeIcons = {
+    player: 'fas fa-person-simple',
+    npc: 'fas fa-people-group',
+    campaign: 'fas fa-earth-asia',
+  }
 
   // Item sheets
   Items.registerSheet('legends', LegendsItemSheet, { makeDefault: true })

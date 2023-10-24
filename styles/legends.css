@@ -2,41 +2,41 @@
  * Fonts
  **/
 @font-face {
-  font-family: "Village";
+  font-family: 'Village';
   src: url(fonts/prisoner/village.ttf);
 }
 @font-face {
-  font-family: "Hey August";
+  font-family: 'Hey August';
   src: url(fonts/hey_august/HeyAugust.ttf);
 }
 @font-face {
-  font-family: "Komikazoom";
+  font-family: 'Komikazoom';
   src: url(fonts/komikazoom/KAMIKZOM.ttf);
 }
 @font-face {
-  font-family: "Covered By Your Grace";
+  font-family: 'Covered By Your Grace';
   src: url(fonts/Covered_By_Your_Grace/CoveredByYourGrace-Regular.ttf);
 }
 @font-face {
-  font-family: "New Tegomin";
+  font-family: 'New Tegomin';
   src: url(fonts/New_Tegomin/NewTegomin-Regular.ttf);
 }
 @font-face {
-  font-family: "Noto Sans";
+  font-family: 'Noto Sans';
   src: url(fonts/Noto_Sans/NotoSans-Regular.ttf);
 }
 @font-face {
-  font-family: "Noto Sans";
+  font-family: 'Noto Sans';
   src: url(fonts/Noto_Sans/NotoSans-Italic.ttf);
   font-style: italic;
 }
 @font-face {
-  font-family: "Noto Sans";
+  font-family: 'Noto Sans';
   src: url(fonts/Noto_Sans/NotoSans-SemiBold.ttf);
   font-weight: bold;
 }
 @font-face {
-  font-family: "Noto Sans";
+  font-family: 'Noto Sans';
   src: url(fonts/Noto_Sans/NotoSans-SemiBoldItalic.ttf);
   font-weight: bold;
   font-style: italic;
@@ -47,8 +47,14 @@
 .bg-default {
   background: #f0f1f5;
 }
+p:empty {
+  margin: 0;
+  padding: 0;
+  height: 0;
+  min-height: auto;
+}
 .window-header {
-  font-family: "Village";
+  font-family: 'Village';
   font-variant: small-caps;
 }
 #logo {
@@ -60,12 +66,12 @@
   content: url(images/pause.webp);
 }
 #pause figcaption {
-  font-family: "Village";
+  font-family: 'Village';
   font-variant: small-caps;
   text-shadow: 0 0 4px #111;
 }
 .legends {
-  font-family: "Noto Sans";
+  font-family: 'Noto Sans';
   font-size: 0.8rem;
 }
 .legends .water {
@@ -96,7 +102,7 @@
   color: #99bbe3;
 }
 .legends .accent-dark {
-  color: #0d2d5d;
+  color: #002a5b;
 }
 .legends .fire-dark {
   color: #65110c;
@@ -129,17 +135,16 @@
 }
 .legends p,
 .legends li {
-  font-family: "Noto Sans";
+  font-family: 'Noto Sans';
   font-size: 0.8rem;
 }
 .legends p {
-  margin: 0;
-  margin-bottom: 0.7rem;
+  margin: 0 0 0.7rem;
 }
 .legends input,
 .legends textarea,
 .legends select {
-  font-family: "Noto Sans";
+  font-family: 'Noto Sans';
   font-size: 0.8rem;
 }
 .legends img {
@@ -150,7 +155,7 @@
 .legends h3,
 .legends h4 {
   border: none;
-  font-family: "Village";
+  font-family: 'Village';
   font-variant: small-caps;
   line-height: 1.2em;
 }
@@ -176,7 +181,7 @@
   font-size: 1rem;
 }
 .legends a {
-  color: #0d2d5d;
+  color: #002a5b;
 }
 .legends a:hover {
   color: black;
@@ -184,27 +189,27 @@
 }
 .legends a.content-link,
 .legends a.inline-roll {
-  color: #0d2d5d;
+  color: #002a5b;
 }
 .legends .block {
-  font-family: "Komikazoom";
+  font-family: 'Komikazoom';
   text-transform: uppercase;
 }
 .legends .brush {
-  font-family: "Hey August";
+  font-family: 'Hey August';
   text-transform: uppercase;
   font-weight: normal;
 }
 .legends .title {
-  font-family: "Village";
+  font-family: 'Village';
   font-variant: small-caps;
 }
 .legends .hand {
-  font-family: "Covered By Your Grace";
+  font-family: 'Covered By Your Grace';
   font-size: 1.5rem;
 }
 .legends .text {
-  font-family: "Noto Sans";
+  font-family: 'Noto Sans';
   font-size: 0.8rem;
 }
 .legends .large {
@@ -260,15 +265,15 @@
   border-width: 1px;
 }
 .legends .skill-name {
-  color: #0d2d5d;
-  font-family: "Village";
+  color: #002a5b;
+  font-family: 'Village';
   font-variant: small-caps;
   font-weight: bold;
   font-size: 0.85rem;
 }
 .legends .kanji::before,
 .legends .kanji::after {
-  font-family: "New Tegomin";
+  font-family: 'New Tegomin';
   color: #b62127;
   padding: 0;
   font-size: 70%;
@@ -306,7 +311,7 @@
   border-radius: 0.6rem;
   color: #f0f1f5;
   font-size: 0.7rem;
-  font-family: "Noto Sans";
+  font-family: 'Noto Sans';
   font-size: 0.8rem;
   font-weight: normal;
   text-transform: uppercase;
@@ -373,7 +378,7 @@
 }
 .legends.sheet.quickstart a.content-link,
 .legends.sheet.quickstart a.inline-roll {
-  color: #6e4e27;
+  color: #111;
 }
 .legends.sheet.quickstart .skill-name {
   color: #6e4e27;
@@ -384,8 +389,8 @@
   background-color: #f0f1f5;
   background-image: linear-gradient(#b4bac8 0%, #f0f1f5 100px, #f0f1f5 100%);
 }
-.legends.sheet.start-collapsed .item.move .drawer,
-.legends.sheet.start-collapsed .item.technique .drawer {
+.legends.sheet .item.move .drawer.hidden,
+.legends.sheet .item.technique .drawer.hidden {
   display: none;
 }
 .legends.sheet.item-sheet header.sheet-header input,
@@ -397,6 +402,14 @@
 .legends.sheet table {
   border-top: 1px solid #99bbe3;
   border-bottom: 1px solid #99bbe3;
+}
+.legends.sheet a.content-link,
+.legends.sheet a.inline-roll {
+  color: #111;
+  font-family: 'Village';
+  font-variant: small-caps;
+  border: none;
+  background: none;
 }
 .legends.sheet .sheet-header {
   flex: none;
@@ -443,7 +456,7 @@
 .legends.sheet .navigation .sheet-tabs.tabs .item {
   display: block;
   width: 100%;
-  color: #0d2d5d;
+  color: #002a5b;
   border-left: 1px solid #99bbe3;
 }
 .legends.sheet .navigation .sheet-tabs.tabs .item:first-child {
@@ -525,9 +538,9 @@
   font-size: 0.6rem;
   line-height: 1.5rem;
   text-align: center;
-  color: #0d2d5d;
+  color: #002a5b;
   margin: 0 -4px;
-  font-family: "Village";
+  font-family: 'Village';
   font-variant: small-caps;
 }
 .legends.sheet .balance ul.balance-center-track {
@@ -617,7 +630,7 @@
 .legends.sheet .description h2,
 .legends.sheet .description h3,
 .legends.sheet .description h4 {
-  font-family: "Village";
+  font-family: 'Village';
   font-variant: small-caps;
 }
 .legends.sheet .description .editor {
@@ -648,7 +661,7 @@
 .legends.sheet select:focus,
 .legends.sheet textarea:focus,
 .legends.sheet .description-scroll:focus {
-  box-shadow: 0 0 3px #0d2d5d;
+  box-shadow: 0 0 3px #002a5b;
 }
 .legends.sheet .description-scroll {
   max-height: 100px;
@@ -673,7 +686,7 @@
   line-height: 1.5rem;
 }
 .legends.sheet .labelled-input input {
-  font-family: "Noto Sans";
+  font-family: 'Noto Sans';
   font-size: 0.8rem;
   margin: 0 0 0 0.5rem;
 }
@@ -726,7 +739,7 @@
   display: inline-block;
   margin: 0 1rem;
   flex: 1;
-  font-family: "Village";
+  font-family: 'Village';
   font-variant: small-caps;
   opacity: 0.25;
 }
@@ -752,12 +765,20 @@
 .sheet.journal-entry.legends-journal-sheet .journal-entry-content {
   background-color: #f0f1f5;
   background-image: linear-gradient(#b4bac8 0%, #f0f1f5 100px, #f0f1f5 100%);
-  font-family: "Noto Sans";
+  font-family: 'Noto Sans';
   font-size: 0.8rem;
 }
 .sheet.journal-entry.legends-journal-sheet .journal-entry-content .journal-header input {
-  font-family: "Village";
+  font-family: 'Village';
   font-variant: small-caps;
+}
+.sheet.journal-entry.legends-journal-sheet .journal-entry-content img {
+  border: 0;
+}
+.sheet.journal-entry.legends-journal-sheet .journal-entry-content img.portrait {
+  width: 100px;
+  float: right;
+  margin: 0 0 0 1rem;
 }
 .sheet.journal-entry.legends-journal-sheet .journal-entry-content h1,
 .sheet.journal-entry.legends-journal-sheet .journal-entry-content h2,
@@ -765,26 +786,71 @@
 .sheet.journal-entry.legends-journal-sheet .journal-entry-content h4,
 .sheet.journal-entry.legends-journal-sheet .journal-entry-content h5 {
   border: none;
-  font-family: "Village";
+  margin-top: 0;
+  font-family: 'Village';
   font-variant: small-caps;
 }
 .sheet.journal-entry.legends-journal-sheet .journal-entry-content h1 {
+  font-size: 1.8rem;
   border-bottom: 2px solid #99bbe3;
+}
+.sheet.journal-entry.legends-journal-sheet .journal-entry-content h2 {
+  font-size: 1.6rem;
+}
+.sheet.journal-entry.legends-journal-sheet .journal-entry-content h3 {
+  font-size: 1.3rem;
+}
+.sheet.journal-entry.legends-journal-sheet .journal-entry-content h4 {
+  font-size: 1.1rem;
 }
 .sheet.journal-entry.legends-journal-sheet .journal-entry-content a.content-link,
 .sheet.journal-entry.legends-journal-sheet .journal-entry-content a.inline-roll {
-  color: #0d2d5d;
+  color: #111;
+  font-family: 'Village';
+  font-variant: small-caps;
+  border: none;
+  background: none;
+}
+.sheet.journal-entry.legends-journal-sheet .journal-entry-content p {
+  margin: 0 0 0.7rem;
+}
+.sheet.journal-entry.legends-journal-sheet .journal-entry-content .title {
+  font-family: 'Village';
+  font-variant: small-caps;
+}
+.sheet.journal-entry.legends-journal-sheet .journal-entry-content .fire-dark {
+  color: #65110c;
 }
 .sheet.journal-entry.legends-journal-sheet .journal-entry-content .skill-name {
-  color: #0d2d5d;
-  font-family: "Village";
+  color: #002a5b;
+  font-family: 'Village';
   font-variant: small-caps;
   font-weight: bold;
   font-size: 0.85rem;
 }
-.sheet.journal-entry.legends-journal-sheet .journal-entry-content .inline-item + p,
-.sheet.journal-entry.legends-journal-sheet .journal-entry-content p:has(+.inline-item) {
-  display: none;
+.sheet.journal-entry.legends-journal-sheet .journal-entry-content .inline-npc {
+  margin-bottom: 0.5rem;
+}
+.sheet.journal-entry.legends-journal-sheet .journal-entry-content .inline-npc h3 {
+  margin: 0;
+}
+.sheet.journal-entry.legends-journal-sheet .journal-entry-content .inline-npc .boxout {
+  padding: 0.5rem calc(0.5rem + 2px);
+  background-image: linear-gradient(90deg, #dce5f1, transparent);
+  border-top: 2px solid #002a5b;
+  border-bottom: 2px solid #002a5b;
+}
+.sheet.journal-entry.legends-journal-sheet .journal-entry-content .inline-npc .boxout p {
+  margin-bottom: 0.25rem;
+}
+.sheet.journal-entry.legends-journal-sheet .journal-entry-content .inline-npc .fatigue-box {
+  display: inline-block;
+  border: 1px solid black;
+  background: white;
+  width: 0.75rem;
+  height: 0.75rem;
+  transform: rotate(45deg);
+  margin: 0 0.15rem;
 }
 .legends.sheet.npc-sheet .body h1 {
   font-size: 1.5rem;
@@ -915,7 +981,7 @@
   margin-bottom: 10px;
 }
 .chat-message {
-  font-family: "Noto Sans";
+  font-family: 'Noto Sans';
   font-size: 0.8rem;
 }
 .chat-message.whisper {
@@ -934,12 +1000,12 @@
   border-bottom: 2px solid #99bbe3;
 }
 .chat-message .message-header .message-sender {
-  font-family: "Village";
+  font-family: 'Village';
   font-variant: small-caps;
   font-size: 1rem;
 }
 .chat-message .message-header .whisper-to {
-  font-family: "Village";
+  font-family: 'Village';
   font-variant: small-caps;
   font-size: 0.8rem;
 }
@@ -949,7 +1015,7 @@
 .chat-message .message-content {
   margin: 0 -5px -5px;
   padding: 0.5rem;
-  font-family: "Noto Sans";
+  font-family: 'Noto Sans';
   font-size: 0.8rem;
 }
 .chat-message.whisper .message-header {
@@ -957,7 +1023,7 @@
 }
 .message-content .legends .kanji::before,
 .message-content .legends .kanji::after {
-  font-family: "New Tegomin";
+  font-family: 'New Tegomin';
   color: #b62127;
   padding: 0;
   font-size: 70%;
@@ -979,7 +1045,7 @@
 }
 .message-content .legends h3 {
   margin: 0;
-  font-family: "Village";
+  font-family: 'Village';
   font-variant: small-caps;
 }
 .message-content .legends a.move-roll {
@@ -993,21 +1059,21 @@
   border-radius: 3px;
   box-shadow: 0 0 2px #fff inset;
   word-break: break-all;
-  font-family: "Village";
+  font-family: 'Village';
   font-variant: small-caps;
   font-weight: bold;
   font-size: 1rem;
 }
 .message-content .legends .dice-roll .dice-tooltip .dice .part-total {
-  font-family: "Village";
+  font-family: 'Village';
   font-variant: small-caps;
 }
 .message-content .legends .dice-roll .dice-tooltip .dice .dice-rolls .roll.die {
-  font-family: "Village";
+  font-family: 'Village';
   font-variant: small-caps;
 }
 #chat-controls {
-  font-family: "Noto Sans";
+  font-family: 'Noto Sans';
   font-size: 0.8rem;
 }
 #chat-controls .roll-type-select {
@@ -1020,7 +1086,7 @@
   text-shadow: 0 0 8px #99bbe3;
 }
 #chat-form #chat-message {
-  font-family: "Noto Sans";
+  font-family: 'Noto Sans';
   font-size: 0.8rem;
   background: #f0f1f5;
 }
@@ -1028,31 +1094,31 @@
   box-shadow: 0 0 8px #99bbe3;
 }
 .dialog .block {
-  font-family: "Komikazoom";
+  font-family: 'Komikazoom';
   text-transform: uppercase;
 }
 .dialog .brush {
-  font-family: "Hey August";
+  font-family: 'Hey August';
   text-transform: uppercase;
   font-weight: normal;
 }
 .dialog .title {
-  font-family: "Village";
+  font-family: 'Village';
   font-variant: small-caps;
 }
 .dialog .hand {
-  font-family: "Covered By Your Grace";
+  font-family: 'Covered By Your Grace';
   font-size: 1.5rem;
 }
 .dialog .text {
-  font-family: "Noto Sans";
+  font-family: 'Noto Sans';
   font-size: 0.8rem;
 }
 .dialog .pad-bottom {
   margin: 0 0 1rem;
 }
 .dialog .window-header {
-  font-family: "Village";
+  font-family: 'Village';
   font-variant: small-caps;
 }
 .dialog .window-content {
@@ -1075,7 +1141,7 @@
   height: 2rem;
 }
 .dialog .window-content .dialog-content .form-group input:focus {
-  box-shadow: 0 0 3px #0d2d5d;
+  box-shadow: 0 0 3px #002a5b;
 }
 .dialog .window-content .dialog-content .form-group .form-text {
   flex: none;

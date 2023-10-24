@@ -1,4 +1,9 @@
-import { filter_items, filter_statuses, filter_techniques } from '../helpers.js'
+import {
+  enrich,
+  filter_items,
+  filter_statuses,
+  filter_techniques,
+} from '../helpers.js'
 import * as Dice from '../dice.js'
 
 export default class LegendsActorSheet extends ActorSheet {
@@ -83,32 +88,42 @@ export default class LegendsActorSheet extends ActorSheet {
     return await super._onDropItemCreate(itemData)
   }
 
-  getData() {
+  async getData() {
     const context = super.getData()
     context.config = CONFIG.legends
     context.cssClass = [
       game.settings.get('legends', 'sheetColour') || 'default',
-      game.settings.get('legends', 'start-collapsed') ? 'start-collapsed' : '',
     ]
       .join(' ')
       .trim()
 
-    context.feature = filter_items(context.items, 'feature')[0]
-    context.conditions = filter_items(context.items, 'condition')
-    context.moves = filter_items(context.items, 'move')
-    context.momentOfBalance = filter_items(
+    context.system = this.actor.system
+
+    let features = await filter_items(context.items, 'feature')
+    context.feature = features[0]
+
+    context.conditions = await filter_items(context.items, 'condition')
+
+    context.moves = await filter_items(context.items, 'move')
+    let momentsOfBalance = await filter_items(
       context.items,
       'moment-of-balance',
-    )[0]
-    context.statuses = {
-      positive: filter_statuses(context.items, 'positive'),
-      negative: filter_statuses(context.items, 'negative'),
-    }
-    context.techniques = filter_items(context.items, 'technique')
+    )
+    context.momentOfBalance = momentsOfBalance[0]
 
-    if (this.actor.type == 'player') {
+    let statuses = await filter_items(context.items, 'status')
+    context.statuses = {
+      positive: filter_statuses(statuses, 'positive'),
+      negative: filter_statuses(statuses, 'negative'),
+    }
+    context.techniques = await filter_items(context.items, 'technique')
+
+    if (this.actor.type === 'player') {
       context.displayTabbed = game.settings.get('legends', 'tabbedPlayerSheet')
-      context.growthQuestions = filter_items(context.items, 'growth-question')
+      context.growthQuestions = await filter_items(
+        context.items,
+        'growth-question',
+      )
       context.playerNotes = game.settings.get('legends', 'playerNotes')
 
       context.techniquesByApproach = {}
@@ -124,6 +139,9 @@ export default class LegendsActorSheet extends ActorSheet {
       context.selectedMoveCategory =
         this.actor.getFlag('legends', 'moveCategory') || 'all'
     }
+    context.system.enrichedDescription = await enrich(
+      this.actor.system.description,
+    )
     return context
   }
 
@@ -578,8 +596,30 @@ export default class LegendsActorSheet extends ActorSheet {
   _onToggleCollapsible(event) {
     event.preventDefault()
 
-    let element = event.currentTarget
-    $(element.closest('.item')).find('.drawer').slideToggle()
+    const itemElement = event.currentTarget.closest('.item')
+    const itemId = itemElement.dataset.itemId
+
+    $(itemElement)
+      .find('.drawer')
+      .slideToggle({
+        done: () => {
+          this.toggleVisibility(itemId)
+        },
+      })
+  }
+
+  toggleVisibility(itemId) {
+    const item = this.actor.items.get(itemId)
+
+    if (item) {
+      const visible = !item.system.visible ? false : true
+
+      item.update({
+        system: {
+          visible: !visible,
+        },
+      })
+    }
   }
 
   /**

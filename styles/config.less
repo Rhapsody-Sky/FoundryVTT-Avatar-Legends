@@ -3,82 +3,82 @@
  * Fonts
  **/
 @font-face {
-  font-family: "Village";
+  font-family: 'Village';
   src: url(fonts/prisoner/village.ttf);
 }
 
 @font-face {
-  font-family: "Hey August";
+  font-family: 'Hey August';
   src: url(fonts/hey_august/HeyAugust.ttf);
 }
 
 @font-face {
-  font-family: "Komikazoom";
+  font-family: 'Komikazoom';
   src: url(fonts/komikazoom/KAMIKZOM.ttf);
 }
 
 @font-face {
-  font-family: "Covered By Your Grace";
+  font-family: 'Covered By Your Grace';
   src: url(fonts/Covered_By_Your_Grace/CoveredByYourGrace-Regular.ttf);
 }
 
 @font-face {
-  font-family: "New Tegomin";
+  font-family: 'New Tegomin';
   src: url(fonts/New_Tegomin/NewTegomin-Regular.ttf);
 }
 
 @font-face {
-  font-family: "Noto Sans";
+  font-family: 'Noto Sans';
   src: url(fonts/Noto_Sans/NotoSans-Regular.ttf);
 }
 
 @font-face {
-  font-family: "Noto Sans";
+  font-family: 'Noto Sans';
   src: url(fonts/Noto_Sans/NotoSans-Italic.ttf);
   font-style: italic;
 }
 
 @font-face {
-  font-family: "Noto Sans";
+  font-family: 'Noto Sans';
   src: url(fonts/Noto_Sans/NotoSans-SemiBold.ttf);
   font-weight: bold;
 }
 
 @font-face {
-  font-family: "Noto Sans";
+  font-family: 'Noto Sans';
   src: url(fonts/Noto_Sans/NotoSans-SemiBoldItalic.ttf);
   font-weight: bold;
   font-style: italic;
 }
 
 .title-font() {
-  font-family: "Village";
+  font-family: 'Village';
   font-variant: small-caps;
 }
 
 .main-font() {
-  font-family: "Noto Sans";
+  font-family: 'Noto Sans';
   font-size: 0.8rem;
 }
 
 .brush-font() {
-  font-family: "Hey August";
+  font-family: 'Hey August';
   text-transform: uppercase;
   font-weight: normal;
 }
 
 .block-font() {
-  font-family: "Komikazoom";
+  font-family: 'Komikazoom';
   text-transform: uppercase;
 }
 
 .hand-font() {
-  font-family: "Covered By Your Grace";
+  font-family: 'Covered By Your Grace';
   font-size: 1.5rem;
 }
 
 .kanji-font() {
-  font-family: "New Tegomin";
+  font-family: 'New Tegomin';
 }
 
 /**
@@ -94,8 +94,9 @@
 // BLUE
 @bg-color: #f0f1f5;
 @bg-fade-color: #b4bac8;
+@bg-fade-light: #dce5f1;
 @accent-color: #99bbe3;
-@accent-dark: #0d2d5d;
+@accent-dark: #002a5b;
 
 @text-color: #111;
 
@@ -110,7 +111,11 @@
 
 .bg-fade(@distance: 5%, @bg-color: @bg-color, @bg-fade-color: @bg-fade-color) {
   background-color: @bg-color;
-  background-image: linear-gradient(@bg-fade-color 0%, @bg-color @distance, @bg-color 100%);
+  background-image: linear-gradient(
+    @bg-fade-color 0%,
+    @bg-color @distance,
+    @bg-color 100%
+  );
 }
 
 .bg-default {

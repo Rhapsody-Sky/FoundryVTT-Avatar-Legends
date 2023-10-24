@@ -9,11 +9,12 @@ export default class LegendsNpcActorSheet extends LegendsActorSheet {
     })
   }
 
-  getData() {
-    const context = super.getData()
-    context.principle = filter_items(context.items, 'npc-principle')[0]
-    context.techniques = filter_items(context.items, 'technique')
-    context.cssClass = game.settings.get('legends', 'sheetColour') || 'default'
+  async getData() {
+    const context = await super.getData()
+    let principles = await filter_items(context.items, 'npc-principle')
+    context.principle = principles[0]
+    // context.techniques = await filter_items(context.items, 'technique')
+    // context.cssClass = game.settings.get('legends', 'sheetColour') || 'default'
     return context
   }
 

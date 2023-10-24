@@ -1,5 +1,13 @@
 # Changelog
 
+## v1.1.2
+
+- Adds enricher for NPCs
+- Remember collapsed items on sheets
+  - This also removes the "start collapsed" setting
+- Better enricher use across all description fields
+- Update Journals in Compendium packs with more enrichers
+
 ## v1.1.1
 
 - Improve playbook listings in Compendiums with enrichers
