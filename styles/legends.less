@@ -1,4 +1,11 @@
-@import "./config.less";
+@import './config.less';
+
+p:empty {
+  margin: 0;
+  padding: 0;
+  height: 0;
+  min-height: auto;
+}
 
 .window-header {
   .title-font();
@@ -22,7 +29,6 @@
 }
 
 .legends {
-
   // colours
   .water {
     color: @waterbender;
@@ -111,8 +117,7 @@
   }
 
   p {
-    margin: 0;
-    margin-bottom: 0.7rem;
+    margin: 0 0 0.7rem;
   }
 
   input,
@@ -273,7 +278,6 @@
   }
 
   .kanji {
-
     &::before,
     &::after {
       .kanji-font();
@@ -370,8 +374,8 @@
   }
 }
 
-@import "./sheets.less";
-@import "./npc-sheet.less";
-@import "./campaign-sheet.less";
-@import "./messages.less";
-@import "./dialog.less";
+@import './sheets.less';
+@import './npc-sheet.less';
+@import './campaign-sheet.less';
+@import './messages.less';
+@import './dialog.less';

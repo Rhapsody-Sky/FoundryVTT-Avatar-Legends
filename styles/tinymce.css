@@ -81,3 +81,11 @@ body .skill-name {
   font-variant: small-caps;
   font-weight: bold;
 }
+body a.content-link {
+  color: #111;
+  font-family: "Village";
+  font-variant: small-caps;
+  border: none;
+  padding: 0;
+  background: none;
+}

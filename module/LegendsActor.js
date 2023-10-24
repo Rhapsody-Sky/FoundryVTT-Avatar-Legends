@@ -1,4 +1,4 @@
-import { filter_items } from './helpers.js'
+import { filter_items, enrich } from './helpers.js'
 
 export default class LegendsActor extends Actor {
   static getDefaultArtwork(data) {
@@ -8,18 +8,29 @@ export default class LegendsActor extends Actor {
     }
   }
 
-  prepareData() {
+  async prepareData() {
     super.prepareData()
 
     if (this.type === 'player') {
-      this.system.conditions = filter_items(this.items, 'condition')
+      this.system.conditions = await filter_items(
+        this.items,
+        'condition',
+        false,
+      )
     }
     if (this.type !== 'npc') return
 
-    const principle = filter_items(this.items, 'npc-principle')[0]
-    if (principle) {
-      this.system.principle = principle.system.track
+    const principles = await filter_items(this.items, 'npc-principle', false)
+    if (principles.length > 0) {
+      this.system.principle = principles[0].system.track
+      this.system.principleName = principles[0].name
     }
+
+    const conditions = await filter_items(this.items, 'condition', false)
+    this.system.conditionNames = conditions.map((condition) => condition.name)
+
+    const techniques = await filter_items(this.items, 'technique', false)
+    this.system.techniqueUUIDs = techniques.map((technique) => technique.uuid)
   }
 
   getPrincipleValue(name) {

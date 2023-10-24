@@ -16,8 +16,8 @@
     {{/if}}
   </h3>
   {{#if inSheet}}
-    <div class="drawer">
+    <div class="drawer {{#unless system.visible}}hidden{{/unless}}">
   {{/if}}
-  {{{enrichHTML system.description}}}
+  {{{system.enrichedDescription}}}
   {{#if inSheet}}</div>{{/if}}
 </section>

@@ -249,10 +249,6 @@
     "playerNotes": {
       "label": "Player Notes",
       "hint": "Show the Notes section on the Player character sheet"
-    },
-    "startCollapsed": {
-      "label": "Auto-collapse Descriptions",
-      "hint": "Descriptions for Moves and Techniques will start collapsed, and must be toggled open"
     }
   }
 }

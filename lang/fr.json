@@ -249,10 +249,6 @@
     "playerNotes": {
       "label": "Notes du joueur",
       "hint": "Voir la section de notes dans la feuille de personnages"
-    },
-    "startCollapsed": {
-      "label": "Repli automatique des Descriptions",
-      "hint": "Les descriptions des manoeuvres et techniques démarrent repliés et peuvent etre ouvertes"
     }
   }
 }

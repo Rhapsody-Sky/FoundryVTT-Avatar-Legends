@@ -1,3 +1,5 @@
+import { enrich } from '../helpers.js'
+
 export default class LegendsItemSheet extends ItemSheet {
   get template() {
     return `systems/legends/templates/sheets/items/${this.item.type}-sheet.hbs`
@@ -16,6 +18,9 @@ export default class LegendsItemSheet extends ItemSheet {
     context.cssClass = game.settings.get('legends', 'sheetColour') || 'default'
 
     context.system = this.item.system
+    context.system.enrichedDescription = await enrich(
+      context.system.description,
+    )
     return context
   }
 

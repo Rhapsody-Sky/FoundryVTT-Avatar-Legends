@@ -1,3 +1,5 @@
+import { enrich } from './helpers.js'
+
 export default class LegendsItem extends Item {
   chatTemplate = {
     move: 'systems/legends/templates/partials/chat/move.hbs',
@@ -29,7 +31,10 @@ export default class LegendsItem extends Item {
 
     let cardData = {
       name: this.name,
-      system: { ...this.system },
+      system: {
+        ...this.system,
+        enrichedDescription: await enrich(this.system.description),
+      },
       owner: owner_id,
       npc: npc,
     }
