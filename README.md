@@ -33,6 +33,8 @@ This system exists thanks to the excellent YouTube tutorial series by [Cédric H
 
 - French translation by [ZUBER Lionel](https://gitlab.com/armaklan)
 - Spanish translation by [Ruy Leon](https://gitlab.com/Amharem)
+- German translation by [Jenni Kuhnert](https://gitlab.com/yennsarah)
+- Brazilian Portuguese translation by [ChemistryPolar](https://gitlab.com/ChemistryPolar)
 
 ### Fonts
 
