@@ -73,6 +73,11 @@
       "lang": "es",
       "name": "Español",
       "path": "lang/es.json"
+    },
+    {
+      "lang": "de",
+      "name": "Detusch",
+      "path": "lang/de.json"
     }
   ],
   "relationships": {},
