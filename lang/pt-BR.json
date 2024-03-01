@@ -1,0 +1,254 @@
+{
+  "legends": {
+    "common": {
+      "description": "Descrição",
+      "none": "Nome",
+      "to-chat": "Conversar",
+      "documentation": "Documentação do Sistema"
+    },
+    "context-menu": {
+      "edit": "Editar",
+      "delete": "Deletar"
+    },
+    "actor-sheet": {
+      "clear-track": "Clique direito para limpar",
+      "name": "Nome",
+      "stats": "Capacidades",
+      "fatigue": "Fadiga",
+      "clear-fatigue": "Remover Fadiga",
+      "balance": "Equilíbrio",
+      "conditions": "Condições",
+      "moves": "Movimentos",
+      "techniques": "Estilo de Luta",
+      "statuses": "Condições",
+      "set-value": "Mudar para {value}",
+      "player": {
+        "about": "Sobre",
+        "look": "Aparência, História, Conexões",
+        "training": "Treinamento",
+        "fighting-style": "Tecnicas de&nbsp;de&nbsp;combate",
+        "background": "História",
+        "demeanor": "Comportamento",
+        "hometown": "Terra&nbsp;natal",
+        "playbook": "PLaybook"
+      },
+      "npc": {
+        "drive": "Motivação",
+        "technique": "Tecnica",
+        "levels": {
+          "minor": "NPC menor",
+          "major": "NPC maior",
+          "master": "NPC Mestre",
+          "legendary": "NPC lendário",
+          "group": "Grupo de NPCs",
+          "npc": "NPC"
+        },
+        "fatigue": {
+          "add": "Aumentar Fadiga máxima",
+          "remove": "Diminuir Fadiga"
+        }
+      },
+      "campaign": {
+        "title": "Titulo da Campanha",
+        "main": "Principal",
+        "acts": "Atos",
+        "incitingIncident": "Incidente Incitante",
+        "noActs": "Sem atos para mostrar. Clique abaixo para adicionar!",
+        "relationships": {
+          "title": "Aliados e Inimigos",
+          "allies": "Aliados",
+          "enemies": "Inimigos"
+        },
+        "focus": {
+          "defeat": "Derrotar [um Vilão]",
+          "protect": "Proteger [um lugar, uma ideia, uma cultura, uma pessoa]",
+          "change": "Mudar [uma cultura, uma sociedade, um lugar, uma pessoa]",
+          "deliver": "Entregar [uma pessoa, uma coisa] a [um lugar, uma cultura, outra pessoa]",
+          "rescue": "Resgatar [uma pessoa, uma coisa]",
+          "learn": "Aprender sobre [uma ideia, uma cultura, uma técnica antiga, história]",
+          "custom": "Customizar Foco do Grupo"
+        },
+        "groupFocus": "Foco do Grupo",
+        "focusDesc": "Descrição do Foco do Grupo",
+        "customFocusPlaceholder": "Para...",
+        "scope": "Escopo",
+        "eras": {
+          "custom": "Custom",
+          "kyoshi": "Kyoshi",
+          "roku": "Roku",
+          "100years": "A Guerra dos 100 anos",
+          "aang": "Aang",
+          "korra": "Korra",
+          "era": "Era",
+          "eraDisplayName": "{era} {name}"
+        }
+      }
+    },
+    "stats": {
+      "creativity": "Criatividade",
+      "focus": "Foco",
+      "harmony": "Harmonia",
+      "passion": "Paixão"
+    },
+    "items": {
+      "new": {
+        "name": "Nome {type}",
+        "description": "<p>Descrição vai aqui.</p>"
+      },
+      "not-allowed": "Esse tipo de Item não pode ser vinculado a esse Ator",
+      "playbook-applied": "Playbook '{name}' foi aplicado",
+      "types": {
+        "condition": "Condição",
+        "move": "Movimento",
+        "technique": "Técnica",
+        "feature": "Traço",
+        "moment-of-balance": "Momento de Equilibrio",
+        "growth-question": "Pergunta de Crescimento",
+        "status": "Status"
+      }
+    },
+    "attachments": {
+      "none": "Nenhuma Modificação foi adicionada. Arraste da sidebar de Itens ou Compendium.",
+      "title": "Modificação"
+    },
+    "moves": {
+      "add": "Adicionar Movimento",
+      "edit": "Editar Movimento",
+      "delete": "Deletar Movimento",
+      "new": "Novo Movimento",
+      "roll-with": "Rolar com",
+      "roll": "Rolar?",
+      "with": "Stat",
+      "category": {
+        "label": "Origem",
+        "all": "Todos",
+        "basic": "Basico",
+        "balance": "Equilíbrio",
+        "playbook": "Playbook"
+      },
+      "none": "Nenhum Movimento foi adicionado. Arraste da sidebar de Itens ou Compendium."
+    },
+    "condition": {
+      "add": "Nova Condição",
+      "none": "Nenhuma Condição foi adicionada. Arraste da sidebar de Itens ou Compendium."
+    },
+    "status": {
+      "title": "Condições",
+      "add": "Nova Condição",
+      "positive": "Positiva",
+      "negative": "Negativa",
+      "type": "Tipo",
+      "none": "Nenhuma Condição foi adicionada. Arraste da sidebar de Itens ou Compendium."
+    },
+    "techniques": {
+      "title": "Tecnicas",
+      "approach": "Abordagem",
+      "basic": "Basico",
+      "approaches": {
+        "defend-maneuver": "Defender e Revidar",
+        "advance-attack": "Avançar e Atacar",
+        "evade-observe": "Evadir e Observar"
+      },
+      "proficiency": {
+        "learn": "Marcar Aprendida",
+        "learned": "A",
+        "practice": "Marcar Praticada",
+        "practiced": "P",
+        "master": "Marcar Masterizada",
+        "mastered": "M"
+      },
+      "add": "Nova Tecnica",
+      "none": "Nenhuma Tecnica foi adicionada. Arraste da sidebar de Itens ou Compendium."
+    },
+    "training": {
+      "specialty": "Especialidade",
+      "water": "Dobra de Água",
+      "fire": "Dobra de Fogo",
+      "earth": "Dobra de Terra",
+      "air": "Dobra de Ar",
+      "weapons": "Armas",
+      "technology": "Tecnologia",
+      "none": "Universal",
+      "group": "Grupo"
+    },
+    "feature": {
+      "title": "Feature do Playbook",
+      "none": "Nenhuma Feature do Playbook foi adicionada. Arraste da sidebar de Itens ou Compendium."
+    },
+    "moment-of-balance": {
+      "title": "Momento de Equilibrio",
+      "add": "Adicionar Momento de Equilibrio",
+      "none": "Nenhum Momento de Equilibrio foi adicionado. Arraste da sidebar de Itens ou Compendium."
+    },
+    "growth": {
+      "title": "Crescimento",
+      "question": {
+        "title": "Perguntas de Crescimento",
+        "none": "Nenhuma Pergunta de Crescimento foi adicionada. Arraste da sidebar de Itens ou Compendium."
+      },
+      "advancement": {
+        "title": "Avanços de Crescimento",
+        "playbook-move": "Escolha um novo movimento do Manual",
+        "other-move": "Escolha um novo movimento de outro Manual",
+        "raise-stat": "Aumente uma Capacidade em +1 (Máximo de +2 em cada capacidade)",
+        "shift-center": "Ajuste seu Centro em um passo",
+        "moment": "Desbloqueie um Movimento de Equilibrio"
+      }
+    },
+    "principle": {
+      "title": "Principio",
+      "none": "Nenhum Principio adicionado.",
+      "add": "Adicionar um Principio",
+      "maximum": "Maximo"
+    },
+    "roll": {
+      "with": "Role com <a class=\"fire-dark approach-roll\" data-approach=\"{approach}\" data-stat=\"{stat}\"><i class=\"fas fa-dice small\"></i> {name}</a>",
+      "evade-observe": "Remova 1 de Fadiga &amp; Role com <a class=\"fire-dark approach-roll\" data-approach=\"Esquiver & Observer\" data-stat=\"creativity\"></i> Criatividade</a> or <a class=\"fire-dark approach-roll\" data-approach=\"Esquiver & Observer\" data-stat=\"harmony\"><i class=\"fas fa-dice small\"></i> Harmonia</a>",
+      "stat": "Rolando {stat}",
+      "no-stat": "Rolando",
+      "miss": "Errou",
+      "hit": "Acerto",
+      "full": "Acerto Completo!",
+      "dialog": {
+        "penalty": "Penalidade",
+        "penalty-description": "De Condições e Capacidades",
+        "bonus": "Bonus",
+        "bonus-description": "Bonus Temporario, Continuo e de Ajuda",
+        "submit": "Rolar"
+      },
+      "no-actor": "Você não pode fazer uma Rolagem sem um ator designado.",
+      "approach": {
+        "full": "<p>Escolha um da lista:</p><ul><li>Marque 1 de Fadiga para usar uma Tecnica Aprendida</li><li>Use uma Tecnica Praticada</li><li>Use duas diferentes tecnicas Basicas ou Masterizadas</li></ul>",
+        "hit": "<p>Use uma  Tecnica Básica ou Masterizada</p>",
+        "miss": "<p>Voc~e tropeça, mas pode mover seu Equilibrio para longe do centro para usar uma Tecnica Basica.</p>"
+      }
+    },
+    "dialog": {
+      "cancel": "Cancelar"
+    },
+    "nav": {
+      "main": "Principal",
+      "moves": "Movimentos",
+      "techniques": "Treinamento e Tecnicas",
+      "detail": "Detalhes e Crescimento",
+      "notes": "Anotações"
+    }
+  },
+  "SETTINGS": {
+    "None": "Não há configurações para Avatar Legends RPG (Unofficial)",
+    "tabbedPlayerSheet": {
+      "label": "Fichas com Guias",
+      "hint": "Mostrar a Ficha de Personagem com layout de Guias"
+    },
+    "sheetColour": {
+      "label": "Cor da Ficha",
+      "hint": "O Esquema de Cores utilizado pelas Fichas de Personagens",
+      "default": "Padrão",
+      "quickstart": "Inicio Rápido"
+    },
+    "playerNotes": {
+      "label": "Anotações do Jogador",
+      "hint": "Compartilhar a aba de Anotações da Ficha de Personagem"
+    }
+  }
+}
