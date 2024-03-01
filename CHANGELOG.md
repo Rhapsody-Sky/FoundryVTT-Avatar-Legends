@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.1.3
+
+- Adds translations for German and Brazilian Portuguese.
+
 ## v1.1.2
 
 - Adds enricher for NPCs
