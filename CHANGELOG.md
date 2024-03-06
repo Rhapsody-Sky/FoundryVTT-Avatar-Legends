@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.1.5
+
+- Declare system requirement for compendium packs
+
 ## v1.1.3
 
 - Adds translations for German and Brazilian Portuguese.
