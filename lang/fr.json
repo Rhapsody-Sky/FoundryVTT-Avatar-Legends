@@ -17,10 +17,10 @@
       "fatigue": "Fatigue",
       "clear-fatigue": "Effacer la fatigue",
       "balance": "Équilibre",
-      "conditions": "Conditions",
+      "conditions": "États",
       "moves": "Manoeuvre",
       "techniques": "Techniques de combats",
-      "statuses": "États",
+      "statuses": "Statuts",
       "set-value": "Fixer à {value}",
       "player": {
         "about": "Votre personnage",
@@ -56,7 +56,7 @@
         "noActs": "Aucun acte à afficher. Cliquez ici pour en ajouter !",
         "relationships": {
           "title": "Alliés & Ennemis",
-          "allies": "Allies",
+          "allies": "Alliés",
           "enemies": "Ennemis"
         },
         "focus": {
@@ -85,10 +85,10 @@
       }
     },
     "stats": {
-      "creativity": "Creativité",
-      "focus": "Focus",
+      "creativity": "Créativité",
+      "focus": "Concentration",
       "harmony": "Harmonie",
-      "passion": "Passion"
+      "passion": "Enthousiasme"
     },
     "items": {
       "new": {
@@ -98,13 +98,13 @@
       "not-allowed": "Ce type d'objet ne peut être ajouter à cet acteur",
       "playbook-applied": "Le livret de personnage '{name}' a été appliqué",
       "types": {
-        "condition": "Condition",
+        "condition": "États",
         "move": "Manoeuvre",
         "technique": "Technique",
         "feature": "Trait",
         "moment-of-balance": "Moment d'Équilibre",
         "growth-question": "Question de progression",
-        "status": "État"
+        "status": "Statut"
       }
     },
     "attachments": {
@@ -129,25 +129,25 @@
       "none": "Aucune manoeuvre. Glissez-en depuis la barre d'objet ou les conpendiums."
     },
     "condition": {
-      "add": "Nouvelle Condition",
-      "none": "Aucune condition. Glissez-en depuis la barre d'objet ou les conpendiums."
+      "add": "Nouvel état",
+      "none": "Aucun état. Glissez-en depuis la barre d'objet ou les conpendiums."
     },
     "status": {
-      "title": "États",
-      "add": "Nouvel état",
+      "title": "Statuts",
+      "add": "Nouveau statut",
       "positive": "Positif",
       "negative": "Négatif",
       "type": "Type",
-      "none": "Aucun état. Glissez-en depuis la barre d'objet ou les conpendiums."
+      "none": "Aucun statut. Glissez-en depuis la barre d'objet ou les conpendiums."
     },
     "techniques": {
       "title": "Techniques",
       "approach": "Approche",
       "basic": "De base",
       "approaches": {
-        "defend-maneuver": "Défendre & Manoeuvrer",
+        "defend-maneuver": "Défendre & Prendre à Revers",
         "advance-attack": "Avancer & Attaquer",
-        "evade-observe": "Esquiver & Observer"
+        "evade-observe": "Esquiver & Analyser"
       },
       "proficiency": {
         "learn": "Fixer à appris",
@@ -166,7 +166,7 @@
       "fire": "Maîtrise du feu",
       "earth": "Maîtrise de la terre",
       "air": "Maîtrise de l'air",
-      "weapons": "Armement",
+      "weapons": "Armes",
       "technology": "Technologie",
       "none": "Universel",
       "group": "Groupe"
@@ -203,7 +203,7 @@
     },
     "roll": {
       "with": "Lancez avec <a class=\"fire-dark approach-roll\" data-approach=\"{approach}\" data-stat=\"{stat}\"><i class=\"fas fa-dice small\"></i> {name}</a>",
-      "evade-observe": "Effacer 1-fatigue &amp; Lancez avec <a class=\"fire-dark approach-roll\" data-approach=\"Esquiver & Observer\" data-stat=\"creativity\"></i> Creativity</a> or <a class=\"fire-dark approach-roll\" data-approach=\"Esquiver & Observer\" data-stat=\"harmony\"><i class=\"fas fa-dice small\"></i> Harmony</a>",
+      "evade-observe": "Effacer 1-fatigue &amp; Lancez avec <a class=\"fire-dark approach-roll\" data-approach=\"Esquiver & Analyser\" data-stat=\"creativity\"></i> Creativity</a> or <a class=\"fire-dark approach-roll\" data-approach=\"Esquiver & Analyser\" data-stat=\"harmony\"><i class=\"fas fa-dice small\"></i> Harmony</a>",
       "stat": "Lancez {stat}",
       "no-stat": "Lancez",
       "miss": "Échec",
@@ -211,7 +211,7 @@
       "full": "Réussite complète!",
       "dialog": {
         "penalty": "Penalité",
-        "penalty-description": "Venant des Conditions et États",
+        "penalty-description": "Venant des États et Statuts",
         "bonus": "Bonus",
         "bonus-description": "Somme des bonus temporaire, continue, et de l'aide",
         "submit": "Lancez"
