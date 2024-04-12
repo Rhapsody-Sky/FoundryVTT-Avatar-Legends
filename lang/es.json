@@ -87,7 +87,7 @@
     "stats": {
       "creativity": "Creatividad",
       "focus": "Concentración",
-      "harmony": "Harmonia",
+      "harmony": "Armonia",
       "passion": "Pasión"
     },
     "items": {
@@ -96,7 +96,7 @@
         "description": "<p>Descripción acá.</p>"
       },
       "not-allowed": "Este tipo de elemento no se puede agregar a este actor.",
-      "playbook-applied": "Playbook '{name}' has been applied",
+      "playbook-applied": "El Libreto '{name}' ha sido aplicado",
       "types": {
         "condition": "Condición",
         "move": "Movimiento",
@@ -108,8 +108,8 @@
       }
     },
     "attachments": {
-      "none": "No Attachments have been added. Drag some from the Item sidebar or Compendium.",
-      "title": "Attachments"
+      "none": "No se han agregado Adjuntos. Arrastralos de la barra lateral.",
+      "title": "Adjuntos"
     },
     "moves": {
       "add": "Nuevo Movimiento",
@@ -126,11 +126,11 @@
         "balance": "Balance",
         "playbook": "Libreto"
       },
-      "none": "No Moves have been added. Drag some from the Item sidebar or Compendium."
+      "none": "No se han agregado Movimientos. Arrastralos desde la barra lateral."
     },
     "condition": {
       "add": "Nueva Condición",
-      "none": "No Conditions have been added. Drag some from the Item sidebar or a Compendium."
+      "none": "No se han agregado Condiciones. Arrastralas desde la barra lateral"
     },
     "status": {
       "title": "Estados",
@@ -138,7 +138,7 @@
       "positive": "Positivo",
       "negative": "Negativo",
       "type": "Tipo",
-      "none": "No Statuses have been added. Drag some from the Item sidebar or a Compendium."
+      "none": "No se han agregado Estados. Arrastralos desde la barra lateral."
     },
     "techniques": {
       "title": "Técnicas de Combate",
@@ -158,7 +158,7 @@
         "mastered": "D"
       },
       "add": "Nueva Técnica",
-      "none": "No Techniques have been added. Drag some from the Item sidebar or a Compendium."
+      "none": "No se han agregado Técnicas. Arrastralas desde la barra lateral."
     },
     "training": {
       "specialty": "Especialidad",
@@ -173,18 +173,18 @@
     },
     "feature": {
       "title": "Ventaja",
-      "none": "No Playbook Feature has been added. Drag one from the Item sidebar or a Compendium."
+      "none": "No se han agregado Ventajas. Arrastralas desde la barra lateral"
     },
     "moment-of-balance": {
       "title": "Momento de Balance",
       "add": "Agregar Momento de Balance",
-      "none": "No Moment of Balance has been added. Drag one from the Item sidebar or a Compendium."
+      "none": "No se ha agregado Momento de Balance. Arrastralo desde la barra lateral."
     },
     "growth": {
       "title": "Mejora",
       "question": {
         "title": "Preguntas de Mejora",
-        "none": "No Growth Questions have been added. Drag some from the Item sidebar or Compendium."
+        "none": "No se han agregado Preguntas de Mejora. Arrastralas desde la barra lateral"
       },
       "advancement": {
         "title": "Avances de Mejora",
@@ -197,7 +197,7 @@
     },
     "principle": {
       "title": "Principio",
-      "none": "No NPC Principle has been added. Drag one from the Item sidebar or a Compendium.",
+      "none": "No se han agregado Principios. Arrastralos desde la barra lateral",
       "add": "Agregar Principio",
       "maximum": "Maximum"
     },
@@ -218,9 +218,9 @@
       },
       "no-actor": "No puedes usar Movimientos sin un Actor asignado.",
       "approach": {
-        "full": "<p>Choose one from this list:</p><ul><li>Mark 1-fatigue to use a learned technique</li><li>Use one practiced technique</li><li>Use two different basic or mastered techniques</li></ul>",
-        "hit": "<p>Use one basic or mastered technique</p>",
-        "miss": "<p>You stumble, but you can shift your balance away from center to use one basic technique.</p>"
+        "full": "<p>Elige de esta lista:</p><ul><li>Marca 1-Fatiga para usar una técnica aprendida.</li><li>Usa una técnica practicada.</li><li>Usa dos técnicas distintas básicas o dominadas</li></ul>",
+        "hit": "<p>Usa una tecnica básica o dominada.</p>",
+        "miss": "<p>Te tropiezas, pero puedes cambiar el Balance lejos del centro para usar una tenica basica.</p>"
       }
     },
     "dialog": {
@@ -241,14 +241,14 @@
       "hint": "Muestra la hoja de personaje con diseño minimizado"
     },
     "sheetColour": {
-      "label": "Sheet Color",
-      "hint": "The color scheme used by Player character sheets",
-      "default": "Default",
-      "quickstart": "Quickstart"
+      "label": "Color de Hoja",
+      "hint": "El color usado para las hojas de personaje",
+      "default": "Defecto",
+      "quickstart": "Inicio Rapido"
     },
     "playerNotes": {
-      "label": "Player Notes",
-      "hint": "Show the Notes section on the Player character sheet"
+      "label": "Notas de Jugador",
+      "hint": "Muestra las Notas en la hoja de personaje"
     }
   }
 }
