@@ -53,6 +53,13 @@ p:empty {
   height: 0;
   min-height: auto;
 }
+html {
+  font-size: 14px;
+}
+body {
+  font-family: 'Noto Sans';
+  font-size: 0.8rem;
+}
 .window-header {
   font-family: 'Village';
   font-variant: small-caps;
@@ -643,6 +650,9 @@ p:empty {
 .legends.sheet .description .editor .tox.tox-tinymce {
   min-height: 200px;
 }
+.legends.sheet .description .editor.prosemirror {
+  min-height: calc(100px * 1.5);
+}
 .legends.sheet .description:hover .editor-edit {
   color: black;
 }
@@ -1130,7 +1140,8 @@ p:empty {
   margin: 0 0 1rem;
 }
 .dialog .window-content .dialog-content .form-group label {
-  font-size: 1.2rem;
+  font-family: 'Village';
+  font-variant: small-caps;
 }
 .dialog .window-content .dialog-content .form-group input {
   text-align: center;
@@ -1149,6 +1160,8 @@ p:empty {
   color: #4d4d4f;
 }
 .dialog .window-content .dialog-buttons button {
+  font-family: 'Noto Sans';
+  font-size: 0.8rem;
   border: 1px solid;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3);
   background: #b4bac8;

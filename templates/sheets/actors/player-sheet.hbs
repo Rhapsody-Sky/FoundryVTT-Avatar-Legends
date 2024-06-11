@@ -247,7 +247,7 @@
         <section class="cell pad-sides">
           <h1 class="title balance menu center underline">{{localize "legends.nav.notes"}}</h1>
           <div class="description notes">
-            {{editor (enrichHTML data.system.notes) target="system.notes" button=true owner=owner editable=editable}}
+            {{editor system.enrichedNotes target="system.notes" button=true owner=owner editable=editable engine="prosemirror"}}
           </div>
         </section>
       </div>

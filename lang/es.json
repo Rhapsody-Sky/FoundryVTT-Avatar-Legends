@@ -250,5 +250,22 @@
       "label": "Notas de Jugador",
       "hint": "Muestra las Notas en la hoja de personaje"
     }
+  },
+  "TYPES": {
+    "Actor": {
+      "campaign": "Campaña",
+      "npc": "PNJ",
+      "player": "Jugador"
+    },
+    "Item": {
+      "condition": "Condición",
+      "move": "Movimiento",
+      "technique": "Técnica de Combate",
+      "feature": "Ventaja",
+      "moment-of-balance": "Momento de Balance",
+      "growth-question": "Pregunta de Mejora",
+      "status": "Estados",
+      "playbook": "Libreto"
+    }
   }
 }

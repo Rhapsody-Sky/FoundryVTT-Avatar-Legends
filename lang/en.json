@@ -250,5 +250,22 @@
       "label": "Player Notes",
       "hint": "Show the Notes section on the Player character sheet"
     }
+  },
+  "TYPES": {
+    "Actor": {
+      "campaign": "Campaign",
+      "npc": "NPC",
+      "player": "Player"
+    },
+    "Item": {
+      "condition": "Condition",
+      "move": "Move",
+      "technique": "Technique",
+      "feature": "Feature",
+      "moment-of-balance": "Moment of Balance",
+      "growth-question": "Growth Question",
+      "status": "Status",
+      "playbook": "Playbook"
+    }
   }
 }

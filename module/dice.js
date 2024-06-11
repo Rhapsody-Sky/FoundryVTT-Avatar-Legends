@@ -193,6 +193,7 @@ const doRoll = async (actor, rollOptions, options = {}) => {
     user: game.user._id,
     speaker: ChatMessage.getSpeaker(),
     roll: rollResult,
+    rolls: [roll],
     content: await renderTemplate(messageTemplate, templateContext),
     sound: CONFIG.sounds.dice,
     type: CONST.CHAT_MESSAGE_TYPES.ROLL,
@@ -213,4 +214,167 @@ function _processRollOptions(html) {
     penalty: parseInt(form.penalty.value),
     bonus: parseInt(form.bonus.value),
   }
+}
+
+export const registerDiceSoNice = (dice3d) => {
+  const diceDefaults = {
+    category: 'Avatar Legends',
+    foreground: '#111111',
+    outline: '#F3EFDC',
+    visibility: 'visible',
+    font: 'Village',
+  }
+
+  // Colorsets
+  dice3d.addColorset(
+    {
+      ...diceDefaults,
+      name: 'airbending',
+      description: game.i18n.localize('legends.training.air'),
+      background: '#D4B450',
+      edge: '#D4B450',
+    },
+    'default',
+  )
+
+  dice3d.addColorset(
+    {
+      ...diceDefaults,
+      name: 'earthbending',
+      description: game.i18n.localize('legends.training.earth'),
+      background: '#3C6733',
+      edge: '#3C6733',
+    },
+    'default',
+  )
+
+  dice3d.addColorset(
+    {
+      ...diceDefaults,
+      name: 'firebending',
+      description: game.i18n.localize('legends.training.fire'),
+      background: '#B62127',
+      edge: '#B62127',
+    },
+    'default',
+  )
+
+  dice3d.addColorset(
+    {
+      ...diceDefaults,
+      name: 'technology',
+      description: game.i18n.localize('legends.training.technology'),
+      background: '#6A2E7E',
+      edge: '#6A2E7E',
+    },
+    'default',
+  )
+
+  dice3d.addColorset(
+    {
+      ...diceDefaults,
+      name: 'waterbending',
+      description: game.i18n.localize('legends.training.water'),
+      background: '#4D63A9',
+      edge: '#4D63A9',
+    },
+    'default',
+  )
+
+  dice3d.addColorset(
+    {
+      ...diceDefaults,
+      name: 'weapons',
+      description: game.i18n.localize('legends.training.weapons'),
+      background: '#4D4D4F',
+      edge: '#4D4D4F',
+    },
+    'default',
+  )
+
+  // Systems and presets
+  dice3d.addSystem(
+    { id: 'legends-air', name: game.i18n.localize('legends.training.air') },
+    'default',
+  )
+  dice3d.addDicePreset({
+    type: 'd6',
+    labels: ['1', '2', '3', '4', '5', 'systems/legends/images/dice/air.webp'],
+    bumpMaps: [, , , , , 'systems/legends/images/dice/air-b.webp'],
+    system: 'legends-air',
+    colorset: 'airbending',
+  })
+
+  dice3d.addSystem(
+    { id: 'legends-earth', name: game.i18n.localize('legends.training.earth') },
+    'default',
+  )
+  dice3d.addDicePreset({
+    type: 'd6',
+    labels: ['1', '2', '3', '4', '5', 'systems/legends/images/dice/earth.webp'],
+    bumpMaps: [, , , , , 'systems/legends/images/dice/earth-b.webp'],
+    system: 'legends-earth',
+    colorset: 'earthbending',
+  })
+
+  dice3d.addSystem(
+    { id: 'legends-fire', name: game.i18n.localize('legends.training.fire') },
+    'default',
+  )
+  dice3d.addDicePreset({
+    type: 'd6',
+    labels: ['1', '2', '3', '4', '5', 'systems/legends/images/dice/fire.webp'],
+    bumpMaps: [, , , , , 'systems/legends/images/dice/fire-b.webp'],
+    system: 'legends-fire',
+    colorset: 'firebending',
+  })
+
+  dice3d.addSystem(
+    {
+      id: 'legends-tech',
+      name: game.i18n.localize('legends.training.technology'),
+    },
+    'default',
+  )
+  dice3d.addDicePreset({
+    type: 'd6',
+    labels: ['1', '2', '3', '4', '5', 'systems/legends/images/dice/tech.webp'],
+    bumpMaps: [, , , , , 'systems/legends/images/dice/tech-b.webp'],
+    system: 'legends-tech',
+    colorset: 'technology',
+  })
+
+  dice3d.addSystem(
+    { id: 'legends-water', name: game.i18n.localize('legends.training.water') },
+    'default',
+  )
+  dice3d.addDicePreset({
+    type: 'd6',
+    labels: ['1', '2', '3', '4', '5', 'systems/legends/images/dice/water.webp'],
+    bumpMaps: [, , , , , 'systems/legends/images/dice/water-b.webp'],
+    system: 'legends-water',
+    colorset: 'waterbending',
+  })
+
+  dice3d.addSystem(
+    {
+      id: 'legends-weapons',
+      name: game.i18n.localize('legends.training.weapons'),
+    },
+    'default',
+  )
+  dice3d.addDicePreset({
+    type: 'd6',
+    labels: [
+      '1',
+      '2',
+      '3',
+      '4',
+      '5',
+      'systems/legends/images/dice/weapon.webp',
+    ],
+    bumpMaps: [, , , , , 'systems/legends/images/dice/weapon-b.webp'],
+    system: 'legends-weapons',
+    colorset: 'weapons',
+  })
 }

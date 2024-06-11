@@ -250,5 +250,22 @@
       "label": "Spielernotizen",
       "hint": "Zeige Notizen auf den Spieler Charakterbögen an."
     }
+  },
+  "TYPES": {
+    "Actor": {
+      "campaign": "Kampagnenbogen",
+      "npc": "NSC",
+      "player": "Spieler"
+    },
+    "Item": {
+      "condition": "Zustand",
+      "move": "Zug",
+      "technique": "Kampftechnik",
+      "feature": "Feature",
+      "moment-of-balance": "Moment des Gleichgewichts",
+      "growth-question": "Wachstum",
+      "status": "Status",
+      "playbook": "Playbook"
+    }
   }
 }
