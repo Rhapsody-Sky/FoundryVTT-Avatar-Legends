@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.2.0
+
+- Add initial FoundryVTT v12 support
+
 ## v1.1.5
 
 - Declare system requirement for compendium packs
