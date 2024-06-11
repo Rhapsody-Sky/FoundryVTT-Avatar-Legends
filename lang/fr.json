@@ -250,5 +250,22 @@
       "label": "Notes du joueur",
       "hint": "Voir la section de notes dans la feuille de personnages"
     }
+  },
+  "TYPES": {
+    "Actor": {
+      "campaign": "Campagne",
+      "npc": "PNJ",
+      "player": "Joueur"
+    },
+    "Item": {
+      "condition": "États",
+      "move": "Manoeuvre",
+      "technique": "Technique",
+      "feature": "Trait",
+      "moment-of-balance": "Moment d'Équilibre",
+      "growth-question": "Question de progression",
+      "status": "Statut",
+      "playbook": "Livret de personnage"
+    }
   }
 }

@@ -8,7 +8,7 @@ import * as Dice from '../dice.js'
 
 export default class LegendsActorSheet extends ActorSheet {
   static get defaultOptions() {
-    return mergeObject(super.defaultOptions, {
+    return foundry.utils.mergeObject(super.defaultOptions, {
       width: 900,
       height: 850,
       tabs: [
@@ -142,6 +142,7 @@ export default class LegendsActorSheet extends ActorSheet {
     context.system.enrichedDescription = await enrich(
       this.actor.system.description,
     )
+    context.system.enrichedNotes = await enrich(this.actor.system.notes)
     return context
   }
 

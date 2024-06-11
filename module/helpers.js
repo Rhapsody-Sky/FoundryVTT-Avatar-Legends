@@ -9,9 +9,7 @@ export const filter_items = async (
   type,
   enrichDescription = true,
 ) => {
-  let items = collection.filter((element) => {
-    return element.type == type
-  })
+  let items = collection.filter((element) => element.type == type)
 
   if (enrichDescription) {
     for (const item of items)

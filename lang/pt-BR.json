@@ -250,5 +250,22 @@
       "label": "Anotações do Jogador",
       "hint": "Compartilhar a aba de Anotações da Ficha de Personagem"
     }
+  },
+  "TYPES": {
+    "Actor": {
+      "campaign": "Campanha",
+      "npc": "NPC",
+      "player": "Jogador"
+    },
+    "Item": {
+      "condition": "Condição",
+      "move": "Movimento",
+      "technique": "Técnica",
+      "feature": "Traço",
+      "moment-of-balance": "Momento de Equilibrio",
+      "growth-question": "Pergunta de Crescimento",
+      "status": "Status",
+      "playbook": "Playbook"
+    }
   }
 }

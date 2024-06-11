@@ -44,3 +44,61 @@ export const setupEnrichers = () => {
     },
   ])
 }
+
+export const registerHandlebarsHelpers = () => {
+  Handlebars.registerHelper('times', function (n, content) {
+    let result = ''
+    for (let i = 0; i < n; i++) {
+      content.data.index = i + 1
+      result += content.fn(i)
+    }
+    return result
+  })
+
+  Handlebars.registerHelper('modulus', (mod, index, content) =>
+    index % mod == 0 ? content : null,
+  )
+  Handlebars.registerHelper(
+    'moveCategoryVisible',
+    (category, movesVisible) => category === '' || movesVisible[category],
+  )
+  Handlebars.registerHelper('tr_path', (path, key) => path + '.' + key)
+  Handlebars.registerHelper('getByKey', (object, key) => object[key])
+  Handlebars.registerHelper('lengthByKey', (object, key) => object[key].length)
+  Handlebars.registerHelper('eraDisplayName', (name) =>
+    game.i18n.format('legends.actor-sheet.campaign.eras.eraDisplayName', {
+      name: game.i18n.localize(name),
+      era: game.i18n.localize('legends.actor-sheet.campaign.eras.era'),
+    }),
+  )
+
+  Handlebars.registerHelper('rollApproach', (approach) => {
+    let path = 'legends.roll.with'
+    let params = {}
+    switch (approach) {
+      case 'defend-maneuver':
+        params = {
+          approach: game.i18n.localize(
+            'legends.techniques.approaches.defend-maneuver',
+          ),
+          stat: 'focus',
+          name: game.i18n.localize('legends.stats.focus'),
+        }
+        break
+      case 'advance-attack':
+        params = {
+          approach: game.i18n.localize(
+            'legends.techniques.approaches.advance-attack',
+          ),
+          stat: 'passion',
+          name: game.i18n.localize('legends.stats.passion'),
+        }
+        break
+      default:
+        path = 'legends.roll.evade-observe'
+        params = {}
+        break
+    }
+    return game.i18n.format(path, params)
+  })
+}

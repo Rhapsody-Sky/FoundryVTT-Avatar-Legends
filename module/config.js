@@ -69,3 +69,62 @@ legends.moveCategories = {
   balance: 'legends.moves.category.balance',
   playbook: 'legends.moves.category.playbook',
 }
+
+legends.typeIcons = {
+  actor: {
+    player: 'fas fa-person-simple',
+    npc: 'fas fa-people-group',
+    campaign: 'fas fa-earth-asia',
+  },
+  item: {
+    move: 'fas fa-arrows-maximize',
+    technique: 'fas fa-person-running fa-rotate-180 fa-flip-vertical',
+    condition: 'fas fa-cloud-xmark',
+    feature: 'fas fa-heart',
+    'moment-of-balance': 'fas fa-yin-yang',
+    'npc-principle': 'fas fa-compass',
+    status: 'fas fa-cloud-xmark',
+    'growth-question': 'fas fa-question',
+    playbook: 'fas fa-scroll-old',
+  },
+}
+
+export const registerSystemSettings = () => {
+  game.settings.register('legends', 'systemMigrationVersion', {
+    config: false,
+    scope: 'world',
+    type: String,
+    default: '',
+  })
+
+  game.settings.register('legends', 'tabbedPlayerSheet', {
+    config: true,
+    scope: 'client',
+    name: 'SETTINGS.tabbedPlayerSheet.label',
+    hint: 'SETTINGS.tabbedPlayerSheet.hint',
+    type: Boolean,
+    default: true,
+  })
+
+  game.settings.register('legends', 'sheetColour', {
+    config: true,
+    scope: 'client',
+    name: 'SETTINGS.sheetColour.label',
+    hint: 'SETTINGS.sheetColour.hint',
+    type: String,
+    choices: {
+      default: 'SETTINGS.sheetColour.default',
+      quickstart: 'SETTINGS.sheetColour.quickstart',
+    },
+    default: 'default',
+  })
+
+  game.settings.register('legends', 'playerNotes', {
+    config: true,
+    scope: 'client',
+    name: 'SETTINGS.playerNotes.label',
+    hint: 'SETTINGS.playerNotes.hint',
+    type: Boolean,
+    default: false,
+  })
+}
