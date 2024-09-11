@@ -71,7 +71,7 @@ export default class LegendsNpcActorSheet extends LegendsActorSheet {
     let newFatigueRemaining = Math.min(newFatigueMax - currentFatigue, 0)
 
     this.actor.update({
-      data: {
+      system: {
         fatigue: {
           value: currentFatigue,
           max: newFatigueMax,

@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.2.1
+
+- Bugfix: NPC Fatigue track could not be decreased (#40)
+
 ## v1.2.0
 
 - Add initial FoundryVTT v12 support
