@@ -5,7 +5,8 @@
  */
 export const rollMove = async (uuid) => {
   const move = await fromUuid(uuid)
-  const actor = move.parent || game.user.character
+  const actor =
+    move.parent || game.user.character || canvas.tokens.controlled[0]?.actor
 
   const title = game.i18n.format('legends.roll.stat', {
     stat: move.name,

@@ -16,16 +16,19 @@ function onMoveRoll(event) {
   event.preventDefault()
 
   const target = event.currentTarget.dataset
-  const character = game.user.character
+  const character = game.user.character || canvas.tokens.controlled[0]?.actor
   if (character === undefined || character === null) {
-    let message = game.i18n.localize('legends.roll.no-actor')
-    ui.notifications.error(message)
-    return
+    return ui.notifications.error(game.i18n.localize('legends.roll.no-actor'))
   }
 
   const move =
     game.items.getName(target.moveName) ||
-    game.packs.get('legends.common-items').index.getName(target.moveName)
+    game.packs.get('legends.common-items').index.getName(target.moveName) ||
+    game.packs.get('legends.playbooks').index.getName(target.moveName) ||
+    game.packs.get('legends.wstag-playbooks').index.getName(target.moveName)
+
+  if (!move)
+    return ui.notifications.error(game.i18n.localize('legends.roll.no-move'))
 
   Dice.rollMove(move.uuid)
 }
