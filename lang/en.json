@@ -217,6 +217,7 @@
         "submit": "Roll"
       },
       "no-actor": "You cannot roll Moves without an assigned Actor.",
+      "no-move": "The requested Move could not be rolled.",
       "approach": {
         "full": "<p>Choose one from this list:</p><ul><li>Mark 1-fatigue to use a learned technique</li><li>Use one practiced technique</li><li>Use two different basic or mastered techniques</li></ul>",
         "hit": "<p>Use one basic or mastered technique</p>",
