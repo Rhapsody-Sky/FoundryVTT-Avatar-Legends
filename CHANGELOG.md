@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.2.2
+
+- Bugfix: Moves can not be rolled from Chat cards (#41)
+
 ## v1.2.1
 
 - Bugfix: NPC Fatigue track could not be decreased (#40)
