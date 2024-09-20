@@ -10,7 +10,7 @@
       "discord": "demondownload"
     }
   ],
-  "version": "1.2.1",
+  "version": "1.2.2",
   "compatibility": {
     "minimum": "11",
     "maximum": "12",
