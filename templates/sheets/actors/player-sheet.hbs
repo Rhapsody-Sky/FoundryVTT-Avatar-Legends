@@ -1,12 +1,12 @@
 <form class="legends sheet player-sheet {{cssClass}}" autocomplete="off">
-  <header class="sheet-header">
-    <section class="row">
-      <section class="playbook cell">
+  <header class="sheet-header flexrow">
+    <section class="flexrow">
+      <section class="playbook flex1">
         <h1 class="block playbook"><input name="system.playbook" type="text" value="{{data.system.playbook}}"
             placeholder="{{localize "legends.actor-sheet.player.playbook"}}" /></h1>
       </section>
-      <section class="name cell cell-2 row">
-        <label class="title name-label">{{localize "legends.actor-sheet.name"}}:</label>
+      <section class="name flex3 flexrow">
+        <label class="title name-label flex0">{{localize "legends.actor-sheet.name"}}:</label>
         <input name="name" type="text" value="{{actor.name}}" placeholder="{{localize "legends.actor-sheet.name"}}" />
       </section>
     </section>

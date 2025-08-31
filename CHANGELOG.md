@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.3.0
+
+- Basic v13 compatibility
+
 ## v1.2.2
 
 - Bugfix: Moves can not be rolled from Chat cards (#41)

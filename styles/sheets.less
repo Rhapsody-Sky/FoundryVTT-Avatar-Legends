@@ -88,6 +88,15 @@
     }
   }
 
+  &.npc-sheet,
+  &.campaign-sheet {
+    header.sheet-header {
+      .charname input {
+        margin: 0.5rem;
+      }
+    }
+  }
+
   table {
     border-top: 1px solid @accent-color;
     border-bottom: 1px solid @accent-color;
@@ -104,8 +113,6 @@
   }
 
   .sheet-header {
-    flex: none;
-
     select {
       width: 96%;
       height: 48px;
@@ -117,6 +124,7 @@
       input {
         border: none;
         background: transparent;
+        margin: 10px 0;
       }
     }
 

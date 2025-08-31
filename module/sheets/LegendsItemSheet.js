@@ -29,6 +29,7 @@ export default class LegendsItemSheet extends ItemSheet {
   }
 
   activateListeners(html) {
+    html = $(html)
     html.find('.item-roll').click(this._onItemRoll.bind(this))
 
     super.activateListeners(html)

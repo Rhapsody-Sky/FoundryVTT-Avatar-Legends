@@ -147,6 +147,7 @@ export default class LegendsActorSheet extends ActorSheet {
   }
 
   activateListeners(html) {
+    html = $(html)
     if (this.isEditable) {
       //Generic value tracks
       html.find('.set-value').click(this._onSetValue.bind(this))

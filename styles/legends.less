@@ -33,6 +33,7 @@ body {
   figcaption {
     .title-font();
     text-shadow: 0 0 4px @text-color;
+    color: white;
   }
 }
 
@@ -83,6 +84,30 @@ body {
   }
 
   .main-font();
+
+  .flexrow {
+    align-items: start;
+  }
+
+  .flex0 {
+    flex: 0 !important;
+  }
+
+  .flex1 {
+    flex: 1 !important;
+  }
+
+  .flex2 {
+    flex: 2 !important;
+  }
+
+  .flex3 {
+    flex: 3 !important;
+  }
+
+  .flex4 {
+    flex: 4 !important;
+  }
 
   // Flex layout classes
   .row {
@@ -386,4 +411,3 @@ body {
 @import './npc-sheet.less';
 @import './campaign-sheet.less';
 @import './messages.less';
-@import './dialog.less';

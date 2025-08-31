@@ -5,6 +5,7 @@ import * as Dice from './dice.js'
  * @param {Text} html
  */
 export function addChatListeners(html) {
+  html = $(html)
   html.on('click', '.move-roll', onMoveRoll)
 }
 
