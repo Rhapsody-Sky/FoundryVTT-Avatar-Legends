@@ -7,7 +7,11 @@ import LegendsCampaignActorSheet from './module/sheets/LegendsCampaignActorSheet
 import LegendsItemSheet from './module/sheets/LegendsItemSheet.js'
 import LegendsNpcPrincipleSheet from './module/sheets/LegendsNpcPrincipleSheet.js'
 import LegendsPlaybookSheet from './module/sheets/LegendsPlaybookSheet.js'
-import { preloadHandlebarsTemplates, setupEnrichers, registerHandlebarsHelpers } from './module/preload.js'
+import {
+  preloadHandlebarsTemplates,
+  setupEnrichers,
+  registerHandlebarsHelpers,
+} from './module/preload.js'
 import * as Chat from './module/chat.js'
 import * as Migrations from './module/migrations.js'
 import LegendsJournalSheet from './module/sheets/LegendsJournalSheet.js'
@@ -77,7 +81,8 @@ Hooks.once('ready', () => {
   const NEEDS_MIGRATION_VERSION = '1.0.10'
 
   const needsMigration =
-    !currentVersion || foundry.utils.isNewerVersion(NEEDS_MIGRATION_VERSION, currentVersion)
+    !currentVersion ||
+    foundry.utils.isNewerVersion(NEEDS_MIGRATION_VERSION, currentVersion)
 
   if (needsMigration) {
     Migrations.migrateWorld()
@@ -96,6 +101,7 @@ Hooks.on('renderSettings', (_app, html) => {
   let helpButton = $(
     `<button id="legends-help-btn" data-action="legends-help"><i class="fas fa-question-circle"></i> ${label}</button>`,
   )
+  html = $(html)
   html.find('button[data-action="support"]').before(helpButton)
 
   helpButton.on('click', (e) => {

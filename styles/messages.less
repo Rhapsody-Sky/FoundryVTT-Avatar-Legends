@@ -1,6 +1,6 @@
 // out: false
 
-@import "./config.less";
+@import './config.less';
 
 .chat-message {
   .main-font();
@@ -53,7 +53,6 @@
 .message-content {
   .legends {
     .kanji {
-
       &::before,
       &::after {
         .kanji-font();
@@ -84,8 +83,13 @@
       }
     }
 
+    h2,
+    h3,
+    h4 {
+      margin: 0 0 0.5rem !important;
+    }
+
     h3 {
-      margin: 0;
       .title-font();
     }
 
@@ -115,6 +119,10 @@
           .title-font();
         }
       }
+    }
+
+    .dice-total {
+      padding: 0.25rem;
     }
   }
 }

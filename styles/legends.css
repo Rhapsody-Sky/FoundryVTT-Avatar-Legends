@@ -76,6 +76,7 @@ body {
   font-family: 'Village';
   font-variant: small-caps;
   text-shadow: 0 0 4px #111;
+  color: white;
 }
 .legends {
   font-family: 'Noto Sans';
@@ -113,6 +114,24 @@ body {
 }
 .legends .fire-dark {
   color: #65110c;
+}
+.legends .flexrow {
+  align-items: start;
+}
+.legends .flex0 {
+  flex: 0 !important;
+}
+.legends .flex1 {
+  flex: 1 !important;
+}
+.legends .flex2 {
+  flex: 2 !important;
+}
+.legends .flex3 {
+  flex: 3 !important;
+}
+.legends .flex4 {
+  flex: 4 !important;
 }
 .legends .row {
   display: flex;
@@ -406,6 +425,10 @@ body {
 .legends.sheet.npc-sheet header.sheet-header select {
   background: rgba(255, 255, 255, 0.7);
 }
+.legends.sheet.npc-sheet header.sheet-header .charname input,
+.legends.sheet.campaign-sheet header.sheet-header .charname input {
+  margin: 0.5rem;
+}
 .legends.sheet table {
   border-top: 1px solid #99bbe3;
   border-bottom: 1px solid #99bbe3;
@@ -418,9 +441,6 @@ body {
   border: none;
   background: none;
 }
-.legends.sheet .sheet-header {
-  flex: none;
-}
 .legends.sheet .sheet-header select {
   width: 96%;
   height: 48px;
@@ -430,6 +450,7 @@ body {
 .legends.sheet .sheet-header .playbook input {
   border: none;
   background: transparent;
+  margin: 10px 0;
 }
 .legends.sheet .sheet-header .name {
   background: white;
@@ -952,7 +973,7 @@ body {
 }
 .legends.sheet.campaign-sheet .body h2 {
   font-size: 1.2rem;
-  margin: 0.5rem;
+  margin: 0.5rem 0;
 }
 .legends.sheet.campaign-sheet .body .description-drive {
   margin: 1rem;
@@ -1053,8 +1074,12 @@ body {
 .message-content .legends .moment-of-balance .kanji::after {
   content: '衡';
 }
+.message-content .legends h2,
+.message-content .legends h3,
+.message-content .legends h4 {
+  margin: 0 0 0.5rem !important;
+}
 .message-content .legends h3 {
-  margin: 0;
   font-family: 'Village';
   font-variant: small-caps;
 }
@@ -1082,6 +1107,9 @@ body {
   font-family: 'Village';
   font-variant: small-caps;
 }
+.message-content .legends .dice-total {
+  padding: 0.25rem;
+}
 #chat-controls {
   font-family: 'Noto Sans';
   font-size: 0.8rem;
@@ -1102,82 +1130,4 @@ body {
 }
 #chat-form #chat-message:focus {
   box-shadow: 0 0 8px #99bbe3;
-}
-.dialog .block {
-  font-family: 'Komikazoom';
-  text-transform: uppercase;
-}
-.dialog .brush {
-  font-family: 'Hey August';
-  text-transform: uppercase;
-  font-weight: normal;
-}
-.dialog .title {
-  font-family: 'Village';
-  font-variant: small-caps;
-}
-.dialog .hand {
-  font-family: 'Covered By Your Grace';
-  font-size: 1.5rem;
-}
-.dialog .text {
-  font-family: 'Noto Sans';
-  font-size: 0.8rem;
-}
-.dialog .pad-bottom {
-  margin: 0 0 1rem;
-}
-.dialog .window-header {
-  font-family: 'Village';
-  font-variant: small-caps;
-}
-.dialog .window-content {
-  padding: 0.5rem;
-  background-color: #f0f1f5;
-  background-image: linear-gradient(#b4bac8 0%, #f0f1f5 20%, #f0f1f5 100%);
-}
-.dialog .window-content .dialog-content {
-  margin: 0 0 1rem;
-}
-.dialog .window-content .dialog-content .form-group label {
-  font-family: 'Village';
-  font-variant: small-caps;
-}
-.dialog .window-content .dialog-content .form-group input {
-  text-align: center;
-  background: rgba(255, 255, 255, 0.5);
-  border: 2px solid #99bbe3;
-  border-radius: 2px;
-  font-size: 1.5rem;
-  height: 2rem;
-}
-.dialog .window-content .dialog-content .form-group input:focus {
-  box-shadow: 0 0 3px #002a5b;
-}
-.dialog .window-content .dialog-content .form-group .form-text {
-  flex: none;
-  width: 100%;
-  color: #4d4d4f;
-}
-.dialog .window-content .dialog-buttons button {
-  font-family: 'Noto Sans';
-  font-size: 0.8rem;
-  border: 1px solid;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3);
-  background: #b4bac8;
-  border-color: #b4bac8;
-  color: #111;
-  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);
-}
-.dialog .window-content .dialog-buttons button:hover {
-  background: #c5cbd9;
-}
-.dialog .window-content .dialog-buttons button.normal,
-.dialog .window-content .dialog-buttons button.default {
-  background: #99bbe3;
-  border-color: #99bbe3;
-}
-.dialog .window-content .dialog-buttons button.normal:hover,
-.dialog .window-content .dialog-buttons button.default:hover {
-  background: #aaccf4;
 }
