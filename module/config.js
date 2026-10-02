@@ -1,4 +1,6 @@
-export const legends = {}
+export const legends = {
+  rootPath: 'systems/legends',
+}
 
 legends.stats = {
   creativity: 'legends.stats.creativity',
@@ -13,10 +15,33 @@ legends.approaches = {
   'evade-observe': 'legends.techniques.approaches.evade-observe',
 }
 
+legends.statusTypeOptions = {
+  positive: 'legends.status.positive',
+  negative: 'legends.status.negative',
+}
+
 legends.training = {
   air: 'legends.training.air',
   earth: 'legends.training.earth',
   fire: 'legends.training.fire',
+  technology: 'legends.training.technology',
+  water: 'legends.training.water',
+  weapons: 'legends.training.weapons',
+}
+legends.trainingIcons = {
+  air: 'fas fa-wind',
+  earth: 'fas fa-mountain',
+  fire: 'fas fa-fire-flame-curved',
+  group: 'fas fa-users',
+  technology: 'fas fa-gear',
+  water: 'fas fa-water',
+  weapons: 'fas fa-swords',
+}
+legends.trainingOptions = {
+  air: 'legends.training.air',
+  earth: 'legends.training.earth',
+  fire: 'legends.training.fire',
+  group: 'legends.training.group',
   technology: 'legends.training.technology',
   water: 'legends.training.water',
   weapons: 'legends.training.weapons',
@@ -70,6 +95,17 @@ legends.moveCategories = {
   playbook: 'legends.moves.category.playbook',
 }
 
+legends.penaltyOptions = {
+  '-2': '-2',
+  1: '+1',
+  2: '+2',
+}
+
+legends.moveStatOptions = {
+  principle: 'legends.principle.title',
+  ...legends.stats,
+}
+
 legends.typeIcons = {
   actor: {
     player: 'fas fa-person-simple',
@@ -97,13 +133,11 @@ export const registerSystemSettings = () => {
     default: '',
   })
 
-  game.settings.register('legends', 'tabbedPlayerSheet', {
-    config: true,
+  game.settings.register('legends', 'archiveMessageDisplayed', {
+    config: false,
     scope: 'client',
-    name: 'SETTINGS.tabbedPlayerSheet.label',
-    hint: 'SETTINGS.tabbedPlayerSheet.hint',
     type: Boolean,
-    default: true,
+    default: false,
   })
 
   game.settings.register('legends', 'sheetColour', {
@@ -117,6 +151,7 @@ export const registerSystemSettings = () => {
       quickstart: 'SETTINGS.sheetColour.quickstart',
     },
     default: 'default',
+    requiresReload: true,
   })
 
   game.settings.register('legends', 'playerNotes', {
@@ -126,5 +161,16 @@ export const registerSystemSettings = () => {
     hint: 'SETTINGS.playerNotes.hint',
     type: Boolean,
     default: false,
+    requiresReload: true,
+  })
+
+  game.settings.register('legends', 'trainingIconsEnabled', {
+    config: true,
+    scope: 'world',
+    name: 'Training Icons',
+    hint: 'Enabled: use FontAwesome icons',
+    type: Boolean,
+    default: true,
+    requiresReload: true,
   })
 }

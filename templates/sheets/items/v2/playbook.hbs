@@ -1,0 +1,61 @@
+<section class='tab flexcol gap-50'>
+  <h3 class='m-0 font-title border-bottom border-accent text-center pb-25'>
+    {{localize 'legends.actor-sheet.balance'}}
+  </h3>
+  <div class='flexrow gap-25'>
+    <input
+      type='text'
+      name='system.balance.topTrack'
+      value='{{system.balance.topTrack}}'
+      class='text-center bg-black color-white font-brush size-120 height-250'
+    />
+    <input
+      type='text'
+      name='system.balance.bottomTrack'
+      value='{{system.balance.bottomTrack}}'
+      class='text-center bg-white font-brush size-120 height-250'
+    />
+  </div>
+  <h3 class='m-0 font-title border-bottom border-accent text-center pb-25'>
+    {{localize 'legends.actor-sheet.stats'}}
+  </h3>
+  <div class='flexrow gap-50'>
+    {{#each system.stats as |val type|}}
+      <div class='flexcol gap-25'>
+        <label class='font-title text-center'>
+          {{localize (tr_path 'legends.stats' type)}}
+        </label>
+        <input
+          name='system.stats.{{type}}'
+          value='{{val}}'
+          type='number'
+          max='3'
+          min='-1'
+          class='font-hand text-center'
+        />
+      </div>
+    {{/each}}
+  </div>
+  <h3 class='m-0 font-title border-bottom border-accent text-center pb-25'>
+    {{localize 'legends.attachments.title'}}
+  </h3>
+  {{#if system.attachedItems}}
+    <div class='flexcol gap-50 align-items-center'>
+      {{#each attachments as |attachment uuid|}}
+        <div class='flexcol gap-25'>
+          <div class='flexrow gap-50'>
+            <div class='flex0-2rem'>
+              <img src='{{attachment.img}}' />
+            </div>
+            <h4 class='itemContextMenu' data-uuid='{{uuid}}'>{{attachment.name}}</h4>
+          </div>
+          <div class='bg-white border-solid border-accent border-1px radius-25 p-50 overflow-auto height-500'>
+            {{{attachment.system.description}}}
+          </div>
+        </div>
+      {{/each}}
+    </div>
+  {{else}}
+    <p class='text-center'>{{localize 'legends.attachments.none'}}</p>
+  {{/if}}
+</section>

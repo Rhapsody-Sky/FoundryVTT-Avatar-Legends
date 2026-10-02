@@ -1,0 +1,22 @@
+<div class='flexcol item {{#if isOwner}}draggable{{/if}}' data-item-id="{{id}}">
+  <div class='flexrow gap-50 align-items-center'>
+    <div class="flex0">
+      <a data-action="toggleStatus"
+         data-item-id="{{id}}"
+         class="condition-toggle check-box{{#if system.checked}} filled{{/if}}"></a>
+    </div>
+      <span
+        class="itemContextMenu size-100 font-title flex0 nowrap"
+        data-action="toggleStatus"
+        data-item-id="{{id}}">
+        {{name}}
+      </span>
+      <a data-action="itemToChat"
+         data-item-id="{{id}}"
+         data-tooltip="{{localize "legends.common.to-chat"}}"
+         class="icon fas fa-comment color-grey flex0"></a>
+  </div>
+  <div>
+    {{{system.enrichedDescription}}}
+  </div>
+</div>

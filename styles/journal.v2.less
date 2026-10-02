@@ -1,0 +1,155 @@
+// out: false
+
+@import url('./config.less');
+
+.sheet.journal-sheet {
+  .window-content {
+    --color-text-primary: @text-color;
+    --color-text-emphatic: @accent-dark;
+
+    .bg-fade(100px, var(--bg-color), var(--bg-fade-color));
+
+    color: var(--color-text-primary);
+  }
+
+  .journal-sidebar {
+    color: var(--color-text-primary);
+
+    search {
+      margin: 1rem;
+      height: 52px;
+      border-bottom: 2px solid var(--color-accent);
+
+      input {
+        --input-placeholder-color: @black-50;
+        color: var(--color-text-primary);
+        border: 1px solid var(--color-accent);
+        background: @white-75;
+      }
+    }
+
+    .toc li.page {
+      border: none;
+      border-bottom: 1px solid var(--color-accent);
+
+      &.active:first-of-type {
+        border-top: none;
+      }
+    }
+  }
+
+  .journal-entry-content {
+    background: transparent;
+  }
+
+  .journal-sidebar,
+  .journal-entry-content,
+  .journal-footer {
+    button {
+      --button-text-color: var(--color-accent-mid);
+      --button-background-color: var(--bg-fade-color);
+      --button-border-color: var(--color-accent-mid);
+      --button-hover-border-color: var(--color-accent-mid);
+      --button-hover-background-color: var(--color-accent-mid);
+      --button-hover-text-color: @white;
+
+      &:focus {
+        --button-focus-outline-color: var(--color-accent);
+      }
+
+      &:disabled {
+        --button-border-color: transparent;
+        --button-text-color: @black-50;
+        --button-hover-border-color: var(--button-border-color);
+        --button-hover-background-color: var(--button-background-color);
+        --button-hover-text-color: var(--button-text-color);
+      }
+    }
+  }
+
+  .journal-header {
+    border-bottom: 2px solid var(--color-accent);
+
+    input[type='text'],
+    select {
+      --input-text-color: var(--color-text-emphatic);
+      .title-font();
+      background: @white-75;
+      border: none;
+
+      &:disabled {
+        background: transparent;
+      }
+    }
+    input[type='checkbox'] {
+      --checkbox-checked-color: var(--color-accent-mid);
+    }
+  }
+
+  .journal-entry-content {
+    h1,
+    h2,
+    h3,
+    h4,
+    p,
+    ul {
+      margin: 0 0 0.5rem;
+      text-decoration: none;
+      border: none;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      .title-font();
+      font-weight: normal;
+    }
+
+    ul {
+      list-style: disc;
+      padding-left: 1rem;
+
+      li {
+        margin-bottom: 0.25rem;
+
+        p {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    img {
+      border: none;
+      box-shadow: none;
+    }
+
+    .balance-box,
+    .fatigue-box,
+    .check-box {
+      display: inline-block;
+      border: 1.5px solid black;
+      background: white;
+      width: 0.75rem;
+      height: 0.75rem;
+      border-width: 1.5px;
+      margin-right: 2px;
+    }
+
+    .load-pdf {
+      button {
+        --button-hover-background-color: var(--color-accent-mid);
+        .font-title();
+        color: @white;
+        border: none;
+        background-color: var(--color-accent-mid);
+        padding: 0.5rem;
+        border-radius: 0.25rem;
+
+        &:hover {
+          text-shadow: 0 0 5px var(--color-accent);
+        }
+      }
+    }
+  }
+}

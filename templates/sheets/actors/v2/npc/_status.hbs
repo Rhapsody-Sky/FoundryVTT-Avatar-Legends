@@ -1,0 +1,18 @@
+<div class='flexcol item'>
+  <div class='flexrow gap-50 align-items-center'>
+    <div class="flex0">
+      <a data-action="toggleStatus"
+         data-item-id="{{id}}"
+         class="condition-toggle check-box{{#if system.checked}} filled{{/if}}"></a>
+    </div>
+    <p class="m-0 flex0 nowrap">
+      <span
+        class="itemContextMenu size-100 font-title color-{{#if (eq system.type "positive")}}water{{else}}fire{{/if}}"
+        data-tooltip="{{{system.enrichedDescription}}}"
+        data-action="toggleStatus"
+        data-item-id="{{id}}">
+        {{name}}
+      </span>
+    </p>
+  </div>
+</div>

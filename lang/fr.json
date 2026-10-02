@@ -26,10 +26,10 @@
         "about": "Votre personnage",
         "look": "Apparence, Historique, Liens",
         "training": "Entrainement",
-        "fighting-style": "Style&nbsp;de&nbsp;Combat",
+        "fighting-style": "Style de Combat",
         "background": "Passé",
         "demeanor": "Comportement",
-        "hometown": "Cité&nbsp;d'&nbsp;origine",
+        "hometown": "Cité d' origine",
         "playbook": "Livret de personnage"
       },
       "npc": {
@@ -88,7 +88,8 @@
       "creativity": "Créativité",
       "focus": "Concentration",
       "harmony": "Harmonie",
-      "passion": "Enthousiasme"
+      "passion": "Enthousiasme",
+      "principle": "Principe"
     },
     "items": {
       "new": {
@@ -202,8 +203,8 @@
       "maximum": "Maximum"
     },
     "roll": {
-      "with": "Lancez avec <a class=\"fire-dark approach-roll\" data-approach=\"{approach}\" data-stat=\"{stat}\"><i class=\"fas fa-dice small\"></i> {name}</a>",
-      "evade-observe": "Effacer 1-fatigue &amp; Lancez avec <a class=\"fire-dark approach-roll\" data-approach=\"Esquiver & Analyser\" data-stat=\"creativity\"></i> Creativity</a> or <a class=\"fire-dark approach-roll\" data-approach=\"Esquiver & Analyser\" data-stat=\"harmony\"><i class=\"fas fa-dice small\"></i> Harmony</a>",
+      "with": "Lancez avec <a class=\"color-fire-dark\" data-action=\"rollApproach\" data-approach=\"{approach}\" data-stat=\"{stat}\"><i class=\"fas fa-dice small\"></i> {name}</a>",
+      "evade-observe": "Effacer 1-fatigue &amp; Lancez avec <a class=\"color-fire-dark\" data-action=\"rollApproach\" data-approach=\"Esquiver & Analyser\" data-stat=\"creativity\"></i> Creativity</a> or <a class=\"color-fire-dark\" data-action=\"rollApproach\" data-approach=\"Esquiver & Analyser\" data-stat=\"harmony\"><i class=\"fas fa-dice small\"></i> Harmony</a>",
       "stat": "Lancez {stat}",
       "no-stat": "Lancez",
       "miss": "Échec",

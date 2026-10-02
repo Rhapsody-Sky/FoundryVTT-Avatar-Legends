@@ -1,0 +1,45 @@
+<div class='flexcol gap-50'>
+  {{#if statName}}
+    <div class='flexrow gap-50'>
+      <label class='text-right size-100 font-title'>{{statName}}</label>
+      <input class='flex3 font-hand text-center' type='number' value='{{statValue}}' disabled />
+      <div class='flex0-2rem'></div>
+    </div>
+  {{/if}}
+  {{#if principle}}
+    <div class='flexrow gap-50'>
+      <label class='text-right size-100 font-title'>{{localize 'legends.principle.title'}}</label>
+      <select name='principle' class='flex3 text-center'>
+        <option value=''></option>
+        {{#each principles as |value key|}}
+          <option value='{{key}}' {{#if (eq key @root.principle)}}selected{{/if}}>{{key}} ({{value}})</option>
+        {{/each}}
+      </select>
+      <div class='flex0-2rem'></div>
+    </div>
+  {{/if}}
+  {{#if condition}}
+    <div class='flexrow gap-50'>
+      <label class='text-right size-100 font-title'>{{condition.name}}</label>
+      <input class='flex3 font-hand text-center' type='number' value='{{condition.penalty.penalty}}' disabled />
+      <div class='flex0-2rem text-center'>
+        <i class='fas fa-question-circle' data-tooltip='{{condition.description}}'></i>
+      </div>
+    </div>
+  {{/if}}
+  <div class='flexrow gap-50'>
+    <label class='text-right size-100 font-title'>{{localize 'legends.roll.dialog.bonus'}}</label>
+    <input name='bonus' class='flex3 font-hand text-center' type='number' value='0' min='0' max='10' />
+    <div class='flex0-2rem text-center'>
+      <i class='fas fa-question-circle' data-tooltip='{{localize "legends.roll.dialog.bonus-description"}}'></i>
+    </div>
+
+  </div>
+  <div class='flexrow gap-50'>
+    <label class='text-right size-100 font-title'>{{localize 'legends.roll.dialog.penalty'}}</label>
+    <input name='penalty' class='flex3 font-hand text-center' type='number' value='0' min='-10' max='10' />
+    <div class='flex0-2rem text-center'>
+      <i class='fas fa-question-circle' data-tooltip='{{localize "legends.roll.dialog.penalty-description"}}'></i>
+    </div>
+  </div>
+</div>

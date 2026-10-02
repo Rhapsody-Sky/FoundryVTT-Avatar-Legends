@@ -2,7 +2,7 @@
  * Run all migrations
  */
 export async function migrateWorld() {
-  console.log('legends | Migration script called')
+  console.info('legends | Migration script called')
 
   // Moves marked rollable
   migrateMoves()
@@ -30,7 +30,7 @@ async function migrateMoves() {
       )
 
       if (actorMoves.length > 0) {
-        console.log(`legends | Migrating moves for actor ${actor.id}...`)
+        console.info(`legends | Migrating moves for actor ${actor.id}...`)
         actorMoves.forEach((move) => {
           migrateMove(move)
         })
@@ -47,7 +47,7 @@ async function migrateMove(move) {
   let rollStat = move.system.rollStat
 
   if (rollStat && !rollable) {
-    console.log(`legends | Migrating Move ${move.id}`)
+    console.info(`legends | Migrating Move ${move.id}`)
     move.update({
       data: {
         rollable: true,
@@ -60,7 +60,7 @@ async function migrateMove(move) {
  * Migrate images to .webp versions
  */
 const migrateWorldItems = async () => {
-  console.log('legends | Migrating images to .webp...')
+  console.info('legends | Migrating images to .webp...')
   const pngRegex = /systems\/legends\/.+\.png$/
 
   const worldItems = game.items.filter((item) => item.img.match(pngRegex))
@@ -97,7 +97,7 @@ const migrateItemImages = async (objects) => {
  * @param {Object} object The document to update
  */
 const migrateItemImage = async (object) => {
-  console.log(
+  console.info(
     `legends | Migrating img for ${object.documentName} ${object.type} ${object.id}`,
   )
   const newImg = object.img.replace(/.png$/, '.webp')

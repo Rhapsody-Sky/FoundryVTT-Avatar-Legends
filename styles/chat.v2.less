@@ -1,0 +1,47 @@
+// out: false
+
+.system-legends {
+  .chat-message.message {
+    .bg-fade(50px, var(--bg-color), var(--bg-fade-color));
+
+    h1,
+    h2,
+    h3,
+    h4,
+    p,
+    ul {
+      margin: 0 0 0.5rem;
+    }
+
+    h3,
+    h4 {
+      .title-font();
+      font-weight: normal;
+    }
+
+    ul {
+      list-style: disc;
+      padding-left: 1rem;
+
+      li {
+        margin-bottom: 0.25rem;
+      }
+    }
+
+    .message-header {
+      border-bottom: 1.5px solid var(--color-accent);
+    }
+
+    &.whisper {
+      .message-header {
+        border-color: @dark-fire;
+      }
+    }
+
+    .skill-name {
+      .title-font();
+      color: var(--color-accent-dark);
+      font-weight: bold;
+    }
+  }
+}

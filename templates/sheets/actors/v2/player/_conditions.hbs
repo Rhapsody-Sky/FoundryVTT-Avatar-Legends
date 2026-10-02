@@ -1,0 +1,10 @@
+<div class='flexcol gap-50'>
+  <h3 class='text-center m-0 border-bottom border-accent pb-25'>
+    {{localize 'legends.actor-sheet.conditions'}}
+  </h3>
+  <div class="flexcol gap-50 item-list">
+    {{#each conditions as |condition|}}
+      {{> (template "sheets/actors/v2/player/_condition.hbs") condition}}
+    {{/each}}
+  </div>
+</div>

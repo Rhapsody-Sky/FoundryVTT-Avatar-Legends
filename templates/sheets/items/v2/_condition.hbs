@@ -1,0 +1,14 @@
+<div class='flexrow gap-50 align-items-baseline'>
+  <label class='font-title'>{{localize 'legends.roll.dialog.penalty'}}</label>
+  <div class='flexcol gap-50 flex2'>
+    {{#each system.affectedMoves as |move|}}
+      <div class='flexrow gap-25'>
+        <select name='system.affectedMoves.{{@index}}.penalty' class='center'>
+          <option value=''></option>
+          {{selectOptions @root.config.penaltyOptions selected=move.penalty localize=false}}
+        </select>
+        <input type='text' name='system.affectedMoves.{{@index}}.name' value='{{move.name}}' class='flex3' />
+      </div>
+    {{/each}}
+  </div>
+</div>

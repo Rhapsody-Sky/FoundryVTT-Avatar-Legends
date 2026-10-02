@@ -1,0 +1,9 @@
+<div class="flexcol gap-50">
+  <h3 class="text-center border-bottom border-accent">{{ localize "legends.actor-sheet.fatigue" }}</h3>
+  <div class="boxes text-center">
+    {{#times system.fatigue.max}}
+      <a class="fatigue-box {{#if (gte ../system.fatigue.value @index)}}filled{{/if}}" data-action="setFatigue"
+        data-new-value="{{@index}}"></a>
+    {{/times}}
+  </div>
+</div>

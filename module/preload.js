@@ -1,25 +1,30 @@
-import {
-  enrichInlineMove,
-  enrichInlineTechnique,
-  enrichNpc,
-} from './helpers.js'
+import { legends } from './config.js'
+import { enrichInlineMove, enrichInlineTechnique, enrichNpc, enrichSkillName, trainingIcon } from './helpers.js'
+const { loadTemplates } = foundry.applications.handlebars
 
 export const preloadHandlebarsTemplates = () => {
   const templatePaths = [
-    'systems/legends/templates/partials/description-editor.hbs',
-    'systems/legends/templates/partials/move-card.hbs',
-    'systems/legends/templates/partials/condition-card.hbs',
-    'systems/legends/templates/partials/status-card.hbs',
-    'systems/legends/templates/partials/technique-card.hbs',
-    'systems/legends/templates/partials/growth-question-card.hbs',
-    'systems/legends/templates/partials/labelled-input.hbs',
-    'systems/legends/templates/partials/npc-principle-card.hbs',
-    'systems/legends/templates/sheets/actors/_balance.hbs',
-    'systems/legends/templates/sheets/actors/_fatigue.hbs',
-    'systems/legends/templates/sheets/actors/_stats.hbs',
-    'systems/legends/templates/sheets/actors/_trainings.hbs',
-    'systems/legends/templates/partials/checkbox.hbs',
-    'templates/dice/roll.html',
+    `${legends.rootPath}/templates/partials/checkbox.hbs`,
+    `${legends.rootPath}/templates/partials/v2/description.hbs`,
+    `${legends.rootPath}/templates/sheets/actors/v2/player/_balance.hbs`,
+    `${legends.rootPath}/templates/sheets/actors/v2/player/_condition.hbs`,
+    `${legends.rootPath}/templates/sheets/actors/v2/player/_conditions.hbs`,
+    `${legends.rootPath}/templates/sheets/actors/v2/player/_fatigue.hbs`,
+    `${legends.rootPath}/templates/sheets/actors/v2/player/_move.hbs`,
+    `${legends.rootPath}/templates/sheets/actors/v2/player/_stats.hbs`,
+    `${legends.rootPath}/templates/sheets/actors/v2/player/_stat.hbs`,
+    `${legends.rootPath}/templates/sheets/actors/v2/player/_status.hbs`,
+    `${legends.rootPath}/templates/sheets/actors/v2/player/_statuses.hbs`,
+    `${legends.rootPath}/templates/sheets/actors/v2/player/_technique.hbs`,
+    `${legends.rootPath}/templates/sheets/actors/v2/npc/_condition.hbs`,
+    `${legends.rootPath}/templates/sheets/actors/v2/npc/_principle.hbs`,
+    `${legends.rootPath}/templates/sheets/actors/v2/npc/_status.hbs`,
+    `${legends.rootPath}/templates/sheets/actors/v2/npc/_technique.hbs`,
+    `${legends.rootPath}/templates/sheets/items/v2/_condition.hbs`,
+    `${legends.rootPath}/templates/sheets/items/v2/_move.hbs`,
+    `${legends.rootPath}/templates/sheets/items/v2/_npc-principle.hbs`,
+    `${legends.rootPath}/templates/sheets/items/v2/_status.hbs`,
+    `${legends.rootPath}/templates/sheets/items/v2/_technique.hbs`,
   ]
 
   return loadTemplates(templatePaths)
@@ -42,6 +47,11 @@ export const setupEnrichers = () => {
       pattern: /@InlineNpc\[(.+?)\](?:{(.+?)})?/gm,
       enricher: async (match) => await enrichNpc(match),
     },
+    {
+      // skill name
+      pattern: /#\[(.+?)\]/gm,
+      enricher: async (match) => await enrichSkillName(match),
+    },
   ])
 }
 
@@ -55,9 +65,14 @@ export const registerHandlebarsHelpers = () => {
     return result
   })
 
-  Handlebars.registerHelper('modulus', (mod, index, content) =>
-    index % mod == 0 ? content : null,
-  )
+  Handlebars.registerHelper('drawer', function (item) {
+    let result = `<div class="drawer" id="drawer-${item.id}"  style="${item.system.visible ? '' : 'display: none;'}">`
+    result += item.system.enrichedDescription
+    result += `</div>`
+    return result
+  })
+
+  Handlebars.registerHelper('modulus', (mod, index, content) => (index % mod == 0 ? content : null))
   Handlebars.registerHelper(
     'moveCategoryVisible',
     (category, movesVisible) => category === '' || movesVisible[category],
@@ -71,25 +86,20 @@ export const registerHandlebarsHelpers = () => {
       era: game.i18n.localize('legends.actor-sheet.campaign.eras.era'),
     }),
   )
-
   Handlebars.registerHelper('rollApproach', (approach) => {
     let path = 'legends.roll.with'
     let params = {}
     switch (approach) {
       case 'defend-maneuver':
         params = {
-          approach: game.i18n.localize(
-            'legends.techniques.approaches.defend-maneuver',
-          ),
+          approach: game.i18n.localize('legends.techniques.approaches.defend-maneuver'),
           stat: 'focus',
           name: game.i18n.localize('legends.stats.focus'),
         }
         break
       case 'advance-attack':
         params = {
-          approach: game.i18n.localize(
-            'legends.techniques.approaches.advance-attack',
-          ),
+          approach: game.i18n.localize('legends.techniques.approaches.advance-attack'),
           stat: 'passion',
           name: game.i18n.localize('legends.stats.passion'),
         }
@@ -101,4 +111,13 @@ export const registerHandlebarsHelpers = () => {
     }
     return game.i18n.format(path, params)
   })
+  Handlebars.registerHelper('template', (path) => {
+    return `${legends.rootPath}/templates/${path}`
+  })
+  Handlebars.registerHelper('trainingIcon', (training, cssClasses = null) => {
+    return trainingIcon(training, cssClasses)
+  })
+  Handlebars.registerHelper('not', (condition) => !condition)
+  Handlebars.registerHelper('mod', (num, div) => num % div)
+  Handlebars.registerHelper('join', (array, glue) => array.join(glue))
 }

@@ -1,0 +1,27 @@
+<div class='flexcol gap-50'>
+  <h4 class='m-0 font-title color-accent-dark'>
+    {{#if name}}
+      {{localize 'legends.roll.stat' stat=name}}
+    {{else}}
+      {{localize 'legends.roll.no-stat'}}
+    {{/if}}
+  </h4>
+  {{#if move}}
+    <p class='size-100 font-title color-fire-dark'>{{move}}</p>
+  {{/if}}
+
+  {{#if (gte total 10)}}
+    <h2 class='color-earth font-brush'>{{localize 'legends.roll.full'}}</h2>
+    {{#if approach}}{{{localize 'legends.roll.approach.full'}}}{{/if}}
+  {{else}}
+    {{#if (gte total 7)}}
+      <h2 class='color-water font-brush'>{{localize 'legends.roll.hit'}}</h2>
+      {{#if approach}}{{{localize 'legends.roll.approach.hit'}}}{{/if}}
+    {{else}}
+      <h2 class='color-fire font-brush'>{{localize 'legends.roll.miss'}}</h2>
+      {{#if approach}}{{{localize 'legends.roll.approach.miss'}}}{{/if}}
+    {{/if}}
+  {{/if}}
+
+  {{{roll}}}
+</div>

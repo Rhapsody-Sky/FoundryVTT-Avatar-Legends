@@ -1,0 +1,13 @@
+<section class="tab {{tabs.notes.id}} {{tabs.notes.cssClass}}"
+         data-tab="{{tabs.notes.id}}"
+         data-group="{{tabs.notes.group}}">
+  <div class="flexcol gap-50 height-full">
+    <h3 class='text-center m-0 border-bottom border-accent pb-25'>
+      {{localize 'legends.nav.notes'}}
+    </h3>
+    {{> (template "partials/v2/description.hbs")
+      content=system.notes
+      enriched=system.enrichedNotes
+      target="system.notes"}}
+  </div>
+</section>

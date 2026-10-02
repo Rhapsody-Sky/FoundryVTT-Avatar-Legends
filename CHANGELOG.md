@@ -1,5 +1,9 @@
 # Changelog
 
+## v2.0.0
+
+- Update to ApplicationV2
+
 ## v1.3.0
 
 - Basic v13 compatibility

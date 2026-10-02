@@ -1,0 +1,24 @@
+<div class='flexcol gap-50'>
+  <div class='flexrow gap-50 text-center font-title'>
+    <div>{{localize 'legends.moves.roll'}}</div>
+    <div class='flex2'>{{localize 'legends.moves.with'}}</div>
+    <div class='flex2'>{{localize 'legends.moves.category.label'}}</div>
+  </div>
+  <div class='flexrow gap-50'>
+    <div>
+      {{> "systems/legends/templates/partials/checkbox.hbs" name="system.rollable" value=system.rollable}}
+    </div>
+    <div class='flex2'>
+      <select name="system.rollStat">
+        <option value="">{{localize 'legends.common.none'}}</option>
+        {{selectOptions config.moveStatOptions selected=system.rollStat localize=true}}
+      </select>
+    </div>
+    <div class='flex2'>
+      <select name="system.category">
+        <option value="">{{localize 'legends.common.none'}}</option>
+       {{selectOptions config.moveCategories selected=system.category localize=true}}
+      </select>
+    </div>
+  </div>
+</div>

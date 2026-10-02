@@ -1,0 +1,10 @@
+<div class="flexcol height-full">
+  {{#if (eq type 'npc-principle')}}
+    {{> (template "sheets/items/v2/_npc-principle.hbs")}}
+  {{else}}
+    {{> (template "partials/v2/description.hbs")
+      content=system.description
+      enriched=system.enrichedDescription
+      target="system.description"}}
+  {{/if}}
+</div>
