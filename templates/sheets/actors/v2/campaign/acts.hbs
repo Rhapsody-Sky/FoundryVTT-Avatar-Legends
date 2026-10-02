@@ -1,0 +1,36 @@
+<section
+  class='tab {{tabs.acts.id}} {{tabs.acts.cssClass}}'
+  data-tab='{{tabs.acts.id}}'
+  data-group='{{tabs.acts.group}}'
+>
+  <div class='flexcol gap-50'>
+    <div class="flexrow gap-50">
+      <div class='flexcol gap-25 flex2'>
+        <h3 class='m-0 pb-25 font-title size-100'>
+          {{localize 'legends.actor-sheet.campaign.incitingIncident'}}
+        </h3>
+        <input type='text' name='system.incitingIncident' value='{{system.incitingIncident}}' />
+      </div>
+      <div class='flexcol gap-25'>
+        <h3 class='m-0 pb-25 font-title size-100'>
+          {{localize 'legends.actor-sheet.campaign.location'}}
+        </h3>
+        <input type='text' name='system.location' value='{{system.location}}' />
+      </div>
+    </div>
+
+    {{#each system.acts as |act id|}}
+      <div class='flexcol gap-25'>
+        <h3 class='m-0 pb-25 text-center border-bottom border-accent'>
+          <input type="text" name="system.acts.{{id}}.name" value="{{act.name}}" class="font-title size-150 text-center bg-transparent border-none" />
+        </h3>
+        <div class="flexcol">
+          {{> (template "partials/v2/description.hbs")
+            content=act.description
+            enriched=act.enrichedDescription
+            target=(concat "system.acts." id ".description")}}
+        </div>
+      </div>
+    {{/each}}
+  </div>
+</section>

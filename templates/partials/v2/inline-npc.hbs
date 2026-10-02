@@ -1,0 +1,56 @@
+<div class='flexrow gap-50 align-items-start my-100'>
+  <div class='flex3'>
+    <h3 class='font-title color-black size-150'>
+      @UUID[{{uuid}}]
+      <span class='size-100 color-fire-dark'>
+        {{localize (getByKey config.npcLevels system.level)}}
+      </span>
+    </h3>
+    {{{system.enrichedDescription}}}
+
+    <div class='border-top border-bottom border-accent-mid bg-gradient-light px-50 py-25'>
+      <p>
+        <strong class='font-title'>
+          {{localize 'legends.actor-sheet.npc.drive'}}:
+        </strong>
+        {{system.drive}}
+      </p>
+      <p>
+        <strong class='font-title'>
+          {{localize 'legends.principle.title'}}:
+        </strong>
+        {{#if system.principle}}
+          {{system.principle.name}}
+          ({{system.principle.system.track.max}})
+        {{else}}
+          <em>{{localize 'legends.common.none'}}</em>
+        {{/if}}
+      </p>
+      {{#if system.conditionNames}}
+        <p>
+          <strong class='font-title'>{{localize 'legends.items.types.condition'}}:</strong>
+          {{join system.conditionNames ', '}}
+        </p>
+      {{/if}}
+      <p>
+        <strong class='font-title'>{{localize 'legends.actor-sheet.fatigue'}}:</strong>
+        {{#times system.fatigue.max}}<span class='fatigue-box'></span>{{#if
+            (eq (mod @index 5) 0)
+          }}&nbsp;&nbsp;{{/if}}{{/times}}
+      </p>
+      <p>
+        <strong class='font-title'>{{localize 'legends.items.types.technique'}}:</strong>
+        {{#if system.techniqueUUIDs}}
+          {{#each system.techniqueUUIDs as |uuid|}}
+            @UUID[{{uuid}}]
+          {{/each}}
+        {{else}}
+          <em>{{localize 'legends.common.none'}}</em>
+        {{/if}}
+      </p>
+    </div>
+  </div>
+  <div>
+    <img src='{{img}}' alt='{{name}}' />
+  </div>
+</div>

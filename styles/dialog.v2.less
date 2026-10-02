@@ -1,0 +1,49 @@
+// out: false
+
+@import './config.less';
+
+.legends.dialog {
+  --color-text-primary: @text-color;
+  --color-text-emphatic: @accent-dark;
+
+  .window-content {
+    .bg-fade(50px, var(--bg-color), var(--bg-fade-color));
+
+    input[type='text'],
+    input[type='number'],
+    select,
+    textarea {
+      background: @white-50;
+      color: var(--color-text-primary);
+      border-color: var(--color-accent);
+      .main-font();
+
+      &:disabled {
+        background: var(--bg-color);
+        color: @weaponsmith;
+        border-color: var(--bg-fade-color);
+      }
+    }
+
+    footer {
+      button {
+        &.dialog-button {
+          --button-focus-outline-color: var(--color-accent);
+          --button-hover-border-color: var(--bg-fade-color);
+          --button-border-color: var(--bg-fade-color);
+
+          background: var(--color-weapon);
+          color: @white;
+
+          &.yes:hover {
+            background: var(--color-earth);
+          }
+
+          &.no:hover {
+            background: var(--color-fire);
+          }
+        }
+      }
+    }
+  }
+}

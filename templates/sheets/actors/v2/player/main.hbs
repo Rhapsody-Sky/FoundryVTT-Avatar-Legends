@@ -1,0 +1,20 @@
+<section class="tab {{tabs.main.id}} {{tabs.main.cssClass}}"
+         data-tab="{{tabs.main.id}}"
+         data-group="{{tabs.main.group}}">
+  
+  <div class="flexrow gap-100 align-items-start">
+    <div class="flexcol flex3 gap-50">
+      <div class="flexrow gap-100 align-items-start">
+        <div class="flexcol gap-50">
+          {{> (template "sheets/actors/v2/player/_stats.hbs") stats=system.stats}}
+          {{> (template "sheets/actors/v2/player/_fatigue.hbs") }}
+        </div>
+        {{> (template "sheets/actors/v2/player/_balance.hbs")}}
+      </div>
+      <div>
+        {{> (template "sheets/actors/v2/player/_statuses.hbs" )}}
+      </div>
+    </div>
+    {{> (template "sheets/actors/v2/player/_conditions.hbs" )}}
+  </div>
+</section>

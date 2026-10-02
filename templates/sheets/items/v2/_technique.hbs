@@ -1,0 +1,35 @@
+<div class='flexcol gap-100'>
+  <div class="flexcol gap-50">
+    <div class='flexrow gap-50 text-center'>
+      <div class='font-title'>{{localize 'legends.techniques.basic'}}</div>
+      <div class='font-title'>{{localize 'legends.techniques.approach'}}</div>
+    </div>
+    <div class='flexrow gap-50'>
+      <div class=''>
+        {{> "systems/legends/templates/partials/checkbox.hbs" name="system.basic" value=system.basic}}
+      </div>
+
+        <select name='system.approach'>
+          {{selectOptions config.approaches selected=system.approach localize=true}}
+        </select>
+
+    </div>
+  </div>
+
+  <div class="flexcol gap-50">
+    <div class='flexrow gap-50 text-center'>
+      <div class='font-title'>{{localize 'legends.actor-sheet.player.training'}}</div>
+      <div class='font-title'>{{localize 'legends.training.specialty'}}</div>
+    </div>
+    <div class="flexrow gap-50">
+
+        <select name="system.training">
+          <option value=""></option>
+          {{selectOptions config.trainingOptions selected=system.training localize=true}}
+        </select>
+
+        <input type="text" name="system.specialty" value="{{system.specialty}}" />
+
+    </div>
+  </div>
+</div>

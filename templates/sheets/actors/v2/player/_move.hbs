@@ -1,0 +1,20 @@
+<div class='flexcol item {{#if isOwner}}draggable{{/if}}' data-item-id='{{id}}'>
+  <div class='flexrow gap-50 border-bottom border-1px border-accent mb-25'>
+    <span class='flex0 nowrap'>
+      <span class='size-120 font-title itemContextMenu' data-action='toggleDrawer' data-item-id='{{id}}'>{{name}}</span>
+    </span>
+    <a
+      data-action='itemToChat'
+      data-item-id='{{id}}'
+      data-tooltip="{{localize "legends.common.to-chat"}}"
+      class='icon fas fa-comment color-grey flex0'></a>
+    {{#if system.rollable}}
+      <a class="color-fire flex0" data-action="rollMove" data-uuid="{{uuid}}">
+        <i class="fas fa-dice"
+          data-tooltip="{{#if system.rollStat}}{{localize (tr_path "legends.stats" system.rollStat)}}{{else}}{{localize "legends.roll.dialog.submit"}}{{/if}}"></i>
+      </a>
+    {{/if}}
+  </div>
+
+  {{{drawer this}}}
+</div>

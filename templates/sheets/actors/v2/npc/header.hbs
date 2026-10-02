@@ -1,0 +1,15 @@
+<div class='flexrow gap-50 mb-50 align-items-start'>
+  <div class='flex0-3rem'>
+    <img src='{{img}}' data-edit='img' title='{{name}}' data-action='editImage' />
+  </div>
+  <input
+    name='name'
+    type='text'
+    value='{{name}}'
+    placeholder='{{localize "legends.actor-sheet.name"}}'
+    class='height-3rem size-200 flex2 font-title'
+  />
+  <select name='system.level' class='font-block height-3rem size-150'>
+    {{selectOptions config.npcLevels selected=system.level localize=true}}
+  </select>
+</div>

@@ -1,0 +1,37 @@
+<section
+  class='tab {{tabs.main.id}} {{tabs.main.cssClass}}'
+  data-tab='{{tabs.main.id}}'
+  data-group='{{tabs.main.group}}'
+>
+  <div class='flexcol gap-50'>
+    <div class='flexcol gap-25'>
+      <h3 class='m-0 pb-25 text-center font-title border-bottom border-accent size-150'>{{localize "legends.actor-sheet.campaign.scope"}}</h3>
+      <div class="flexcol">
+        {{> (template "partials/v2/description.hbs")
+          content=system.scope
+          enriched=system.enrichedScope
+          target="system.scope"}}
+      </div>
+    </div>
+    <div class="flexcol gap-25">
+      <h3 class='m-0 pb-25 text-center font-title border-bottom border-accent size-150'>{{localize "legends.actor-sheet.campaign.groupFocus"}}</h3>
+      <div class="flexrow gap-50">
+        <select class="font-block" name="system.focus">
+          {{selectOptions config.campaignFocus selected=system.focus localize=true}}
+        </select>
+        <div>
+          {{#if (eq system.focus 'custom')}}
+            <input type="text" name="system.customFocus" value="{{system.customFocus}}"
+                    placeholder="{{localize "legends.actor-sheet.campaign.customFocusPlaceholder" }}" />
+          {{/if}}
+        </div>
+      </div>
+      <div class="flexcol">
+        {{> (template "partials/v2/description.hbs")
+          content=system.focusDesc
+          enriched=system.enrichedFocusDesc
+          target="system.focusDesc"}}
+      </div>
+    </div>
+  </div>
+</section>

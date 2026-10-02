@@ -22,14 +22,16 @@
       "techniques": "Fighting Techniques",
       "statuses": "Statuses",
       "set-value": "Set to {value}",
+      "edit-mode": "Toggle Edit Mode",
+      "title": "Player",
       "player": {
         "about": "Your Character",
         "look": "Look, History & Connections",
         "training": "Training",
-        "fighting-style": "Fighting&nbsp;Style",
+        "fighting-style": "Fighting Style",
         "background": "Background",
         "demeanor": "Demeanor",
-        "hometown": "Home&nbsp;Town",
+        "hometown": "Home Town",
         "playbook": "Playbook"
       },
       "npc": {
@@ -50,9 +52,10 @@
       },
       "campaign": {
         "title": "Campaign Worksheet",
-        "main": "Main",
+        "main": "Scope & Focus",
         "acts": "Acts",
         "incitingIncident": "Inciting Incident",
+        "location": "Location",
         "noActs": "No acts to display. Click below to add some!",
         "relationships": {
           "title": "Allies & Enemies",
@@ -88,7 +91,8 @@
       "creativity": "Creativity",
       "focus": "Focus",
       "harmony": "Harmony",
-      "passion": "Passion"
+      "passion": "Passion",
+      "principle": "Principle"
     },
     "items": {
       "new": {
@@ -202,8 +206,8 @@
       "maximum": "Maximum"
     },
     "roll": {
-      "with": "Roll with <a class=\"fire-dark approach-roll\" data-approach=\"{approach}\" data-stat=\"{stat}\"><i class=\"fas fa-dice small\"></i> {name}</a>",
-      "evade-observe": "Clear 1-fatigue &amp; roll with <a class=\"fire-dark approach-roll\" data-approach=\"Evade & Observe\" data-stat=\"creativity\"><i class=\"fas fa-dice small\"></i> Creativity</a> or <a class=\"fire-dark approach-roll\" data-approach=\"Evade & Observe\" data-stat=\"harmony\"><i class=\"fas fa-dice small\"></i> Harmony</a>",
+      "with": "Roll with <a class=\"color-fire-dark\" data-action=\"rollApproach\" data-approach=\"{approach}\" data-stat=\"{stat}\"><i class=\"fas fa-dice small\"></i> {name}</a>",
+      "evade-observe": "Clear 1-fatigue &amp; roll with <a class=\"color-fire-dark\" data-action=\"rollApproach\" data-approach=\"Evade & Observe\" data-stat=\"creativity\"><i class=\"fas fa-dice small\"></i> Creativity</a> or <a class=\"color-fire-dark\" data-action=\"rollApproach\" data-approach=\"Evade & Observe\" data-stat=\"harmony\"><i class=\"fas fa-dice small\"></i> Harmony</a>",
       "stat": "Rolling {stat}",
       "no-stat": "Rolling",
       "miss": "Miss",
@@ -222,7 +226,8 @@
         "full": "<p>Choose one from this list:</p><ul><li>Mark 1-fatigue to use a learned technique</li><li>Use one practiced technique</li><li>Use two different basic or mastered techniques</li></ul>",
         "hit": "<p>Use one basic or mastered technique</p>",
         "miss": "<p>You stumble, but you can shift your balance away from center to use one basic technique.</p>"
-      }
+      },
+      "principle-required": "You must select a Principle"
     },
     "dialog": {
       "cancel": "Cancel"
@@ -232,7 +237,8 @@
       "moves": "Moves",
       "techniques": "Training & Techniques",
       "detail": "Details & Growth",
-      "notes": "Notes"
+      "notes": "Notes",
+      "effects": "Effects"
     }
   },
   "SETTINGS": {
@@ -264,6 +270,7 @@
       "technique": "Technique",
       "feature": "Feature",
       "moment-of-balance": "Moment of Balance",
+      "npc-principle": "NPC Principle",
       "growth-question": "Growth Question",
       "status": "Status",
       "playbook": "Playbook"

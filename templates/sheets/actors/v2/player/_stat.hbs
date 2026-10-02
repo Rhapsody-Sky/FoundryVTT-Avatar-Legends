@@ -1,0 +1,11 @@
+<div class='flexrow gap-50'>
+  <div class='flex0-2rem'>
+    <input name='system.stats.{{type}}' value='{{val}}' type='number' max='3' min='-1' class='stat hand' />
+  </div>
+  <div class='flex2 font-title'>
+    <a data-action='rollStat' data-stat='{{type}}' class='size-120'>
+      {{localize (tr_path 'legends.stats' type)}}
+      <i class='fas fa-dice color-weapons'></i>
+    </a>
+  </div>
+</div>

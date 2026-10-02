@@ -1,3 +1,5 @@
+import * as DialogV2 from './dialog.v2.js'
+
 /**
  * Roll a Move by UUID
  * @param {String} uuid The Item's UUID
@@ -5,20 +7,57 @@
  */
 export const rollMove = async (uuid) => {
   const move = await fromUuid(uuid)
-  const actor =
-    move.parent || game.user.character || canvas.tokens.controlled[0]?.actor
+  const actor = move.parent || game.user.character || canvas.tokens.controlled[0]?.actor
+
+  const template = 'systems/legends/templates/dialog/v2/roll.hbs'
 
   const title = game.i18n.format('legends.roll.stat', {
     stat: move.name,
   })
-  const rollOptions = await newGetRollOptions(actor, {
-    title: title,
-    move: move,
-  })
 
-  if (rollOptions.cancelled) return
+  const stat = move?.system?.rollStat
 
-  doRoll(actor, rollOptions, { move: move })
+  let statValue = undefined
+  let statName = undefined
+  let principle = false
+  let principles = []
+
+  if (stat) {
+    switch (stat) {
+      case 'principle':
+        principle = true
+        const { bottomTrack, topTrack, value } = actor.system.balance
+        principles = {
+          [bottomTrack]: -value,
+          [topTrack]: value,
+        }
+        break
+      default:
+        statValue = actor.system.stats[stat]
+        statName = statValue !== undefined ? game.i18n.localize(`legends.stats.${stat}`) : ''
+        break
+    }
+  }
+  const condition = move ? actor.getConditionForMove(move?.name) : null
+
+  const data = {
+    statName,
+    statValue,
+    condition,
+    principle,
+    principles,
+  }
+
+  const fields = ['bonus', 'penalty', 'principle']
+
+  const rollOptions = await DialogV2.rollDialog(title, template, data, fields)
+  if (!rollOptions || rollOptions == 'cancel') return
+  if (principle && !rollOptions.values?.principle) {
+    ui.notifications.warn(game.i18n.localize('legends.roll.principle-required'))
+    return
+  }
+
+  doRoll(actor, rollOptions.values, { move })
 }
 
 /**
@@ -27,119 +66,82 @@ export const rollMove = async (uuid) => {
  * @param {String} stat The stat name to roll
  * @returns null
  */
-export const rollStat = async (actor, stat) => {
-  const title = game.i18n.format('legends.roll.stat', {
-    stat: game.i18n.localize(`legends.stats.${stat}`),
-  })
-  const rollOptions = await newGetRollOptions(actor, {
-    title: title,
-    stat: stat,
-  })
+export const rollStat = async (actor, stat, options = {}) => {
+  const template = 'systems/legends/templates/dialog/v2/roll.hbs'
+  const title =
+    options.title ??
+    game.i18n.format('legends.roll.stat', {
+      stat: game.i18n.localize(`legends.stats.${stat}`),
+    })
 
-  if (rollOptions.cancelled) return
+  const statValue = actor.system.stats[stat]
+  const statName = statValue !== undefined ? game.i18n.localize(`legends.stats.${stat}`) : ''
+  const data = { statName, statValue }
 
-  doRoll(actor, rollOptions, { stat: stat })
+  const fields = ['bonus', 'penalty']
+
+  const rollOptions = await DialogV2.rollDialog(title, template, data, fields)
+  if (!rollOptions || rollOptions == 'cancel') return
+
+  doRoll(actor, rollOptions.values, { stat })
 }
 
+/**
+ *
+ * @param {Object} actor The Actor to roll for
+ * @param {String} stat The Stat used by this Approach
+ * @param {String} approach The name of the Approach
+ * @returns Promise
+ */
 export const rollApproach = async (actor, stat, approach) => {
+  const template = 'systems/legends/templates/dialog/v2/roll.hbs'
   const title = game.i18n.format('legends.roll.stat', {
     stat: approach,
   })
-  const rollOptions = await newGetRollOptions(actor, {
-    title: title,
-    stat: stat,
-    approach: approach,
-  })
 
-  if (rollOptions.cancelled) return
+  const statValue = actor.system.stats[stat]
+  const statName = statValue !== undefined ? game.i18n.localize(`legends.stats.${stat}`) : ''
+  const data = { statName, statValue }
+  const fields = ['bonus', 'penalty']
 
-  doRoll(actor, rollOptions, { stat: stat, approach: approach })
+  const rollOptions = await DialogV2.rollDialog(title, template, data, fields)
+  if (!rollOptions || rollOptions == 'cancel') return
+
+  doRoll(actor, rollOptions.values, { stat: stat, approach: approach })
 }
 
 export const rollPrinciple = async (actor, principle) => {
+  const template = 'systems/legends/templates/dialog/v2/roll.hbs'
   const title = game.i18n.format('legends.roll.stat', {
     stat: principle,
   })
-  const rollOptions = await newGetRollOptions(actor, {
-    title: title,
-    principle: principle,
-  })
 
-  if (rollOptions.cancelled) return
+  const { bottomTrack, topTrack, value } = actor.system.balance
+  const principles = {
+    [bottomTrack]: -value,
+    [topTrack]: value,
+  }
 
-  doRoll(actor, rollOptions, { principle: principle })
+  const data = { principle, principles }
+  const fields = ['bonus', 'penalty', 'principle']
+
+  const rollOptions = await DialogV2.rollDialog(title, template, data, fields)
+  if (!rollOptions || rollOptions == 'cancel') return
+  if (!rollOptions.values?.principle) {
+    ui.notifications.warn(game.i18n.localize('legends.roll.principle-required'))
+    return
+  }
+
+  doRoll(actor, rollOptions.values, { principle })
 }
 
-const newGetRollOptions = async (actor, options = {}) => {
-  const template = 'systems/legends/templates/partials/dialog/roll-dialog.hbs'
-
+export const doRoll = async (actor, rollOptions, options = {}) => {
   const move = options.move
-  const principle = options.principle
-  const stat = options.stat || move?.system?.rollStat
-  const title = options.title || game.i18n.localize('legends.roll.no-stat')
-
-  const statValue = principle
-    ? actor.getPrincipleValue(principle)
-    : actor.system.stats[stat]
-
+  const principle = rollOptions.principle ?? options.principle
+  const stat = move?.system?.rollStat || options.stat || principle
+  const statValue = principle ? actor.getPrincipleValue(principle) : actor.system.stats[stat]
+  const statName = stat !== undefined ? (principle ? principle : game.i18n.localize(`legends.stats.${stat}`)) : null
   const condition = move ? actor.getConditionForMove(move?.name) : null
-
-  const statName = principle
-    ? principle
-    : statValue !== undefined
-    ? game.i18n.localize(`legends.stats.${stat}`)
-    : ''
-
-  const html = await renderTemplate(template, {
-    statName: statName,
-    moveName: move?.name,
-    statValue: statValue,
-    condition: condition,
-  })
-
-  return new Promise((resolve) => {
-    const data = {
-      title: title,
-      content: html,
-      buttons: {
-        normal: {
-          label: `<i class="fas fa-dice"></i> ${game.i18n.localize(
-            'legends.roll.dialog.submit',
-          )}`,
-          callback: (html) => resolve(_processRollOptions(html)),
-        },
-        cancel: {
-          label: `<i class="fas fa-times"></i> ${game.i18n.localize(
-            'legends.dialog.cancel',
-          )}`,
-          callback: (_html) => resolve({ cancelled: true }),
-        },
-      },
-      default: 'normal',
-      close: () => resolve({ cancelled: true }),
-    }
-    new Dialog(data, { classes: ['dialog', 'legends-dialog'] }).render(true)
-  })
-}
-
-const doRoll = async (actor, rollOptions, options = {}) => {
-  const move = options.move
-  const principle = options.principle
-  const stat = move?.system?.rollStat || options.stat
-
-  const statValue = principle
-    ? actor.getPrincipleValue(principle)
-    : actor.system.stats[stat]
-
-  const statName =
-    stat !== undefined
-      ? principle
-        ? principle
-        : game.i18n.localize(`legends.stats.${stat}`)
-      : null
-
-  const condition = move ? actor.getConditionForMove(move?.name) : null
-
   const neg = statValue < 0
   const absStat = Math.abs(statValue || 0)
 
@@ -154,8 +156,7 @@ const doRoll = async (actor, rollOptions, options = {}) => {
   // Condition
   if (condition) {
     rollData.conditionValue = condition.penalty.penalty
-    const conditionValue =
-      condition.penalty.penalty >= 0 ? ' + @conditionValue' : ' @conditionValue'
+    const conditionValue = condition.penalty.penalty >= 0 ? ' + @conditionValue' : ' @conditionValue'
     rollFormula += conditionValue
   }
 
@@ -179,8 +180,7 @@ const doRoll = async (actor, rollOptions, options = {}) => {
   const renderedRoll = await rollResult.render()
 
   // Setup the roll template
-  const messageTemplate =
-    'systems/legends/templates/partials/chat/stat-roll.hbs'
+  const messageTemplate = 'systems/legends/templates/chat/v2/roll.hbs'
   const templateContext = {
     name: statName,
     move: move?.name || options.approach,
@@ -196,10 +196,8 @@ const doRoll = async (actor, rollOptions, options = {}) => {
     roll: rollResult,
     rolls: [roll],
     content: await renderTemplate(messageTemplate, templateContext),
-    sound: CONFIG.sounds.dice,
-    type: CONST.CHAT_MESSAGE_TYPES.ROLL,
   }
-
+  ChatMessage.applyMode(chatData, game.settings.get('core', 'messageMode'))
   return ChatMessage.create(chatData)
 }
 
@@ -294,10 +292,7 @@ export const registerDiceSoNice = (dice3d) => {
   )
 
   // Systems and presets
-  dice3d.addSystem(
-    { id: 'legends-air', name: game.i18n.localize('legends.training.air') },
-    'default',
-  )
+  dice3d.addSystem({ id: 'legends-air', name: game.i18n.localize('legends.training.air') }, 'default')
   dice3d.addDicePreset({
     type: 'd6',
     labels: ['1', '2', '3', '4', '5', 'systems/legends/images/dice/air.webp'],
@@ -306,10 +301,7 @@ export const registerDiceSoNice = (dice3d) => {
     colorset: 'airbending',
   })
 
-  dice3d.addSystem(
-    { id: 'legends-earth', name: game.i18n.localize('legends.training.earth') },
-    'default',
-  )
+  dice3d.addSystem({ id: 'legends-earth', name: game.i18n.localize('legends.training.earth') }, 'default')
   dice3d.addDicePreset({
     type: 'd6',
     labels: ['1', '2', '3', '4', '5', 'systems/legends/images/dice/earth.webp'],
@@ -318,10 +310,7 @@ export const registerDiceSoNice = (dice3d) => {
     colorset: 'earthbending',
   })
 
-  dice3d.addSystem(
-    { id: 'legends-fire', name: game.i18n.localize('legends.training.fire') },
-    'default',
-  )
+  dice3d.addSystem({ id: 'legends-fire', name: game.i18n.localize('legends.training.fire') }, 'default')
   dice3d.addDicePreset({
     type: 'd6',
     labels: ['1', '2', '3', '4', '5', 'systems/legends/images/dice/fire.webp'],
@@ -345,10 +334,7 @@ export const registerDiceSoNice = (dice3d) => {
     colorset: 'technology',
   })
 
-  dice3d.addSystem(
-    { id: 'legends-water', name: game.i18n.localize('legends.training.water') },
-    'default',
-  )
+  dice3d.addSystem({ id: 'legends-water', name: game.i18n.localize('legends.training.water') }, 'default')
   dice3d.addDicePreset({
     type: 'd6',
     labels: ['1', '2', '3', '4', '5', 'systems/legends/images/dice/water.webp'],
@@ -366,14 +352,7 @@ export const registerDiceSoNice = (dice3d) => {
   )
   dice3d.addDicePreset({
     type: 'd6',
-    labels: [
-      '1',
-      '2',
-      '3',
-      '4',
-      '5',
-      'systems/legends/images/dice/weapon.webp',
-    ],
+    labels: ['1', '2', '3', '4', '5', 'systems/legends/images/dice/weapon.webp'],
     bumpMaps: [, , , , , 'systems/legends/images/dice/weapon-b.webp'],
     system: 'legends-weapons',
     colorset: 'weapons',

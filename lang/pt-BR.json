@@ -29,7 +29,7 @@
         "fighting-style": "Tecnicas de combate",
         "background": "História",
         "demeanor": "Condutas",
-        "hometown": "Terra&nbsp;natal",
+        "hometown": "Terra natal",
         "playbook": "Manual"
       },
       "npc": {
@@ -88,7 +88,8 @@
       "creativity": "Criatividade",
       "focus": "Foco",
       "harmony": "Harmonia",
-      "passion": "Paixão"
+      "passion": "Paixão",
+      "principle": "Principio"
     },
     "items": {
       "new": {
@@ -202,8 +203,8 @@
       "maximum": "Maximo"
     },
     "roll": {
-      "with": "Role com <a class=\"fire-dark approach-roll\" data-approach=\"{approach}\" data-stat=\"{stat}\"><i class=\"fas fa-dice small\"></i> {name}</a>",
-      "evade-observe": "Remova 1 de Fadiga &amp; Role com <a class=\"fire-dark approach-roll\" data-approach=\"Esquiver & Observer\" data-stat=\"creativity\"></i> Criatividade</a> or <a class=\"fire-dark approach-roll\" data-approach=\"Esquiver & Observer\" data-stat=\"harmony\"><i class=\"fas fa-dice small\"></i> Harmonia</a>",
+      "with": "Role com <a class=\"color-fire-dark\" data-action=\"rollApproach\" data-approach=\"{approach}\" data-stat=\"{stat}\"><i class=\"fas fa-dice small\"></i> {name}</a>",
+      "evade-observe": "Remova 1 de Fadiga &amp; Role com <a class=\"color-fire-dark\" data-action=\"rollApproach\" data-approach=\"Esquiver & Observer\" data-stat=\"creativity\"></i> Criatividade</a> or <a class=\"color-fire-dark\" data-action=\"rollApproach\" data-approach=\"Esquiver & Observer\" data-stat=\"harmony\"><i class=\"fas fa-dice small\"></i> Harmonia</a>",
       "stat": "Rolando {stat}",
       "no-stat": "Rolando",
       "miss": "Fracasso",

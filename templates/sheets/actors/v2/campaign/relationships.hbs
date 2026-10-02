@@ -1,0 +1,26 @@
+<section
+  class='tab {{tabs.relationships.id}} {{tabs.relationships.cssClass}}'
+  data-tab='{{tabs.relationships.id}}'
+  data-group='{{tabs.relationships.group}}'
+>
+  <div class='flexcol gap-50'>
+    <div class="flexcol gap-25">
+      <h3 class='m-0 pb-25 text-center font-title border-bottom border-accent size-150'>Allies</h3>
+      <div class="flexcol">
+        {{> (template "partials/v2/description.hbs")
+          content=system.allies
+          enriched=system.enrichedAllies
+          target="system.allies"}}
+      </div>
+    </div>
+    <div class="flexcol gap-25">
+      <h3 class='m-0 pb-25 text-center font-title border-bottom border-accent size-150'>Enemies</h3>
+      <div class="flexcol">
+        {{> (template "partials/v2/description.hbs")
+          content=system.enemies
+          enriched=system.enrichedEnemies
+          target="system.enemies"}}
+      </div>
+    </div>
+  </div>
+</section>

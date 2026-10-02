@@ -1,0 +1,8 @@
+<div class='flexcol gap-50'>
+  <h3 class="text-center m-0 border-bottom border-accent pb-25">
+    {{ localize "legends.actor-sheet.stats" }}
+  </h3>
+  {{#each stats as |val type| }}
+    {{> "systems/legends/templates/sheets/actors/v2/player/_stat.hbs" val=val type=type}}
+  {{/each}}
+</div>

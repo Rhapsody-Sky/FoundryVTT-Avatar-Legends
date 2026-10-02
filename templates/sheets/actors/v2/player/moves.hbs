@@ -1,0 +1,31 @@
+<section
+  class='tab {{tabs.moves.id}} {{tabs.moves.cssClass}}'
+  data-tab='{{tabs.moves.id}}'
+  data-group='{{tabs.moves.group}}'
+>
+<div class="flexcol gap-50">
+  <h3 class='text-center m-0 border-bottom border-accent pb-25'>
+    {{localize 'legends.actor-sheet.moves'}}
+  </h3>
+
+  <div class="flexrow">
+    <div></div>
+    <div>
+      <label class="flexrow gap-50">
+        <span class="flex0 font-title color-fire">{{localize "legends.moves.category.label"}}</span>
+        <select class="moveCategorySelect">
+          <option value="all">{{localize "legends.moves.category.all"}}</option>
+          {{selectOptions moveCategories selected=selectedMoveCategory localize=true}}
+        </select>
+      </label>
+    </div>
+    <div></div>
+  </div>
+
+  <div class='col2 gap-100 item-list'>
+    {{#each moves as |move|}}
+      {{> (template "sheets/actors/v2/player/_move.hbs") move}}
+    {{/each}}
+  </div>
+  </div>
+</section>

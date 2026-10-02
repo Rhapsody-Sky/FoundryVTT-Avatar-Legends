@@ -1,0 +1,25 @@
+<div class='flexcol item {{#if isOwner}}draggable{{/if}}' data-item-id='{{id}}'>
+  <div class="flexrow gap-50">
+    <span class='itemContextMenu size-120 font-title flex0 nowrap' data-action="toggleDrawer" data-item-id="{{id}}">{{name}}</span>
+    <a
+      data-action='itemToChat'
+      data-item-id='{{id}}'
+      data-tooltip="{{localize "legends.common.to-chat"}}"
+      class='icon fas fa-comment color-grey flex0'></a>
+    {{#if system.specialty}}
+      <span class='font-title flex0 nowrap specialty {{system.training}}'>{{system.specialty}}</span>
+    {{else}}
+      {{#if system.training}}
+        <span class="flex0-1rem">{{{trainingIcon system.training}}}</span>
+      {{/if}}
+    {{/if}}
+  </div>
+  <div class="flexrow border-bottom border-1px border-accent mb-25">
+    <div>
+      <span class="color-fire font-title">
+        {{localize (tr_path "legends.techniques.approaches" system.approach)}}
+      </span>
+    </div>
+  </div>
+  {{{drawer this}}}
+</div>

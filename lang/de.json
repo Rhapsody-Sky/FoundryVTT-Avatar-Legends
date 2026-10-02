@@ -88,7 +88,8 @@
       "creativity": "Kreativität",
       "focus": "Fokus",
       "harmony": "Harmonie",
-      "passion": "Leidenschaft"
+      "passion": "Leidenschaft",
+      "principle": "Prinzip"
     },
     "items": {
       "new": {
@@ -202,8 +203,8 @@
       "maximum": "Maximum"
     },
     "roll": {
-      "with": "Würfle mit <a class=\"fire-dark approach-roll\" data-approach=\"{approach}\" data-stat=\"{stat}\"><i class=\"fas fa-dice small\"></i> {name}</a>",
-      "evade-observe": "Lösche 1 Kästchen Erschöpfung &amp; würfle mit <a class=\"fire-dark approach-roll\" data-approach=\"Evade & Observe\" data-stat=\"creativity\"><i class=\"fas fa-dice small\"></i> Kreativität</a> or <a class=\"fire-dark approach-roll\" data-approach=\"Evade & Observe\" data-stat=\"harmony\"><i class=\"fas fa-dice small\"></i> Harmonie</a>",
+      "with": "Würfle mit <a class=\"color-fire-dark\" data-action=\"rollApproach\" data-approach=\"{approach}\" data-stat=\"{stat}\"><i class=\"fas fa-dice small\"></i> {name}</a>",
+      "evade-observe": "Lösche 1 Kästchen Erschöpfung &amp; würfle mit <a class=\"color-fire-dark\" data-action=\"rollApproach\" data-approach=\"Evade & Observe\" data-stat=\"creativity\"><i class=\"fas fa-dice small\"></i> Kreativität</a> or <a class=\"color-fire-dark\" data-action=\"rollApproach\" data-approach=\"Evade & Observe\" data-stat=\"harmony\"><i class=\"fas fa-dice small\"></i> Harmonie</a>",
       "stat": "Würfle {stat}",
       "no-stat": "Würfle",
       "miss": "Misserfolg",

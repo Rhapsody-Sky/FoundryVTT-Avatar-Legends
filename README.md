@@ -1,4 +1,10 @@
-[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/B0B11L4PE)
+# ! Archive Notice !
+
+v2.0.0, is my final major update for the Avatar Legends system
+
+You can see more details on the [project wiki](https://gitlab.com/pacosgrove1/legends/-/wikis/Archive-Notice).
+
+Thanks for using the system!
 
 # Avatar Legends RPG (Unofficial)
 
@@ -28,6 +34,8 @@ To install the system manually, paste the manifest URL below into the `Install S
 See [the Wiki](https://gitlab.com/pacosgrove1/legends/-/wikis/home) for specific usage examples.
 
 ## Credits
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/B0B11L4PE)
 
 This system exists thanks to the excellent YouTube tutorial series by [Cédric Hauteville](https://www.youtube.com/user/LieutenantRazak).
 

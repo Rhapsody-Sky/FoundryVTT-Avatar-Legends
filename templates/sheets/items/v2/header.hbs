@@ -1,0 +1,27 @@
+<div class='flexrow gap-100 mb-50 align-items-start'>
+  <div class='flexcol gap-50'>
+    <input
+      name='name'
+      type='text'
+      value='{{name}}'
+      placeholder='{{localize "legends.actor-sheet.name"}}'
+      class='height-3rem size-200'
+    />
+
+    {{#if (eq type 'condition')}}
+      {{> (template "sheets/items/v2/_condition.hbs")}}
+    {{/if}}
+    {{#if (eq type 'move')}}
+      {{> (template "sheets/items/v2/_move.hbs")}}
+    {{/if}}
+    {{#if (eq type 'status')}}
+      {{> (template "sheets/items/v2/_status.hbs")}}
+    {{/if}}
+    {{#if (eq type 'technique')}}
+      {{> (template "sheets/items/v2/_technique.hbs")}}
+    {{/if}}
+  </div>
+  <div class='flex0-3rem'>
+    <img src='{{img}}' data-edit='img' title='{{name}}' data-action='editImage' />
+  </div>
+</div>

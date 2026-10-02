@@ -1,0 +1,26 @@
+<header class='flexrow gap-50 align-items-start'>
+  <div class='flex2'>
+    <input
+      name='system.playbook'
+      type='text'
+      value='{{system.playbook}}'
+      placeholder='{{localize "legends.actor-sheet.player.playbook"}}'
+      class='font-block size-200 height-3rem bg-transparent border-none'
+    />
+  </div>
+  <div class='flex5'>
+    <div class='bg-white flexrow radius-25 align-items-start'>
+      <label class='title name-label flex0 p-25 font-title'>{{localize 'legends.actor-sheet.name'}}:</label>
+      <input
+        name='name'
+        type='text'
+        value='{{name}}'
+        placeholder='{{localize "legends.actor-sheet.name"}}'
+        class='height-3rem size-200 border-none'
+      />
+    </div>
+  </div>
+  <div class='flex0-3rem'>
+    <img src='{{img}}' data-edit='img' title='{{name}}' data-action='editImage' />
+  </div>
+</header>
