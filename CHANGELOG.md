@@ -1,5 +1,9 @@
 # Changelog
 
+## v2.0.1
+
+- Fix for validation errors (#46)
+
 ## v2.0.0
 
 - Update to ApplicationV2

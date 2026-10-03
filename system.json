@@ -12,7 +12,7 @@
   ],
   "license": "LICENSE",
   "readme": "README.md",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "compatibility": {
     "minimum": "14",
     "verified": "14"
@@ -26,9 +26,39 @@
   ],
   "url": "https://gitlab.com/pacosgrove1/legends/",
   "manifest": "https://gitlab.com/api/v4/projects/pacosgrove1%2Flegends/packages/generic/legends/latest/system.json",
-  "download": "https://gitlab.com/pacosgrove1/legends/-/releases/v2.0.0/downloads/legends-v2.0.0.zip",
+  "download": "https://gitlab.com/pacosgrove1/legends/-/releases/v2.0.1/downloads/legends-v2.0.1.zip",
   "esmodules": ["legends.js"],
   "styles": ["styles/legends.v2.css"],
+  "documentTypes": {
+    "Actor": {
+      "player": {
+        "htmlFields": ["look", "notes"]
+      },
+      "npc": { "htmlFields": ["description"] },
+      "campaign": {
+        "htmlFields": [
+          "scope",
+          "focusDesc",
+          "allies",
+          "enemies",
+          "acts.1.description",
+          "acts.2.description",
+          "acts.3.description"
+        ]
+      }
+    },
+    "Item": {
+      "condition": { "htmlFields": ["description"] },
+      "feature": { "htmlFields": ["description"] },
+      "growth-question": { "htmlFields": ["description"] },
+      "moment-of-balance": { "htmlFields": ["description"] },
+      "move": { "htmlFields": ["description"] },
+      "npc-principle": { "htmlFields": ["description"] },
+      "playbook": { "htmlFields": ["description"] },
+      "status": { "htmlFields": ["description"] },
+      "technique": { "htmlFields": ["description"] }
+    }
+  },
   "packs": [
     {
       "label": "Playbooks",
