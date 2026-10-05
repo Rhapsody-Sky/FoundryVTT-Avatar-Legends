@@ -20,7 +20,8 @@ async function onMoveRoll(event) {
 
   const actor = game.user.character
   if (!actor) {
-    ui.notifications.error = 'You need an actor to do this'
+    ui.notifications.error('You need an actor to do this')
+    game.user.sheet.render({ force: true })
     return
   }
 

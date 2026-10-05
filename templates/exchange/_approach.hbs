@@ -1,0 +1,41 @@
+<div class='flexcol gap-50 {{#unless isCurrentPhase}}phase-inactive{{/unless}}'>
+  {{#if isCurrentPhase}}
+    {{#if @root.round}}
+      <div class='phase-nav flexrow gap-25 height-3 {{#if @root.round}}{{approach}}{{else}}inactive{{/if}}'>
+        {{#if @root.user.isGM}}
+          <a class='flex0 nav-button phase' data-action='prevPhase' data-tooltip='{{localize "legends.exchange.prevPhase"}}'>
+            <i class='fas fa-caret-left'></i>
+          </a>
+        {{/if}}
+        <h3 class="m-0 size-100 font-title line-height-200">{{localize (concat 'legends.exchange.' approach)}}</h3>
+        {{#if @root.user.isGM}}
+          <a class='flex0 nav-button phase' data-action='nextPhase' data-tooltip='{{localize "legends.exchange.nextPhase"}}'>
+            <i class='fas fa-caret-right'></i>
+          </a>
+        {{/if}}
+      </div>
+    {{/if}}
+    {{#if (any combatants)}}
+      {{#each combatants as |combatant|}}
+        {{> (template "exchange/_combatant.hbs") combatant=combatant}}
+      {{/each}}
+    {{else}}
+      <p class="text-center my-50 color-white font-title">{{localize "legends.common.none"}}</p>
+    {{/if}}
+  {{else}}
+    <h4 class='phase-nav font-title {{approach}} m-0 size-75 size-100'>{{localize (concat 'legends.exchange.' approach)}}</h4>
+    {{#if (any combatants)}}
+      <div class='combatant-grid mx-50'>
+        {{#each combatants as |combatant|}}
+          <div id='combatant-{{combatant.id}}'
+            data-combatant-id="{{combatant.id}}"
+            class="combatant">
+            <img src='{{combatant.img}}' alt='{{combatant.name}}' data-tooltip="{{combatant.name}}" />
+          </div>
+        {{/each}}
+      </div>
+    {{else}}
+      <p class="text-center my-50 color-white font-title">{{localize "legends.common.none"}}</p>
+    {{/if}}
+  {{/if}}
+</div>

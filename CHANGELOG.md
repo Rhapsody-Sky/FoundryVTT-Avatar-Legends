@@ -1,5 +1,9 @@
 # Changelog
 
+## v2.1.0
+
+- Add custom Exchange tracker (optional)
+
 ## v2.0.1
 
 - Fix for validation errors (#46)

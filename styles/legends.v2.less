@@ -3,10 +3,6 @@
 .system-legends {
   --font-title: 'Village';
 
-  input {
-    --input-placeholder-color: @black-50;
-  }
-
   * {
     scrollbar-color: var(--color-accent-mid) transparent;
   }
@@ -66,6 +62,10 @@
     white-space: nowrap;
   }
 
+  .flex-nowrap {
+    flex-wrap: nowrap;
+  }
+
   // #region fonts
   --font-sans: 'Noto Sans', sans-serif;
   --font-h1: 'Village', sans-serif;
@@ -97,7 +97,9 @@
   .align-items-baseline {
     align-items: baseline;
   }
-
+  .justify-space-between {
+    justify-content: space-between;
+  }
   .justify-content-end {
     justify-content: end;
   }
@@ -117,16 +119,16 @@
     flex: 0 0 3rem;
   }
   .flex2 {
-    flex: 2;
+    flex: 2 !important;
   }
   .flex3 {
-    flex: 3;
+    flex: 3 !important;
   }
   .flex4 {
-    flex: 4;
+    flex: 4 !important;
   }
   .flex5 {
-    flex: 5;
+    flex: 5 !important;
   }
   .col2 {
     columns: 2;
@@ -147,6 +149,18 @@
   // #region margins
   .m-0 {
     margin: 0 !important;
+  }
+  .mx-25 {
+    margin-left: 0.25rem !important;
+    margin-right: 0.25rem !important;
+  }
+  .mx-50 {
+    margin-left: 0.5rem !important;
+    margin-right: 0.5rem !important;
+  }
+  .mx-25 {
+    margin-left: 0.25rem !important;
+    margin-right: 0.25rem !important;
   }
   .my-50 {
     margin-top: 0.5rem !important;
@@ -195,6 +209,9 @@
   // #endregion
 
   // #region flex gap
+  .gap-0 {
+    gap: 0 !important;
+  }
   .gap-25 {
     gap: 0.25rem;
   }
@@ -210,6 +227,9 @@
   // #endregion
 
   // #region font-size
+  .size-75 {
+    font-size: 0.75rem !important;
+  }
   .size-1rem,
   .size-100 {
     font-size: 1rem !important;
@@ -229,6 +249,10 @@
     font-size: 2.5rem !important;
   }
   // #endregion
+
+  .line-height-200 {
+    line-height: 2rem;
+  }
 
   // #region font styles
   .small-caps {
@@ -287,6 +311,9 @@
   .color-white {
     color: @white !important;
   }
+  .color-white-75 {
+    color: @white-75 !important;
+  }
   .color-accent {
     color: var(--color-accent);
   }
@@ -296,13 +323,16 @@
   .color-accent-dark {
     color: var(--color-accent-dark);
   }
-  .color-water {
+  .color-water,
+  .color-hit {
     color: @waterbender;
   }
-  .color-earth {
+  .color-earth,
+  .color-full {
     color: @earthbender;
   }
-  .color-fire {
+  .color-fire,
+  .color-miss {
     color: @firebender;
   }
   .color-fire-dark {
@@ -363,6 +393,12 @@
   .height-300 {
     height: 3rem !important;
   }
+  .height-350 {
+    height: 3.5rem !important;
+  }
+  .height-400 {
+    height: 4rem !important;
+  }
   .height-500 {
     height: 5rem !important;
   }
@@ -406,6 +442,15 @@
   }
   .bg-gradient-light {
     background-image: linear-gradient(90deg, @bg-fade-light, transparent);
+  }
+  .bg-accent {
+    background-color: @accent-color;
+  }
+  .bg-accent-mid {
+    background-color: @accent-mid;
+  }
+  .bg-accent-dark {
+    background-color: @accent-dark;
   }
   // #endregion
 
@@ -623,5 +668,6 @@
 
 @import url('./chat.v2.less');
 @import url('./dialog.v2.less');
+@import url('./exchange.less');
 @import url('./journal.v2.less');
 @import url('./sheets.v2.less');

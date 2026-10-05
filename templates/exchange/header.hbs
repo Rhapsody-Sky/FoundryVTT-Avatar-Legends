@@ -1,0 +1,36 @@
+<header class='header {{#unless hasCombat}}align-items-stretch min-height-full{{/unless}} flexcol'>
+  {{#if @root.user.isGM}}
+  <div class='flexrow align-items-start gap-50 tabs'>
+    {{#if (any combats)}}
+      <a class='tab addConflict' data-action='createCombat'><i class='fas fa-plus'></i></a>
+      {{#each combats as |combat|}}
+        <a class='tab {{#if combat.active}}active{{/if}} font-title' data-action='cycleCombat' data-combat-id='{{combat.id}}'>
+        {{#if combat.name}}{{combat.name}}{{else}}{{plusOne @index}}{{/if}}
+        </a>
+      {{/each}}
+    {{else}}
+      <a class='tab font-title px-50 addConflict flex2' data-action='createCombat'>{{localize 'legends.exchange.create-exchange'}}</a>
+    {{/if}}
+    <a class='tab settings' data-action='trackerSettings'><i class='fas fa-gear'></i></a>
+  </div>
+  {{/if}}
+  {{#if hasCombat}}
+    <div class='p-50 flexrow gap-50 round-header height-250'>
+      <div class="flexrow gap-50 align-items-start"></div>
+      <h4 class='m-0 text-center flex2 size-100'>
+        {{#if round}}
+          {{format 'legends.exchange.roundNumber' round=round}}
+        {{else}}
+          {{localize 'legends.exchange.notStarted'}}
+        {{/if}}
+      </h4>
+      <div class="flexrow gap-50 align-items-end">
+        {{#if @root.user.isGM}}
+          <a class="encounter-context-menu conflict-btn icon fa-solid fa-ellipsis-vertical color-white"></a>
+        {{/if}}
+      </div>
+    </div>
+  {{else}}
+    <h3 class='font-title text-center my-50 align-content-center flex1 size-120'>{{localize 'legends.exchange.no-exchange'}}</h3>
+  {{/if}}
+</header>

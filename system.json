@@ -12,7 +12,7 @@
   ],
   "license": "LICENSE",
   "readme": "README.md",
-  "version": "2.0.1",
+  "version": "2.1.0",
   "compatibility": {
     "minimum": "14",
     "verified": "14"
@@ -26,7 +26,7 @@
   ],
   "url": "https://gitlab.com/pacosgrove1/legends/",
   "manifest": "https://gitlab.com/api/v4/projects/pacosgrove1%2Flegends/packages/generic/legends/latest/system.json",
-  "download": "https://gitlab.com/pacosgrove1/legends/-/releases/v2.0.1/downloads/legends-v2.0.1.zip",
+  "download": "https://gitlab.com/pacosgrove1/legends/-/releases/v2.1.0/downloads/legends-v2.1.0.zip",
   "esmodules": ["legends.js"],
   "styles": ["styles/legends.v2.css"],
   "documentTypes": {

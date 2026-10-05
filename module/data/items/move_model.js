@@ -7,6 +7,7 @@ export default class LegendsMoveItemDataModel extends foundry.abstract.TypeDataM
       rollable: new BooleanField({ initial: false }),
       rollStat: new StringField(),
       category: new StringField(),
+      visible: new BooleanField({ initial: true }),
     }
   }
 }

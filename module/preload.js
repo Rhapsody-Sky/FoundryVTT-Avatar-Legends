@@ -4,6 +4,8 @@ const { loadTemplates } = foundry.applications.handlebars
 
 export const preloadHandlebarsTemplates = () => {
   const templatePaths = [
+    `${legends.rootPath}/templates/exchange/_approach.hbs`,
+    `${legends.rootPath}/templates/exchange/_combatant.hbs`,
     `${legends.rootPath}/templates/partials/checkbox.hbs`,
     `${legends.rootPath}/templates/partials/v2/description.hbs`,
     `${legends.rootPath}/templates/sheets/actors/v2/player/_balance.hbs`,
@@ -120,4 +122,8 @@ export const registerHandlebarsHelpers = () => {
   Handlebars.registerHelper('not', (condition) => !condition)
   Handlebars.registerHelper('mod', (num, div) => num % div)
   Handlebars.registerHelper('join', (array, glue) => array.join(glue))
+  Handlebars.registerHelper('plusOne', (value) => parseInt(value) + 1)
+  Handlebars.registerHelper('any', (array) => (array?.length || array?.size) > 0)
+  Handlebars.registerHelper('format', (path, options) => game.i18n.format(path, { ...options?.hash }))
+  Handlebars.registerHelper('length', (array) => array.length)
 }

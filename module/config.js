@@ -14,6 +14,18 @@ legends.approaches = {
   'advance-attack': 'legends.techniques.approaches.advance-attack',
   'evade-observe': 'legends.techniques.approaches.evade-observe',
 }
+legends.approachStats = {
+  'defend-maneuver': ['focus'],
+  'advance-attack': ['passion'],
+  'evade-observe': ['creativity', 'harmony'],
+}
+legends.exchangePhases = ['choose', 'defend-maneuver', 'advance-attack', 'evade-observe']
+legends.exchangePhaseOptions = {
+  choose: 'legends.exchange.choose',
+  'defend-maneuver': 'legends.techniques.approaches.defend-maneuver',
+  'advance-attack': 'legends.techniques.approaches.advance-attack',
+  'evade-observe': 'legends.techniques.approaches.evade-observe',
+}
 
 legends.statusTypeOptions = {
   positive: 'legends.status.positive',
@@ -171,6 +183,16 @@ export const registerSystemSettings = () => {
     hint: 'Enabled: use FontAwesome icons',
     type: Boolean,
     default: true,
+    requiresReload: true,
+  })
+
+  game.settings.register('legends', 'exchangeTracker', {
+    config: true,
+    scope: 'world',
+    name: 'SETTINGS.exchangeTracker.label',
+    hint: 'SETTINGS.exchangeTracker.hint',
+    type: Boolean,
+    default: false,
     requiresReload: true,
   })
 }

@@ -58,6 +58,10 @@
   font-family: 'Village' !important;
   font-variant: small-caps !important;
 }
+.font-main {
+  font-family: 'Noto Sans' !important;
+  font-size: 0.8rem !important;
+}
 /**
 * Colours
 **/
@@ -87,9 +91,6 @@
   --table-header-text-color: #ffffff;
   --table-row-color-odd: transparent;
   --table-row-color-even: transparent;
-}
-.system-legends input {
-  --input-placeholder-color: rgba(17, 17, 17, 0.5);
 }
 .system-legends * {
   scrollbar-color: var(--color-accent-mid) transparent;
@@ -139,6 +140,9 @@
 .system-legends .nowrap {
   white-space: nowrap;
 }
+.system-legends .flex-nowrap {
+  flex-wrap: nowrap;
+}
 .system-legends .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, calc(calc(100% - 1rem) / 3));
@@ -156,6 +160,9 @@
 .system-legends .align-items-baseline {
   align-items: baseline;
 }
+.system-legends .justify-space-between {
+  justify-content: space-between;
+}
 .system-legends .justify-content-end {
   justify-content: end;
 }
@@ -172,16 +179,16 @@
   flex: 0 0 3rem;
 }
 .system-legends .flex2 {
-  flex: 2;
+  flex: 2 !important;
 }
 .system-legends .flex3 {
-  flex: 3;
+  flex: 3 !important;
 }
 .system-legends .flex4 {
-  flex: 4;
+  flex: 4 !important;
 }
 .system-legends .flex5 {
-  flex: 5;
+  flex: 5 !important;
 }
 .system-legends .col2 {
   columns: 2;
@@ -197,6 +204,18 @@
 }
 .system-legends .m-0 {
   margin: 0 !important;
+}
+.system-legends .mx-25 {
+  margin-left: 0.25rem !important;
+  margin-right: 0.25rem !important;
+}
+.system-legends .mx-50 {
+  margin-left: 0.5rem !important;
+  margin-right: 0.5rem !important;
+}
+.system-legends .mx-25 {
+  margin-left: 0.25rem !important;
+  margin-right: 0.25rem !important;
 }
 .system-legends .my-50 {
   margin-top: 0.5rem !important;
@@ -239,6 +258,9 @@
 .system-legends .pb-25 {
   padding-bottom: 0.25rem !important;
 }
+.system-legends .gap-0 {
+  gap: 0 !important;
+}
 .system-legends .gap-25 {
   gap: 0.25rem;
 }
@@ -250,6 +272,9 @@
 }
 .system-legends .gap-100 {
   gap: 1rem;
+}
+.system-legends .size-75 {
+  font-size: 0.75rem !important;
 }
 .system-legends .size-1rem,
 .system-legends .size-100 {
@@ -268,6 +293,9 @@
 }
 .system-legends .size-250 {
   font-size: 2.5rem !important;
+}
+.system-legends .line-height-200 {
+  line-height: 2rem;
 }
 .system-legends .small-caps {
   font-variant: small-caps;
@@ -300,6 +328,9 @@
 .system-legends .color-white {
   color: #ffffff !important;
 }
+.system-legends .color-white-75 {
+  color: rgba(255, 255, 255, 0.75) !important;
+}
 .system-legends .color-accent {
   color: var(--color-accent);
 }
@@ -309,13 +340,16 @@
 .system-legends .color-accent-dark {
   color: var(--color-accent-dark);
 }
-.system-legends .color-water {
+.system-legends .color-water,
+.system-legends .color-hit {
   color: #4d63a9;
 }
-.system-legends .color-earth {
+.system-legends .color-earth,
+.system-legends .color-full {
   color: #3c6733;
 }
-.system-legends .color-fire {
+.system-legends .color-fire,
+.system-legends .color-miss {
   color: #b62127;
 }
 .system-legends .color-fire-dark {
@@ -370,6 +404,12 @@
 .system-legends .height-300 {
   height: 3rem !important;
 }
+.system-legends .height-350 {
+  height: 3.5rem !important;
+}
+.system-legends .height-400 {
+  height: 4rem !important;
+}
 .system-legends .height-500 {
   height: 5rem !important;
 }
@@ -404,6 +444,15 @@
 }
 .system-legends .bg-gradient-light {
   background-image: linear-gradient(90deg, #dce5f1, transparent);
+}
+.system-legends .bg-accent {
+  background-color: #99bbe3;
+}
+.system-legends .bg-accent-mid {
+  background-color: #405480;
+}
+.system-legends .bg-accent-dark {
+  background-color: #002a5b;
 }
 .system-legends img.icon {
   max-width: 1rem;
@@ -612,6 +661,9 @@
   --color-text-primary: #111111;
   --color-text-emphatic: #002a5b;
 }
+.legends.dialog input {
+  --input-placeholder-color: rgba(17, 17, 17, 0.5);
+}
 .legends.dialog .window-content {
   background-color: var(--bg-color);
   background-image: linear-gradient(var(--bg-fade-color) 0%, var(--bg-color) 50px, var(--bg-color) 100%);
@@ -646,6 +698,221 @@
 }
 .legends.dialog .window-content footer button.dialog-button.no:hover {
   background: var(--color-fire);
+}
+.legends.sidebar.exchange {
+  --color-text-primary: #ffffff;
+  align-items: stretch;
+}
+.legends.sidebar.exchange .header,
+.legends.sidebar.exchange .footer {
+  flex: 0 0 2rem;
+}
+.legends.sidebar.exchange .phase-nav {
+  --phase-nav-bg: var(--color-accent-mid);
+  --phase-nav-hover: rgba(255, 255, 255, 0.5);
+  --phase-nav-hover-text: var(--color-accent-dark);
+  padding: 0.5rem;
+  text-align: center;
+  background: var(--phase-nav-bg);
+}
+.legends.sidebar.exchange .phase-nav .nav-button {
+  display: flex;
+  height: 2rem;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.25rem;
+  background: var(--phase-nav-bg);
+  color: #ffffff;
+}
+.legends.sidebar.exchange .phase-nav .nav-button.phase,
+.legends.sidebar.exchange .phase-nav .nav-button.round {
+  flex: 0 0 2rem;
+}
+.legends.sidebar.exchange .phase-nav .nav-button:hover {
+  text-shadow: none;
+  background: var(--phase-nav-hover);
+  color: var(--phase-nav-hover-text);
+}
+.legends.sidebar.exchange .phase-nav.defend-maneuver {
+  --phase-nav-bg: #3c6733;
+  --phase-nav-hover-text: var(--phase-nav-bg);
+}
+.legends.sidebar.exchange .phase-nav.advance-attack {
+  --phase-nav-bg: #b62127;
+  --phase-nav-hover-text: var(--phase-nav-bg);
+}
+.legends.sidebar.exchange .phase-nav.evade-observe {
+  --phase-nav-bg: #4d63a9;
+  --phase-nav-hover-text: var(--phase-nav-bg);
+}
+.legends.sidebar.exchange .phase-inactive .phase-nav {
+  background: transparent;
+  border-top: 2px solid var(--phase-nav-bg);
+  border-bottom: 2px solid var(--phase-nav-bg);
+  background-image: linear-gradient(120deg, var(--phase-nav-bg), transparent);
+}
+.legends.sidebar.exchange .header .tabs {
+  padding: 0.5rem;
+}
+.legends.sidebar.exchange .header .tabs .tab {
+  white-space: nowrap;
+  padding: 0 0.5rem;
+  color: white;
+}
+.legends.sidebar.exchange .header .tabs .tab.active {
+  background: var(--color-accent-mid);
+}
+.legends.sidebar.exchange .header .tabs .tab.addConflict,
+.legends.sidebar.exchange .header .tabs .tab.settings {
+  padding: 0;
+}
+.legends.sidebar.exchange .header .tabs .tab,
+.legends.sidebar.exchange .header .conflict-btn {
+  flex: 0 0 1.5rem;
+  background: rgba(255, 255, 255, 0.25);
+  height: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.25rem;
+}
+.legends.sidebar.exchange .header .tabs .tab.settings,
+.legends.sidebar.exchange .header .conflict-btn.settings,
+.legends.sidebar.exchange .header .tabs .tab.encounter-context-menu,
+.legends.sidebar.exchange .header .conflict-btn.encounter-context-menu {
+  margin-left: auto;
+}
+.legends.sidebar.exchange .header .round-header {
+  background: rgba(255, 255, 255, 0.25);
+}
+.legends.sidebar.exchange .combatant-grid {
+  gap: 0.5rem;
+  display: grid;
+  grid-template-columns: repeat(8, calc((100% - 3.5rem) / 8));
+}
+.legends.sidebar.exchange .combatants {
+  flex: 1;
+  overflow-y: auto;
+}
+.legends.sidebar.exchange .combatants .combatant-full {
+  border-bottom: none;
+  padding: 0.25rem 0.5rem;
+}
+.legends.sidebar.exchange .combatants .combatant-full:nth-child(odd) {
+  background: rgba(17, 17, 17, 0.25);
+}
+.legends.sidebar.exchange .combatants .combatant-full:last-child {
+  border-bottom: none;
+}
+.legends.sidebar.exchange .combatants .combatant-full.inactive {
+  opacity: 0.5;
+}
+.legends.sidebar.exchange .combatants .combatant-full .stat {
+  flex: 0 0 2rem;
+}
+.legends.sidebar.exchange .combatants .combatant-full .token {
+  position: relative;
+}
+.legends.sidebar.exchange .combatants .combatant-full .token .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(17, 17, 17, 0.5);
+  color: #ffffff;
+  text-shadow: 0 0 5px #111111;
+  font-size: 1.5rem;
+}
+.legends.sidebar.exchange .combatants .combatant-full .token .overlay i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.legends.sidebar.exchange .combatants .combatant-full .btn {
+  background: rgba(255, 255, 255, 0.25);
+  color: #111111;
+  border-radius: 0.25rem;
+  display: block;
+  text-align: center;
+  transition: all 0.2s;
+}
+.legends.sidebar.exchange .combatants .combatant-full .btn.active {
+  color: #ffffff !important;
+}
+.legends.sidebar.exchange .combatants .combatant-full .btn.approach {
+  flex: 0 0 3rem;
+  padding: 0.25rem;
+  font-size: 0.75rem;
+  font-weight: normal;
+  --btn-bg: rgba(255, 255, 255, 0.25);
+  --btn-bg-hover: rgba(255, 255, 255, 0.5);
+}
+.legends.sidebar.exchange .combatants .combatant-full .btn.approach:hover {
+  color: var(--btn-bg);
+  background: var(--btn-bg-hover);
+}
+.legends.sidebar.exchange .combatants .combatant-full .btn.approach.active {
+  background: var(--btn-bg);
+}
+.legends.sidebar.exchange .combatants .combatant-full .btn.defend-maneuver {
+  --btn-bg: #3c6733;
+}
+.legends.sidebar.exchange .combatants .combatant-full .btn.advance-attack {
+  --btn-bg: #b62127;
+}
+.legends.sidebar.exchange .combatants .combatant-full .btn.evade-observe {
+  --btn-bg: #4d63a9;
+}
+.legends.sidebar.exchange .combatants .combatant-full .btn.stance-move:hover {
+  background: var(--btn-bg);
+  color: #ffffff;
+}
+.legends.sidebar.exchange .combatants .combatant-full .npc-principle {
+  margin: 0 0.5rem -0.5rem;
+}
+.legends.sidebar.exchange .combatants .combatant-full .npc-principle .check-box {
+  --box-size: 1.5rem;
+  display: inline-block;
+  border: 1.5px solid black;
+  background: white;
+  box-shadow: -1px -1px 0 rgba(255, 255, 255, 0.75), -1px 1px 0 rgba(255, 255, 255, 0.75), 1px -1px 0 rgba(255, 255, 255, 0.75), 1px 1px 0 rgba(255, 255, 255, 0.75);
+  flex: 0 0 var(--box-size);
+  height: var(--box-size);
+  transform: rotate(45deg);
+  color: #111111;
+  position: relative;
+  margin: 0.25rem;
+}
+.legends.sidebar.exchange .combatants .combatant-full .npc-principle .check-box .num {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: inline-block;
+  transform: translate(-50%, -50%) rotate(-45deg);
+  text-align: center;
+  font-size: 0.8rem;
+  line-height: var(--box-size);
+}
+.legends.sidebar.exchange .combatants .combatant-full .npc-principle .check-box.filled {
+  background: #b62127;
+  box-shadow: inset 2px 2px 0 white, inset -2px -2px 0 white;
+}
+.legends.sidebar.exchange .combatants .combatant-full .npc-principle .check-box.filled .num {
+  color: white;
+}
+.legends.sidebar.exchange .combatants .combatant-full .token-effect {
+  max-width: 1rem;
+}
+.legends.sidebar.exchange .combatants .combatant-full .combatant-action {
+  color: rgba(255, 255, 255, 0.5);
+}
+.legends.sidebar.exchange .combatants .combatant-full .combatant-action:hover {
+  color: rgba(255, 255, 255, 0.75);
+}
+.legends.sidebar.exchange .combatants .combatant-full .combatant-action.active {
+  color: #ffffff;
 }
 .sheet.journal-sheet .window-content {
   --color-text-primary: #111111;
@@ -779,6 +1046,9 @@
 .legends.sheet {
   --color-text-primary: #111111;
   --color-text-emphatic: #002a5b;
+}
+.legends.sheet input {
+  --input-placeholder-color: rgba(17, 17, 17, 0.5);
 }
 .legends.sheet .window-content {
   padding: 0.5rem 1rem 1rem;
