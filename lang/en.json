@@ -151,7 +151,10 @@
       "approaches": {
         "defend-maneuver": "Defend & Maneuver",
         "advance-attack": "Advance & Attack",
-        "evade-observe": "Evade & Observe"
+        "evade-observe": "Evade & Observe",
+        "defend-maneuver_short": "D&M",
+        "advance-attack_short": "A&A",
+        "evade-observe_short": "E&O"
       },
       "proficiency": {
         "learn": "Set Learned",
@@ -230,7 +233,8 @@
       "principle-required": "You must select a Principle"
     },
     "dialog": {
-      "cancel": "Cancel"
+      "cancel": "Cancel",
+      "submit": "Submit"
     },
     "nav": {
       "main": "Main",
@@ -239,7 +243,31 @@
       "detail": "Details & Growth",
       "notes": "Notes",
       "effects": "Effects"
+    },
+    "exchange": {
+      "choose": "Choose Approach",
+      "notStarted": "Not Started",
+      "roundNumber": "Round {round}",
+      "prevRound": "Previous Round",
+      "nextRound": "Next Round",
+      "prevPhase": "Previous Phase",
+      "nextPhase": "Next Phase",
+      "defend-maneuver": "Defend & Maneuver",
+      "advance-attack": "Advance & Attack",
+      "evade-observe": "Evade & Observe",
+      "stat": "Stat",
+      "clear-stance": "Reset Stance Result",
+      "no-exchange": "No Exchange",
+      "toggle-hidden": "Toggle Hidden",
+      "toggle-defeated": "Toggle Defeated",
+      "ping-combatant": "Ping Combatant",
+      "create-exchange": "Create Exchange"
     }
+  },
+  "COMBAT": {
+    "Begin": "Start Exchange",
+    "End": "End Exchange",
+    "InitiativeReset": "Reset all Stance Results"
   },
   "SETTINGS": {
     "None": "There are no settings for Avatar Legends RPG (Unofficial)",
@@ -256,6 +284,10 @@
     "playerNotes": {
       "label": "Player Notes",
       "hint": "Show the Notes section on the Player character sheet"
+    },
+    "exchangeTracker": {
+      "label": "Use Exchange Tracker",
+      "hint": "Replace the Combat Tracker with a custom Exchange Tracker for Avatar Legends."
     }
   },
   "TYPES": {

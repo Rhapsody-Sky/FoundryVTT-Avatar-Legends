@@ -23,6 +23,10 @@ import LegendsPlaybookItemDataModel from './module/data/items/playbook_model.js'
 import LegendsStatusItemDataModel from './module/data/items/status_model.js'
 import LegendsTechniqueItemDataModel from './module/data/items/technique_model.js'
 
+import LegendsExchange from './module/exchange/exchange.js'
+import LegendsExchangeTracker from './module/exchange/tracker.js'
+import LegendsCombatant from './module/exchange/combatant.js'
+
 const { Actors, Items } = foundry.documents.collections
 const { ActorSheet } = foundry.appv1.sheets
 
@@ -77,6 +81,12 @@ Hooks.once('init', function () {
   registerSystemSettings()
   registerHandlebarsHelpers()
   setupEnrichers()
+
+  if (game.settings.get('legends', 'exchangeTracker')) {
+    CONFIG.Combat.documentClass = LegendsExchange
+    CONFIG.Combatant.documentClass = LegendsCombatant
+    CONFIG.ui.combat = LegendsExchangeTracker
+  }
 })
 
 // Allow buttons in chat messages

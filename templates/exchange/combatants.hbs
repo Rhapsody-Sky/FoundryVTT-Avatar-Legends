@@ -1,0 +1,13 @@
+{{#if hasCombat}}
+  <div class='combatants flexcol gap-50'>
+    {{#if (eq currentPhase 'choose')}}
+      {{> (template "exchange/_approach.hbs") combatants=turns approach=currentPhase isCurrentPhase=true}}
+    {{else}}
+      {{#each turnsByApproach as |turns approach|}}
+        {{> (template "exchange/_approach.hbs") combatants=turns approach=approach isCurrentPhase=(eq approach @root.currentPhase)}}
+      {{/each}}
+    {{/if}}
+  </div>
+{{else}}
+  <div></div>
+{{/if}}

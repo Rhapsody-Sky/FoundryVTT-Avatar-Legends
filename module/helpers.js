@@ -1,5 +1,6 @@
 import { legends } from './config.js'
 const { enrichHTML } = foundry.applications.ux.TextEditor.implementation
+const { renderTemplate } = foundry.applications.handlebars
 
 export const onlyUnique = (array) => {
   return array.filter((value, index, array) => array.indexOf(value) === index)

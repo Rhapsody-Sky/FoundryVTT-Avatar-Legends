@@ -1,0 +1,28 @@
+<div class='flexcol gap-50'>
+
+  <div class='flexrow gap-50'>
+    <label class='text-right size-100 font-title'>{{localize 'legends.exchange.stat'}}</label>
+    <select name='stat' class='flex3 text-center'>
+      {{#each stats as |stat|}}
+        <option value='{{stat.key}}'>{{stat.name}} ({{stat.value}})</option>
+      {{/each}}
+    </select>
+    <div class='flex0-2rem'></div>
+  </div>
+
+  <div class='flexrow gap-50'>
+    <label class='text-right size-100 font-title'>{{localize 'legends.roll.dialog.bonus'}}</label>
+    <input name='bonus' class='flex3 font-hand text-center' type='number' value='0' min='0' max='10' />
+    <div class='flex0-2rem text-center'>
+      <i class='fas fa-question-circle' data-tooltip='{{localize "legends.roll.dialog.bonus-description"}}'></i>
+    </div>
+
+  </div>
+  <div class='flexrow gap-50'>
+    <label class='text-right size-100 font-title'>{{localize 'legends.roll.dialog.penalty'}}</label>
+    <input name='penalty' class='flex3 font-hand text-center' type='number' value='0' min='-10' max='10' />
+    <div class='flex0-2rem text-center'>
+      <i class='fas fa-question-circle' data-tooltip='{{localize "legends.roll.dialog.penalty-description"}}'></i>
+    </div>
+  </div>
+</div>

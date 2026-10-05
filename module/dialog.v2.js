@@ -1,3 +1,5 @@
+import { legends } from './config.js'
+
 const { DialogV2 } = foundry.applications.api
 const { renderTemplate } = foundry.applications.handlebars
 

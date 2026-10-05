@@ -1,4 +1,7 @@
+import { legends } from './config.js'
 import * as DialogV2 from './dialog.v2.js'
+
+const { renderTemplate } = foundry.applications.handlebars
 
 /**
  * Roll a Move by UUID
@@ -108,6 +111,30 @@ export const rollApproach = async (actor, stat, approach) => {
   if (!rollOptions || rollOptions == 'cancel') return
 
   doRoll(actor, rollOptions.values, { stat: stat, approach: approach })
+}
+
+export const newRollApproach = async (actor, approach) => {
+  if (!actor || !approach) return
+
+  const approachName = game.i18n.localize(`legends.exchange.${approach}`)
+  const title = game.i18n.format('legends.roll.stat', {
+    stat: approachName,
+  })
+
+  const template = 'systems/legends/templates/dialog/v2/approach.hbs'
+  const stats = legends.approachStats[approach].map((stat) => ({
+    key: stat,
+    name: game.i18n.localize(`legends.stats.${stat}`),
+    value: actor.system.stats[stat],
+  }))
+
+  const data = { stats }
+  const fields = ['stat', 'bonus', 'penalty']
+  const rollOptions = await DialogV2.rollDialog(title, template, data, fields)
+  if (!rollOptions || rollOptions == 'cancel') return
+
+  const rollResult = await doRoll(actor, rollOptions.values, { stat: rollOptions.values.stat, approach: approachName })
+  return rollResult.rolls[0]
 }
 
 export const rollPrinciple = async (actor, principle) => {

@@ -9,6 +9,16 @@ export default class LegendsActorV2 extends Actor {
     }
   }
 
+  get npcPrinciple() {
+    if (this.type != 'npc') return null
+    const npcPrinciple = this.itemTypes['npc-principle'][0]
+
+    if (npcPrinciple) {
+      return npcPrinciple.system.track.value
+    }
+    return null
+  }
+
   async _preCreate(data, options, user) {
     const allowed = await super._preCreate(data, options, user)
     if (allowed === false) return false
