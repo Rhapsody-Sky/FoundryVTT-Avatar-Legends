@@ -30,6 +30,8 @@ Additional screenshots: https://imgur.com/a/wWJLdor
 
 ## Installation
 
+**Coming from the original system?** Follow the [switching guide](docs/switching.md) / [Umstiegsanleitung auf Deutsch](docs/umstieg.md). It covers backups, existing worlds, update protection and recovery without recreating your campaign.
+
 Requires **Foundry VTT 14**. Do not install the original directory entry expecting to receive this fork.
 
 After the first tested, non-prerelease GitHub release is published, the fork's installation manifest will be:

@@ -1,0 +1,48 @@
+name: Migration help / Umstiegshilfe
+description: Help switching from the original Legends system to the Rhapsody fork.
+title: "[Migration] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Start with the [English guide](https://github.com/Rhapsody-Sky/FoundryVTT-Avatar-Legends/blob/main/docs/switching.md) / [deutsche Anleitung](https://github.com/Rhapsody-Sky/FoundryVTT-Avatar-Legends/blob/main/docs/umstieg.md).
+        This issue is public. Do not attach worlds, credentials, license keys, private player information or access links. Solange kein getestetes Release vorliegt, bitte keine produktive Welt migrieren.
+  - type: input
+    id: foundry
+    attributes:
+      label: Foundry version and build / Version und Build
+      placeholder: "14.xxx"
+    validations:
+      required: true
+  - type: input
+    id: versions
+    attributes:
+      label: Old system and target release / Bisheriges System und Zielrelease
+      placeholder: "Original 2.1.0 -> Rhapsody ..."
+    validations:
+      required: true
+  - type: dropdown
+    id: world-state
+    attributes:
+      label: World state / Weltzustand
+      options:
+        - Not launched since replacement / Seit Austausch nicht gestartet
+        - Only a test copy launched / Nur Testkopie gestartet
+        - Production world launched / Produktive Welt gestartet
+        - Not sure / Unklar
+    validations:
+      required: true
+  - type: textarea
+    id: backup
+    attributes:
+      label: Backup available? / Sicherung vorhanden?
+      description: State whether a pre-switch world and system backup exists. Do not upload it.
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: Failed step and symptoms / Schritt und Fehlerbild
+      description: Include hosting type, relevant modules and redacted errors; omit sensitive paths or URLs.
+    validations:
+      required: true
