@@ -1,4 +1,4 @@
-# Switch from the original Legends system to Rhapsody
+# Switch from the original Legends system to this fork
 
 [Deutsch](umstieg.md) · [README](../README.md) · [Releases](https://github.com/Rhapsody-Sky/FoundryVTT-Avatar-Legends/releases)
 
@@ -17,7 +17,7 @@ Record your Foundry version/build and installed Legends version from Setup befor
 | Starting point | What to check before proceeding |
 | --- | --- |
 | Original Legends 1.x | The target release must explicitly support your version. Test the sheet/data transition on a copy; do not assume every historical version is covered. |
-| Rhapsody's earlier 1.4.0 V14 port | Check description text, notes and saved sheet selections in particular. This port used `system.description`; upstream V2 uses `system.look`. |
+| My earlier 1.4.0 V14 port | Check description text, notes and saved sheet selections in particular. This port used `system.description`; upstream V2 uses `system.look`. |
 | Original Legends 2.0.x / 2.1.0 | These already use ApplicationV2. Still back up and check data, modules and the exact target release notes. |
 | Foundry older or newer than 14 | Stop: this candidate targets Foundry 14 only. Plan and test a core-version change separately; do not downgrade a world to fit this fork. |
 | A newer or otherwise unlisted system version | Ask before switching. A lower version number is not a safe rollback route. |

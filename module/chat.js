@@ -89,10 +89,10 @@ export const showArchiveMessage = async () => {
     speaker: ChatMessage.getSpeaker(),
     style: 0,
     content: `
-    <h3 class="font-title color-accent-mid">Avatar Legends — Rhapsody continuation</h3>
+    <h3 class="font-title color-accent-mid">Avatar Legends — continued development</h3>
     <p>This community fork continues Paul Cosgrove's (demondownload) unofficial Avatar Legends system.</p>
     <p>The original maintainer announced v2.0.0 as the final major update. See the <a href="https://gitlab.com/pacosgrove1/legends/-/wikis/Archive-Notice">original archive notice</a>.</p>
-    <p>Fork updates and support: <a href="https://github.com/Rhapsody-Sky/FoundryVTT-Avatar-Legends">Rhapsody's repository</a>. Thank you to the original author and contributors!</p>
+    <p>Find updates and support in <a href="https://github.com/Rhapsody-Sky/FoundryVTT-Avatar-Legends">this project's repository</a>. Thank you to the original author and contributors!</p>
     `,
   }
   return ChatMessage.create(chatData)

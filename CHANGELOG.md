@@ -2,7 +2,7 @@
 
 ## v2.1.1-rhapsody.1 — development candidate
 
-- Establish the Rhapsody continuation with preserved upstream history, MIT notice and contributor credits.
+- Establish this continuation with preserved upstream history, MIT notice and contributor credits.
 - Base the fork on upstream 2.1.0, including ApplicationV2 sheets and the optional Exchange tracker.
 - Preserve legacy player description HTML and copy it into an empty V2 look field once without overwriting existing text.
 - Restore dedicated DialogV2 roll/cancel icons; upstream V2 editor layout already avoids the old enclosing-label bug.

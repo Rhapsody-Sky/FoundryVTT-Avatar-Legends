@@ -4,15 +4,15 @@ A FoundryVTT system for [Avatar Legends RPG](https://magpiegames.com/pages/avata
 
 ## Origin and continuation
 
-This is Rhapsody's community continuation of **[Paul Cosgrove / demondownload's original Legends system](https://gitlab.com/pacosgrove1/legends)**, based on upstream **v2.1.0** (commit `173611c933b06033520e99b1d196724afbf81e90`). The upstream Git history is preserved in this repository.
+I maintain this project as a continuation of **[Paul Cosgrove / demondownload's original Legends system](https://gitlab.com/pacosgrove1/legends)**, based on upstream **v2.1.0** (commit `173611c933b06033520e99b1d196724afbf81e90`). The upstream Git history is preserved in this repository.
 
-Paul announced v2.0.0 as his final major update; see his [archive notice](https://gitlab.com/pacosgrove1/legends/-/wikis/Archive-Notice). Thank you to Paul and everyone who contributed to the original project. This fork is maintained separately and is not an official release by Paul, Magpie Games, or the Avatar rights holders. Please report fork issues [here](https://github.com/Rhapsody-Sky/FoundryVTT-Avatar-Legends/issues), not to the retired upstream project.
+Paul announced v2.0.0 as his final major update; see his [archive notice](https://gitlab.com/pacosgrove1/legends/-/wikis/Archive-Notice). Thank you to Paul and everyone who contributed to the original project. I maintain this fork independently; it is not an official release by Paul, Magpie Games, or the Avatar rights holders. Report problems through [this repository's issue tracker](https://github.com/Rhapsody-Sky/FoundryVTT-Avatar-Legends/issues), not to the retired upstream project.
 
-The code remains under the **MIT license**. [LICENSE](LICENSE) retains Paul Cosgrove's original copyright and permission notice alongside the notice for Rhapsody's contributions. Fonts, icons and franchise content retain their respective notices and terms listed below; the code license does not relicense those assets.
+The code remains under the **MIT license**. [LICENSE](LICENSE) retains Paul Cosgrove's original copyright and permission notice, with an additional copyright notice for my changes. Fonts, icons and franchise content retain their respective notices and terms listed below; the code license does not relicense those assets.
 
 ## Current status
 
-The first Rhapsody version, `2.1.1-rhapsody.1`, is a **development candidate, not yet a published or production-validated release**. It includes upstream's ApplicationV2 sheets and optional Exchange tracker, restores the separate DialogV2 button icons, and adds a compatibility migration for character descriptions from our earlier V14 port.
+The first version of this continuation, `2.1.1-rhapsody.1`, is a **development candidate, not yet a published or production-validated release**. It includes upstream's ApplicationV2 sheets and optional Exchange tracker, restores the separate DialogV2 button icons, and adds a compatibility migration for character descriptions from my earlier V14 port.
 
 Existing non-empty `look` text is never overwritten. Legacy `description` text is retained and copied into an empty `look` field once; a saved migration marker prevents a deliberately cleared field from being repopulated. Test this on a copy of your world before upgrading. See [the release checklist](docs/releasing.md) for the remaining runtime checks.
 

@@ -1,4 +1,4 @@
-# Vom ursprünglichen Legends-System zu Rhapsody wechseln
+# Vom ursprünglichen Legends-System zu diesem Fork wechseln
 
 [English](switching.md) · [README](../README.md) · [Releases](https://github.com/Rhapsody-Sky/FoundryVTT-Avatar-Legends/releases)
 
@@ -17,7 +17,7 @@ Notiere im Setup die Foundry-Version inklusive Build und die installierte Legend
 | Ausgangspunkt | Vor dem Wechsel prüfen |
 | --- | --- |
 | Original Legends 1.x | Unterstützt das Zielrelease diese Version ausdrücklich? Bogen- und Datenumstellung erst an einer Kopie testen. Nicht jede historische Version ist automatisch abgedeckt. |
-| Unser früherer V14-Port 1.4.0 | Besonders Beschreibung, Notizen und gespeicherte Bogenauswahl prüfen: Der Port verwendet `system.description`, Upstream V2 dagegen `system.look`. |
+| Mein früherer V14-Port 1.4.0 | Besonders Beschreibung, Notizen und gespeicherte Bogenauswahl prüfen: Der Port verwendet `system.description`, Upstream V2 dagegen `system.look`. |
 | Original Legends 2.0.x / 2.1.0 | ApplicationV2 ist bereits vorhanden. Trotzdem sichern und Daten, Module sowie Releasehinweise prüfen. |
 | Foundry älter oder neuer als 14 | Anhalten: Dieser Kandidat ist nur für Foundry 14 vorgesehen. Einen Foundry-Versionswechsel separat planen und testen; keine Welt einfach herunterstufen. |
 | Neueres oder anderes System | Vorher nachfragen. Eine kleinere Versionsnummer ist kein sicherer Rückweg. |
@@ -42,7 +42,7 @@ Den folgenden Austausch zuerst dort durchführen und die Prüfliste abarbeiten. 
 
 Dieser Weg tauscht das Paket direkt aus und verlässt sich nicht darauf, dass Foundry die Updatequelle eines bereits installierten Systems umstellt. Ohne Dateizugriff übernimmt das dein Hoster. **Keine Welt deinstallieren oder löschen.**
 
-1. Ein getestetes Release aus **unserem Repository** auswählen. Dessen `legends-v<version>.zip`, `system.json` und `SHA256SUMS.txt` herunterladen — nicht das GitHub-Archiv „Source code“. SHA256 des ZIPs mit der veröffentlichten Prüfsumme vergleichen.
+1. Ein getestetes Release aus **diesem Repository** auswählen. Dessen `legends-v<version>.zip`, `system.json` und `SHA256SUMS.txt` herunterladen — nicht das GitHub-Archiv „Source code“. SHA256 des ZIPs mit der veröffentlichten Prüfsumme vergleichen.
 2. Automatischen Weltstart deaktivieren und die betroffene Foundry-Anwendung bzw. den Dienst vollständig stoppen.
 3. Das bisherige `Data/systems/legends` an den dokumentierten Sicherungsort **außerhalb von `Data/systems`** verschieben. Behalten, nicht löschen und nicht einfach mit neuen Dateien überlagern.
 4. Ein neues `Data/systems/legends` anlegen und das Release-ZIP direkt dort entpacken. Das Manifest muss unter `Data/systems/legends/system.json` liegen, ohne zusätzlichen Unterordner. `Data/worlds` bleibt unangetastet.
@@ -50,7 +50,7 @@ Dieser Weg tauscht das Paket direkt aus und verlässt sich nicht darauf, dass Fo
 6. Im neuen Systemordner eine leere Datei **`legends.lock`** anlegen. Unter Windows auf versteckte Endungen achten: nicht `legends.lock.txt`.
 7. Foundry ins Setup starten, noch keine Welt öffnen. Rhapsody-Titel, Version und Sperre prüfen. Bei ungültigem Paket oder altem Titel erst Pfad, Manifest und Logs klären — nicht die Weltdateien bearbeiten.
 
-Nach Veröffentlichung des ersten geeigneten Releases lautet unsere Manifest-Adresse:
+Nach Veröffentlichung des ersten geeigneten Releases lautet die Manifest-Adresse:
 
 `https://github.com/Rhapsody-Sky/FoundryVTT-Avatar-Legends/releases/latest/download/system.json`
 
@@ -72,7 +72,7 @@ Erst wenn alle betroffenen Weltkopien funktionieren: Live-Termin festlegen, **fr
 
 ## 6. Beim Fork bleiben
 
-Updatesperre beibehalten. Foundry kann wegen der gemeinsamen ID `legends` trotz eigener Manifest-URL zum offiziellen Paketindex wechseln. Nicht darauf vertrauen, dass „Alle aktualisieren“ bei unserem Fork bleibt. Künftige geprüfte Releases bewusst mit Sicherung, Austausch und Prüfung installieren und die Sperre wieder setzen. Eine eigene System-ID würde eine gesonderte Migration der Referenzen erfordern; diese Anleitung macht das nicht.
+Updatesperre beibehalten. Foundry kann wegen der gemeinsamen ID `legends` trotz eigener Manifest-URL zum offiziellen Paketindex wechseln. Nicht darauf vertrauen, dass „Alle aktualisieren“ bei diesem Fork bleibt. Künftige geprüfte Releases bewusst mit Sicherung, Austausch und Prüfung installieren und die Sperre wieder setzen. Eine eigene System-ID würde eine gesonderte Migration der Referenzen erfordern; diese Anleitung macht das nicht.
 
 ## Wenn etwas schiefgeht
 
