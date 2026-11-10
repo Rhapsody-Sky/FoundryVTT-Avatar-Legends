@@ -12,9 +12,9 @@ The code remains under the **MIT license**. [LICENSE](LICENSE) retains Paul Cosg
 
 ## Current status
 
-The first version of this continuation, `2.1.1-rhapsody.1`, is a **development candidate, not yet a published or production-validated release**. It includes upstream's ApplicationV2 sheets and optional Exchange tracker, restores the separate DialogV2 button icons, and adds a compatibility migration for character descriptions from my earlier V14 port.
+The first release of this continuation is **2.1.1-rhapsody.1** for Foundry VTT 14. It includes upstream's ApplicationV2 sheets and optional Exchange tracker, restores the separate DialogV2 button icons, and adds a compatibility migration for character descriptions from my earlier V14 port.
 
-Existing non-empty `look` text is never overwritten. Legacy `description` text is retained and copied into an empty `look` field once; a saved migration marker prevents a deliberately cleared field from being repopulated. Test this on a copy of your world before upgrading. See [the release checklist](docs/releasing.md) for the remaining runtime checks.
+Existing non-empty `look` text is never overwritten. Legacy `description` text is retained and copied into an empty `look` field once; a saved migration marker prevents a deliberately cleared field from being repopulated. Migration from my earlier 1.4.0 port was tested on a world copy with Foundry 14.367; see the [test results and limits](docs/test-report-2026-11-10.md). Back up your world before upgrading.
 
 <img src="https://i.imgur.com/VA1c6cD.png" alt="Player character sheet" width="60%" />
 
@@ -34,11 +34,11 @@ Additional screenshots: https://imgur.com/a/wWJLdor
 
 Requires **Foundry VTT 14**. Do not install the original directory entry expecting to receive this fork.
 
-After the first tested, non-prerelease GitHub release is published, the fork's installation manifest will be:
+Install using this manifest:
 
 `https://github.com/Rhapsody-Sky/FoundryVTT-Avatar-Legends/releases/latest/download/system.json`
 
-**This URL is not available until that release exists.** Source archives are not the supported installation package; use the `legends-<version>.zip` release asset when available. Its contents belong directly in `Data/systems/legends`, not a repository-named folder.
+For manual installation, use the `legends-v<version>.zip` release asset, not the GitHub source archive. Its contents belong directly in `Data/systems/legends`, not a repository-named folder.
 
 ### Existing worlds and update safety
 
@@ -46,7 +46,7 @@ The system ID remains `legends` to preserve world associations, settings and com
 
 Foundry can follow its official package index even when a different manifest URL is configured. Keep the system **locked** in Setup while using this fork; the native lock file is `Data/systems/legends/legends.lock`. A separate manifest alone does not guarantee isolation. Apply only reviewed fork releases deliberately, then restore the lock. A future separate-ID migration requires explicit handling of existing references and is not part of this release.
 
-Never downgrade a world already saved under a newer system without a matching backup. The production installation has not been changed by publishing this repository.
+Never downgrade a world already saved under a newer system without a matching backup.
 
 ## Development
 

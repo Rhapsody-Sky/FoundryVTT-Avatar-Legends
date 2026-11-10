@@ -1,6 +1,6 @@
 # Changelog
 
-## v2.1.1-rhapsody.1 — development candidate
+## v2.1.1-rhapsody.1 — 2026-11-10
 
 - Establish this continuation with preserved upstream history, MIT notice and contributor credits.
 - Base the fork on upstream 2.1.0, including ApplicationV2 sheets and the optional Exchange tracker.
@@ -13,7 +13,7 @@
 - Shorten the switching instructions to five steps.
 - Retain the V14 `system.rollable` migration update and fix a missing-move error that overwrote the notification function.
 - Add independent GitHub manifest URLs, validation, migration regression tests and reproducible package tooling.
-- No production rollout or Foundry UI acceptance claimed for this candidate.
+- Tested migration from the earlier 1.4.0 port on a world copy with Foundry 14.367; see the dated test report for coverage and limits.
 
 ## v2.1.0
 

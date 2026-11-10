@@ -4,8 +4,6 @@
 
 Für **Foundry VTT 14**. Deine bestehenden Welten bleiben erhalten; du musst nichts neu anlegen. Der Wechsel betrifft alle Legends-Welten dieser Installation.
 
-> Das erste Release ist noch im Test. Bitte bis zur Freigabe nicht produktiv umsteigen.
-
 1. **Sichern:** Foundry beenden und deine Welten sowie `Data/systems/legends` sichern. Eigene Bilder und Änderungen an System-Kompendien ebenfalls behalten.
 2. **Herunterladen:** Aus den Releases das Paket `legends-v….zip` laden, nicht „Source code“.
 3. **Austauschen:** Den alten Ordner `Data/systems/legends` außerhalb von `Data/systems` aufbewahren. Das neue ZIP in einen frischen Ordner `Data/systems/legends` entpacken. Dort muss direkt die `system.json` liegen. Weltordner nicht verändern.

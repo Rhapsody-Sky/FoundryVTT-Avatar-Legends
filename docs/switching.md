@@ -4,8 +4,6 @@
 
 For **Foundry VTT 14**. Keep your existing worlds; there is no need to recreate them. Switching affects every Legends world in this installation.
 
-> The first release is still being tested. Please wait for its approval before switching a production world.
-
 1. **Back up:** Stop Foundry and back up your worlds and `Data/systems/legends`. Keep your custom assets and any edits to the system's compendia too.
 2. **Download:** Get the `legends-v….zip` package from Releases, not “Source code”.
 3. **Replace:** Keep the old `Data/systems/legends` folder outside `Data/systems`. Extract the new ZIP into a fresh `Data/systems/legends` folder, with `system.json` directly inside it. Leave your world folders alone.

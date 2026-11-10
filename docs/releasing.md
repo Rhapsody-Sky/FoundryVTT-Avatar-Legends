@@ -1,8 +1,8 @@
 # Release and migration checklist
 
-## Candidate status
+## First release
 
-`2.1.1-rhapsody.1` is based on upstream 2.1.0. No production-world migration or UI acceptance has been performed for this candidate. CI validates source and package structure, not the full Foundry runtime.
+`2.1.1-rhapsody.1` is based on upstream 2.1.0. The maintainer approved publication and installation after the [world-copy test on Foundry 14.367](test-report-2026-11-10.md). That report records the tested scope and remaining integration limits. CI validates source and package structure, not the full Foundry runtime.
 
 ## Before publishing a release
 
