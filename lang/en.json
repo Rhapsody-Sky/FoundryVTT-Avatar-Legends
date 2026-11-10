@@ -101,6 +101,8 @@
       },
       "not-allowed": "This Item type cannot be added to this Actor",
       "playbook-applied": "Playbook '{name}' has been applied",
+      "playbook-attachment-missing": "Playbook '{name}' has a missing or inaccessible item: {uuid}",
+      "playbook-failed": "Playbook '{name}' could not be applied completely. Check the character sheet before trying again.",
       "types": {
         "condition": "Condition",
         "move": "Move",

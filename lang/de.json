@@ -98,6 +98,8 @@
       },
       "not-allowed": "Dieser Itemtyp kann diesem Actor nicht zugeordnet werden.",
       "playbook-applied": "Rollenbuch '{name}' wurde angewendet.",
+      "playbook-attachment-missing": "Ein Eintrag aus dem Rollenbuch '{name}' fehlt oder ist nicht zugänglich: {uuid}",
+      "playbook-failed": "Das Rollenbuch '{name}' konnte nicht vollständig angewendet werden. Prüfe den Charakterbogen, bevor du es erneut versuchst.",
       "types": {
         "condition": "Zustand",
         "move": "Zug",

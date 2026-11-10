@@ -94,7 +94,7 @@ export const enrichSkillName = async (match) => {
 }
 
 export const viewNotesTab = (document) => {
-  return document.type == 'player' && !!game.settings.get('legends', 'playerNotes')
+  return document.type == 'player' && !!game.settings.get('avatar-legends', 'playerNotes')
 }
 
 export const toggleDrawer = async (document, target) => {
@@ -139,13 +139,13 @@ export const editImage = async (event, target, document) => {
 
 export const trainingIcon = (training, cssClasses = null) => {
   let tooltip = game.i18n.localize(`legends.training.${training}`)
-  if (game.settings.get('legends', 'trainingIconsEnabled')) {
+  if (game.settings.get('avatar-legends', 'trainingIconsEnabled')) {
     //fontawesome
     return `<i class="${legends.trainingIcons[training]} color-${training} ${cssClasses}" data-tooltip="${tooltip}"></i>`
   } else {
     // image
     return `<img
-          src='systems/legends/images/${training}.webp'
+          src='systems/avatar-legends/images/${training}.webp'
           data-tooltip='${tooltip}'
           alt='${tooltip}'
           class='flex0 ${cssClasses}'

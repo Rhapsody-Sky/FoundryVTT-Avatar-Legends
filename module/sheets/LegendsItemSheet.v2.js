@@ -1,5 +1,6 @@
 import { legends } from '../config.js'
 import { editImage, enrich } from '../helpers.js'
+import { configureEditors } from '../editor.js'
 
 const { HandlebarsApplicationMixin } = foundry.applications.api
 const { ItemSheetV2 } = foundry.applications.sheets
@@ -62,6 +63,7 @@ export default class LegendsItemSheetV2 extends HandlebarsApplicationMixin(ItemS
 
   async _onRender(context, options) {
     await super._onRender(context, options)
+    configureEditors(this.element)
   }
 
   static async #onSubmitForm(event, _form, formData) {

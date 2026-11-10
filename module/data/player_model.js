@@ -2,6 +2,24 @@ import { legends } from '../config.js'
 const { StringField, NumberField, SchemaField, ArrayField, BooleanField, HTMLField } = foundry.data.fields
 
 export default class LegendsPlayerDataModel extends foundry.abstract.TypeDataModel {
+  get fatigueRemaining() {
+    return { value: this.fatigue.max - this.fatigue.value, max: this.fatigue.max }
+  }
+
+  static migrateData(source, options) {
+    source = super.migrateData(source, options)
+    // Our V14 1.4.0 sheet wrote this HTML to description; upstream V2 uses look.
+    // Preserve both fields when both contain text. Never refill an intentionally
+    // cleared look field after this migration has already been saved.
+    if (!source.legacyDescriptionMigrated && typeof source.description === 'string' && source.description.trim()) {
+      if (source.look == null || (typeof source.look === 'string' && !source.look.trim())) {
+        source.look = source.description
+      }
+      source.legacyDescriptionMigrated = true
+    }
+    return source
+  }
+
   static defineSchema() {
     return {
       fatigue: new SchemaField({
@@ -12,6 +30,8 @@ export default class LegendsPlayerDataModel extends foundry.abstract.TypeDataMod
       background: new StringField(),
       demeanor: new StringField(),
       look: new HTMLField(),
+      description: new HTMLField(), // Retain the original text for recovery/export.
+      legacyDescriptionMigrated: new BooleanField({ initial: false }),
       hometown: new StringField(),
       training: new SchemaField({
         water: new BooleanField({ initial: false }),

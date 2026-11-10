@@ -68,7 +68,7 @@
 .bg-default {
   background: #f0f1f5;
 }
-.system-legends {
+.system-avatar-legends {
   --font-title: 'Village';
   --font-sans: 'Noto Sans', sans-serif;
   --font-h1: 'Village', sans-serif;
@@ -92,412 +92,412 @@
   --table-row-color-odd: transparent;
   --table-row-color-even: transparent;
 }
-.system-legends * {
+.system-avatar-legends * {
   scrollbar-color: var(--color-accent-mid) transparent;
 }
-.system-legends #pause.paused {
+.system-avatar-legends #pause.paused {
   animation: none;
 }
-.system-legends #pause img {
+.system-avatar-legends #pause img {
   content: url(images/pause.webp);
 }
-.system-legends #pause figcaption {
+.system-avatar-legends #pause figcaption {
   font-family: var(--font-title);
   font-size: 24px;
   text-transform: uppercase;
   color: #ffffff;
 }
-.system-legends button.ui-control {
+.system-avatar-legends button.ui-control {
   --control-active-border-color: var(--color-accent) !important;
 }
-.system-legends .window-title {
+.system-avatar-legends .window-title {
   --font-title: 'Village';
   font-family: var(--font-title);
   font-variant: small-caps;
 }
-.system-legends #context-menu menu.context-items {
+.system-avatar-legends #context-menu menu.context-items {
   background: #111111;
 }
-.system-legends #context-menu menu.context-items li.context-item {
+.system-avatar-legends #context-menu menu.context-items li.context-item {
   font-family: 'Village';
   font-variant: small-caps;
   background: #111111;
   color: var(--bg-fade-color);
 }
-.system-legends #context-menu menu.context-items li.context-item:hover {
+.system-avatar-legends #context-menu menu.context-items li.context-item:hover {
   background: #111111;
   color: #ffffff;
 }
-.system-legends #tooltip,
-.system-legends .locked-tooltip {
+.system-avatar-legends #tooltip,
+.system-avatar-legends .locked-tooltip {
   color: var(--bg-fade-color);
   font-family: 'Village' !important;
   font-variant: small-caps !important;
 }
-.system-legends .notification-pip {
+.system-avatar-legends .notification-pip {
   background-color: var(--color-accent);
 }
-.system-legends .nowrap {
+.system-avatar-legends .nowrap {
   white-space: nowrap;
 }
-.system-legends .flex-nowrap {
+.system-avatar-legends .flex-nowrap {
   flex-wrap: nowrap;
 }
-.system-legends .grid {
+.system-avatar-legends .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, calc(calc(100% - 1rem) / 3));
   gap: 0.5rem;
 }
-.system-legends .align-items-start {
+.system-avatar-legends .align-items-start {
   align-items: start;
 }
-.system-legends .align-items-center {
+.system-avatar-legends .align-items-center {
   align-items: center;
 }
-.system-legends .align-items-end {
+.system-avatar-legends .align-items-end {
   align-items: end;
 }
-.system-legends .align-items-baseline {
+.system-avatar-legends .align-items-baseline {
   align-items: baseline;
 }
-.system-legends .justify-space-between {
+.system-avatar-legends .justify-space-between {
   justify-content: space-between;
 }
-.system-legends .justify-content-end {
+.system-avatar-legends .justify-content-end {
   justify-content: end;
 }
-.system-legends .flex0 {
+.system-avatar-legends .flex0 {
   flex: 0;
 }
-.system-legends .flex0-1rem {
+.system-avatar-legends .flex0-1rem {
   flex: 0 0 1rem;
 }
-.system-legends .flex0-2rem {
+.system-avatar-legends .flex0-2rem {
   flex: 0 0 2rem;
 }
-.system-legends .flex0-3rem {
+.system-avatar-legends .flex0-3rem {
   flex: 0 0 3rem;
 }
-.system-legends .flex2 {
+.system-avatar-legends .flex2 {
   flex: 2 !important;
 }
-.system-legends .flex3 {
+.system-avatar-legends .flex3 {
   flex: 3 !important;
 }
-.system-legends .flex4 {
+.system-avatar-legends .flex4 {
   flex: 4 !important;
 }
-.system-legends .flex5 {
+.system-avatar-legends .flex5 {
   flex: 5 !important;
 }
-.system-legends .col2 {
+.system-avatar-legends .col2 {
   columns: 2;
 }
-.system-legends .col3 {
+.system-avatar-legends .col3 {
   columns: 3;
 }
-.system-legends .col2 > *,
-.system-legends .col3 > * {
+.system-avatar-legends .col2 > *,
+.system-avatar-legends .col3 > * {
   break-inside: avoid;
   page-break-inside: avoid;
   margin-bottom: 0.25rem;
 }
-.system-legends .m-0 {
+.system-avatar-legends .m-0 {
   margin: 0 !important;
 }
-.system-legends .mx-25 {
+.system-avatar-legends .mx-25 {
   margin-left: 0.25rem !important;
   margin-right: 0.25rem !important;
 }
-.system-legends .mx-50 {
+.system-avatar-legends .mx-50 {
   margin-left: 0.5rem !important;
   margin-right: 0.5rem !important;
 }
-.system-legends .mx-25 {
+.system-avatar-legends .mx-25 {
   margin-left: 0.25rem !important;
   margin-right: 0.25rem !important;
 }
-.system-legends .my-50 {
+.system-avatar-legends .my-50 {
   margin-top: 0.5rem !important;
   margin-bottom: 0.5rem !important;
 }
-.system-legends .my-100 {
+.system-avatar-legends .my-100 {
   margin-top: 1rem !important;
   margin-bottom: 1rem !important;
 }
-.system-legends .mt-50 {
+.system-avatar-legends .mt-50 {
   margin-top: 0.5rem !important;
 }
-.system-legends .mb-25 {
+.system-avatar-legends .mb-25 {
   margin-bottom: 0.25rem !important;
 }
-.system-legends .mb-50 {
+.system-avatar-legends .mb-50 {
   margin-bottom: 0.5rem !important;
 }
-.system-legends .ml-50 {
+.system-avatar-legends .ml-50 {
   margin-left: 0.5rem !important;
 }
-.system-legends .p-25 {
+.system-avatar-legends .p-25 {
   padding: 0.25rem !important;
 }
-.system-legends .p-50 {
+.system-avatar-legends .p-50 {
   padding: 0.5rem !important;
 }
-.system-legends .px-25 {
+.system-avatar-legends .px-25 {
   padding-left: 0.25rem !important;
   padding-right: 0.25rem !important;
 }
-.system-legends .px-50 {
+.system-avatar-legends .px-50 {
   padding-left: 0.5rem !important;
   padding-right: 0.5rem !important;
 }
-.system-legends .py-25 {
+.system-avatar-legends .py-25 {
   padding-top: 0.25rem !important;
   padding-bottom: 0.25rem !important;
 }
-.system-legends .pb-25 {
+.system-avatar-legends .pb-25 {
   padding-bottom: 0.25rem !important;
 }
-.system-legends .gap-0 {
+.system-avatar-legends .gap-0 {
   gap: 0 !important;
 }
-.system-legends .gap-25 {
+.system-avatar-legends .gap-25 {
   gap: 0.25rem;
 }
-.system-legends .gap-50 {
+.system-avatar-legends .gap-50 {
   gap: 0.5rem;
 }
-.system-legends .gap-75 {
+.system-avatar-legends .gap-75 {
   gap: 0.75rem;
 }
-.system-legends .gap-100 {
+.system-avatar-legends .gap-100 {
   gap: 1rem;
 }
-.system-legends .size-75 {
+.system-avatar-legends .size-75 {
   font-size: 0.75rem !important;
 }
-.system-legends .size-1rem,
-.system-legends .size-100 {
+.system-avatar-legends .size-1rem,
+.system-avatar-legends .size-100 {
   font-size: 1rem !important;
 }
-.system-legends .size-120 {
+.system-avatar-legends .size-120 {
   font-size: 1.2rem !important;
 }
-.system-legends .size-1-5rem,
-.system-legends .size-150 {
+.system-avatar-legends .size-1-5rem,
+.system-avatar-legends .size-150 {
   font-size: 1.5rem !important;
 }
-.system-legends .size-2rem,
-.system-legends .size-200 {
+.system-avatar-legends .size-2rem,
+.system-avatar-legends .size-200 {
   font-size: 2rem !important;
 }
-.system-legends .size-250 {
+.system-avatar-legends .size-250 {
   font-size: 2.5rem !important;
 }
-.system-legends .line-height-200 {
+.system-avatar-legends .line-height-200 {
   line-height: 2rem;
 }
-.system-legends .small-caps {
+.system-avatar-legends .small-caps {
   font-variant: small-caps;
 }
-.system-legends .weight-normal {
+.system-avatar-legends .weight-normal {
   font-weight: normal;
 }
-.system-legends .text-center {
+.system-avatar-legends .text-center {
   text-align: center !important;
 }
-.system-legends .text-right {
+.system-avatar-legends .text-right {
   text-align: right !important;
 }
-.system-legends .float-right {
+.system-avatar-legends .float-right {
   float: right;
 }
-.system-legends .quickstart,
-.system-legends [data-theme='quickstart'] {
+.system-avatar-legends .quickstart,
+.system-avatar-legends [data-theme='quickstart'] {
   --color-accent: #baaf6b;
   --color-accent-mid: #6e4e27;
   --color-accent-dark: #6e4e27;
 }
-.system-legends .color-black {
+.system-avatar-legends .color-black {
   color: #111111;
 }
-.system-legends .color-grey,
-.system-legends .color-weapon {
+.system-avatar-legends .color-grey,
+.system-avatar-legends .color-weapon {
   color: #4d4d4f;
 }
-.system-legends .color-white {
+.system-avatar-legends .color-white {
   color: #ffffff !important;
 }
-.system-legends .color-white-75 {
+.system-avatar-legends .color-white-75 {
   color: rgba(255, 255, 255, 0.75) !important;
 }
-.system-legends .color-accent {
+.system-avatar-legends .color-accent {
   color: var(--color-accent);
 }
-.system-legends .color-accent-mid {
+.system-avatar-legends .color-accent-mid {
   color: var(--color-accent-mid);
 }
-.system-legends .color-accent-dark {
+.system-avatar-legends .color-accent-dark {
   color: var(--color-accent-dark);
 }
-.system-legends .color-water,
-.system-legends .color-hit {
+.system-avatar-legends .color-water,
+.system-avatar-legends .color-hit {
   color: #4d63a9;
 }
-.system-legends .color-earth,
-.system-legends .color-full {
+.system-avatar-legends .color-earth,
+.system-avatar-legends .color-full {
   color: #3c6733;
 }
-.system-legends .color-fire,
-.system-legends .color-miss {
+.system-avatar-legends .color-fire,
+.system-avatar-legends .color-miss {
   color: #b62127;
 }
-.system-legends .color-fire-dark {
+.system-avatar-legends .color-fire-dark {
   color: #65110c;
 }
-.system-legends .color-air {
+.system-avatar-legends .color-air {
   color: #d4b450;
 }
-.system-legends .color-technology {
+.system-avatar-legends .color-technology {
   color: #6a2e7e;
 }
-.system-legends .color-weapons {
+.system-avatar-legends .color-weapons {
   color: #4d4d4f;
 }
-.system-legends .border-none {
+.system-avatar-legends .border-none {
   border-width: 0 !important;
 }
-.system-legends .border-1px {
+.system-avatar-legends .border-1px {
   border-width: 1px !important;
 }
-.system-legends .border-top {
+.system-avatar-legends .border-top {
   border-top-width: 2px;
   border-top-style: solid;
 }
-.system-legends .border-bottom {
+.system-avatar-legends .border-bottom {
   border-bottom-width: 2px;
   border-bottom-style: solid;
 }
-.system-legends .border-solid {
+.system-avatar-legends .border-solid {
   border-style: solid !important;
 }
-.system-legends .border-accent {
+.system-avatar-legends .border-accent {
   border-color: var(--color-accent) !important;
 }
-.system-legends .border-accent-mid {
+.system-avatar-legends .border-accent-mid {
   border-color: var(--color-accent-mid) !important;
 }
-.system-legends .border-fire-dark {
+.system-avatar-legends .border-fire-dark {
   border-color: #65110c;
 }
-.system-legends .radius-25 {
+.system-avatar-legends .radius-25 {
   border-radius: 0.25rem;
 }
-.system-legends .height-2rem,
-.system-legends .height-200 {
+.system-avatar-legends .height-2rem,
+.system-avatar-legends .height-200 {
   height: 2rem !important;
 }
-.system-legends .height-250 {
+.system-avatar-legends .height-250 {
   height: 2.5rem !important;
 }
-.system-legends .height-3rem,
-.system-legends .height-300 {
+.system-avatar-legends .height-3rem,
+.system-avatar-legends .height-300 {
   height: 3rem !important;
 }
-.system-legends .height-350 {
+.system-avatar-legends .height-350 {
   height: 3.5rem !important;
 }
-.system-legends .height-400 {
+.system-avatar-legends .height-400 {
   height: 4rem !important;
 }
-.system-legends .height-500 {
+.system-avatar-legends .height-500 {
   height: 5rem !important;
 }
-.system-legends .height-full {
+.system-avatar-legends .height-full {
   height: 100%;
 }
-.system-legends .overflow-auto {
+.system-avatar-legends .overflow-auto {
   overflow: auto;
 }
-.system-legends .quickstart,
-.system-legends [data-theme='quickstart'] {
+.system-avatar-legends .quickstart,
+.system-avatar-legends [data-theme='quickstart'] {
   --bg-color: #f3efdc;
   --bg-fade-color: #dfd3b4;
 }
-.system-legends .bg-transparent {
+.system-avatar-legends .bg-transparent {
   background-color: transparent !important;
 }
-.system-legends .bg-white {
+.system-avatar-legends .bg-white {
   background-color: #ffffff !important;
 }
-.system-legends .bg-white-25 {
+.system-avatar-legends .bg-white-25 {
   background-color: rgba(255, 255, 255, 0.25) !important;
 }
-.system-legends .bg-white-50 {
+.system-avatar-legends .bg-white-50 {
   background-color: rgba(255, 255, 255, 0.5) !important;
 }
-.system-legends .bg-black {
+.system-avatar-legends .bg-black {
   background-color: #111111 !important;
 }
-.system-legends .bg-light {
+.system-avatar-legends .bg-light {
   background-color: #dce5f1;
 }
-.system-legends .bg-gradient-light {
+.system-avatar-legends .bg-gradient-light {
   background-image: linear-gradient(90deg, #dce5f1, transparent);
 }
-.system-legends .bg-accent {
+.system-avatar-legends .bg-accent {
   background-color: #99bbe3;
 }
-.system-legends .bg-accent-mid {
+.system-avatar-legends .bg-accent-mid {
   background-color: #405480;
 }
-.system-legends .bg-accent-dark {
+.system-avatar-legends .bg-accent-dark {
   background-color: #002a5b;
 }
-.system-legends img.icon {
+.system-avatar-legends img.icon {
   max-width: 1rem;
 }
-.system-legends table {
+.system-avatar-legends table {
   --table-background-color: transparent;
 }
-.system-legends table thead {
+.system-avatar-legends table thead {
   border: none;
   font-family: 'Village';
   font-variant: small-caps;
   color: #ffffff;
 }
-.system-legends table thead th {
+.system-avatar-legends table thead th {
   vertical-align: bottom;
 }
-.system-legends table p:last-child {
+.system-avatar-legends table p:last-child {
   margin-bottom: 0 !important;
 }
-.system-legends table tbody td {
+.system-avatar-legends table tbody td {
   vertical-align: top;
 }
-.system-legends .description-editor {
+.system-avatar-legends .description-editor {
   flex: 1;
 }
-.system-legends prose-mirror,
-.system-legends .prosemirror {
+.system-avatar-legends prose-mirror,
+.system-avatar-legends .prosemirror {
   height: 100%;
 }
-.system-legends prose-mirror menu,
-.system-legends .prosemirror menu {
+.system-avatar-legends prose-mirror menu,
+.system-avatar-legends .prosemirror menu {
   background: var(--color-accent-mid);
   border-radius: 0 0 0.25rem 0.25rem;
 }
-.system-legends prose-mirror menu button,
-.system-legends .prosemirror menu button,
-.system-legends prose-mirror menu .button,
-.system-legends .prosemirror menu .button {
+.system-avatar-legends prose-mirror menu button,
+.system-avatar-legends .prosemirror menu button,
+.system-avatar-legends prose-mirror menu .button,
+.system-avatar-legends .prosemirror menu .button {
   --button-focus-outline-color: var(--color-accent);
   --button-hover-border-color: #ffffff;
   --button-text-color: #ffffff;
   --color-form-label-hover: #ffffff;
 }
-.system-legends prose-mirror button.icon.toggle,
-.system-legends .prosemirror button.icon.toggle {
+.system-avatar-legends prose-mirror button.icon.toggle,
+.system-avatar-legends .prosemirror button.icon.toggle {
   padding: 0;
   --button-text-color: #ffffff;
   --button-hover-border-color: var(--color-accent-mid);
@@ -505,15 +505,15 @@
   --button-hover-text-color: #ffffff;
   --button-hover-border-color: transparent;
 }
-.system-legends prose-mirror button.icon.toggle:focus,
-.system-legends .prosemirror button.icon.toggle:focus {
+.system-avatar-legends prose-mirror button.icon.toggle:focus,
+.system-avatar-legends .prosemirror button.icon.toggle:focus {
   --button-focus-outline-color: var(--color-accent);
 }
-.system-legends prose-mirror .editor-content,
-.system-legends .prosemirror .editor-content {
+.system-avatar-legends prose-mirror .editor-content,
+.system-avatar-legends .prosemirror .editor-content {
   margin-top: 0.25rem;
 }
-.system-legends .specialty {
+.system-avatar-legends .specialty {
   color: #f0f1f5;
   background-color: #111111;
   font-size: 0.7rem;
@@ -526,37 +526,37 @@
   white-space: nowrap;
   clip-path: polygon(0 0.5rem, 0.5rem 0, calc(100% - 0.5rem) 0, 100% 0.5rem, 100% calc(100% - 0.5rem), calc(100% - 0.5rem) 100%, 0.5rem 100%, 0 calc(100% - 0.5rem));
 }
-.system-legends .specialty.air {
+.system-avatar-legends .specialty.air {
   background-color: #d4b450;
 }
-.system-legends .specialty.earth {
+.system-avatar-legends .specialty.earth {
   background-color: #3c6733;
 }
-.system-legends .specialty.fire {
+.system-avatar-legends .specialty.fire {
   background-color: #b62127;
 }
-.system-legends .specialty.technology {
+.system-avatar-legends .specialty.technology {
   background-color: #6a2e7e;
 }
-.system-legends .specialty.water {
+.system-avatar-legends .specialty.water {
   background-color: #4d63a9;
 }
-.system-legends .specialty.weapons {
+.system-avatar-legends .specialty.weapons {
   background-color: #4d4d4f;
 }
-.system-legends .skill-name {
+.system-avatar-legends .skill-name {
   font-family: 'Village';
   font-variant: small-caps;
   color: var(--color-accent-mid);
   font-weight: bold;
 }
-.system-legends .inline-item {
+.system-avatar-legends .inline-item {
   margin-bottom: 0.5rem;
 }
-.system-legends a {
+.system-avatar-legends a {
   --color-text-accent: var(--color-accent-mid);
 }
-.system-legends a.btn {
+.system-avatar-legends a.btn {
   font-family: 'Village' !important;
   font-variant: small-caps !important;
   color: #ffffff;
@@ -565,93 +565,93 @@
   padding: 0.5rem;
   border-radius: 0.25rem;
 }
-.system-legends a.btn:hover {
+.system-avatar-legends a.btn:hover {
   text-shadow: 0 0 5px var(--color-accent);
 }
-.system-legends a.btn.air {
+.system-avatar-legends a.btn.air {
   background-color: #d4b450;
   color: #ffffff;
 }
-.system-legends a.btn.earth {
+.system-avatar-legends a.btn.earth {
   background-color: #3c6733;
   color: #ffffff;
 }
-.system-legends a.btn.fire {
+.system-avatar-legends a.btn.fire {
   background-color: #b62127;
   color: #ffffff;
 }
-.system-legends a.btn.fire-dark {
+.system-avatar-legends a.btn.fire-dark {
   background-color: #65110c;
   color: #ffffff;
 }
-.system-legends a.btn.technology {
+.system-avatar-legends a.btn.technology {
   background-color: #6a2e7e;
   color: #ffffff;
 }
-.system-legends a.btn.water {
+.system-avatar-legends a.btn.water {
   background-color: #4d63a9;
   color: #ffffff;
 }
-.system-legends a.btn.weapons {
+.system-avatar-legends a.btn.weapons {
   background-color: #4d4d4f;
   color: #ffffff;
 }
-.system-legends a.btn.group {
+.system-avatar-legends a.btn.group {
   background-color: #111111;
   color: #ffffff;
 }
-.system-legends .cursor-pointer,
-.system-legends [data-action] {
+.system-avatar-legends .cursor-pointer,
+.system-avatar-legends [data-action] {
   cursor: pointer;
 }
-.system-legends p:empty {
+.system-avatar-legends p:empty {
   display: none;
 }
-.system-legends .content-link,
-.system-legends .inline-roll {
+.system-avatar-legends .content-link,
+.system-avatar-legends .inline-roll {
   --content-link-icon-color: var(--color-accent-dark);
   background: rgba(255, 255, 255, 0.5);
   color: var(--color-accent-mid);
   border: 1px solid var(--color-accent);
   border-radius: 0.25rem;
 }
-.system-legends img.portrait {
+.system-avatar-legends img.portrait {
   width: 100px;
   float: right;
   margin: 0 0 0 1rem;
 }
-.system-legends .chat-message.message {
+.system-avatar-legends .chat-message.message {
   background-color: var(--bg-color);
   background-image: linear-gradient(var(--bg-fade-color) 0%, var(--bg-color) 50px, var(--bg-color) 100%);
 }
-.system-legends .chat-message.message h1,
-.system-legends .chat-message.message h2,
-.system-legends .chat-message.message h3,
-.system-legends .chat-message.message h4,
-.system-legends .chat-message.message p,
-.system-legends .chat-message.message ul {
+.system-avatar-legends .chat-message.message h1,
+.system-avatar-legends .chat-message.message h2,
+.system-avatar-legends .chat-message.message h3,
+.system-avatar-legends .chat-message.message h4,
+.system-avatar-legends .chat-message.message p,
+.system-avatar-legends .chat-message.message ul {
   margin: 0 0 0.5rem;
 }
-.system-legends .chat-message.message h3,
-.system-legends .chat-message.message h4 {
+.system-avatar-legends .chat-message.message h3,
+.system-avatar-legends .chat-message.message h4 {
   font-family: 'Village';
   font-variant: small-caps;
   font-weight: normal;
 }
-.system-legends .chat-message.message ul {
+.system-avatar-legends .chat-message.message ul {
   list-style: disc;
   padding-left: 1rem;
 }
-.system-legends .chat-message.message ul li {
+.system-avatar-legends .chat-message.message ul li {
   margin-bottom: 0.25rem;
 }
-.system-legends .chat-message.message .message-header {
+.system-avatar-legends .chat-message.message .message-header {
   border-bottom: 1.5px solid var(--color-accent);
 }
-.system-legends .chat-message.message.whisper .message-header {
+.system-avatar-legends .chat-message.message.whisper .message-header {
   border-color: #65110c;
 }
-.system-legends .chat-message.message .skill-name {
+.system-avatar-legends .chat-message.message .skill-name {
   font-family: 'Village';
   font-variant: small-caps;
   color: var(--color-accent-dark);

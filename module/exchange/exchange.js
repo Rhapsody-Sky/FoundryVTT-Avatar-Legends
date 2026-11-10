@@ -9,7 +9,7 @@ export default class LegendsExchange extends Combat {
   }
 
   get currentPhase() {
-    return this.getFlag('legends', 'exchangePhase') || legends.exchangePhases[0]
+    return this.getFlag('avatar-legends', 'exchangePhase') || legends.exchangePhases[0]
   }
 
   get combatant() {
@@ -17,7 +17,7 @@ export default class LegendsExchange extends Combat {
   }
 
   async setPhase(phase) {
-    await this.setFlag('legends', 'exchangePhase', phase)
+    await this.setFlag('avatar-legends', 'exchangePhase', phase)
   }
 
   async prevPhase() {

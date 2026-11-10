@@ -1,7 +1,14 @@
 import { legends } from './config.js'
 import { enrich } from './helpers.js'
+import { persistLegacyDescription } from './data/legacy-description.js'
 
 export default class LegendsActorV2 extends Actor {
+  async _preUpdate(changes, options, user) {
+    const allowed = await super._preUpdate(changes, options, user)
+    if (allowed === false) return false
+    if (this.type === 'player') persistLegacyDescription(this.system, changes)
+  }
+
   static getDefaultArtwork(data) {
     return {
       img: legends.defaultTokens[data.type],
