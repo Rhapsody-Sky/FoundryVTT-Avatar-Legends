@@ -1,5 +1,4 @@
 import * as Dice from './dice.js'
-import * as DialogV2 from './dialog.v2.js'
 
 /**
  * Catch interactions with Chat messages
@@ -16,7 +15,7 @@ export function addChatListeners(html) {
  */
 async function onMoveRoll(event) {
   event.preventDefault()
-  const { moveName, moveStat } = event.currentTarget.dataset
+  const { moveName } = event.currentTarget.dataset
 
   const actor = game.user.character
   if (!actor) {
@@ -31,55 +30,7 @@ async function onMoveRoll(event) {
     return
   }
 
-  const template = 'systems/avatar-legends/templates/dialog/v2/roll.hbs'
-
-  const title = game.i18n.format('legends.roll.stat', {
-    stat: moveName,
-  })
-
-  const stat = moveStat
-
-  let statValue = undefined
-  let statName = undefined
-  let principle = false
-  let principles = []
-
-  if (stat) {
-    switch (stat) {
-      case 'principle':
-        principle = true
-        const { bottomTrack, topTrack, value } = actor.system.balance
-        principles = {
-          [bottomTrack]: -value,
-          [topTrack]: value,
-        }
-        break
-      default:
-        statValue = actor.system.stats[stat]
-        statName = statValue !== undefined ? game.i18n.localize(`legends.stats.${stat}`) : ''
-        break
-    }
-  }
-  const condition = move ? actor.getConditionForMove(move?.name) : null
-
-  const data = {
-    statName,
-    statValue,
-    condition,
-    principle,
-    principles,
-  }
-
-  const fields = ['bonus', 'penalty', 'principle']
-
-  const rollOptions = await DialogV2.rollDialog(title, template, data, fields)
-  if (!rollOptions || rollOptions == 'cancel') return
-  if (principle && !rollOptions.values?.principle) {
-    ui.notifications.warn(game.i18n.localize('legends.roll.principle-required'))
-    return
-  }
-
-  Dice.doRoll(actor, rollOptions.values, { move })
+  await Dice.rollMove(move.uuid)
 }
 
 export const showArchiveMessage = async () => {

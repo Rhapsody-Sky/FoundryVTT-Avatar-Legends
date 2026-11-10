@@ -13,6 +13,7 @@ export function rewriteString(value, { collections = {}, assets = {} } = {}) {
   }
   for (const [oldId, newId] of Object.entries(collections)) {
     result = result.split(`Compendium.${oldId}.`).join(`Compendium.${newId}.`)
+    result = result.split(`@Compendium[${oldId}.`).join(`@Compendium[${newId}.`)
     for (const quote of ['"', "'"]) result = result.split(`${quote}${oldId}${quote}`).join(`${quote}${newId}${quote}`)
     if (result === oldId) result = newId
   }

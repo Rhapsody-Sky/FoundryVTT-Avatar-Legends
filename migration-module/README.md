@@ -11,5 +11,3 @@ Cancel makes no changes. An interrupted migration can be resumed by reopening th
 Client preferences are copied separately when each player first opens the new system in their browser. Modules explicitly restricted to the old system must be disabled before migration. Module-provided compendiums and third-party module code are not rewritten.
 
 Review custom scripts which construct package IDs dynamically; the assistant rewrites explicit paths, UUIDs, common settings/flag calls and literal compendium IDs, not arbitrary JavaScript logic.
-
-This candidate is under test and has not been released.

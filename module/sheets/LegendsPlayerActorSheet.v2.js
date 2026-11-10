@@ -6,6 +6,8 @@ import { rollApproach, rollMove, rollPrinciple, rollStat } from '../dice.js'
 const TextEditor = foundry.applications.ux.TextEditor.implementation
 
 export default class LegendsPlayerActorSheetV2 extends LegendsActorSheetV2 {
+  #applyingPlaybook = false
+
   static PARTS = {
     header: {
       template: `${legends.rootPath}/templates/sheets/actors/v2/player/header.hbs`,
@@ -103,12 +105,12 @@ export default class LegendsPlayerActorSheetV2 extends LegendsActorSheetV2 {
       if (!item) return
 
       if (item.type === 'playbook') {
-        this.applyPlaybook(item)
-        ui.notifications.info(
-          game.i18n.format('legends.items.playbook-applied', {
-            name: item.name,
-          }),
-        )
+        try {
+          await this.applyPlaybook(item)
+          ui.notifications.info(game.i18n.format('legends.items.playbook-applied', { name: item.name }))
+        } catch (error) {
+          ui.notifications.error(error.message)
+        }
         return
       }
     } else if (type == 'Folder') {
@@ -345,35 +347,45 @@ export default class LegendsPlayerActorSheetV2 extends LegendsActorSheetV2 {
   // #endregion
 
   async applyPlaybook(playbook) {
-    // Overwrite text fields for Playbook name, default stats and Principles
-    this.actor.update({
-      system: {
-        playbook: playbook.name,
-        stats: playbook.system.stats,
-        balance: playbook.system.balance,
-      },
-    })
-
-    // Delete existing unique items
-    this.deleteItemsByType(['feature', 'moment-of-balance', 'growth-question'])
-
-    // Re-add default Growth Questions
-    const growthQuestions = game.packs
-      .get('avatar-legends.common-items')
-      .index.filter((item) => item.type === 'growth-question')
-      .sort((a, b) => (a.name > b.name ? 1 : -1))
-
-    for (const growthQuestion of growthQuestions) {
-      const question = await fromUuid(`Compendium.avatar-legends.common-items.${growthQuestion._id}`)
-      if (question) {
-        // We await this to make sure they're added in the correct order
-        await this.actor.createEmbeddedDocuments('Item', [question])
+    const { actor } = this
+    const failed = () => new Error(game.i18n.format('legends.items.playbook-failed', { name: playbook.name }))
+    if (this.#applyingPlaybook) throw failed()
+    this.#applyingPlaybook = true
+    try {
+      const common = game.packs.get('avatar-legends.common-items')
+      if (!common) throw failed()
+      const questions = common.index.filter(item => item.type === 'growth-question')
+        .sort((a, b) => a.name.localeCompare(b.name))
+      const uuids = [...questions.map(item => common.getUuid(item._id)), ...playbook.system.attachedItems]
+      const replacements = []
+      for (const uuid of uuids) {
+        const item = await fromUuid(uuid)
+        if (!(item instanceof Item)) {
+          throw new Error(game.i18n.format('legends.items.playbook-attachment-missing', { name: playbook.name, uuid }))
+        }
+        replacements.push(item.toObject())
       }
-    }
 
-    for (const uuid of playbook.system.attachedItems) {
-      const attachment = await fromUuid(uuid)
-      this.actor.createEmbeddedDocuments('Item', [attachment])
+      const uniqueTypes = ['feature', 'moment-of-balance', 'growth-question']
+      const previous = actor.items.filter(item => uniqueTypes.includes(item.type)).map(item => item.id)
+      const created = await actor.createEmbeddedDocuments('Item', replacements)
+      try {
+        if (created.length !== replacements.length) throw failed()
+        const updated = await actor.update({
+          system: { playbook: playbook.name, stats: playbook.system.stats, balance: playbook.system.balance },
+        })
+        if (!updated) throw failed()
+      } catch (error) {
+        if (created.length) await actor.deleteEmbeddedDocuments('Item', created.map(item => item.id))
+        throw error
+      }
+      // Only retire the old entries once the new ones and the actor update are saved.
+      if (previous.length) {
+        const removed = await actor.deleteEmbeddedDocuments('Item', previous)
+        if (removed.length !== previous.length) throw failed()
+      }
+    } finally {
+      this.#applyingPlaybook = false
     }
   }
 }

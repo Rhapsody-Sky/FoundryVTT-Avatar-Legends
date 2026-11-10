@@ -25,6 +25,13 @@ test('conflicting flag namespaces fail instead of silently overwriting data', ()
   assert.throws(() => transformTree({ flags: { legends: { value: 1 }, 'avatar-legends': { value: 2 } } }), /Conflicting/)
 })
 
+test('rewrites legacy compendium links and preserves their labels and anchors', () => {
+  const before = '@Compendium[legends.common-items.abc#section]{Move} @Compendium[other.common-items.abc]{Other}'
+  const after = '@Compendium[world.avatar-legends-legacy-common-items.abc#section]{Move} @Compendium[other.common-items.abc]{Other}'
+  assert.equal(rewriteString(before, options), after)
+  assert.equal(rewriteString(after, options), after)
+})
+
 test('unlinked player tokens retain their own description instead of inheriting the base actor look', () => {
   const scene = { tokens: [{ actorId: 'a', actorLink: false, delta: { system: { description: '<p>Token text</p>' } } }] }
   const result = transformTree(scene, { actorTypes: { a: 'player' } })

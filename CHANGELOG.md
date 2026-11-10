@@ -1,5 +1,12 @@
 # Changelog
 
+## v2.2.1
+
+- Check playbook attachments before changing the character, and save the replacement items before removing the previous ones.
+- Use the character's move for both the chat roll dialog and the roll. Attribute rolls to the character whose stats were used.
+- Handle cancelled stance rolls and display a total of zero as a miss in the Exchange Tracker.
+- Migration module 1.0.1 preserves compendium access, copies images into a fresh folder, and rewrites legacy compendium links.
+
 ## v2.2.0 - 2026-11-10
 
 - Use the independent system ID `avatar-legends` for native Foundry updates.

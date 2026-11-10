@@ -14,7 +14,7 @@
   ],
   "license": "LICENSE",
   "readme": "README.md",
-  "version": "2.2.0",
+  "version": "2.2.1",
   "compatibility": {
     "minimum": "14",
     "maximum": "14",
@@ -29,7 +29,7 @@
   ],
   "url": "https://github.com/Rhapsody-Sky/FoundryVTT-Avatar-Legends",
   "manifest": "https://github.com/Rhapsody-Sky/FoundryVTT-Avatar-Legends/releases/latest/download/system.json",
-  "download": "https://github.com/Rhapsody-Sky/FoundryVTT-Avatar-Legends/releases/download/v2.2.0/avatar-legends-v2.2.0.zip",
+  "download": "https://github.com/Rhapsody-Sky/FoundryVTT-Avatar-Legends/releases/download/v2.2.1/avatar-legends-v2.2.1.zip",
   "esmodules": [
     "legends.js"
   ],

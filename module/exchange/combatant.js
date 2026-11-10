@@ -14,6 +14,7 @@ export default class LegendsCombatant extends Combatant {
     if (this.isNpc) return
     if (this.currentPhase) {
       const result = await newRollApproach(this.actor, this.currentPhase)
+      if (!result) return
       await this.setFlag('avatar-legends', 'stanceRoll', result.total)
       await this.update({ initiative: result.total })
     }
@@ -30,7 +31,7 @@ export default class LegendsCombatant extends Combatant {
       case 'npc':
         return this.actor.npcPrinciple + 1
       case 'player':
-        if (this.initiative) {
+        if (this.initiative != null) {
           if (this.initiative >= 10) {
             return 'full'
           } else if (this.initiative >= 7) {

@@ -95,6 +95,8 @@ async function documents() {
 }
 
 async function copyAssets(paths, migration) {
+  const pending = [...paths].filter(path => !migration.assets[path])
+  if (!pending.length) return
   const FilePicker = foundry.applications.apps.FilePicker.implementation
   const dirs = new Set()
   const mkdir = async path => {
@@ -104,19 +106,22 @@ async function copyAssets(paths, migration) {
     catch { await FilePicker.browse('data', path) }
     dirs.add(path)
   }
-  const root = `worlds/${game.world.id}/avatar-legends-migration`
-  for (const oldPath of paths) {
-    if (migration.assets[oldPath]) continue
-    const relative = decodeURIComponent(oldPath.slice('systems/legends/'.length)).split(/[?#]/)[0]
-    if (relative.split('/').some(p => p === '..' || !p) || relative.includes('\\')) throw new Error(`Unsafe asset path: ${oldPath}`)
+  const parent = `worlds/${game.world.id}/avatar-legends-migration`
+  await mkdir(parent)
+  // Foundry's media upload overwrites existing files. Create a fresh directory
+  // for this run and keep any paths already recorded by a previous attempt.
+  const root = `${parent}/${foundry.utils.randomID()}`
+  await FilePicker.createDirectory('data', root, {}, { notify: false })
+  for (const oldPath of pending) {
+    const relative = decodeURIComponent(oldPath.slice('systems/legends/'.length).split(/[?#]/)[0])
+    if (relative.split('/').some(p => p === '.' || p === '..' || !p) || relative.includes('\\')) throw new Error(`Unsafe asset path: ${oldPath}`)
     const response = await fetch(foundry.utils.getRoute(oldPath))
     if (!response.ok) throw new Error(`Cannot preserve missing asset: ${oldPath}`)
     const blob = await response.blob()
     const segments = relative.split('/')
     const filename = segments.pop()
     let folder = root
-    await mkdir(folder)
-    for (const segment of segments) { folder += '/' + segment; await mkdir(folder) }
+    for (const segment of segments) { folder += '/' + encodeURIComponent(segment); await mkdir(folder) }
     const uploaded = await FilePicker.upload('data', folder, new File([blob], filename, { type: blob.type }), {}, { notify: false })
     if (!uploaded?.path) throw new Error(`Could not preserve asset: ${oldPath}`)
     const saved = await fetch(foundry.utils.getRoute(uploaded.path), { cache: 'no-store' })
@@ -187,9 +192,18 @@ export async function migrate({ backupConfirmed = false } = {}) {
       let target = pack
       if (pack.metadata.packageName === OLD_ID) {
         const id = migration.collections[pack.collection]
-        target = game.packs.get(id) ?? await Compendiums.createCompendium({
-          name: id.slice('world.'.length), label: `${pack.title} (Legacy)`, type: pack.documentName, package: 'world',
-        })
+        target = game.packs.get(id)
+        if (target) {
+          // A retry can find a copy made by an earlier version of the assistant.
+          // Keep a migrated override if the source setting has already moved.
+          const ownership = pack.config.ownership ?? target.config.ownership ?? pack.ownership
+          if (!equal(target.ownership, ownership)) await target.configure({ ownership })
+        } else {
+          target = await Compendiums.createCompendium({
+            name: id.slice('world.'.length), label: `${pack.title} (Legacy)`, type: pack.documentName,
+            package: 'world', ownership: pack.ownership,
+          })
+        }
         const locked = target.locked
         try {
           if (locked) await target.configure({ locked: false })

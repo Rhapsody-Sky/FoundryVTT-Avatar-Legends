@@ -219,7 +219,7 @@ export const doRoll = async (actor, rollOptions, options = {}) => {
   // Setup the chat message
   const chatData = {
     user: game.user._id,
-    speaker: ChatMessage.getSpeaker(),
+    speaker: ChatMessage.getSpeaker({ actor }),
     roll: rollResult,
     rolls: [roll],
     content: await renderTemplate(messageTemplate, templateContext),
