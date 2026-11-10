@@ -1,0 +1,17 @@
+<div class='footer flexrow gap-25'>
+  {{#if (and @root.user.isGM hasCombat)}}
+    <div class='phase-nav flexrow gap-25 {{#if round}}{{phase}}{{else}}inactive{{/if}}'>
+      {{#if round}}
+        <a class='nav-button round' data-action='prevRound' data-tooltip='legends.exchange.prevRound'>
+          <i class='fas fa-step-backward'></i>
+        </a>
+        <h3 class="m-0 size-120"><a class='nav-button' data-action='endExchange'>{{localize 'COMBAT.End'}}</a></h3>
+        <a class='nav-button round' data-action='nextRound' data-tooltip='legends.exchange.nextRound'>
+          <i class='fas fa-step-forward'></i>
+        </a>
+      {{else}}
+        <h3 class="m-0 size-120"><a class='nav-button' data-action='startExchange'>{{localize 'COMBAT.Begin'}}</a></h3>
+      {{/if}}
+    </div>
+  {{/if}}
+</div>

@@ -1,0 +1,14 @@
+<div class="legends">
+  {{> "systems/legends/templates/partials/move-card.hbs"}}
+
+  {{#if system.rollable}}
+    <a class="move-roll text" data-move-name="{{name}}">
+      <i class="fas fa-dice"></i>
+      {{#if system.rollStat}}
+        {{localize (tr_path 'legends.stats' system.rollStat)}}
+      {{else}}
+        {{localize 'legends.roll.dialog.submit'}}
+      {{/if}}
+    </a>
+  {{/if}}
+</div>

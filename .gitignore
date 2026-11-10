@@ -1,0 +1,5 @@
+*.DS_Store
+*.lock
+.vscode/extensions.json
+package-lock.json
+CHECKLIST.md

@@ -1,0 +1,1324 @@
+/**
+ * Fonts
+ **/
+@font-face {
+  font-family: 'Village';
+  src: url(fonts/prisoner/village.ttf);
+}
+@font-face {
+  font-family: 'Hey August';
+  src: url(fonts/hey_august/HeyAugust.ttf);
+}
+@font-face {
+  font-family: 'Komikazoom';
+  src: url(fonts/komikazoom/KAMIKZOM.ttf);
+}
+@font-face {
+  font-family: 'Covered By Your Grace';
+  src: url(fonts/Covered_By_Your_Grace/CoveredByYourGrace-Regular.ttf);
+}
+@font-face {
+  font-family: 'New Tegomin';
+  src: url(fonts/New_Tegomin/NewTegomin-Regular.ttf);
+}
+@font-face {
+  font-family: 'Noto Sans';
+  src: url(fonts/Noto_Sans/NotoSans-Regular.ttf);
+}
+@font-face {
+  font-family: 'Noto Sans';
+  src: url(fonts/Noto_Sans/NotoSans-Italic.ttf);
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Noto Sans';
+  src: url(fonts/Noto_Sans/NotoSans-SemiBold.ttf);
+  font-weight: bold;
+}
+@font-face {
+  font-family: 'Noto Sans';
+  src: url(fonts/Noto_Sans/NotoSans-SemiBoldItalic.ttf);
+  font-weight: bold;
+  font-style: italic;
+}
+.font-block {
+  font-family: 'Komikazoom' !important;
+  text-transform: uppercase !important;
+}
+.font-brush {
+  font-family: 'Hey August' !important;
+  text-transform: uppercase !important;
+  font-weight: normal !important;
+}
+.font-hand {
+  font-family: 'Covered By Your Grace' !important;
+  font-size: 1.5rem !important;
+}
+.font-title {
+  font-family: 'Village' !important;
+  font-variant: small-caps !important;
+}
+.font-main {
+  font-family: 'Noto Sans' !important;
+  font-size: 0.8rem !important;
+}
+/**
+* Colours
+**/
+.bg-default {
+  background: #f0f1f5;
+}
+.system-legends {
+  --font-title: 'Village';
+  --font-sans: 'Noto Sans', sans-serif;
+  --font-h1: 'Village', sans-serif;
+  --font-h2: 'Village', sans-serif;
+  --font-h3: 'Village', sans-serif;
+  --font-h4-size: 1.2rem;
+  --color-accent: #99bbe3;
+  --color-accent-mid: #405480;
+  --color-accent-dark: #002a5b;
+  --color-shadow-primary: var(--color-accent);
+  --color-air: #d4b450;
+  --color-earth: #3c6733;
+  --color-fire: #b62127;
+  --color-water: #4d63a9;
+  --color-technology: #6a2e7e;
+  --color-weapon: #4d4d4f;
+  --bg-color: #f0f1f5;
+  --bg-fade-color: #b4bac8;
+  --table-header-bg-color: var(--color-accent-mid);
+  --table-header-text-color: #ffffff;
+  --table-row-color-odd: transparent;
+  --table-row-color-even: transparent;
+}
+.system-legends * {
+  scrollbar-color: var(--color-accent-mid) transparent;
+}
+.system-legends #pause.paused {
+  animation: none;
+}
+.system-legends #pause img {
+  content: url(images/pause.webp);
+}
+.system-legends #pause figcaption {
+  font-family: var(--font-title);
+  font-size: 24px;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+.system-legends button.ui-control {
+  --control-active-border-color: var(--color-accent) !important;
+}
+.system-legends .window-title {
+  --font-title: 'Village';
+  font-family: var(--font-title);
+  font-variant: small-caps;
+}
+.system-legends #context-menu menu.context-items {
+  background: #111111;
+}
+.system-legends #context-menu menu.context-items li.context-item {
+  font-family: 'Village';
+  font-variant: small-caps;
+  background: #111111;
+  color: var(--bg-fade-color);
+}
+.system-legends #context-menu menu.context-items li.context-item:hover {
+  background: #111111;
+  color: #ffffff;
+}
+.system-legends #tooltip,
+.system-legends .locked-tooltip {
+  color: var(--bg-fade-color);
+  font-family: 'Village' !important;
+  font-variant: small-caps !important;
+}
+.system-legends .notification-pip {
+  background-color: var(--color-accent);
+}
+.system-legends .nowrap {
+  white-space: nowrap;
+}
+.system-legends .flex-nowrap {
+  flex-wrap: nowrap;
+}
+.system-legends .grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, calc(calc(100% - 1rem) / 3));
+  gap: 0.5rem;
+}
+.system-legends .align-items-start {
+  align-items: start;
+}
+.system-legends .align-items-center {
+  align-items: center;
+}
+.system-legends .align-items-end {
+  align-items: end;
+}
+.system-legends .align-items-baseline {
+  align-items: baseline;
+}
+.system-legends .justify-space-between {
+  justify-content: space-between;
+}
+.system-legends .justify-content-end {
+  justify-content: end;
+}
+.system-legends .flex0 {
+  flex: 0;
+}
+.system-legends .flex0-1rem {
+  flex: 0 0 1rem;
+}
+.system-legends .flex0-2rem {
+  flex: 0 0 2rem;
+}
+.system-legends .flex0-3rem {
+  flex: 0 0 3rem;
+}
+.system-legends .flex2 {
+  flex: 2 !important;
+}
+.system-legends .flex3 {
+  flex: 3 !important;
+}
+.system-legends .flex4 {
+  flex: 4 !important;
+}
+.system-legends .flex5 {
+  flex: 5 !important;
+}
+.system-legends .col2 {
+  columns: 2;
+}
+.system-legends .col3 {
+  columns: 3;
+}
+.system-legends .col2 > *,
+.system-legends .col3 > * {
+  break-inside: avoid;
+  page-break-inside: avoid;
+  margin-bottom: 0.25rem;
+}
+.system-legends .m-0 {
+  margin: 0 !important;
+}
+.system-legends .mx-25 {
+  margin-left: 0.25rem !important;
+  margin-right: 0.25rem !important;
+}
+.system-legends .mx-50 {
+  margin-left: 0.5rem !important;
+  margin-right: 0.5rem !important;
+}
+.system-legends .mx-25 {
+  margin-left: 0.25rem !important;
+  margin-right: 0.25rem !important;
+}
+.system-legends .my-50 {
+  margin-top: 0.5rem !important;
+  margin-bottom: 0.5rem !important;
+}
+.system-legends .my-100 {
+  margin-top: 1rem !important;
+  margin-bottom: 1rem !important;
+}
+.system-legends .mt-50 {
+  margin-top: 0.5rem !important;
+}
+.system-legends .mb-25 {
+  margin-bottom: 0.25rem !important;
+}
+.system-legends .mb-50 {
+  margin-bottom: 0.5rem !important;
+}
+.system-legends .ml-50 {
+  margin-left: 0.5rem !important;
+}
+.system-legends .p-25 {
+  padding: 0.25rem !important;
+}
+.system-legends .p-50 {
+  padding: 0.5rem !important;
+}
+.system-legends .px-25 {
+  padding-left: 0.25rem !important;
+  padding-right: 0.25rem !important;
+}
+.system-legends .px-50 {
+  padding-left: 0.5rem !important;
+  padding-right: 0.5rem !important;
+}
+.system-legends .py-25 {
+  padding-top: 0.25rem !important;
+  padding-bottom: 0.25rem !important;
+}
+.system-legends .pb-25 {
+  padding-bottom: 0.25rem !important;
+}
+.system-legends .gap-0 {
+  gap: 0 !important;
+}
+.system-legends .gap-25 {
+  gap: 0.25rem;
+}
+.system-legends .gap-50 {
+  gap: 0.5rem;
+}
+.system-legends .gap-75 {
+  gap: 0.75rem;
+}
+.system-legends .gap-100 {
+  gap: 1rem;
+}
+.system-legends .size-75 {
+  font-size: 0.75rem !important;
+}
+.system-legends .size-1rem,
+.system-legends .size-100 {
+  font-size: 1rem !important;
+}
+.system-legends .size-120 {
+  font-size: 1.2rem !important;
+}
+.system-legends .size-1-5rem,
+.system-legends .size-150 {
+  font-size: 1.5rem !important;
+}
+.system-legends .size-2rem,
+.system-legends .size-200 {
+  font-size: 2rem !important;
+}
+.system-legends .size-250 {
+  font-size: 2.5rem !important;
+}
+.system-legends .line-height-200 {
+  line-height: 2rem;
+}
+.system-legends .small-caps {
+  font-variant: small-caps;
+}
+.system-legends .weight-normal {
+  font-weight: normal;
+}
+.system-legends .text-center {
+  text-align: center !important;
+}
+.system-legends .text-right {
+  text-align: right !important;
+}
+.system-legends .float-right {
+  float: right;
+}
+.system-legends .quickstart,
+.system-legends [data-theme='quickstart'] {
+  --color-accent: #baaf6b;
+  --color-accent-mid: #6e4e27;
+  --color-accent-dark: #6e4e27;
+}
+.system-legends .color-black {
+  color: #111111;
+}
+.system-legends .color-grey,
+.system-legends .color-weapon {
+  color: #4d4d4f;
+}
+.system-legends .color-white {
+  color: #ffffff !important;
+}
+.system-legends .color-white-75 {
+  color: rgba(255, 255, 255, 0.75) !important;
+}
+.system-legends .color-accent {
+  color: var(--color-accent);
+}
+.system-legends .color-accent-mid {
+  color: var(--color-accent-mid);
+}
+.system-legends .color-accent-dark {
+  color: var(--color-accent-dark);
+}
+.system-legends .color-water,
+.system-legends .color-hit {
+  color: #4d63a9;
+}
+.system-legends .color-earth,
+.system-legends .color-full {
+  color: #3c6733;
+}
+.system-legends .color-fire,
+.system-legends .color-miss {
+  color: #b62127;
+}
+.system-legends .color-fire-dark {
+  color: #65110c;
+}
+.system-legends .color-air {
+  color: #d4b450;
+}
+.system-legends .color-technology {
+  color: #6a2e7e;
+}
+.system-legends .color-weapons {
+  color: #4d4d4f;
+}
+.system-legends .border-none {
+  border-width: 0 !important;
+}
+.system-legends .border-1px {
+  border-width: 1px !important;
+}
+.system-legends .border-top {
+  border-top-width: 2px;
+  border-top-style: solid;
+}
+.system-legends .border-bottom {
+  border-bottom-width: 2px;
+  border-bottom-style: solid;
+}
+.system-legends .border-solid {
+  border-style: solid !important;
+}
+.system-legends .border-accent {
+  border-color: var(--color-accent) !important;
+}
+.system-legends .border-accent-mid {
+  border-color: var(--color-accent-mid) !important;
+}
+.system-legends .border-fire-dark {
+  border-color: #65110c;
+}
+.system-legends .radius-25 {
+  border-radius: 0.25rem;
+}
+.system-legends .height-2rem,
+.system-legends .height-200 {
+  height: 2rem !important;
+}
+.system-legends .height-250 {
+  height: 2.5rem !important;
+}
+.system-legends .height-3rem,
+.system-legends .height-300 {
+  height: 3rem !important;
+}
+.system-legends .height-350 {
+  height: 3.5rem !important;
+}
+.system-legends .height-400 {
+  height: 4rem !important;
+}
+.system-legends .height-500 {
+  height: 5rem !important;
+}
+.system-legends .height-full {
+  height: 100%;
+}
+.system-legends .overflow-auto {
+  overflow: auto;
+}
+.system-legends .quickstart,
+.system-legends [data-theme='quickstart'] {
+  --bg-color: #f3efdc;
+  --bg-fade-color: #dfd3b4;
+}
+.system-legends .bg-transparent {
+  background-color: transparent !important;
+}
+.system-legends .bg-white {
+  background-color: #ffffff !important;
+}
+.system-legends .bg-white-25 {
+  background-color: rgba(255, 255, 255, 0.25) !important;
+}
+.system-legends .bg-white-50 {
+  background-color: rgba(255, 255, 255, 0.5) !important;
+}
+.system-legends .bg-black {
+  background-color: #111111 !important;
+}
+.system-legends .bg-light {
+  background-color: #dce5f1;
+}
+.system-legends .bg-gradient-light {
+  background-image: linear-gradient(90deg, #dce5f1, transparent);
+}
+.system-legends .bg-accent {
+  background-color: #99bbe3;
+}
+.system-legends .bg-accent-mid {
+  background-color: #405480;
+}
+.system-legends .bg-accent-dark {
+  background-color: #002a5b;
+}
+.system-legends img.icon {
+  max-width: 1rem;
+}
+.system-legends table {
+  --table-background-color: transparent;
+}
+.system-legends table thead {
+  border: none;
+  font-family: 'Village';
+  font-variant: small-caps;
+  color: #ffffff;
+}
+.system-legends table thead th {
+  vertical-align: bottom;
+}
+.system-legends table p:last-child {
+  margin-bottom: 0 !important;
+}
+.system-legends table tbody td {
+  vertical-align: top;
+}
+.system-legends .description-editor {
+  flex: 1;
+}
+.system-legends prose-mirror,
+.system-legends .prosemirror {
+  height: 100%;
+}
+.system-legends prose-mirror menu,
+.system-legends .prosemirror menu {
+  background: var(--color-accent-mid);
+  border-radius: 0 0 0.25rem 0.25rem;
+}
+.system-legends prose-mirror menu button,
+.system-legends .prosemirror menu button,
+.system-legends prose-mirror menu .button,
+.system-legends .prosemirror menu .button {
+  --button-focus-outline-color: var(--color-accent);
+  --button-hover-border-color: #ffffff;
+  --button-text-color: #ffffff;
+  --color-form-label-hover: #ffffff;
+}
+.system-legends prose-mirror button.icon.toggle,
+.system-legends .prosemirror button.icon.toggle {
+  padding: 0;
+  --button-text-color: #ffffff;
+  --button-hover-border-color: var(--color-accent-mid);
+  --button-hover-background-color: var(--color-accent-mid);
+  --button-hover-text-color: #ffffff;
+  --button-hover-border-color: transparent;
+}
+.system-legends prose-mirror button.icon.toggle:focus,
+.system-legends .prosemirror button.icon.toggle:focus {
+  --button-focus-outline-color: var(--color-accent);
+}
+.system-legends prose-mirror .editor-content,
+.system-legends .prosemirror .editor-content {
+  margin-top: 0.25rem;
+}
+.system-legends .specialty {
+  color: #f0f1f5;
+  background-color: #111111;
+  font-size: 0.7rem;
+  font-family: 'Noto Sans';
+  font-size: 0.8rem;
+  font-weight: normal;
+  text-transform: uppercase;
+  padding: 0 0.75rem;
+  height: 1rem;
+  white-space: nowrap;
+  clip-path: polygon(0 0.5rem, 0.5rem 0, calc(100% - 0.5rem) 0, 100% 0.5rem, 100% calc(100% - 0.5rem), calc(100% - 0.5rem) 100%, 0.5rem 100%, 0 calc(100% - 0.5rem));
+}
+.system-legends .specialty.air {
+  background-color: #d4b450;
+}
+.system-legends .specialty.earth {
+  background-color: #3c6733;
+}
+.system-legends .specialty.fire {
+  background-color: #b62127;
+}
+.system-legends .specialty.technology {
+  background-color: #6a2e7e;
+}
+.system-legends .specialty.water {
+  background-color: #4d63a9;
+}
+.system-legends .specialty.weapons {
+  background-color: #4d4d4f;
+}
+.system-legends .skill-name {
+  font-family: 'Village';
+  font-variant: small-caps;
+  color: var(--color-accent-mid);
+  font-weight: bold;
+}
+.system-legends .inline-item {
+  margin-bottom: 0.5rem;
+}
+.system-legends a {
+  --color-text-accent: var(--color-accent-mid);
+}
+.system-legends a.btn {
+  font-family: 'Village' !important;
+  font-variant: small-caps !important;
+  color: #ffffff;
+  border: none;
+  background-color: var(--color-accent-mid);
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+}
+.system-legends a.btn:hover {
+  text-shadow: 0 0 5px var(--color-accent);
+}
+.system-legends a.btn.air {
+  background-color: #d4b450;
+  color: #ffffff;
+}
+.system-legends a.btn.earth {
+  background-color: #3c6733;
+  color: #ffffff;
+}
+.system-legends a.btn.fire {
+  background-color: #b62127;
+  color: #ffffff;
+}
+.system-legends a.btn.fire-dark {
+  background-color: #65110c;
+  color: #ffffff;
+}
+.system-legends a.btn.technology {
+  background-color: #6a2e7e;
+  color: #ffffff;
+}
+.system-legends a.btn.water {
+  background-color: #4d63a9;
+  color: #ffffff;
+}
+.system-legends a.btn.weapons {
+  background-color: #4d4d4f;
+  color: #ffffff;
+}
+.system-legends a.btn.group {
+  background-color: #111111;
+  color: #ffffff;
+}
+.system-legends .cursor-pointer,
+.system-legends [data-action] {
+  cursor: pointer;
+}
+.system-legends p:empty {
+  display: none;
+}
+.system-legends .content-link,
+.system-legends .inline-roll {
+  --content-link-icon-color: var(--color-accent-dark);
+  background: rgba(255, 255, 255, 0.5);
+  color: var(--color-accent-mid);
+  border: 1px solid var(--color-accent);
+  border-radius: 0.25rem;
+}
+.system-legends img.portrait {
+  width: 100px;
+  float: right;
+  margin: 0 0 0 1rem;
+}
+.system-legends .chat-message.message {
+  background-color: var(--bg-color);
+  background-image: linear-gradient(var(--bg-fade-color) 0%, var(--bg-color) 50px, var(--bg-color) 100%);
+}
+.system-legends .chat-message.message h1,
+.system-legends .chat-message.message h2,
+.system-legends .chat-message.message h3,
+.system-legends .chat-message.message h4,
+.system-legends .chat-message.message p,
+.system-legends .chat-message.message ul {
+  margin: 0 0 0.5rem;
+}
+.system-legends .chat-message.message h3,
+.system-legends .chat-message.message h4 {
+  font-family: 'Village';
+  font-variant: small-caps;
+  font-weight: normal;
+}
+.system-legends .chat-message.message ul {
+  list-style: disc;
+  padding-left: 1rem;
+}
+.system-legends .chat-message.message ul li {
+  margin-bottom: 0.25rem;
+}
+.system-legends .chat-message.message .message-header {
+  border-bottom: 1.5px solid var(--color-accent);
+}
+.system-legends .chat-message.message.whisper .message-header {
+  border-color: #65110c;
+}
+.system-legends .chat-message.message .skill-name {
+  font-family: 'Village';
+  font-variant: small-caps;
+  color: var(--color-accent-dark);
+  font-weight: bold;
+}
+.legends.dialog {
+  --color-text-primary: #111111;
+  --color-text-emphatic: #002a5b;
+}
+.legends.dialog input {
+  --input-placeholder-color: rgba(17, 17, 17, 0.5);
+}
+.legends.dialog .window-content {
+  background-color: var(--bg-color);
+  background-image: linear-gradient(var(--bg-fade-color) 0%, var(--bg-color) 50px, var(--bg-color) 100%);
+}
+.legends.dialog .window-content input[type='text'],
+.legends.dialog .window-content input[type='number'],
+.legends.dialog .window-content select,
+.legends.dialog .window-content textarea {
+  background: rgba(255, 255, 255, 0.5);
+  color: var(--color-text-primary);
+  border-color: var(--color-accent);
+  font-family: 'Noto Sans';
+  font-size: 0.8rem;
+}
+.legends.dialog .window-content input[type='text']:disabled,
+.legends.dialog .window-content input[type='number']:disabled,
+.legends.dialog .window-content select:disabled,
+.legends.dialog .window-content textarea:disabled {
+  background: var(--bg-color);
+  color: #4d4d4f;
+  border-color: var(--bg-fade-color);
+}
+.legends.dialog .window-content footer button.dialog-button {
+  --button-focus-outline-color: var(--color-accent);
+  --button-hover-border-color: var(--bg-fade-color);
+  --button-border-color: var(--bg-fade-color);
+  background: var(--color-weapon);
+  color: #ffffff;
+}
+.legends.dialog .window-content footer button.dialog-button.yes:hover {
+  background: var(--color-earth);
+}
+.legends.dialog .window-content footer button.dialog-button.no:hover {
+  background: var(--color-fire);
+}
+.legends.sidebar.exchange {
+  --color-text-primary: #ffffff;
+  align-items: stretch;
+}
+.legends.sidebar.exchange .header,
+.legends.sidebar.exchange .footer {
+  flex: 0 0 2rem;
+}
+.legends.sidebar.exchange .phase-nav {
+  --phase-nav-bg: var(--color-accent-mid);
+  --phase-nav-hover: rgba(255, 255, 255, 0.5);
+  --phase-nav-hover-text: var(--color-accent-dark);
+  padding: 0.5rem;
+  text-align: center;
+  background: var(--phase-nav-bg);
+}
+.legends.sidebar.exchange .phase-nav .nav-button {
+  display: flex;
+  height: 2rem;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.25rem;
+  background: var(--phase-nav-bg);
+  color: #ffffff;
+}
+.legends.sidebar.exchange .phase-nav .nav-button.phase,
+.legends.sidebar.exchange .phase-nav .nav-button.round {
+  flex: 0 0 2rem;
+}
+.legends.sidebar.exchange .phase-nav .nav-button:hover {
+  text-shadow: none;
+  background: var(--phase-nav-hover);
+  color: var(--phase-nav-hover-text);
+}
+.legends.sidebar.exchange .phase-nav.defend-maneuver {
+  --phase-nav-bg: #3c6733;
+  --phase-nav-hover-text: var(--phase-nav-bg);
+}
+.legends.sidebar.exchange .phase-nav.advance-attack {
+  --phase-nav-bg: #b62127;
+  --phase-nav-hover-text: var(--phase-nav-bg);
+}
+.legends.sidebar.exchange .phase-nav.evade-observe {
+  --phase-nav-bg: #4d63a9;
+  --phase-nav-hover-text: var(--phase-nav-bg);
+}
+.legends.sidebar.exchange .phase-inactive .phase-nav {
+  background: transparent;
+  border-top: 2px solid var(--phase-nav-bg);
+  border-bottom: 2px solid var(--phase-nav-bg);
+  background-image: linear-gradient(120deg, var(--phase-nav-bg), transparent);
+}
+.legends.sidebar.exchange .header .tabs {
+  padding: 0.5rem;
+}
+.legends.sidebar.exchange .header .tabs .tab {
+  white-space: nowrap;
+  padding: 0 0.5rem;
+  color: white;
+}
+.legends.sidebar.exchange .header .tabs .tab.active {
+  background: var(--color-accent-mid);
+}
+.legends.sidebar.exchange .header .tabs .tab.addConflict,
+.legends.sidebar.exchange .header .tabs .tab.settings {
+  padding: 0;
+}
+.legends.sidebar.exchange .header .tabs .tab,
+.legends.sidebar.exchange .header .conflict-btn {
+  flex: 0 0 1.5rem;
+  background: rgba(255, 255, 255, 0.25);
+  height: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.25rem;
+}
+.legends.sidebar.exchange .header .tabs .tab.settings,
+.legends.sidebar.exchange .header .conflict-btn.settings,
+.legends.sidebar.exchange .header .tabs .tab.encounter-context-menu,
+.legends.sidebar.exchange .header .conflict-btn.encounter-context-menu {
+  margin-left: auto;
+}
+.legends.sidebar.exchange .header .round-header {
+  background: rgba(255, 255, 255, 0.25);
+}
+.legends.sidebar.exchange .combatant-grid {
+  gap: 0.5rem;
+  display: grid;
+  grid-template-columns: repeat(8, calc((100% - 3.5rem) / 8));
+}
+.legends.sidebar.exchange .combatants {
+  flex: 1;
+  overflow-y: auto;
+}
+.legends.sidebar.exchange .combatants .combatant-full {
+  border-bottom: none;
+  padding: 0.25rem 0.5rem;
+}
+.legends.sidebar.exchange .combatants .combatant-full:nth-child(odd) {
+  background: rgba(17, 17, 17, 0.25);
+}
+.legends.sidebar.exchange .combatants .combatant-full:last-child {
+  border-bottom: none;
+}
+.legends.sidebar.exchange .combatants .combatant-full.inactive {
+  opacity: 0.5;
+}
+.legends.sidebar.exchange .combatants .combatant-full .stat {
+  flex: 0 0 2rem;
+}
+.legends.sidebar.exchange .combatants .combatant-full .token {
+  position: relative;
+}
+.legends.sidebar.exchange .combatants .combatant-full .token .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(17, 17, 17, 0.5);
+  color: #ffffff;
+  text-shadow: 0 0 5px #111111;
+  font-size: 1.5rem;
+}
+.legends.sidebar.exchange .combatants .combatant-full .token .overlay i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.legends.sidebar.exchange .combatants .combatant-full .btn {
+  background: rgba(255, 255, 255, 0.25);
+  color: #111111;
+  border-radius: 0.25rem;
+  display: block;
+  text-align: center;
+  transition: all 0.2s;
+}
+.legends.sidebar.exchange .combatants .combatant-full .btn.active {
+  color: #ffffff !important;
+}
+.legends.sidebar.exchange .combatants .combatant-full .btn.approach {
+  flex: 0 0 3rem;
+  padding: 0.25rem;
+  font-size: 0.75rem;
+  font-weight: normal;
+  --btn-bg: rgba(255, 255, 255, 0.25);
+  --btn-bg-hover: rgba(255, 255, 255, 0.5);
+}
+.legends.sidebar.exchange .combatants .combatant-full .btn.approach:hover {
+  color: var(--btn-bg);
+  background: var(--btn-bg-hover);
+}
+.legends.sidebar.exchange .combatants .combatant-full .btn.approach.active {
+  background: var(--btn-bg);
+}
+.legends.sidebar.exchange .combatants .combatant-full .btn.defend-maneuver {
+  --btn-bg: #3c6733;
+}
+.legends.sidebar.exchange .combatants .combatant-full .btn.advance-attack {
+  --btn-bg: #b62127;
+}
+.legends.sidebar.exchange .combatants .combatant-full .btn.evade-observe {
+  --btn-bg: #4d63a9;
+}
+.legends.sidebar.exchange .combatants .combatant-full .btn.stance-move:hover {
+  background: var(--btn-bg);
+  color: #ffffff;
+}
+.legends.sidebar.exchange .combatants .combatant-full .npc-principle {
+  margin: 0 0.5rem -0.5rem;
+}
+.legends.sidebar.exchange .combatants .combatant-full .npc-principle .check-box {
+  --box-size: 1.5rem;
+  display: inline-block;
+  border: 1.5px solid black;
+  background: white;
+  box-shadow: -1px -1px 0 rgba(255, 255, 255, 0.75), -1px 1px 0 rgba(255, 255, 255, 0.75), 1px -1px 0 rgba(255, 255, 255, 0.75), 1px 1px 0 rgba(255, 255, 255, 0.75);
+  flex: 0 0 var(--box-size);
+  height: var(--box-size);
+  transform: rotate(45deg);
+  color: #111111;
+  position: relative;
+  margin: 0.25rem;
+}
+.legends.sidebar.exchange .combatants .combatant-full .npc-principle .check-box .num {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: inline-block;
+  transform: translate(-50%, -50%) rotate(-45deg);
+  text-align: center;
+  font-size: 0.8rem;
+  line-height: var(--box-size);
+}
+.legends.sidebar.exchange .combatants .combatant-full .npc-principle .check-box.filled {
+  background: #b62127;
+  box-shadow: inset 2px 2px 0 white, inset -2px -2px 0 white;
+}
+.legends.sidebar.exchange .combatants .combatant-full .npc-principle .check-box.filled .num {
+  color: white;
+}
+.legends.sidebar.exchange .combatants .combatant-full .token-effect {
+  max-width: 1rem;
+}
+.legends.sidebar.exchange .combatants .combatant-full .combatant-action {
+  color: rgba(255, 255, 255, 0.5);
+}
+.legends.sidebar.exchange .combatants .combatant-full .combatant-action:hover {
+  color: rgba(255, 255, 255, 0.75);
+}
+.legends.sidebar.exchange .combatants .combatant-full .combatant-action.active {
+  color: #ffffff;
+}
+.sheet.journal-sheet .window-content {
+  --color-text-primary: #111111;
+  --color-text-emphatic: #002a5b;
+  background-color: var(--bg-color);
+  background-image: linear-gradient(var(--bg-fade-color) 0%, var(--bg-color) 100px, var(--bg-color) 100%);
+  color: var(--color-text-primary);
+}
+.sheet.journal-sheet .journal-sidebar {
+  color: var(--color-text-primary);
+}
+.sheet.journal-sheet .journal-sidebar search {
+  margin: 1rem;
+  height: 52px;
+  border-bottom: 2px solid var(--color-accent);
+}
+.sheet.journal-sheet .journal-sidebar search input {
+  --input-placeholder-color: rgba(17, 17, 17, 0.5);
+  color: var(--color-text-primary);
+  border: 1px solid var(--color-accent);
+  background: rgba(255, 255, 255, 0.75);
+}
+.sheet.journal-sheet .journal-sidebar .toc li.page {
+  border: none;
+  border-bottom: 1px solid var(--color-accent);
+}
+.sheet.journal-sheet .journal-sidebar .toc li.page.active:first-of-type {
+  border-top: none;
+}
+.sheet.journal-sheet .journal-entry-content {
+  background: transparent;
+}
+.sheet.journal-sheet .journal-sidebar button,
+.sheet.journal-sheet .journal-entry-content button,
+.sheet.journal-sheet .journal-footer button {
+  --button-text-color: var(--color-accent-mid);
+  --button-background-color: var(--bg-fade-color);
+  --button-border-color: var(--color-accent-mid);
+  --button-hover-border-color: var(--color-accent-mid);
+  --button-hover-background-color: var(--color-accent-mid);
+  --button-hover-text-color: #ffffff;
+}
+.sheet.journal-sheet .journal-sidebar button:focus,
+.sheet.journal-sheet .journal-entry-content button:focus,
+.sheet.journal-sheet .journal-footer button:focus {
+  --button-focus-outline-color: var(--color-accent);
+}
+.sheet.journal-sheet .journal-sidebar button:disabled,
+.sheet.journal-sheet .journal-entry-content button:disabled,
+.sheet.journal-sheet .journal-footer button:disabled {
+  --button-border-color: transparent;
+  --button-text-color: rgba(17, 17, 17, 0.5);
+  --button-hover-border-color: var(--button-border-color);
+  --button-hover-background-color: var(--button-background-color);
+  --button-hover-text-color: var(--button-text-color);
+}
+.sheet.journal-sheet .journal-header {
+  border-bottom: 2px solid var(--color-accent);
+}
+.sheet.journal-sheet .journal-header input[type='text'],
+.sheet.journal-sheet .journal-header select {
+  --input-text-color: var(--color-text-emphatic);
+  font-family: 'Village';
+  font-variant: small-caps;
+  background: rgba(255, 255, 255, 0.75);
+  border: none;
+}
+.sheet.journal-sheet .journal-header input[type='text']:disabled,
+.sheet.journal-sheet .journal-header select:disabled {
+  background: transparent;
+}
+.sheet.journal-sheet .journal-header input[type='checkbox'] {
+  --checkbox-checked-color: var(--color-accent-mid);
+}
+.sheet.journal-sheet .journal-entry-content h1,
+.sheet.journal-sheet .journal-entry-content h2,
+.sheet.journal-sheet .journal-entry-content h3,
+.sheet.journal-sheet .journal-entry-content h4,
+.sheet.journal-sheet .journal-entry-content p,
+.sheet.journal-sheet .journal-entry-content ul {
+  margin: 0 0 0.5rem;
+  text-decoration: none;
+  border: none;
+}
+.sheet.journal-sheet .journal-entry-content h1,
+.sheet.journal-sheet .journal-entry-content h2,
+.sheet.journal-sheet .journal-entry-content h3,
+.sheet.journal-sheet .journal-entry-content h4 {
+  font-family: 'Village';
+  font-variant: small-caps;
+  font-weight: normal;
+}
+.sheet.journal-sheet .journal-entry-content ul {
+  list-style: disc;
+  padding-left: 1rem;
+}
+.sheet.journal-sheet .journal-entry-content ul li {
+  margin-bottom: 0.25rem;
+}
+.sheet.journal-sheet .journal-entry-content ul li p {
+  margin-bottom: 0;
+}
+.sheet.journal-sheet .journal-entry-content img {
+  border: none;
+  box-shadow: none;
+}
+.sheet.journal-sheet .journal-entry-content .balance-box,
+.sheet.journal-sheet .journal-entry-content .fatigue-box,
+.sheet.journal-sheet .journal-entry-content .check-box {
+  display: inline-block;
+  border: 1.5px solid black;
+  background: white;
+  width: 0.75rem;
+  height: 0.75rem;
+  border-width: 1.5px;
+  margin-right: 2px;
+}
+.sheet.journal-sheet .journal-entry-content .load-pdf button {
+  --button-hover-background-color: var(--color-accent-mid);
+  font-family: 'Village' !important;
+  font-variant: small-caps !important;
+  color: #ffffff;
+  border: none;
+  background-color: var(--color-accent-mid);
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+}
+.sheet.journal-sheet .journal-entry-content .load-pdf button:hover {
+  text-shadow: 0 0 5px var(--color-accent);
+}
+.legends.sheet {
+  --color-text-primary: #111111;
+  --color-text-emphatic: #002a5b;
+}
+.legends.sheet input {
+  --input-placeholder-color: rgba(17, 17, 17, 0.5);
+}
+.legends.sheet .window-content {
+  padding: 0.5rem 1rem 1rem;
+  background-color: var(--bg-color);
+  background-image: linear-gradient(var(--bg-fade-color) 0%, var(--bg-color) 100px, var(--bg-color) 100%);
+}
+.legends.sheet .window-content h1,
+.legends.sheet .window-content h2,
+.legends.sheet .window-content h3,
+.legends.sheet .window-content h4,
+.legends.sheet .window-content p,
+.legends.sheet .window-content ul {
+  margin: 0 0 0.5rem;
+}
+.legends.sheet .window-content h3,
+.legends.sheet .window-content h4 {
+  font-family: 'Village';
+  font-variant: small-caps;
+  font-weight: normal;
+}
+.legends.sheet .window-content ul {
+  list-style: disc;
+  padding-left: 1rem;
+}
+.legends.sheet .window-content ul li {
+  margin-bottom: 0.25rem;
+}
+.legends.sheet .window-content ul li p {
+  margin-bottom: 0;
+}
+.legends.sheet .window-content input[type='text'],
+.legends.sheet .window-content input[type='number'],
+.legends.sheet .window-content select,
+.legends.sheet .window-content textarea {
+  background: rgba(255, 255, 255, 0.5);
+  color: var(--color-text-primary);
+  border-color: var(--color-accent);
+  font-family: 'Noto Sans';
+  font-size: 0.8rem;
+}
+.legends.sheet .window-content input[type='text'].stat,
+.legends.sheet .window-content input[type='number'].stat,
+.legends.sheet .window-content select.stat,
+.legends.sheet .window-content textarea.stat {
+  text-align: center;
+  border: 2px solid;
+  border-color: var(--color-text-primary);
+  border-radius: 50%;
+  height: 2rem;
+  line-height: 2rem;
+  font-size: 2rem;
+  padding: 0;
+  font-family: 'Covered By Your Grace';
+  font-size: 1.5rem;
+}
+.legends.sheet .window-content input[type='text']:disabled,
+.legends.sheet .window-content input[type='number']:disabled,
+.legends.sheet .window-content select:disabled,
+.legends.sheet .window-content textarea:disabled {
+  background: var(--bg-color);
+  color: #4d4d4f;
+  border-color: var(--bg-fade-color);
+}
+.legends.sheet .sheet-tabs.tabs {
+  border-width: 1px;
+  border-color: var(--color-accent);
+  margin: 0.5rem -1rem;
+  gap: 0;
+}
+.legends.sheet .sheet-tabs.tabs a {
+  margin: 0.25rem 0;
+  color: var(--color-accent-dark);
+  flex: 1;
+  border-right: 1px solid var(--color-accent);
+}
+.legends.sheet .sheet-tabs.tabs a.active,
+.legends.sheet .sheet-tabs.tabs a:hover {
+  color: var(--color-accent-dark);
+  text-shadow: 0 0 4px var(--color-accent);
+}
+.legends.sheet .sheet-tabs.tabs a:last-child {
+  border-right: none;
+}
+.legends.sheet section.tab {
+  overflow: auto;
+  height: 100%;
+}
+.legends.sheet .balance-box,
+.legends.sheet .fatigue-box,
+.legends.sheet .check-box {
+  display: inline-block;
+  border: 2px solid black;
+  background: white;
+}
+.legends.sheet .balance-box.filled,
+.legends.sheet .fatigue-box.filled,
+.legends.sheet .check-box.filled {
+  background: #b62127;
+  box-shadow: inset 2px 2px 0 white, inset -2px -2px 0 white;
+}
+.legends.sheet .balance-box.mini,
+.legends.sheet .fatigue-box.mini,
+.legends.sheet .check-box.mini {
+  width: 1rem;
+  height: 1rem;
+}
+.legends.sheet .check-box {
+  width: 1.2rem;
+  height: 1.2rem;
+  border-radius: 2px;
+  margin: 0 0 -2px;
+}
+.legends.sheet .balance-box,
+.legends.sheet .fatigue-box {
+  transform: rotate(45deg);
+}
+.legends.sheet .fatigue-box {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin: 0 0.2rem;
+}
+.legends.sheet .balance .balance-black,
+.legends.sheet .balance .balance-white {
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}
+.legends.sheet .balance .balance-black input,
+.legends.sheet .balance .balance-white input {
+  border: none;
+  padding: 0.25rem 0.5rem;
+  margin: 0;
+  width: 100%;
+  background: transparent;
+}
+.legends.sheet .balance .balance-black input.full-width,
+.legends.sheet .balance .balance-white input.full-width {
+  width: 100%;
+}
+.legends.sheet .balance .balance-black {
+  color: white;
+  background-image: linear-gradient(115deg, #111111 50%, rgba(17, 17, 17, 0) 100%);
+  margin-bottom: 0;
+}
+.legends.sheet .balance .balance-black input {
+  color: white;
+}
+.legends.sheet .balance .balance-white {
+  background-image: linear-gradient(-115deg, white 50%, rgba(255, 255, 255, 0) 100%);
+  color: #111111;
+}
+.legends.sheet .balance .balance-white input {
+  color: #111111;
+  text-align: right;
+}
+.legends.sheet .balance ul.balance-track,
+.legends.sheet .balance ul.balance-center-track {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: none;
+  margin: 0;
+  padding: 0;
+}
+.legends.sheet .balance ul.balance-track li,
+.legends.sheet .balance ul.balance-center-track li {
+  list-style: none;
+  flex: 1;
+  text-align: center;
+  margin-bottom: 0 !important;
+}
+.legends.sheet .balance ul.balance-track li.text,
+.legends.sheet .balance ul.balance-center-track li.text {
+  flex: 0;
+  font-size: 0.6rem;
+  line-height: 1.5rem;
+  text-align: center;
+  color: var(--color-accent-dark);
+  margin: 0 -4px;
+  font-family: 'Village';
+  font-variant: small-caps;
+}
+.legends.sheet .balance ul.balance-center-track {
+  height: 1.2rem;
+}
+.legends.sheet .balance ul.balance-track.black li .num,
+.legends.sheet .balance ul.balance-track.white li .num {
+  display: inline-block;
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+  margin: 0.5rem;
+  padding: 4px 0;
+  border: 2px solid;
+  font-weight: bold;
+}
+.legends.sheet .balance ul.balance-track.black li.selected .num,
+.legends.sheet .balance ul.balance-track.white li.selected .num {
+  background: #b62127;
+  color: white;
+}
+.legends.sheet .balance ul.balance-track.black,
+.legends.sheet .balance ul.balance-track.white {
+  box-shadow: inset 1rem 1.4rem 0 var(--bg-color), inset -1rem -1.4rem 0 var(--bg-color);
+}
+.legends.sheet .balance ul.balance-track.black {
+  background: black;
+}
+.legends.sheet .balance ul.balance-track.black li .num {
+  background: #111111;
+  color: white;
+  border-color: #111111;
+}
+.legends.sheet .balance ul.balance-track.black li:hover .num {
+  border-color: #b62127;
+}
+.legends.sheet .balance ul.balance-track.white {
+  background: white;
+}
+.legends.sheet .balance ul.balance-track.white li .num {
+  background: white;
+  color: #111111;
+  border-color: white;
+}
+.legends.sheet .balance ul.balance-track.white li:hover .num {
+  border-color: #b62127;
+}
+.legends.sheet .training-type {
+  display: inline-block;
+  margin: 0 1rem;
+  flex: 1;
+  font-family: 'Village';
+  font-variant: small-caps;
+  opacity: 0.25;
+  text-align: center;
+  transition: 0.25s all;
+  filter: grayscale(0.5);
+}
+.legends.sheet .training-type:hover {
+  opacity: 0.75;
+  filter: grayscale(0.25);
+}
+.legends.sheet .training-type.selected {
+  opacity: 1 !important;
+  filter: none;
+}
+.legends.sheet .training-type img {
+  width: 2rem;
+  border: none;
+  display: inline-block;
+}
+.legends.sheet .npc-principle {
+  margin: 0 0.5rem -0.5rem;
+}
+.legends.sheet .npc-principle .check-box {
+  flex: 0 0 2rem;
+  height: 2rem;
+  transform: rotate(45deg);
+  color: #111111;
+  position: relative;
+  margin: 0.25rem;
+}
+.legends.sheet .npc-principle .check-box .num {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: inline-block;
+  transform: translate(-50%, -50%) rotate(-45deg);
+  text-align: center;
+  font-size: 0.8rem;
+  line-height: 1.5rem;
+}
+.legends.sheet .npc-principle .check-box.filled .num {
+  color: white;
+}

@@ -1,0 +1,673 @@
+@import url('./config.less');
+
+.system-legends {
+  --font-title: 'Village';
+
+  * {
+    scrollbar-color: var(--color-accent-mid) transparent;
+  }
+
+  #pause {
+    &.paused {
+      animation: none;
+    }
+    img {
+      content: url(./images/pause.webp);
+    }
+
+    figcaption {
+      font-family: var(--font-title);
+      font-size: 24px;
+      text-transform: uppercase;
+      color: @white;
+    }
+  }
+
+  button.ui-control {
+    --control-active-border-color: var(--color-accent) !important;
+  }
+
+  .window-title {
+    --font-title: 'Village';
+    font-family: var(--font-title);
+    font-variant: small-caps;
+  }
+
+  #context-menu {
+    menu.context-items {
+      background: @black;
+      li.context-item {
+        .title-font();
+        background: @black;
+        color: var(--bg-fade-color);
+        &:hover {
+          background: @black;
+          color: @white;
+        }
+      }
+    }
+  }
+
+  #tooltip,
+  .locked-tooltip {
+    color: var(--bg-fade-color);
+    .font-title();
+  }
+
+  .notification-pip {
+    background-color: var(--color-accent);
+  }
+
+  .nowrap {
+    white-space: nowrap;
+  }
+
+  .flex-nowrap {
+    flex-wrap: nowrap;
+  }
+
+  // #region fonts
+  --font-sans: 'Noto Sans', sans-serif;
+  --font-h1: 'Village', sans-serif;
+  --font-h2: 'Village', sans-serif;
+  --font-h3: 'Village', sans-serif;
+  // --font-h4:
+  --font-h4-size: 1.2rem;
+
+  // #endregion
+
+  // #region grid
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, calc(calc(100% - 1rem) / 3));
+    gap: 0.5rem;
+  }
+  // #endregion
+
+  // #region flex alignment
+  .align-items-start {
+    align-items: start;
+  }
+  .align-items-center {
+    align-items: center;
+  }
+  .align-items-end {
+    align-items: end;
+  }
+  .align-items-baseline {
+    align-items: baseline;
+  }
+  .justify-space-between {
+    justify-content: space-between;
+  }
+  .justify-content-end {
+    justify-content: end;
+  }
+  // #endregion
+
+  // #region flex size
+  .flex0 {
+    flex: 0;
+  }
+  .flex0-1rem {
+    flex: 0 0 1rem;
+  }
+  .flex0-2rem {
+    flex: 0 0 2rem;
+  }
+  .flex0-3rem {
+    flex: 0 0 3rem;
+  }
+  .flex2 {
+    flex: 2 !important;
+  }
+  .flex3 {
+    flex: 3 !important;
+  }
+  .flex4 {
+    flex: 4 !important;
+  }
+  .flex5 {
+    flex: 5 !important;
+  }
+  .col2 {
+    columns: 2;
+  }
+  .col3 {
+    columns: 3;
+  }
+  .col2,
+  .col3 {
+    & > * {
+      break-inside: avoid;
+      page-break-inside: avoid;
+      margin-bottom: 0.25rem;
+    }
+  }
+  // #endregion
+
+  // #region margins
+  .m-0 {
+    margin: 0 !important;
+  }
+  .mx-25 {
+    margin-left: 0.25rem !important;
+    margin-right: 0.25rem !important;
+  }
+  .mx-50 {
+    margin-left: 0.5rem !important;
+    margin-right: 0.5rem !important;
+  }
+  .mx-25 {
+    margin-left: 0.25rem !important;
+    margin-right: 0.25rem !important;
+  }
+  .my-50 {
+    margin-top: 0.5rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+  .my-100 {
+    margin-top: 1rem !important;
+    margin-bottom: 1rem !important;
+  }
+  .mt-50 {
+    margin-top: 0.5rem !important;
+  }
+  .mb-25 {
+    margin-bottom: 0.25rem !important;
+  }
+  .mb-50 {
+    margin-bottom: 0.5rem !important;
+  }
+  .ml-50 {
+    margin-left: 0.5rem !important;
+  }
+  // #endregion
+
+  // #region padding
+  .p-25 {
+    padding: 0.25rem !important;
+  }
+  .p-50 {
+    padding: 0.5rem !important;
+  }
+  .px-25 {
+    padding-left: 0.25rem !important;
+    padding-right: 0.25rem !important;
+  }
+  .px-50 {
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+  }
+  .py-25 {
+    padding-top: 0.25rem !important;
+    padding-bottom: 0.25rem !important;
+  }
+  .pb-25 {
+    padding-bottom: 0.25rem !important;
+  }
+  // #endregion
+
+  // #region flex gap
+  .gap-0 {
+    gap: 0 !important;
+  }
+  .gap-25 {
+    gap: 0.25rem;
+  }
+  .gap-50 {
+    gap: 0.5rem;
+  }
+  .gap-75 {
+    gap: 0.75rem;
+  }
+  .gap-100 {
+    gap: 1rem;
+  }
+  // #endregion
+
+  // #region font-size
+  .size-75 {
+    font-size: 0.75rem !important;
+  }
+  .size-1rem,
+  .size-100 {
+    font-size: 1rem !important;
+  }
+  .size-120 {
+    font-size: 1.2rem !important;
+  }
+  .size-1-5rem,
+  .size-150 {
+    font-size: 1.5rem !important;
+  }
+  .size-2rem,
+  .size-200 {
+    font-size: 2rem !important;
+  }
+  .size-250 {
+    font-size: 2.5rem !important;
+  }
+  // #endregion
+
+  .line-height-200 {
+    line-height: 2rem;
+  }
+
+  // #region font styles
+  .small-caps {
+    font-variant: small-caps;
+  }
+  // #endregion
+
+  // #region font weight
+  .weight-normal {
+    font-weight: normal;
+  }
+  // #endregion
+
+  // #region text alignment
+  .text-center {
+    text-align: center !important;
+  }
+  .text-right {
+    text-align: right !important;
+  }
+  // #endregion
+
+  // #region float
+  .float-right {
+    float: right;
+  }
+  // #endregion
+
+  // #region text colors
+  --color-accent: @accent-color;
+  --color-accent-mid: @accent-mid;
+  --color-accent-dark: @accent-dark;
+  --color-shadow-primary: var(--color-accent);
+
+  --color-air: @airbender;
+  --color-earth: @earthbender;
+  --color-fire: @firebender;
+  --color-water: @waterbender;
+  --color-technology: @technologist;
+  --color-weapon: @weaponsmith;
+
+  .quickstart,
+  [data-theme='quickstart'] {
+    --color-accent: @accent-color-quickstart;
+    --color-accent-mid: @accent-dark-quickstart;
+    --color-accent-dark: @accent-dark-quickstart;
+  }
+
+  .color-black {
+    color: @black;
+  }
+  .color-grey,
+  .color-weapon {
+    color: @weaponsmith;
+  }
+  .color-white {
+    color: @white !important;
+  }
+  .color-white-75 {
+    color: @white-75 !important;
+  }
+  .color-accent {
+    color: var(--color-accent);
+  }
+  .color-accent-mid {
+    color: var(--color-accent-mid);
+  }
+  .color-accent-dark {
+    color: var(--color-accent-dark);
+  }
+  .color-water,
+  .color-hit {
+    color: @waterbender;
+  }
+  .color-earth,
+  .color-full {
+    color: @earthbender;
+  }
+  .color-fire,
+  .color-miss {
+    color: @firebender;
+  }
+  .color-fire-dark {
+    color: @dark-fire;
+  }
+  .color-air {
+    color: @airbender;
+  }
+  .color-technology {
+    color: @technologist;
+  }
+  .color-weapons {
+    color: @weaponsmith;
+  }
+  // #endregion
+
+  // #region borders
+  .border-none {
+    border-width: 0 !important;
+  }
+  .border-1px {
+    border-width: 1px !important;
+  }
+  .border-top {
+    border-top-width: 2px;
+    border-top-style: solid;
+  }
+  .border-bottom {
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+  }
+  .border-solid {
+    border-style: solid !important;
+  }
+  .border-accent {
+    border-color: var(--color-accent) !important;
+  }
+  .border-accent-mid {
+    border-color: var(--color-accent-mid) !important;
+  }
+  .border-fire-dark {
+    border-color: @dark-fire;
+  }
+  .radius-25 {
+    border-radius: 0.25rem;
+  }
+  // #endregion
+
+  // #region height helpers
+  .height-2rem,
+  .height-200 {
+    height: 2rem !important;
+  }
+  .height-250 {
+    height: 2.5rem !important;
+  }
+  .height-3rem,
+  .height-300 {
+    height: 3rem !important;
+  }
+  .height-350 {
+    height: 3.5rem !important;
+  }
+  .height-400 {
+    height: 4rem !important;
+  }
+  .height-500 {
+    height: 5rem !important;
+  }
+  .height-full {
+    height: 100%;
+  }
+
+  .overflow-auto {
+    overflow: auto;
+  }
+  // #endregion
+
+  // #region background colors
+  --bg-color: @bg-color;
+  --bg-fade-color: @bg-fade-color;
+
+  .quickstart,
+  [data-theme='quickstart'] {
+    --bg-color: @bg-color-quickstart;
+    --bg-fade-color: @bg-fade-color-quickstart;
+  }
+
+  .bg-transparent {
+    background-color: transparent !important;
+  }
+
+  .bg-white {
+    background-color: @white !important;
+  }
+  .bg-white-25 {
+    background-color: @white-25 !important;
+  }
+  .bg-white-50 {
+    background-color: @white-50 !important;
+  }
+  .bg-black {
+    background-color: @text-color !important;
+  }
+  .bg-light {
+    background-color: @bg-fade-light;
+  }
+  .bg-gradient-light {
+    background-image: linear-gradient(90deg, @bg-fade-light, transparent);
+  }
+  .bg-accent {
+    background-color: @accent-color;
+  }
+  .bg-accent-mid {
+    background-color: @accent-mid;
+  }
+  .bg-accent-dark {
+    background-color: @accent-dark;
+  }
+  // #endregion
+
+  // #region images
+  img {
+    &.icon {
+      max-width: 1rem;
+    }
+  }
+  // #endregion
+
+  // #region tables
+  table {
+    --table-background-color: transparent;
+
+    thead {
+      border: none;
+      .title-font();
+      color: @white;
+
+      th {
+        vertical-align: bottom;
+      }
+    }
+    p:last-child {
+      margin-bottom: 0 !important;
+    }
+
+    tbody td {
+      vertical-align: top;
+    }
+  }
+  --table-header-bg-color: var(--color-accent-mid);
+  --table-header-text-color: @white;
+  --table-row-color-odd: transparent;
+  --table-row-color-even: transparent;
+  // #endregion
+
+  .description-editor {
+    flex: 1;
+  }
+
+  prose-mirror,
+  .prosemirror {
+    height: 100%;
+
+    menu {
+      background: var(--color-accent-mid);
+      border-radius: 0 0 0.25rem 0.25rem;
+
+      button,
+      .button {
+        --button-focus-outline-color: var(--color-accent);
+        --button-hover-border-color: @white;
+        --button-text-color: @white;
+        --color-form-label-hover: @white;
+      }
+    }
+
+    button.icon.toggle {
+      padding: 0;
+      --button-text-color: @white;
+      --button-hover-border-color: var(--color-accent-mid);
+      --button-hover-background-color: var(--color-accent-mid);
+      --button-hover-text-color: @white;
+      --button-hover-border-color: transparent;
+
+      &:focus {
+        --button-focus-outline-color: var(--color-accent);
+      }
+    }
+
+    .editor-content {
+      margin-top: 0.25rem;
+    }
+  }
+
+  .specialty {
+    color: @bg-color;
+    background-color: @text-color;
+    font-size: 0.7rem;
+    .main-font();
+    font-weight: normal;
+    text-transform: uppercase;
+    padding: 0 0.75rem;
+    height: 1rem;
+    white-space: nowrap;
+    clip-path: polygon(
+      0 0.5rem,
+      0.5rem 0,
+      calc(100% - 0.5rem) 0,
+      100% 0.5rem,
+      100% calc(100% - 0.5rem),
+      calc(100% - 0.5rem) 100%,
+      0.5rem 100%,
+      0 calc(100% - 0.5rem)
+    );
+
+    &.air {
+      background-color: @airbender;
+    }
+
+    &.earth {
+      background-color: @earthbender;
+    }
+
+    &.fire {
+      background-color: @firebender;
+    }
+
+    &.technology {
+      background-color: @technologist;
+    }
+
+    &.water {
+      background-color: @waterbender;
+    }
+
+    &.weapons {
+      background-color: @weaponsmith;
+    }
+  }
+
+  .skill-name {
+    .title-font();
+    color: var(--color-accent-mid);
+    font-weight: bold;
+  }
+
+  .inline-item {
+    margin-bottom: 0.5rem;
+  }
+  a {
+    --color-text-accent: var(--color-accent-mid);
+
+    &.btn {
+      .font-title();
+      color: @white;
+      border: none;
+      background-color: var(--color-accent-mid);
+      padding: 0.5rem;
+      border-radius: 0.25rem;
+
+      &:hover {
+        text-shadow: 0 0 5px var(--color-accent);
+      }
+
+      &.air {
+        background-color: @airbender;
+        color: @white;
+      }
+
+      &.earth {
+        background-color: @earthbender;
+        color: @white;
+      }
+
+      &.fire {
+        background-color: @firebender;
+        color: @white;
+      }
+      &.fire-dark {
+        background-color: @dark-fire;
+        color: @white;
+      }
+
+      &.technology {
+        background-color: @technologist;
+        color: @white;
+      }
+
+      &.water {
+        background-color: @waterbender;
+        color: @white;
+      }
+
+      &.weapons {
+        background-color: @weaponsmith;
+        color: @white;
+      }
+
+      &.group {
+        background-color: @text-color;
+        color: @white;
+      }
+    }
+  }
+
+  .cursor-pointer,
+  [data-action] {
+    cursor: pointer;
+  }
+
+  p:empty {
+    display: none;
+  }
+
+  .content-link,
+  .inline-roll {
+    --content-link-icon-color: var(--color-accent-dark);
+    background: @white-50;
+    color: var(--color-accent-mid);
+    border: 1px solid var(--color-accent);
+    border-radius: 0.25rem;
+  }
+
+  img {
+    &.portrait {
+      width: 100px;
+      float: right;
+      margin: 0 0 0 1rem;
+    }
+  }
+}
+
+@import url('./chat.v2.less');
+@import url('./dialog.v2.less');
+@import url('./exchange.less');
+@import url('./journal.v2.less');
+@import url('./sheets.v2.less');

@@ -1,0 +1,145 @@
+// out: false
+/**
+ * Fonts
+ **/
+@font-face {
+  font-family: 'Village';
+  src: url(fonts/prisoner/village.ttf);
+}
+
+@font-face {
+  font-family: 'Hey August';
+  src: url(fonts/hey_august/HeyAugust.ttf);
+}
+
+@font-face {
+  font-family: 'Komikazoom';
+  src: url(fonts/komikazoom/KAMIKZOM.ttf);
+}
+
+@font-face {
+  font-family: 'Covered By Your Grace';
+  src: url(fonts/Covered_By_Your_Grace/CoveredByYourGrace-Regular.ttf);
+}
+
+@font-face {
+  font-family: 'New Tegomin';
+  src: url(fonts/New_Tegomin/NewTegomin-Regular.ttf);
+}
+
+@font-face {
+  font-family: 'Noto Sans';
+  src: url(fonts/Noto_Sans/NotoSans-Regular.ttf);
+}
+
+@font-face {
+  font-family: 'Noto Sans';
+  src: url(fonts/Noto_Sans/NotoSans-Italic.ttf);
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Noto Sans';
+  src: url(fonts/Noto_Sans/NotoSans-SemiBold.ttf);
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: 'Noto Sans';
+  src: url(fonts/Noto_Sans/NotoSans-SemiBoldItalic.ttf);
+  font-weight: bold;
+  font-style: italic;
+}
+
+.title-font() {
+  font-family: 'Village';
+  font-variant: small-caps;
+}
+
+.main-font() {
+  font-family: 'Noto Sans';
+  font-size: 0.8rem;
+}
+
+.brush-font() {
+  font-family: 'Hey August';
+  text-transform: uppercase;
+  font-weight: normal;
+}
+
+.block-font() {
+  font-family: 'Komikazoom';
+  text-transform: uppercase;
+}
+
+.hand-font() {
+  font-family: 'Covered By Your Grace';
+  font-size: 1.5rem;
+}
+
+.kanji-font() {
+  font-family: 'New Tegomin';
+}
+
+.font-block {
+  .block-font() !important;
+}
+.font-brush {
+  .brush-font() !important;
+}
+.font-hand {
+  .hand-font() !important;
+}
+.font-title {
+  .title-font() !important;
+}
+.font-main {
+  .main-font() !important;
+}
+
+/**
+* Colours
+**/
+
+// PAPER
+@bg-color-quickstart: #f3efdc;
+@bg-fade-color-quickstart: #dfd3b4;
+@accent-color-quickstart: #baaf6b;
+@accent-dark-quickstart: #6e4e27;
+
+// BLUE
+@bg-color: #f0f1f5;
+@bg-fade-color: #b4bac8;
+@bg-fade-light: #dce5f1;
+@accent-color: #99bbe3;
+@accent-mid: #405480;
+@accent-dark: #002a5b;
+
+@white: #ffffff;
+@white-75: rgba(255, 255, 255, 0.75);
+@white-50: rgba(255, 255, 255, 0.5);
+@white-25: rgba(255, 255, 255, 0.25);
+@black: #111111;
+@black-75: rgba(17, 17, 17, 0.75);
+@black-50: rgba(17, 17, 17, 0.5);
+@black-25: rgba(17, 17, 17, 0.25);
+
+@text-color: @black;
+
+@firebender: #b62127;
+@waterbender: #4d63a9;
+@earthbender: #3c6733;
+@airbender: #d4b450;
+@weaponsmith: #4d4d4f;
+@technologist: #6a2e7e;
+
+@dark-fire: #65110c;
+
+.bg-fade(@distance: 5%, @bg-color: @bg-color, @bg-fade-color: @bg-fade-color) {
+  background-color: @bg-color;
+  background-image: linear-gradient(@bg-fade-color 0%, @bg-color @distance, @bg-color 100%);
+}
+
+.bg-default {
+  background: @bg-color;
+}

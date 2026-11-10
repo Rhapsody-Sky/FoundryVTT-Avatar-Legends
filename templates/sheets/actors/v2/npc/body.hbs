@@ -1,0 +1,103 @@
+<section class='tab flexcol gap-100 height-full'>
+  <div class="flexcol gap-50">
+    <h3 class='m-0 border-bottom border-accent pb-25 font-title text-center'>Description</h3>
+    <div class="flexcol">
+      {{> (template "partials/v2/description.hbs")
+        content=system.description
+        enriched=system.enrichedDescription
+        target="system.description"}}
+    </div>
+    <div class="flexrow gap-50">
+      <label class="font-title flex0-3rem">Drive:</label>
+      <input class="" name="system.drive" value="{{system.drive}}" type="text" placeholder="Drive" />
+    </div>
+  </div>
+
+  {{#if principle}}
+    <div class="border-bottom border-accent flexrow">
+      <h3 class="font-title flex0 nowrap m-0 itemContextMenu" data-item-id="{{principle.id}}">
+        {{localize "legends.principle.title"}}:
+        {{principle.name}}
+      </h3>
+
+      {{> (template 'sheets/actors/v2/npc/_principle.hbs') principle}}
+    </div>
+  {{else}}
+    <div class="flexcol gap-25">
+      <h3 class="font-title border-bottom border-accent m-0">
+        {{localize "legends.principle.title"}}:
+        {{localize "legends.common.none"}}
+      </h3>
+      <p>
+        {{localize "legends.principle.none" }}
+        <a class="color-accent-mid" data-action="addItem" data-item-type="npc-principle">{{localize "legends.principle.add"}}</a>
+      </p>
+    </div>
+  {{/if}}
+
+  <!-- #region fatigue -->
+  <div class="flexcol gap-25">
+    <h3 class="font-title border-bottom border-accent m-0 pb-25">
+      {{localize "legends.actor-sheet.fatigue"}}
+      <a data-action="fatigueDecrease" class="size-100"><i
+          class="fas fa-minus"></i></a><a data-action="fatigueIncrease" class="size-100"><i
+          class="fas fa-plus"></i></a>
+    </h3>
+    <div>
+      {{#times system.fatigue.max}}
+      <a class="check-box {{#if (gte ../system.fatigue.value @index)}}filled{{/if}}" data-action="setFatigue"
+        data-new-value="{{@index}}"></a>
+        {{#if (modulus 5 @index)}}
+          {{#unless (eq @index ../system.fatigue.max)}}
+            &nbsp;
+          {{/unless}}
+        {{/if}}
+      {{/times}}
+    </div>
+  </div>
+  <!-- #endregion -->
+
+  <div class="flexrow gap-100 align-items-start">
+    <div class="flexcol flex2">
+      <h3 class="font-title border-bottom border-accent m-0 pb-25">
+        {{localize "legends.techniques.title"}}
+      </h3>
+      {{#if techniques}}
+        {{#each techniques as |technique|}}
+          {{> (template 'sheets/actors/v2/npc/_technique.hbs') technique}}
+        {{/each}}
+      {{else}}
+        <p class="mb-25">{{localize "legends.techniques.none" }}</p>
+      {{/if}}
+    </div>
+    <div class="flexcol gap-50">
+      <h3 class="font-title border-bottom border-accent m-0 pb-25">
+        {{ localize "legends.actor-sheet.conditions" }}
+        <a class="size-100" data-action="addItem" data-item-type="condition"><i class="fas fa-plus"></i></a>
+      </h3>
+      <div class="item-list flexcol gap-25">
+        {{#if conditions}}
+          {{#each conditions as |condition|}}
+            {{> (template 'sheets/actors/v2/npc/_condition.hbs') condition}}
+          {{/each}}
+        {{else}}
+          <p class="mb-25">{{localize "legends.common.none" }}</p>
+        {{/if}}
+      </div>
+
+      <h3 class="font-title border-bottom border-accent m-0 pb-25">
+        {{ localize "legends.actor-sheet.statuses" }}
+        <a class="size-100" data-action="addItem" data-item-type="status"><i class="fas fa-plus"></i></a>
+      </h3>
+      <div class="item-list flexcol gap-25">
+        {{#if statuses}}
+          {{#each statuses as |status|}}
+            {{> (template 'sheets/actors/v2/npc/_status.hbs') status}}
+          {{/each}}
+        {{else}}
+          <p>{{localize "legends.common.none" }}</p>
+        {{/if}}
+      </div>
+    </div>
+  </div>
+</section>

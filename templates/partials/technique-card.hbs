@@ -1,0 +1,62 @@
+{{#unless inSheet}}
+  <div class="legends">
+{{/unless}}
+<section class="item technique" data-item-id="{{_id}}" data-npc="{{npc}}">
+  <h3 class="title">
+    {{#if inSheet}}
+      <a class="toggle-drawer black menu">{{name}}</a>
+      <a class="item-roll small weapons">
+        <i class="fas fa-comment" data-tooltip="{{localize "legends.common.to-chat"}}"></i>
+      </a>
+    {{else}}
+      {{name}}
+    {{/if}}
+
+    <span class="data">
+      {{#if system.training}}
+        {{#if system.specialty}}
+          <span class="specialty {{system.training}}">{{system.specialty}}</span>
+        {{/if}}
+        <img src="systems/legends/images/{{system.training}}.webp"
+          data-tooltip="{{localize (tr_path "legends.training" system.training)}}"
+          alt="{{localize (tr_path "legends.training" system.training)}}" class="icon" />
+      {{/if}}
+    </span>
+  </h3>
+  <h4 class="title fire-dark">
+    {{localize (tr_path "legends.techniques.approaches" system.approach)}}
+    {{#unless (or npc system.basic)}}
+      <div class="float-right">
+        {{#if inSheet}}
+          <a class="set-proficiency" data-level="learned"
+            data-tooltip="{{localize 'legends.techniques.proficiency.learn'}}">{{localize "legends.techniques.proficiency.learned"}}
+            <i class="far fa-{{#if system.learned}}times-{{/if}}circle"></i></a>
+          &nbsp;
+          <a class="set-proficiency" data-level="practiced"
+            data-tooltip="{{localize 'legends.techniques.proficiency.practice'}}">{{localize "legends.techniques.proficiency.practiced"}}
+            <i class="far fa-{{#if system.practiced}}times-{{/if}}circle"></i></a>
+          &nbsp;
+          <a class="set-proficiency" data-level="mastered"
+            data-tooltip="{{localize 'legends.techniques.proficiency.master'}}">{{localize "legends.techniques.proficiency.mastered"}}
+            <i class="far fa-{{#if system.mastered}}times-{{/if}}circle"></i></a>
+        {{else}}
+          {{#if system.mastered}}
+            {{localize "legends.techniques.proficiency.mastered"}}
+          {{else}}
+            {{#if system.practiced}}
+              {{localize "legends.techniques.proficiency.practiced"}}
+            {{else}}
+              {{localize "legends.techniques.proficiency.learned"}}
+            {{/if}}
+          {{/if}}
+        {{/if}}
+      </div>
+    {{/unless}}
+  </h4>
+  {{#if inSheet}}
+    <div class="drawer {{#unless system.visible}}hidden{{/unless}}">
+  {{/if}}
+  {{{system.enrichedDescription }}}
+  {{#if inSheet}}</div>{{/if}}
+</section>
+{{#unless inSheet}}</div>{{/unless}}

@@ -1,0 +1,272 @@
+{
+  "legends": {
+    "common": {
+      "description": "Description",
+      "none": "Aucun",
+      "to-chat": "Vers le chat",
+      "documentation": "Documentation du système"
+    },
+    "context-menu": {
+      "edit": "Editer",
+      "delete": "Supprimer"
+    },
+    "actor-sheet": {
+      "clear-track": "Click-droit pour effacer",
+      "name": "Nom",
+      "stats": "Statistiques",
+      "fatigue": "Fatigue",
+      "clear-fatigue": "Effacer la fatigue",
+      "balance": "Équilibre",
+      "conditions": "États",
+      "moves": "Manoeuvre",
+      "techniques": "Techniques de combats",
+      "statuses": "Statuts",
+      "set-value": "Fixer à {value}",
+      "player": {
+        "about": "Votre personnage",
+        "look": "Apparence, Historique, Liens",
+        "training": "Entrainement",
+        "fighting-style": "Style de Combat",
+        "background": "Passé",
+        "demeanor": "Comportement",
+        "hometown": "Cité d' origine",
+        "playbook": "Livret de personnage"
+      },
+      "npc": {
+        "drive": "Pulsion",
+        "technique": "Techniques",
+        "levels": {
+          "minor": "PNJ Mineur",
+          "major": "PNJ Majeur",
+          "master": "Maître",
+          "legendary": "PNJ Légendaire",
+          "group": "Groupe de PNJs",
+          "npc": "PNJ"
+        },
+        "fatigue": {
+          "add": "Augmenter le maximum de Fatigue",
+          "remove": "Diminuer le maximum de Fatigue"
+        }
+      },
+      "campaign": {
+        "title": "Feuille de campagne",
+        "main": "Principal",
+        "acts": "Actes",
+        "incitingIncident": "Élement perturbateur",
+        "noActs": "Aucun acte à afficher. Cliquez ici pour en ajouter !",
+        "relationships": {
+          "title": "Alliés & Ennemis",
+          "allies": "Alliés",
+          "enemies": "Ennemis"
+        },
+        "focus": {
+          "defeat": "Pour défaire [un scélérat]",
+          "protect": "Pour protéger [un lieu, une idée, une culture, une personne, une chose]",
+          "change": "Pour faire évoluer [une culture, une société, un lieu, une personne]",
+          "deliver": "Pour délivrer [une personne, un chose] de [un lieu, une culture, une personne]",
+          "rescue": "Pour sauver [une personne, une chose]",
+          "learn": "Pour apprendre [une idée, une culture, un entrainement, une histoire]",
+          "custom": "Interêt spécifique"
+        },
+        "groupFocus": "Interêt de groupe",
+        "focusDesc": "Détails de l'interêt de groupe",
+        "customFocusPlaceholder": "Pour...",
+        "scope": "Échelle",
+        "eras": {
+          "custom": "Spécifique",
+          "kyoshi": "Kyoshi",
+          "roku": "Roku",
+          "100years": "de la Guerre de 100 ans",
+          "aang": "Aang",
+          "korra": "Korra",
+          "era": "Ère",
+          "eraDisplayName": "{era} {name}"
+        }
+      }
+    },
+    "stats": {
+      "creativity": "Créativité",
+      "focus": "Concentration",
+      "harmony": "Harmonie",
+      "passion": "Enthousiasme",
+      "principle": "Principe"
+    },
+    "items": {
+      "new": {
+        "name": "Nouveau {type}",
+        "description": "<p>Décrire ici.</p>"
+      },
+      "not-allowed": "Ce type d'objet ne peut être ajouter à cet acteur",
+      "playbook-applied": "Le livret de personnage '{name}' a été appliqué",
+      "types": {
+        "condition": "États",
+        "move": "Manoeuvre",
+        "technique": "Technique",
+        "feature": "Trait",
+        "moment-of-balance": "Moment d'Équilibre",
+        "growth-question": "Question de progression",
+        "status": "Statut"
+      }
+    },
+    "attachments": {
+      "none": "Aucun liens. Glissez-en depuis la barre d'objet ou les conpendiums.",
+      "title": "Objets liés"
+    },
+    "moves": {
+      "add": "Ajouter une manoeuvre",
+      "edit": "Modifier la manoeuvre",
+      "delete": "Supprimer la manoeuvre",
+      "new": "Nouvelle manoeuvre",
+      "roll-with": "Lancez avec",
+      "roll": "Lancez?",
+      "with": "Stat",
+      "category": {
+        "label": "Origine",
+        "all": "Toutes",
+        "basic": "De base",
+        "balance": "Équilibre",
+        "playbook": "Livret de personnages"
+      },
+      "none": "Aucune manoeuvre. Glissez-en depuis la barre d'objet ou les conpendiums."
+    },
+    "condition": {
+      "add": "Nouvel état",
+      "none": "Aucun état. Glissez-en depuis la barre d'objet ou les conpendiums."
+    },
+    "status": {
+      "title": "Statuts",
+      "add": "Nouveau statut",
+      "positive": "Positif",
+      "negative": "Négatif",
+      "type": "Type",
+      "none": "Aucun statut. Glissez-en depuis la barre d'objet ou les conpendiums."
+    },
+    "techniques": {
+      "title": "Techniques",
+      "approach": "Approche",
+      "basic": "De base",
+      "approaches": {
+        "defend-maneuver": "Défendre & Prendre à Revers",
+        "advance-attack": "Avancer & Attaquer",
+        "evade-observe": "Esquiver & Analyser"
+      },
+      "proficiency": {
+        "learn": "Fixer à appris",
+        "learned": "A",
+        "practice": "Fixer à pratiquer",
+        "practiced": "P",
+        "master": "Fixer à maîtriser",
+        "mastered": "M"
+      },
+      "add": "Nouvelle technique",
+      "none": "Aucune technique. Glissez-en depuis la barre d'objet ou les conpendiums."
+    },
+    "training": {
+      "specialty": "Spécialité",
+      "water": "Maîtrise de l'eau",
+      "fire": "Maîtrise du feu",
+      "earth": "Maîtrise de la terre",
+      "air": "Maîtrise de l'air",
+      "weapons": "Armes",
+      "technology": "Technologie",
+      "none": "Universel",
+      "group": "Groupe"
+    },
+    "feature": {
+      "title": "Trait de livret",
+      "none": "Aucun trait de livret. Glissez-en une depuis la barre d'objet ou les conpendiums."
+    },
+    "moment-of-balance": {
+      "title": "Moment d'Équilibre",
+      "add": "Ajouter un Moment d'Équilibre",
+      "none": "Aucun moment d'équilibre. Glissez-en une depuis la barre d'objet ou les conpendiums."
+    },
+    "growth": {
+      "title": "Progression",
+      "question": {
+        "title": "Questions de progressions",
+        "none": "Aucune question de progression. Glissez-en depuis la barre d'objet ou les conpendiums."
+      },
+      "advancement": {
+        "title": "Avancement de la progression",
+        "playbook-move": "Prendre une nouvelle manoeuvre de votre livret",
+        "other-move": "Prendre une nouvelle manoeuvre d'un autre livret",
+        "raise-stat": "Augmenter une caractéristique de +1 (jusqu'à un maximum of +2)",
+        "shift-center": "Décaler votre centre d'un cran",
+        "moment": "Débloquez votre Moment d'Équilibre"
+      }
+    },
+    "principle": {
+      "title": "Principe",
+      "none": "Aucun principe.",
+      "add": "Ajouter un principe",
+      "maximum": "Maximum"
+    },
+    "roll": {
+      "with": "Lancez avec <a class=\"color-fire-dark\" data-action=\"rollApproach\" data-approach=\"{approach}\" data-stat=\"{stat}\"><i class=\"fas fa-dice small\"></i> {name}</a>",
+      "evade-observe": "Effacer 1-fatigue &amp; Lancez avec <a class=\"color-fire-dark\" data-action=\"rollApproach\" data-approach=\"Esquiver & Analyser\" data-stat=\"creativity\"></i> Creativity</a> or <a class=\"color-fire-dark\" data-action=\"rollApproach\" data-approach=\"Esquiver & Analyser\" data-stat=\"harmony\"><i class=\"fas fa-dice small\"></i> Harmony</a>",
+      "stat": "Lancez {stat}",
+      "no-stat": "Lancez",
+      "miss": "Échec",
+      "hit": "Réussite",
+      "full": "Réussite complète!",
+      "dialog": {
+        "penalty": "Penalité",
+        "penalty-description": "Venant des États et Statuts",
+        "bonus": "Bonus",
+        "bonus-description": "Somme des bonus temporaire, continue, et de l'aide",
+        "submit": "Lancez"
+      },
+      "no-actor": "Vous ne pouvez lancer une Manoeuvre sans acteur sélectionné.",
+      "approach": {
+        "full": "<p>Choisir un dans cette liste:</p><ul><li>Cocher 1-fatigue pour utiliser une technique apprise</li><li>Utilisez une technique pratiqué</li><li>Utilisez 2 techniques de bases ou maîtrisés</li></ul>",
+        "hit": "<p>Utilisez une technique de base ou maîtrisé</p>",
+        "miss": "<p>Vous trébuchez, mais vous pouvez éloigné votre équilibre de son centre pour utiliser une technique de base.</p>"
+      }
+    },
+    "dialog": {
+      "cancel": "Annuler"
+    },
+    "nav": {
+      "main": "Principal",
+      "moves": "Manoeuvre",
+      "techniques": "Entraînements & Techniques",
+      "detail": "Détails & Progressions",
+      "notes": "Notes"
+    }
+  },
+  "SETTINGS": {
+    "None": "Il n'y a aucune configuration possible pour Avatar Legends RPG (Non-Officiel)",
+    "tabbedPlayerSheet": {
+      "label": "Feuille de personnage à onglet",
+      "hint": "Afficher les feuilles de personnage avec une organisation par onglet"
+    },
+    "sheetColour": {
+      "label": "Couleur des feuilles",
+      "hint": "Le thème de couleur utilisez par les feuilles de personnages",
+      "default": "Par défaut",
+      "quickstart": "Boîte de lancement"
+    },
+    "playerNotes": {
+      "label": "Notes du joueur",
+      "hint": "Voir la section de notes dans la feuille de personnages"
+    }
+  },
+  "TYPES": {
+    "Actor": {
+      "campaign": "Campagne",
+      "npc": "PNJ",
+      "player": "Joueur"
+    },
+    "Item": {
+      "condition": "États",
+      "move": "Manoeuvre",
+      "technique": "Technique",
+      "feature": "Trait",
+      "moment-of-balance": "Moment d'Équilibre",
+      "growth-question": "Question de progression",
+      "status": "Statut",
+      "playbook": "Livret de personnage"
+    }
+  }
+}

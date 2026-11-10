@@ -1,0 +1,63 @@
+<div class='flexcol gap-25'>
+  <div class='flexrow gap-50'>
+    <h4 class='m-0 font-title {{#if (eq type 'status')}}{{#if (eq system.type 'positive')}}color-water{{else}}color-fire{{/if}}{{else}}color-accent-dark{{/if}}'>
+      {{name}}
+    </h4>
+    {{#if (eq type 'technique')}}
+      {{#if system.training}}
+        <div class='flexrow gap-25 justify-content-end flex0'>
+          {{#if system.specialty}}
+            <span
+              class='font-title flex0 nowrap specialty {{system.training}}'
+              data-tooltip='{{localize (tr_path "legends.training" system.training)}}'
+            >
+              {{system.specialty}}
+            </span>
+          {{else}}
+            <span class="flex0-1rem">{{{trainingIcon system.training}}}</span>
+          {{/if}}
+        </div>
+      {{/if}}
+    {{/if}}
+  </div>
+  {{#if (eq type 'technique')}}
+    <div class='flexrow gap-50'>
+      <span class='color-fire font-title'>
+        {{localize (tr_path 'legends.techniques.approaches' system.approach)}}
+      </span>
+      <div class='text-right color-fire flex0 nowrap font-title'>
+        {{#unless system.basic}}
+          {{#if system.mastered}}
+            {{localize 'legends.techniques.proficiency.mastered'}}
+          {{else}}
+            {{#if system.practiced}}
+              {{localize 'legends.techniques.proficiency.practiced'}}
+            {{else}}
+              {{localize 'legends.techniques.proficiency.learned'}}
+            {{/if}}
+          {{/if}}
+        {{/unless}}
+      </div>
+    </div>
+  {{/if}}
+  <div>
+    {{{system.enrichedDescription}}}
+  </div>
+  {{#if (eq type 'move')}}
+    {{#if system.rollable}}
+      <a
+        class="text-center btn"
+        data-tooltip="{{#if system.rollStat}}{{localize (tr_path "legends.stats" system.rollStat)}}{{else}}{{localize "legends.roll.dialog.submit"}}{{/if}}"
+        data-action="rollMove"
+        data-move-name="{{name}}"
+        data-move-stat="{{system.rollStat}}">
+        <i class="fas fa-dice"></i>
+        {{#if system.rollStat}}
+          {{localize (tr_path 'legends.stats' system.rollStat)}}
+        {{else}}
+          {{localize 'legends.roll.dialog.submit'}}
+        {{/if}}
+      </a>
+    {{/if}}
+  {{/if}}
+</div>

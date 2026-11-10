@@ -1,0 +1,100 @@
+<section
+  class='tab {{tabs.details.id}} {{tabs.details.cssClass}}'
+  data-tab='{{tabs.details.id}}'
+  data-group='{{tabs.details.group}}'
+>
+  <div class='flexrow gap-100 align-items-start'>
+    <div class='flexcol gap-50'>
+      {{#if feature}}
+        <h3 class='itemContextMenu text-center m-0 border-bottom border-accent pb-25' data-item-id="{{feature.id}}">
+          {{feature.name}}
+        </h3>
+        <section class='body'>
+          {{{feature.system.enrichedDescription}}}
+        </section>
+      {{else}}
+        <h3 class='text-center m-0 border-bottom border-accent pb-25'>
+          {{localize 'legends.feature.title'}}
+        </h3>
+        <p>{{localize 'legends.feature.none'}}</p>
+      {{/if}}
+    </div>
+    <div class='flexcol gap-50'>
+        {{#if momentOfBalance}}
+        <h3 class='itemContextMenu text-center m-0 border-bottom border-accent pb-25' data-item-id="{{momentOfBalance.id}}">
+          {{localize 'legends.moment-of-balance.title'}}
+        </h3>
+        <div class='moment'>
+          {{{momentOfBalance.system.enrichedDescription}}}
+        </div>
+        {{else}}
+          <h3 class='text-center m-0 border-bottom border-accent pb-25'>
+            {{localize 'legends.moment-of-balance.title'}}
+          </h3>
+          <p>{{localize 'legends.moment-of-balance.none'}}</p>
+        {{/if}}
+
+      <h3 class='text-center m-0 border-bottom border-accent pb-25'>
+        {{localize 'legends.actor-sheet.player.about'}}
+      </h3>
+      <div class='flexrow gap-50'>
+        <label class='nowrap font-title'>{{localize 'legends.actor-sheet.player.background'}}</label>
+        <input type='text' name='system.background' value='{{system.background}}' class="flex3" />
+      </div>
+      <div class='flexrow gap-50'>
+        <label class='nowrap font-title'>{{localize 'legends.actor-sheet.player.demeanor'}}</label>
+        <input type='text' name='system.demeanor' value='{{system.demeanor}}' class="flex3"  />
+      </div>
+      <div class='flexcol gap-25'>
+        <label class='nowrap font-title mt-50'>{{localize 'legends.actor-sheet.player.look'}}</label>
+        {{> (template "partials/v2/description.hbs")
+          content=system.look
+          enriched=system.enrichedLook
+          target="system.look"}}
+      </div>
+      <div class='flexrow gap-50'>
+        <label class='nowrap font-title'>{{localize 'legends.actor-sheet.player.hometown'}}</label>
+        <input type='text' name='system.hometown' value='{{system.hometown}}' class="flex3"  />
+      </div>
+
+      <!-- GROWTH -->
+      <h3 class='m-0'>
+        {{localize "legends.growth.title"}}
+        {{#times 4}}
+          <a class="check-box set-value{{#if (gte @root.system.growth.value @index)}} filled{{/if}}"
+            data-action="markGrowth" data-new-value="{{@index}}"></a>
+        {{/times}}
+      </h3>
+
+      <h4 class="color-accent-mid m-0 font-title weight-normal">
+        {{localize "legends.growth.question.title"}}
+      </h4>
+      {{#if growthQuestions}}
+        <ul class="item-list">
+          {{#each growthQuestions as |question|}}
+            <li class="itemContextMenu" data-item-id="{{question.id}}">{{question.system.enrichedDescription}}</li>
+          {{/each}}
+        </ul>
+      {{else}}
+        <p>{{localize "legends.growth.question.none"}}</p>
+      {{/if}}
+
+      <!-- ADVANCEMENT -->
+      <h4 class="color-accent-mid m-0 font-title weight-normal">
+        {{localize "legends.growth.advancement.title"}}
+      </h4>
+      <ul>
+        {{#each system.growth.advancements as |track name|}}
+          <li>
+            {{localize (tr_path "legends.growth.advancement" name)}}
+            &nbsp;
+            {{#times track.max}}
+              <a class="check-box mini {{#if (gte track.value @index)}}filled{{/if}}"
+                data-action="markAdvancement" data-param="{{name}}" data-new-value="{{@index}}"></a>
+            {{/times}}
+          </li>
+        {{/each}}
+      </ul>
+    </div>
+  </div>
+</section>

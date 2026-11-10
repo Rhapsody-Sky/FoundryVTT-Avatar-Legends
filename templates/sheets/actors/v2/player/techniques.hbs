@@ -1,0 +1,46 @@
+<section
+  class='tab {{tabs.techniques.id}} {{tabs.techniques.cssClass}}'
+  data-tab='{{tabs.techniques.id}}'
+  data-group='{{tabs.techniques.group}}'
+>
+  <div class='flexcol gap-50'>
+    <div class="flexcol gap-100">
+      <h3 class='text-center m-0 border-bottom border-accent pb-25'>
+        {{localize 'legends.actor-sheet.player.training'}}
+      </h3>
+      <div class='flexrow'>
+        {{#each system.training as |selected type|}}
+          <div class="training-type{{#if selected}} selected{{/if}} text-center" data-action="toggleTraining" data-training="{{type}}">
+            {{{trainingIcon type 'size-250'}}}
+            <br />{{localize (tr_path "legends.training" type)}}
+          </div>
+        {{/each}}
+      </div>
+      <div class='flexrow'>
+        <div></div>
+        <div class="flexrow flex2 gap-50">
+          <label class="font-title flex0 nowrap">{{localize "legends.actor-sheet.player.fighting-style"}}</label>
+          <input type="text" name="system.fighting_style" class="" value="{{system.fighting_style}}" />
+        </div>
+        <div></div>
+      </div>
+    </div>
+
+    <h3 class='text-center m-0 border-bottom border-accent pb-25'>
+      {{localize 'legends.techniques.title'}}
+    </h3>
+    {{#each config.approaches as |label key|}}
+      <div class="">
+        <h4 class='font-block weight-normal size-150 m-0'>
+          {{localize label}}
+        </h4>
+        <p class='font-title color-fire-dark m-0 size-100'>{{{rollApproach key}}}</p>
+      </div>
+      <div class="col2 item-list">
+      {{#each (getByKey @root.techniquesByApproach key) as |technique|}}
+        {{> (template "sheets/actors/v2/player/_technique.hbs") technique}}
+      {{/each}}
+      </div>
+    {{/each}}
+  </div>
+</section>

@@ -1,0 +1,272 @@
+{
+  "legends": {
+    "common": {
+      "description": "Beschreibung",
+      "none": "Keine",
+      "to-chat": "Zum Chat",
+      "documentation": "Systemdokumentation"
+    },
+    "context-menu": {
+      "edit": "Ändern",
+      "delete": "Löschen"
+    },
+    "actor-sheet": {
+      "clear-track": "Rechts Klicken zum Löschen",
+      "name": "Name",
+      "stats": "Stats",
+      "fatigue": "Erschöpfung",
+      "clear-fatigue": "Entferne Erschöpfung",
+      "balance": "Gleichgewicht",
+      "conditions": "Zustände",
+      "moves": "Züge",
+      "techniques": "Kampftechniken",
+      "statuses": "Statuses",
+      "set-value": "Set to {value}",
+      "player": {
+        "about": "Dein Charakter",
+        "look": "Aussehen, Vergangenheit & Verbindungen",
+        "training": "Training",
+        "fighting-style": "Kampfstil",
+        "background": "Hintergrund",
+        "demeanor": "Auftreten",
+        "hometown": "Heimatort",
+        "playbook": "Rollenbuch"
+      },
+      "npc": {
+        "drive": "Antrieb",
+        "technique": "Kampftechniken",
+        "levels": {
+          "minor": "Neben-NSC",
+          "major": "Haupt-NSC",
+          "master": "Meister-NSC",
+          "legendary": "Legendärer NSC",
+          "group": "NSC Gruppe",
+          "npc": "NSC"
+        },
+        "fatigue": {
+          "add": "Erhöhe die maximale Erschöpfung",
+          "remove": "Verringere die maximale Erschöpfung"
+        }
+      },
+      "campaign": {
+        "title": "Kampagnenbogen",
+        "main": "Main",
+        "acts": "Akte",
+        "incitingIncident": "Initialkonflikt",
+        "noActs": "Keine Akte zum Anzeigen. Klicke unten um einen Akt hinzuzufügen!",
+        "relationships": {
+          "title": "Verbündete & GegnerInnen",
+          "allies": "Verbündete",
+          "enemies": "GegnerInnen"
+        },
+        "focus": {
+          "defeat": "Besiegen [gefährliche gegnerische Partei]",
+          "protect": "Beschützen [Ort, Idee, Kultur, Person, Gegenstand]",
+          "change": "Verändern [Kultur, Gesellschaft, Ort, Person]",
+          "deliver": "Überbringen [Person, Gegenstand] nach [Ort, Kultur, Person]",
+          "rescue": "Befreien [Person, Gegenstand]",
+          "learn": "Erlernen [Idee, Kultur, Ausbildung, Geschichte]",
+          "custom": "Eigenes Gruppenziel"
+        },
+        "groupFocus": "Gruppenziel",
+        "focusDesc": "Gruppenziel Details",
+        "customFocusPlaceholder": "Um/Zu...",
+        "scope": "Scope",
+        "eras": {
+          "custom": "Custom",
+          "kyoshi": "Kyoshi",
+          "roku": "Roku",
+          "100years": "Hundertjähriger Krieg",
+          "aang": "Aang",
+          "korra": "Korra",
+          "era": "Ära",
+          "eraDisplayName": "{name} {era}"
+        }
+      }
+    },
+    "stats": {
+      "creativity": "Kreativität",
+      "focus": "Fokus",
+      "harmony": "Harmonie",
+      "passion": "Leidenschaft",
+      "principle": "Prinzip"
+    },
+    "items": {
+      "new": {
+        "name": "Neu: {type}",
+        "description": "<p>Beschreibung</p>"
+      },
+      "not-allowed": "Dieser Itemtyp kann diesem Actor nicht zugeordnet werden.",
+      "playbook-applied": "Rollenbuch '{name}' wurde angewendet.",
+      "types": {
+        "condition": "Zustand",
+        "move": "Zug",
+        "technique": "Kampftechnik",
+        "feature": "Feature",
+        "moment-of-balance": "Moment des Gleichgewichts",
+        "growth-question": "Wachstum",
+        "status": "Status"
+      }
+    },
+    "attachments": {
+      "none": "Es wurden keine Anhänge hinzugefügt. Ziehe welche von der Itemseitenleiste oder aus dem Kompendium.",
+      "title": "Anhänge"
+    },
+    "moves": {
+      "add": "Zug hinzufügen",
+      "edit": "Zug ändern",
+      "delete": "Zug löschen",
+      "new": "Neuer Zug",
+      "roll-with": "Würfeln mit",
+      "roll": "Würfeln?",
+      "with": "Stat",
+      "category": {
+        "label": "Quelle",
+        "all": "All",
+        "basic": "Basis",
+        "balance": "Balance",
+        "playbook": "Rollenbuch"
+      },
+      "none": "Es wurden keine Züge hinzugefügt. Ziehe einen Zug aus der Itemseitenleiste oder aus dem Kompendium."
+    },
+    "condition": {
+      "add": "Neuer Zustand.",
+      "none": "Es wurden keine Zustände hinzugefügt. Ziehe einen Zustand aus der Itemseitenleiste oder aus dem Kompendium."
+    },
+    "status": {
+      "title": "Status",
+      "add": "Neuer Status",
+      "positive": "Positiv",
+      "negative": "Negativ",
+      "type": "Typ",
+      "none": "Es wurde kein Status hinzugefügt. Ziehe einen Status aus der Itemseitenleiste oder aus dem Kompendium."
+    },
+    "techniques": {
+      "title": "Kampftechniken",
+      "approach": "Approach",
+      "basic": "Basic",
+      "approaches": {
+        "defend-maneuver": "Verteidigen & Manövrieren",
+        "advance-attack": "Vorstossen & Angreifen",
+        "evade-observe": "Ausweichen & Beobachten"
+      },
+      "proficiency": {
+        "learn": "Setze gelernt",
+        "learned": "L",
+        "practice": "Setze praktiziert",
+        "practiced": "P",
+        "master": "Setze gemeistert",
+        "mastered": "M"
+      },
+      "add": "Neue Kampftechnik",
+      "none": "Es wurde keine Kampftechnik hinzugefügt. Ziehe eine Kampftechnik aus der Itemseitenleiste oder aus dem Kompendium."
+    },
+    "training": {
+      "specialty": "Ausbildung",
+      "water": "Wasserbändigen",
+      "fire": "Feuerbändigen",
+      "earth": "Erdebändigen",
+      "air": "Luftbändigen",
+      "weapons": "Waffen",
+      "technology": "Technologie",
+      "none": "Universell",
+      "group": "Gruppe"
+    },
+    "feature": {
+      "title": "Rollenbuch Feature",
+      "none": "Es wurde kein Rollenbuch Feature hinzugefügt. Ziehe ein Rollenbuch Feature aus der Itemseitenleiste oder aus dem Kompendium."
+    },
+    "moment-of-balance": {
+      "title": "Moment des Gleichgewichts",
+      "add": "Moment des Gleichgewichts hinzufügen",
+      "none": "Es wurde kein Moment des Gleichgewichts hinzugefügt. Ziehe eins aus der Itemseitenleiste oder aus dem Kompendium."
+    },
+    "growth": {
+      "title": "Wachstum",
+      "question": {
+        "title": "Wachstumsfrage",
+        "none": "Es wurde keine Wachstumsfrage des Gleichgewichts hinzugefügt. Ziehe eine aus der Itemseitenleiste oder aus dem Kompendium."
+      },
+      "advancement": {
+        "title": "Wachstumsentwicklungen",
+        "playbook-move": "Eigne dir einen neuen Zug aus deinem Rollenbuch an",
+        "other-move": "Eigne dir einen neuen Zug aus einem anderen Rollenbuch an",
+        "raise-stat": "Erhöhe einen Spielwert um +1 (Maximum +2)",
+        "shift-center": "Verschiebe deine Mitte um einen Schritt ",
+        "moment": "Schalte deinen Moment des Gleichgewichts frei"
+      }
+    },
+    "principle": {
+      "title": "Prinzip",
+      "none": "Kein NSC Prinzip hinzugefügt.",
+      "add": "Prinzip hinzufügen",
+      "maximum": "Maximum"
+    },
+    "roll": {
+      "with": "Würfle mit <a class=\"color-fire-dark\" data-action=\"rollApproach\" data-approach=\"{approach}\" data-stat=\"{stat}\"><i class=\"fas fa-dice small\"></i> {name}</a>",
+      "evade-observe": "Lösche 1 Kästchen Erschöpfung &amp; würfle mit <a class=\"color-fire-dark\" data-action=\"rollApproach\" data-approach=\"Evade & Observe\" data-stat=\"creativity\"><i class=\"fas fa-dice small\"></i> Kreativität</a> or <a class=\"color-fire-dark\" data-action=\"rollApproach\" data-approach=\"Evade & Observe\" data-stat=\"harmony\"><i class=\"fas fa-dice small\"></i> Harmonie</a>",
+      "stat": "Würfle {stat}",
+      "no-stat": "Würfle",
+      "miss": "Misserfolg",
+      "hit": "Teilerfolg",
+      "full": "Erfolg",
+      "dialog": {
+        "penalty": "Nachteile",
+        "penalty-description": "Von Zuständen und Status",
+        "bonus": "Bonus",
+        "bonus-description": "Total of Forwards, Ongoing and Helping",
+        "submit": "Würfle"
+      },
+      "no-actor": "Du kannst keinen Zug würfeln ohne einen zugeordneten Actor.",
+      "approach": {
+        "full": "<p>Markiere 1 Kästchen Erschöpfung, um eine erlernte Technik einzusetzen</li><li>Setze eine praktizierte Technik ein</li><li>Setze zwei unterschiedliche Grund- oder gemeisterte Techniken ein</li></ul>",
+        "hit": "<p>Setze eine Grund- oder gemeisterte Techniken ein</p>",
+        "miss": "<p>Du gerätst ins Wanken, kannst aber dein Gleichgewicht von deiner Mitte fort verschieben, um eine Gruntechnik einzusetzen.</p>"
+      }
+    },
+    "dialog": {
+      "cancel": "Abbrechen"
+    },
+    "nav": {
+      "main": "Main",
+      "moves": "Spielzüge",
+      "techniques": "Training & Kampftechniken",
+      "detail": "Details & Wachstum",
+      "notes": "Notizen"
+    }
+  },
+  "SETTINGS": {
+    "None": "Es gibt keine Einstellungen für Avatar Legends RPG (Unofficial)",
+    "tabbedPlayerSheet": {
+      "label": "Charakterbogen mit Reitern",
+      "hint": "Zeige Charakterbogen mit Reitern an."
+    },
+    "sheetColour": {
+      "label": "Charakterbogenfarbe",
+      "hint": "Das Farbschema der Charakterbögen",
+      "default": "Default",
+      "quickstart": "Schnellstart"
+    },
+    "playerNotes": {
+      "label": "Spielernotizen",
+      "hint": "Zeige Notizen auf den Spieler Charakterbögen an."
+    }
+  },
+  "TYPES": {
+    "Actor": {
+      "campaign": "Kampagnenbogen",
+      "npc": "NSC",
+      "player": "Spieler"
+    },
+    "Item": {
+      "condition": "Zustand",
+      "move": "Zug",
+      "technique": "Kampftechnik",
+      "feature": "Feature",
+      "moment-of-balance": "Moment des Gleichgewichts",
+      "growth-question": "Wachstum",
+      "status": "Status",
+      "playbook": "Playbook"
+    }
+  }
+}

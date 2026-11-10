@@ -1,0 +1,44 @@
+<form>
+  {{#if statName}}
+    <div class="form-group pad-bottom">
+      <label class="title">
+        {{statName}}
+      </label>
+      <input type="number" class="hand" value="{{statValue}}" disabled />
+    </div>
+  {{/if}}
+  {{#if principle}}
+    <div class="form-group pad-bottom">
+      <label class="title">
+        {{principle}}
+      </label>
+      <input type="number" class="hand" value="{{statValue}}" disabled />
+    </div>
+  {{/if}}
+  {{#if condition}}
+    <div class="form-group pad-bottom">
+      <label class="title">
+        {{condition.name}}
+      </label>
+      <input type="number" class="hand" value="{{condition.penalty.penalty}}" disabled />
+    </div>
+  {{/if}}
+  <div class="form-group pad-bottom">
+    <label for="bonus" class="title">
+      {{localize "legends.roll.dialog.bonus"}}
+    </label>
+    <input name="bonus" class="hand" type="number" min="0" max="10" value="0" />
+    <small class="form-text text">
+      {{localize "legends.roll.dialog.bonus-description"}}
+    </small>
+  </div>
+  <div class="form-group">
+    <label for="penalty" class="title">
+      {{localize "legends.roll.dialog.penalty"}}
+    </label>
+    <input name="penalty" class="hand" type="number" min="-10" max="10" value="0" />
+    <small class="form-text text">
+      {{localize "legends.roll.dialog.penalty-description"}}
+    </small>
+  </div>
+</form>

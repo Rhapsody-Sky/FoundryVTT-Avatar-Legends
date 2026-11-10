@@ -1,0 +1,10 @@
+{{#unless inSheet}}
+  <div class="legends">
+{{/unless}}
+<section class="item moment-of-balance" data-item-id="{{_id}}">
+  <h3 class="title kanji">
+    {{localize "legends.moment-of-balance.title"}}
+  </h3>
+  {{{system.enrichedDescription}}}
+</section>
+{{#unless inSheet}}</div>{{/unless}}

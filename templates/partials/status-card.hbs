@@ -1,0 +1,29 @@
+{{#unless inSheet}}
+  <div class="legends">
+{{/unless}}
+<section class="item status cell" data-item-id="{{_id}}" data-npc="{{npc}}">
+  <h4 class="title no-margin">
+    {{#if inSheet}}
+      <a class="condition-toggle check-box{{#if system.checked}} filled{{/if}}"></a>
+      {{#if npc}}
+        <a class="black menu">{{name}}</a>
+      {{else}}
+        <a class="black menu{{#if inSheet}} toggle-drawer{{/if}}">{{name}}</a>
+        <a class="item-roll small weapons">
+          <i class="fas fa-comment" data-tooltip="{{localize "legends.common.to-chat"}}"></i>
+        </a>
+      {{/if}}
+    {{else}}
+      {{name}}
+    {{/if}}
+  </h4>
+
+  {{#unless npc}}
+    {{#if inSheet}}
+      <div class="drawer {{#unless system.visible}}hidden{{/unless}}">
+    {{/if}}
+    {{{system.enrichedDescription}}}
+    {{#if inSheet}}</div>{{/if}}
+  {{/unless}}
+</section>
+{{#unless inSheet}}</div>{{/unless}}

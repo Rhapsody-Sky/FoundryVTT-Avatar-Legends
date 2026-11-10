@@ -1,0 +1,311 @@
+{
+  "legends": {
+    "common": {
+      "description": "Description",
+      "none": "None",
+      "to-chat": "To chat",
+      "documentation": "System Documentation"
+    },
+    "context-menu": {
+      "edit": "Edit",
+      "delete": "Delete"
+    },
+    "actor-sheet": {
+      "clear-track": "Right-click to clear",
+      "name": "Name",
+      "stats": "Stats",
+      "fatigue": "Fatigue",
+      "clear-fatigue": "Clear Fatigue",
+      "balance": "Balance",
+      "conditions": "Conditions",
+      "moves": "Moves",
+      "techniques": "Fighting Techniques",
+      "statuses": "Statuses",
+      "set-value": "Set to {value}",
+      "edit-mode": "Toggle Edit Mode",
+      "title": "Player",
+      "player": {
+        "about": "Your Character",
+        "look": "Look, History & Connections",
+        "training": "Training",
+        "fighting-style": "Fighting Style",
+        "background": "Background",
+        "demeanor": "Demeanor",
+        "hometown": "Home Town",
+        "playbook": "Playbook"
+      },
+      "npc": {
+        "drive": "Drive",
+        "technique": "Technique",
+        "levels": {
+          "minor": "Minor NPC",
+          "major": "Major NPC",
+          "master": "Master NPC",
+          "legendary": "Legendary NPC",
+          "group": "NPC Group",
+          "npc": "NPC"
+        },
+        "fatigue": {
+          "add": "Increase max Fatigue",
+          "remove": "Decrease max Fatigue"
+        }
+      },
+      "campaign": {
+        "title": "Campaign Worksheet",
+        "main": "Scope & Focus",
+        "acts": "Acts",
+        "incitingIncident": "Inciting Incident",
+        "location": "Location",
+        "noActs": "No acts to display. Click below to add some!",
+        "relationships": {
+          "title": "Allies & Enemies",
+          "allies": "Allies",
+          "enemies": "Enemies"
+        },
+        "focus": {
+          "defeat": "To defeat [villain]",
+          "protect": "To protect [place, idea, culture, person, thing]",
+          "change": "To change [culture, society, place, person]",
+          "deliver": "To deliver [person, thing] to [place, culture, person]",
+          "rescue": "To rescue [person, thing]",
+          "learn": "To learn [idea, culture, training, history]",
+          "custom": "Custom group focus"
+        },
+        "groupFocus": "Group Focus",
+        "focusDesc": "Group Focus Details",
+        "customFocusPlaceholder": "To...",
+        "scope": "Scope",
+        "eras": {
+          "custom": "Custom",
+          "kyoshi": "Kyoshi",
+          "roku": "Roku",
+          "100years": "Hundred Year War",
+          "aang": "Aang",
+          "korra": "Korra",
+          "era": "Era",
+          "eraDisplayName": "{name} {era}"
+        }
+      }
+    },
+    "stats": {
+      "creativity": "Creativity",
+      "focus": "Focus",
+      "harmony": "Harmony",
+      "passion": "Passion",
+      "principle": "Principle"
+    },
+    "items": {
+      "new": {
+        "name": "New {type}",
+        "description": "<p>Description goes here.</p>"
+      },
+      "not-allowed": "This Item type cannot be added to this Actor",
+      "playbook-applied": "Playbook '{name}' has been applied",
+      "types": {
+        "condition": "Condition",
+        "move": "Move",
+        "technique": "Technique",
+        "feature": "Feature",
+        "moment-of-balance": "Moment of Balance",
+        "growth-question": "Growth Question",
+        "status": "Status"
+      }
+    },
+    "attachments": {
+      "none": "No Attachments have been added. Drag some from the Item sidebar or Compendium.",
+      "title": "Attachments"
+    },
+    "moves": {
+      "add": "New Move",
+      "edit": "Edit Move",
+      "delete": "Delete Move",
+      "new": "New Move",
+      "roll-with": "Roll with",
+      "roll": "Roll?",
+      "with": "Stat",
+      "category": {
+        "label": "Source",
+        "all": "All",
+        "basic": "Basic",
+        "balance": "Balance",
+        "playbook": "Playbook"
+      },
+      "none": "No Moves have been added. Drag some from the Item sidebar or Compendium."
+    },
+    "condition": {
+      "add": "New Condition",
+      "none": "No Conditions have been added. Drag some from the Item sidebar or a Compendium."
+    },
+    "status": {
+      "title": "Statuses",
+      "add": "New Status",
+      "positive": "Positive",
+      "negative": "Negative",
+      "type": "Type",
+      "none": "No Statuses have been added. Drag some from the Item sidebar or a Compendium."
+    },
+    "techniques": {
+      "title": "Techniques",
+      "approach": "Approach",
+      "basic": "Basic",
+      "approaches": {
+        "defend-maneuver": "Defend & Maneuver",
+        "advance-attack": "Advance & Attack",
+        "evade-observe": "Evade & Observe",
+        "defend-maneuver_short": "D&M",
+        "advance-attack_short": "A&A",
+        "evade-observe_short": "E&O"
+      },
+      "proficiency": {
+        "learn": "Set Learned",
+        "learned": "L",
+        "practice": "Set Practiced",
+        "practiced": "P",
+        "master": "Set Mastered",
+        "mastered": "M"
+      },
+      "add": "New Technique",
+      "none": "No Techniques have been added. Drag some from the Item sidebar or a Compendium."
+    },
+    "training": {
+      "specialty": "Specialty",
+      "water": "Waterbending",
+      "fire": "Firebending",
+      "earth": "Earthbending",
+      "air": "Airbending",
+      "weapons": "Weapons",
+      "technology": "Technology",
+      "none": "Universal",
+      "group": "Group"
+    },
+    "feature": {
+      "title": "Playbook Feature",
+      "none": "No Playbook Feature has been added. Drag one from the Item sidebar or a Compendium."
+    },
+    "moment-of-balance": {
+      "title": "Moment of Balance",
+      "add": "Add Moment of Balance",
+      "none": "No Moment of Balance has been added. Drag one from the Item sidebar or a Compendium."
+    },
+    "growth": {
+      "title": "Growth",
+      "question": {
+        "title": "Growth Questions",
+        "none": "No Growth Questions have been added. Drag some from the Item sidebar or Compendium."
+      },
+      "advancement": {
+        "title": "Growth Advancements",
+        "playbook-move": "Take a new move from your playbook",
+        "other-move": "Take a new move from another playbook",
+        "raise-stat": "Raise a stat by +1 (maximum of +2 to any stat)",
+        "shift-center": "Shift your Center by one step",
+        "moment": "Unlock your Moment of Balance"
+      }
+    },
+    "principle": {
+      "title": "Principle",
+      "none": "No NPC Principle has been added.",
+      "add": "Add Principle",
+      "maximum": "Maximum"
+    },
+    "roll": {
+      "with": "Roll with <a class=\"color-fire-dark\" data-action=\"rollApproach\" data-approach=\"{approach}\" data-stat=\"{stat}\"><i class=\"fas fa-dice small\"></i> {name}</a>",
+      "evade-observe": "Clear 1-fatigue &amp; roll with <a class=\"color-fire-dark\" data-action=\"rollApproach\" data-approach=\"Evade & Observe\" data-stat=\"creativity\"><i class=\"fas fa-dice small\"></i> Creativity</a> or <a class=\"color-fire-dark\" data-action=\"rollApproach\" data-approach=\"Evade & Observe\" data-stat=\"harmony\"><i class=\"fas fa-dice small\"></i> Harmony</a>",
+      "stat": "Rolling {stat}",
+      "no-stat": "Rolling",
+      "miss": "Miss",
+      "hit": "Hit",
+      "full": "Full Hit!",
+      "dialog": {
+        "penalty": "Penalties",
+        "penalty-description": "From Conditions and Statuses",
+        "bonus": "Bonuses",
+        "bonus-description": "Total of Forwards, Ongoing and Helping",
+        "submit": "Roll"
+      },
+      "no-actor": "You cannot roll Moves without an assigned Actor.",
+      "no-move": "The requested Move could not be rolled.",
+      "approach": {
+        "full": "<p>Choose one from this list:</p><ul><li>Mark 1-fatigue to use a learned technique</li><li>Use one practiced technique</li><li>Use two different basic or mastered techniques</li></ul>",
+        "hit": "<p>Use one basic or mastered technique</p>",
+        "miss": "<p>You stumble, but you can shift your balance away from center to use one basic technique.</p>"
+      },
+      "principle-required": "You must select a Principle"
+    },
+    "dialog": {
+      "cancel": "Cancel",
+      "submit": "Submit"
+    },
+    "nav": {
+      "main": "Main",
+      "moves": "Moves",
+      "techniques": "Training & Techniques",
+      "detail": "Details & Growth",
+      "notes": "Notes",
+      "effects": "Effects"
+    },
+    "exchange": {
+      "choose": "Choose Approach",
+      "notStarted": "Not Started",
+      "roundNumber": "Round {round}",
+      "prevRound": "Previous Round",
+      "nextRound": "Next Round",
+      "prevPhase": "Previous Phase",
+      "nextPhase": "Next Phase",
+      "defend-maneuver": "Defend & Maneuver",
+      "advance-attack": "Advance & Attack",
+      "evade-observe": "Evade & Observe",
+      "stat": "Stat",
+      "clear-stance": "Reset Stance Result",
+      "no-exchange": "No Exchange",
+      "toggle-hidden": "Toggle Hidden",
+      "toggle-defeated": "Toggle Defeated",
+      "ping-combatant": "Ping Combatant",
+      "create-exchange": "Create Exchange"
+    }
+  },
+  "COMBAT": {
+    "Begin": "Start Exchange",
+    "End": "End Exchange",
+    "InitiativeReset": "Reset all Stance Results"
+  },
+  "SETTINGS": {
+    "None": "There are no settings for Avatar Legends RPG (Unofficial)",
+    "tabbedPlayerSheet": {
+      "label": "Tabbed Player Sheet",
+      "hint": "Display the player character sheet with tabbed layout"
+    },
+    "sheetColour": {
+      "label": "Sheet Color",
+      "hint": "The color scheme used by Player character sheets",
+      "default": "Default",
+      "quickstart": "Quickstart"
+    },
+    "playerNotes": {
+      "label": "Player Notes",
+      "hint": "Show the Notes section on the Player character sheet"
+    },
+    "exchangeTracker": {
+      "label": "Use Exchange Tracker",
+      "hint": "Replace the Combat Tracker with a custom Exchange Tracker for Avatar Legends."
+    }
+  },
+  "TYPES": {
+    "Actor": {
+      "campaign": "Campaign",
+      "npc": "NPC",
+      "player": "Player"
+    },
+    "Item": {
+      "condition": "Condition",
+      "move": "Move",
+      "technique": "Technique",
+      "feature": "Feature",
+      "moment-of-balance": "Moment of Balance",
+      "npc-principle": "NPC Principle",
+      "growth-question": "Growth Question",
+      "status": "Status",
+      "playbook": "Playbook"
+    }
+  }
+}

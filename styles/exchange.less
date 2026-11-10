@@ -1,0 +1,273 @@
+// out: false
+
+@import url('./config.less');
+
+.legends.sidebar.exchange {
+  --color-text-primary: @white;
+
+  align-items: stretch;
+
+  .header,
+  .footer {
+    flex: 0 0 2rem;
+  }
+
+  .phase-nav {
+    --phase-nav-bg: var(--color-accent-mid);
+    --phase-nav-hover: @white-50;
+    --phase-nav-hover-text: var(--color-accent-dark);
+
+    padding: 0.5rem;
+    text-align: center;
+    background: var(--phase-nav-bg);
+
+    .nav-button {
+      display: flex;
+      height: 2rem;
+      justify-content: center;
+      align-items: center;
+      border-radius: 0.25rem;
+      background: var(--phase-nav-bg);
+      color: @white;
+
+      &.phase,
+      &.round {
+        flex: 0 0 2rem;
+      }
+
+      &:hover {
+        text-shadow: none;
+        background: var(--phase-nav-hover);
+        color: var(--phase-nav-hover-text);
+      }
+    }
+
+    &.defend-maneuver {
+      --phase-nav-bg: @earthbender;
+      --phase-nav-hover-text: var(--phase-nav-bg);
+    }
+    &.advance-attack {
+      --phase-nav-bg: @firebender;
+      --phase-nav-hover-text: var(--phase-nav-bg);
+    }
+    &.evade-observe {
+      --phase-nav-bg: @waterbender;
+      --phase-nav-hover-text: var(--phase-nav-bg);
+    }
+  }
+
+  .phase-inactive {
+    .phase-nav {
+      background: transparent;
+      border-top: 2px solid var(--phase-nav-bg);
+      border-bottom: 2px solid var(--phase-nav-bg);
+      background-image: linear-gradient(120deg, var(--phase-nav-bg), transparent);
+    }
+  }
+
+  .header {
+    .tabs {
+      padding: 0.5rem;
+
+      .tab {
+        white-space: nowrap;
+        padding: 0 0.5rem;
+        color: white;
+
+        &.active {
+          background: var(--color-accent-mid);
+        }
+
+        &.addConflict,
+        &.settings {
+          padding: 0;
+        }
+      }
+    }
+
+    .tabs .tab,
+    .conflict-btn {
+      flex: 0 0 1.5rem;
+      background: @white-25;
+      height: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 0.25rem;
+
+      &.settings,
+      &.encounter-context-menu {
+        margin-left: auto;
+      }
+    }
+
+    .round-header {
+      background: @white-25;
+    }
+  }
+
+  .combatant-grid {
+    gap: 0.5rem;
+    display: grid;
+    grid-template-columns: repeat(8, calc((100% - 3.5rem) / 8));
+  }
+
+  .combatants {
+    flex: 1;
+    overflow-y: auto;
+
+    .combatant-full {
+      border-bottom: none; // 1px solid @white-25;
+      padding: 0.25rem 0.5rem;
+
+      &:nth-child(odd) {
+        background: @black-25;
+      }
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      &.inactive {
+        opacity: 0.5;
+      }
+
+      .stat {
+        flex: 0 0 2rem;
+      }
+
+      .token {
+        position: relative;
+        .overlay {
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          width: 100%;
+          background: @black-50;
+          color: @white;
+          text-shadow: 0 0 5px @black;
+          font-size: 1.5rem;
+          i {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+          }
+        }
+      }
+
+      .btn {
+        background: @white-25;
+        color: @text-color;
+        border-radius: 0.25rem;
+        display: block;
+        text-align: center;
+
+        transition: all 0.2s;
+
+        &.active {
+          color: @white !important;
+        }
+
+        &.approach {
+          flex: 0 0 3rem;
+          padding: 0.25rem;
+          font-size: 0.75rem;
+          font-weight: normal;
+
+          --btn-bg: @white-25;
+          --btn-bg-hover: @white-50;
+
+          &:hover {
+            color: var(--btn-bg);
+            background: var(--btn-bg-hover);
+          }
+
+          &.active {
+            background: var(--btn-bg);
+          }
+        }
+
+        &.defend-maneuver {
+          --btn-bg: @earthbender;
+        }
+
+        &.advance-attack {
+          --btn-bg: @firebender;
+        }
+
+        &.evade-observe {
+          --btn-bg: @waterbender;
+        }
+
+        &.stance-move:hover {
+          background: var(--btn-bg);
+          color: @white;
+        }
+      }
+
+      .npc-principle {
+        margin: 0 0.5rem -0.5rem;
+
+        .check-box {
+          --box-size: 1.5rem;
+
+          display: inline-block;
+          border: 1.5px solid black;
+          background: white;
+          box-shadow:
+            -1px -1px 0 @white-75,
+            -1px 1px 0 @white-75,
+            1px -1px 0 @white-75,
+            1px 1px 0 @white-75;
+
+          flex: 0 0 var(--box-size);
+          height: var(--box-size);
+          transform: rotate(45deg);
+          color: @text-color;
+          position: relative;
+          margin: 0.25rem;
+
+          .num {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            display: inline-block;
+            transform: translate(-50%, -50%) rotate(-45deg);
+            text-align: center;
+            font-size: 0.8rem;
+            line-height: var(--box-size);
+          }
+
+          &.filled {
+            background: @firebender;
+            box-shadow:
+              inset 2px 2px 0 white,
+              inset -2px -2px 0 white;
+
+            .num {
+              color: white;
+            }
+          }
+        }
+      }
+
+      .token-effect {
+        max-width: 1rem;
+      }
+
+      .combatant-action {
+        color: @white-50;
+
+        &:hover {
+          color: @white-75;
+        }
+
+        &.active {
+          color: @white;
+        }
+      }
+    }
+  }
+}

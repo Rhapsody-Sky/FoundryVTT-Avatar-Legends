@@ -1,0 +1,126 @@
+{
+  "id": "legends",
+  "title": "Avatar Legends RPG (Unofficial)",
+  "description": "Unofficial system for Avatar Legends RPG player and NPC sheets.",
+  "authors": [
+    {
+      "name": "demondownload",
+      "url": "https://ko-fi.com/demondownload",
+      "discord": "demondownload",
+      "ko-fi": "demondownload"
+    }
+  ],
+  "license": "LICENSE",
+  "readme": "README.md",
+  "version": "2.1.0",
+  "compatibility": {
+    "minimum": "14",
+    "verified": "14"
+  },
+  "media": [
+    {
+      "type": "setup",
+      "url": "systems/legends/images/setup.webp",
+      "thumbnail": "systems/legends/images/setup.webp"
+    }
+  ],
+  "url": "https://gitlab.com/pacosgrove1/legends/",
+  "manifest": "https://gitlab.com/api/v4/projects/pacosgrove1%2Flegends/packages/generic/legends/latest/system.json",
+  "download": "https://gitlab.com/pacosgrove1/legends/-/releases/v2.1.0/downloads/legends-v2.1.0.zip",
+  "esmodules": ["legends.js"],
+  "styles": ["styles/legends.v2.css"],
+  "documentTypes": {
+    "Actor": {
+      "player": {
+        "htmlFields": ["look", "notes"]
+      },
+      "npc": { "htmlFields": ["description"] },
+      "campaign": {
+        "htmlFields": [
+          "scope",
+          "focusDesc",
+          "allies",
+          "enemies",
+          "acts.1.description",
+          "acts.2.description",
+          "acts.3.description"
+        ]
+      }
+    },
+    "Item": {
+      "condition": { "htmlFields": ["description"] },
+      "feature": { "htmlFields": ["description"] },
+      "growth-question": { "htmlFields": ["description"] },
+      "moment-of-balance": { "htmlFields": ["description"] },
+      "move": { "htmlFields": ["description"] },
+      "npc-principle": { "htmlFields": ["description"] },
+      "playbook": { "htmlFields": ["description"] },
+      "status": { "htmlFields": ["description"] },
+      "technique": { "htmlFields": ["description"] }
+    }
+  },
+  "packs": [
+    {
+      "label": "Playbooks",
+      "type": "Item",
+      "name": "playbooks",
+      "path": "packs/playbooks",
+      "system": "legends",
+      "private": false
+    },
+    {
+      "label": "WSTAG Playbooks",
+      "type": "Item",
+      "name": "wstag-playbooks",
+      "path": "packs/wstag-playbooks",
+      "system": "legends",
+      "private": false
+    },
+    {
+      "label": "Common Items",
+      "type": "Item",
+      "name": "common-items",
+      "path": "packs/common-items",
+      "system": "legends",
+      "private": false
+    },
+    {
+      "label": "Reference",
+      "type": "JournalEntry",
+      "name": "reference",
+      "path": "packs/reference",
+      "system": "legends",
+      "private": false
+    }
+  ],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English (US)",
+      "path": "lang/en.json"
+    },
+    {
+      "lang": "fr",
+      "name": "Français",
+      "path": "lang/fr.json"
+    },
+    {
+      "lang": "es",
+      "name": "Español",
+      "path": "lang/es.json"
+    },
+    {
+      "lang": "de",
+      "name": "Detusch",
+      "path": "lang/de.json"
+    },
+    {
+      "lang": "pt-BR",
+      "name": "Português do Brasil",
+      "path": "lang/pt-BR.json"
+    }
+  ],
+  "relationships": {},
+  "primaryTokenAttribute": "fatigueRemaining",
+  "initiative": "2d6"
+}

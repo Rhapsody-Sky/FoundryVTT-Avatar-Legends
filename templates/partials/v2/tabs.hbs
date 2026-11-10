@@ -1,0 +1,15 @@
+<nav class="sheet-tabs tabs {{ tabClasses }} bg-white-25"
+     aria-roledescription="{{localize "SHEETS.FormNavLabel"}}">
+    {{#each tabs as |tab|}}
+    <a data-action="tab" data-group="{{tab.group}}" data-tab="{{tab.id}}"
+        {{#if tab.cssClass}}class="{{tab.cssClass}}"{{/if}}
+        {{#if tab.tooltip}}data-tooltip="{{tab.tooltip}}"{{/if}}>
+        {{#if tab.icon}}<i class="{{tab.icon}}" inert></i>{{/if}}
+        {{#if tab.label}}<span>{{localize tab.label}}</span>{{/if}}
+    </a>
+    {{/each}}
+
+    {{#if editable}}
+    <a data-action="setSheetColor"><i class="fas fa-brush"></i></a>
+    {{/if}}
+</nav>

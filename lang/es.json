@@ -1,0 +1,272 @@
+{
+  "legends": {
+    "common": {
+      "description": "Descripción",
+      "none": "Nada",
+      "to-chat": "Al Chat",
+      "documentation": "Documentación del sistema"
+    },
+    "context-menu": {
+      "edit": "Editar",
+      "delete": "Eliminar"
+    },
+    "actor-sheet": {
+      "clear-track": "Click derecho para limpiar",
+      "name": "Nombre",
+      "stats": "Estadisticas",
+      "fatigue": "Fatiga",
+      "clear-fatigue": "Limpiar Fatiga",
+      "balance": "Balance",
+      "conditions": "Condiciones",
+      "moves": "Movimientos",
+      "techniques": "Técnicas de Combate",
+      "statuses": "Estados",
+      "set-value": "Dejar en {value}",
+      "player": {
+        "about": "Tu Personaje",
+        "look": "Apariencia, Historia y Conexiones",
+        "training": "Entrenamiento",
+        "fighting-style": "Estilo de Combate",
+        "background": "Trasfondo",
+        "demeanor": "Actitud",
+        "hometown": "Pueblo de Origen",
+        "playbook": "Libreto"
+      },
+      "npc": {
+        "drive": "Impulso",
+        "technique": "Tecnica",
+        "levels": {
+          "minor": "PNJ Menor",
+          "major": "PNJ Mayor",
+          "master": "PNJ Maestro",
+          "legendary": "PNJ Legendario",
+          "group": "Grupo de PNJs",
+          "npc": "PNJ"
+        },
+        "fatigue": {
+          "add": "Aumentar Fatiga Máxima",
+          "remove": "Sustraer Fatiga Máxima"
+        }
+      },
+      "campaign": {
+        "title": "Libreto de Campaña",
+        "main": "Principal",
+        "acts": "Actos",
+        "incitingIncident": "Incidente Inicial",
+        "noActs": "No hay actos disponibles. ¡Haz click para agregar más!",
+        "relationships": {
+          "title": "Aliados y Enemigos",
+          "allies": "Aliados",
+          "enemies": "Enemigos"
+        },
+        "focus": {
+          "defeat": "Derrotar a [villano]",
+          "protect": "Proteger [lugar, idea, cultura, persona, cosa]",
+          "change": "Cambiar [cultura, sociedad, lugar, persona]",
+          "deliver": "Entregar [persona, cosa] a [lugar, cultura, persona]",
+          "rescue": "Rescatar a [persona, cosa]",
+          "learn": "Aprender [idea, cultura, entrenamiento, historia]",
+          "custom": "Enfoque de Grupo personalizado"
+        },
+        "groupFocus": "Enfoque de Grupo",
+        "focusDesc": "Detalles del Enfoque de Grupo",
+        "customFocusPlaceholder": "Para...",
+        "scope": "Alcance",
+        "eras": {
+          "custom": "Personalizado",
+          "kyoshi": "de Kyoshi",
+          "roku": "de Roku",
+          "100years": "de la Guerra de los Cien Años",
+          "aang": "de Aang",
+          "korra": "de Korra",
+          "era": "Era",
+          "eraDisplayName": "{era} {name}"
+        }
+      }
+    },
+    "stats": {
+      "creativity": "Creatividad",
+      "focus": "Concentración",
+      "harmony": "Armonia",
+      "passion": "Pasión",
+      "principle": "Principio"
+    },
+    "items": {
+      "new": {
+        "name": "Nuevo {type}",
+        "description": "<p>Descripción acá.</p>"
+      },
+      "not-allowed": "Este tipo de elemento no se puede agregar a este actor.",
+      "playbook-applied": "El Libreto '{name}' ha sido aplicado",
+      "types": {
+        "condition": "Condición",
+        "move": "Movimiento",
+        "technique": "Técnica de Combate",
+        "feature": "Ventaja",
+        "moment-of-balance": "Momento de Balance",
+        "growth-question": "Pregunta de Mejora",
+        "status": "Estados"
+      }
+    },
+    "attachments": {
+      "none": "No se han agregado Adjuntos. Arrastralos de la barra lateral.",
+      "title": "Adjuntos"
+    },
+    "moves": {
+      "add": "Nuevo Movimiento",
+      "edit": "Editar Movimiento",
+      "delete": "Eliminar Movimiento",
+      "new": "Nuevo Movimiento",
+      "roll-with": "Lanzar con",
+      "roll": "¿Lanzar?",
+      "with": "Estadística",
+      "category": {
+        "label": "Categoría",
+        "all": "Todos",
+        "basic": "Basico",
+        "balance": "Balance",
+        "playbook": "Libreto"
+      },
+      "none": "No se han agregado Movimientos. Arrastralos desde la barra lateral."
+    },
+    "condition": {
+      "add": "Nueva Condición",
+      "none": "No se han agregado Condiciones. Arrastralas desde la barra lateral"
+    },
+    "status": {
+      "title": "Estados",
+      "add": "Nuevo Estado",
+      "positive": "Positivo",
+      "negative": "Negativo",
+      "type": "Tipo",
+      "none": "No se han agregado Estados. Arrastralos desde la barra lateral."
+    },
+    "techniques": {
+      "title": "Técnicas de Combate",
+      "approach": "Acercamiento",
+      "basic": "Basico",
+      "approaches": {
+        "defend-maneuver": "Defender y Maniobrar",
+        "advance-attack": "Avanzar y Atacar",
+        "evade-observe": "Evadir y Observar"
+      },
+      "proficiency": {
+        "learn": "Aprendida",
+        "learned": "A",
+        "practice": "Practicada",
+        "practiced": "P",
+        "master": "Dominada",
+        "mastered": "D"
+      },
+      "add": "Nueva Técnica",
+      "none": "No se han agregado Técnicas. Arrastralas desde la barra lateral."
+    },
+    "training": {
+      "specialty": "Especialidad",
+      "water": "Agua Control",
+      "fire": "Fuego Control",
+      "earth": "Tierra Control",
+      "air": "Aire Control",
+      "weapons": "Armas",
+      "technology": "Tecnología",
+      "none": "Universal",
+      "group": "Grupo"
+    },
+    "feature": {
+      "title": "Ventaja",
+      "none": "No se han agregado Ventajas. Arrastralas desde la barra lateral"
+    },
+    "moment-of-balance": {
+      "title": "Momento de Balance",
+      "add": "Agregar Momento de Balance",
+      "none": "No se ha agregado Momento de Balance. Arrastralo desde la barra lateral."
+    },
+    "growth": {
+      "title": "Mejora",
+      "question": {
+        "title": "Preguntas de Mejora",
+        "none": "No se han agregado Preguntas de Mejora. Arrastralas desde la barra lateral"
+      },
+      "advancement": {
+        "title": "Avances de Mejora",
+        "playbook-move": "Toma un movimiento nuevo de tu libreto",
+        "other-move": "Toma un movimiento nuevo de otro libreto",
+        "raise-stat": "Aumenta una estadística +1 (máximo +2)",
+        "shift-center": "Cambia tu Centro en una dirección",
+        "moment": "Desbloquea tu Momento de Balance"
+      }
+    },
+    "principle": {
+      "title": "Principio",
+      "none": "No se han agregado Principios. Arrastralos desde la barra lateral",
+      "add": "Agregar Principio",
+      "maximum": "Maximum"
+    },
+    "roll": {
+      "with": "Lanza con <a class=\"color-fire-dark\" data-action=\"rollApproach\" data-approach=\"{approach}\" data-stat=\"{stat}\"><i class=\"fas fa-dice small\"></i>{name}</a>",
+      "evade-observe": "Elimina 1 Fatiga y lanza con <a class=\"color-fire-dark\" data-action=\"rollApproach\" data-approach=\"Evadir y Observar\" data-stat=\"creativity\"><i class=\"fas fa-dice small\"></i>Creativity</a> or <a class=\"color-fire-dark\" data-action=\"rollApproach\" data-approach=\"Evadir y Observar\" data-stat=\"harmony\"><i class=\"fas fa-dice small\"></i>Harmony</a>",
+      "stat": "Lanzando {stat}",
+      "no-stat": "Lanzando",
+      "miss": "Fallo",
+      "hit": "Éxito",
+      "full": "¡Éxito Total!",
+      "dialog": {
+        "penalty": "Penalizaciones",
+        "penalty-description": "De condiciones y estados",
+        "bonus": "Bonus",
+        "bonus-description": "Total de Conservados, Ayudas y Apoyo",
+        "submit": "Lanzar"
+      },
+      "no-actor": "No puedes usar Movimientos sin un Actor asignado.",
+      "approach": {
+        "full": "<p>Elige de esta lista:</p><ul><li>Marca 1-Fatiga para usar una técnica aprendida.</li><li>Usa una técnica practicada.</li><li>Usa dos técnicas distintas básicas o dominadas</li></ul>",
+        "hit": "<p>Usa una tecnica básica o dominada.</p>",
+        "miss": "<p>Te tropiezas, pero puedes cambiar el Balance lejos del centro para usar una tenica basica.</p>"
+      }
+    },
+    "dialog": {
+      "cancel": "Cancelar"
+    },
+    "nav": {
+      "main": "Principal",
+      "moves": "Movimientos",
+      "techniques": "Entrenamientos y Técnicas",
+      "detail": "Detalles y Avances",
+      "notes": "Notas"
+    }
+  },
+  "SETTINGS": {
+    "None": "No hay configuraciones para Avatar Legends",
+    "tabbedPlayerSheet": {
+      "label": "Hoja de Personaje Minimizada",
+      "hint": "Muestra la hoja de personaje con diseño minimizado"
+    },
+    "sheetColour": {
+      "label": "Color de Hoja",
+      "hint": "El color usado para las hojas de personaje",
+      "default": "Defecto",
+      "quickstart": "Inicio Rapido"
+    },
+    "playerNotes": {
+      "label": "Notas de Jugador",
+      "hint": "Muestra las Notas en la hoja de personaje"
+    }
+  },
+  "TYPES": {
+    "Actor": {
+      "campaign": "Campaña",
+      "npc": "PNJ",
+      "player": "Jugador"
+    },
+    "Item": {
+      "condition": "Condición",
+      "move": "Movimiento",
+      "technique": "Técnica de Combate",
+      "feature": "Ventaja",
+      "moment-of-balance": "Momento de Balance",
+      "growth-question": "Pregunta de Mejora",
+      "status": "Estados",
+      "playbook": "Libreto"
+    }
+  }
+}
