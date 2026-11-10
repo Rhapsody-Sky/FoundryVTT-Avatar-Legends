@@ -4,7 +4,7 @@ A FoundryVTT system for [Avatar Legends RPG](https://magpiegames.com/pages/avata
 
 ## Origin and continuation
 
-I maintain this project as a continuation of **[Paul Cosgrove / demondownload's original Legends system](https://gitlab.com/pacosgrove1/legends)**, based on upstream **v2.1.0** (commit `173611c933b06033520e99b1d196724afbf81e90`). The upstream Git history is preserved in this repository.
+This is my community continuation of **[Paul Cosgrove / demondownload's original Legends system](https://gitlab.com/pacosgrove1/legends)**, based on upstream **v2.1.0** (commit `173611c933b06033520e99b1d196724afbf81e90`). The upstream Git history is preserved in this repository.
 
 Paul announced v2.0.0 as his final major update; see his [archive notice](https://gitlab.com/pacosgrove1/legends/-/wikis/Archive-Notice). Thank you to Paul and everyone who contributed to the original project. I maintain this fork independently; it is not an official release by Paul, Magpie Games, or the Avatar rights holders. Report problems through [this repository's issue tracker](https://github.com/Rhapsody-Sky/FoundryVTT-Avatar-Legends/issues), not to the retired upstream project.
 
