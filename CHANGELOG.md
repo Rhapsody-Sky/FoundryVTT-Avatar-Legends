@@ -1,6 +1,6 @@
 # Changelog
 
-## v2.2.0 - unreleased
+## v2.2.0 - 2026-11-10
 
 - Use the independent system ID `avatar-legends` for native Foundry updates.
 - Add a separate migration module with a GM assistant, backup confirmation and resumable migration.

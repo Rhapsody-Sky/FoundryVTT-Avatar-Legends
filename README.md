@@ -16,7 +16,6 @@ This project continues [Paul Cosgrove / demondownload's original Legends system]
 
 ## Installation
 
-> Version 2.2.0 and the migration module are being tested. The published release still uses the old system ID; the instructions below apply to the upcoming release.
 
 In Foundry's Setup screen, open **Game Systems → Install System**, paste this URL into **Manifest URL**, and click **Install**:
 

@@ -1,8 +1,8 @@
 # Release and migration checklist
 
-## Current candidate
+## Release 2.2.0
 
-System `avatar-legends` version 2.2.0 and module `avatar-legends-migration` version 1.0.0 are local, unpublished candidates. See [the migration test report](migration-test-2026-11-10.md). The earlier 2.1.1 releases use the old system ID and remain unchanged.
+System `avatar-legends` version 2.2.0 and module `avatar-legends-migration` version 1.0.0 passed the isolated migration tests and were approved for release. See [the migration test report](migration-test-2026-11-10.md). The earlier 2.1.1 releases use the old system ID and remain unchanged.
 
 ## Before publishing a release
 

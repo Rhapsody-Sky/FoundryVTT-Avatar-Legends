@@ -2,9 +2,10 @@
 
 [Deutsch](umstieg.md)
 
-> For the upcoming 2.2.0 release. The new system and migration module have not been published yet.
 
 You need Foundry VTT 14, access to Setup and a GM account in your existing Legends world. The new system is still called **Avatar Legends RPG**, but has its own ID: `avatar-legends`.
+
+Tested with the original system 2.1.0 and our earlier V14 port 1.4.0 on Foundry 14.367.
 
 ## 1. Back up and install
 
