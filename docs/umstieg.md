@@ -1,44 +1,38 @@
-# Auf diesen Fork umsteigen
+# Mit dem Migrationsmodul umsteigen
 
-[English](switching.md) · [Releases](https://github.com/Rhapsody-Sky/FoundryVTT-Avatar-Legends/releases)
+[English](switching.md)
 
-Für **Foundry VTT 14**. Bestehende Legends-Welten bleiben erhalten. Du brauchst Zugriff auf das Foundry-Setup und auf die Dateien der Installation. Bei einem Server verwendest du dafür dessen Dateimanager oder SFTP-Zugang.
+> Für das kommende Release 2.2.0. System und Migrationsmodul sind noch nicht veröffentlicht.
 
-## 1. Foundry stoppen und sichern
+Du brauchst Foundry VTT 14, Zugriff auf das Setup und einen Spielleiter-Zugang zur bestehenden Legends-Welt. Das neue System heißt weiterhin **Avatar Legends RPG**, verwendet aber die eigene ID `avatar-legends`.
 
-Beende die laufende Welt und stoppe anschließend die Foundry-Anwendung beziehungsweise den Foundry-Dienst im Hosting-Panel. Nur den Browser zu schließen reicht nicht.
+## 1. Sichern und installieren
 
-Öffne den **Benutzerdatenordner** deiner Foundry-Installation, nicht den Programmordner. Sichere daraus:
+1. Beende Foundry und sichere deine Welt sowie `Data/systems/legends`, einschließlich eigener Kompendien. Starte Foundry danach wieder im Setup.
+2. Öffne **Zusatzmodule / Add-on Modules → Modul installieren / Install Module**. Füge diese Adresse bei **Manifest URL** ein und klicke **Installieren**:
 
-- `Data/worlds/<deine-welt>` für jede Legends-Welt;
-- `Data/systems/legends`, einschließlich eigener Änderungen an System-Kompendien;
-- eigene Bilder und andere Dateien, falls sie außerhalb dieser Ordner liegen.
+   ```text
+   https://github.com/Rhapsody-Sky/FoundryVTT-Avatar-Legends/releases/latest/download/module.json
+   ```
 
-Der Austausch betrifft alle Legends-Welten dieser Installation.
+3. Wenn Foundry nach der benötigten Abhängigkeit fragt, wähle **Automatisch installieren / Install Dependency Automatically**. Damit wird das neue System zusätzlich installiert. Lass das alte System vorerst installiert.
 
-## 2. Das System austauschen
+## 2. Die bestehende Welt umstellen
 
-1. Öffne die [Releases](https://github.com/Rhapsody-Sky/FoundryVTT-Avatar-Legends/releases) und lade unter **Assets** die Datei `legends-v….zip` herunter. Nicht „Source code“ verwenden.
-2. Verschiebe den bisherigen Ordner `Data/systems/legends` an einen Sicherungsort **außerhalb von `Data/systems`**.
-3. Lege einen neuen Ordner `Data/systems/legends` an und entpacke den ZIP-Inhalt dort hinein. Die Datei muss direkt unter `Data/systems/legends/system.json` liegen, ohne zusätzlichen Unterordner.
-4. Lass die Weltordner unverändert und starte Foundry wieder. Unter **Spielsysteme / Game Systems** muss „Avatar Legends RPG“ mit der Versionsnummer des heruntergeladenen Releases erscheinen.
+1. Starte deine bisherige Welt mit dem alten System und melde dich als Spielleiter an.
+2. Öffne **Einstellungen → Module verwalten / Manage Modules**, aktiviere **Avatar Legends Migration** und speichere. Nach dem Neuladen erscheint der Assistent automatisch.
+3. Alle anderen Nutzer müssen sich abmelden. Bestätige im Assistenten die vorhandene Sicherung und klicke **Welt umstellen**. Lass den Browser geöffnet, bis Foundry zum Setup zurückkehrt.
+4. Starte dieselbe Welt erneut. Nach der Erfolgsmeldung kannst du das Migrationsmodul deaktivieren.
 
-## 3. Updatesperre einschalten
+Der Assistent übernimmt Einstellungen und Verweise. Alte System-Kompendien werden als Welt-Kompendien mit dem Zusatz **(Legacy)** erhalten, damit eigene Änderungen nicht verloren gehen. Verwendete Bilder aus dem alten System werden in die Welt kopiert. Das neue System bringt zusätzlich seine aktuellen Standard-Kompendien mit.
 
-1. Öffne im Foundry-Setup den Reiter **Spielsysteme / Game Systems**. Falls eine Welt läuft, kehre zuerst über deren Einstellungen zum Setup zurück; gegebenenfalls ist das Administratorpasswort nötig.
-2. Klicke mit der **rechten Maustaste auf den Eintrag „Avatar Legends RPG“** und wähle die Sperraktion (**Lock System** in der englischen Oberfläche).
-3. Prüfe, ob am Eintrag ein **Schloss** angezeigt wird. Bietet das Kontextmenü bereits das Entsperren an, ist die Sperre aktiv.
+**Später** schließt den Dialog ohne Migration. Nach einem Fehler lässt sich der Assistent über die Moduleinstellungen erneut öffnen; eine unterbrochene Umstellung wird fortgesetzt. Spiele nicht in einer teilweise umgestellten Welt. Falls du stattdessen zurückwechseln möchtest, stelle die passende Welt- und Systemsicherung wieder her; spätere Änderungen gehen dabei verloren.
 
-Die Sperre verhindert Paketupdates und Deinstallation über das Setup. Sie ist nötig, weil Foundrys Paketkatalog sonst wieder das Original anbieten kann. Die Welt lässt sich weiterhin starten.
+## Danach
 
-## 4. Die Welt prüfen
-
-Öffne deine bestehende Welt und prüfe Charaktertexte, Bögen und einen Würfelwurf. Lege keine neue Welt an. Für einen Probelauf vor der Live-Umstellung verwende eine Weltkopie in einer separaten Foundry-Installation; eine zweite Welt im selben Datenordner nutzt ebenfalls das ausgetauschte System.
-
-## Später aktualisieren
-
-Lade das nächste ZIP aus **diesem Repository** und wiederhole die Schritte 1–3: stoppen, frisch sichern, Systemordner ersetzen, starten und sperren. Die Sperre muss für diesen Dateiaustausch nicht vorher aufgehoben werden; prüfe sie nach dem Austausch erneut. Verwende für diesen Fork nicht den normalen „Update“-Knopf des Systems.
-
-**Zurückwechseln:** Foundry stoppen und die gesicherten Systemdateien wiederherstellen. Wurde die Welt bereits mit der neuen Version gestartet, auch die dazu passende Weltsicherung wiederherstellen. Dabei gehen spätere Änderungen verloren; bewahre den aktuellen Stand vorher zusätzlich auf.
+- Prüfe Charaktertexte, Tokens, Kompendium-Links und einen Würfelwurf.
+- Künftige Updates: **Setup → Spielsysteme / Game Systems → Avatar Legends RPG → Update**. Das neue System nicht sperren.
+- Stelle weitere alte Legends-Welten einzeln um. Entferne das alte System erst, wenn keine Welt es mehr benötigt.
+- Module, die ausdrücklich nur das alte System unterstützen, müssen vor dem Umstieg deaktiviert werden. Für sie kann eine Anpassung durch ihre Entwickler nötig sein.
 
 [Hilfe beim Umstieg](https://github.com/Rhapsody-Sky/FoundryVTT-Avatar-Legends/issues/new?template=migration-help.yml)

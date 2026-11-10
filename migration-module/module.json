@@ -1,0 +1,17 @@
+{
+  "id": "avatar-legends-migration",
+  "title": "Avatar Legends Migration",
+  "description": "Move an existing Legends world to Avatar Legends RPG with a guided, one-time migration.",
+  "version": "1.0.0",
+  "authors": [{"name": "Rhapsody"}],
+  "compatibility": {"minimum": "14", "verified": "14", "maximum": "14"},
+  "esmodules": ["migration.js"],
+  "relationships": {
+    "requires": [{"id": "avatar-legends", "type": "system", "compatibility": {"minimum": "2.2.0"}, "manifest": "https://github.com/Rhapsody-Sky/FoundryVTT-Avatar-Legends/releases/latest/download/system.json"}]
+  },
+  "url": "https://github.com/Rhapsody-Sky/FoundryVTT-Avatar-Legends",
+  "manifest": "https://github.com/Rhapsody-Sky/FoundryVTT-Avatar-Legends/releases/latest/download/module.json",
+  "download": "https://github.com/Rhapsody-Sky/FoundryVTT-Avatar-Legends/releases/download/v2.2.0/avatar-legends-migration-v1.0.0.zip",
+  "license": "LICENSE",
+  "readme": "README.md"
+}

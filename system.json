@@ -1,5 +1,5 @@
 {
-  "id": "legends",
+  "id": "avatar-legends",
   "title": "Avatar Legends RPG",
   "description": "A community continuation of Paul Cosgrove's unofficial Avatar Legends RPG system for Foundry VTT 14.",
   "authors": [
@@ -8,15 +8,13 @@
       "url": "https://github.com/Rhapsody-Sky/FoundryVTT-Avatar-Legends"
     },
     {
-      "name": "demondownload",
-      "url": "https://ko-fi.com/demondownload",
-      "discord": "demondownload",
-      "ko-fi": "demondownload"
+      "name": "Paul Cosgrove / demondownload",
+      "url": "https://gitlab.com/pacosgrove1/legends"
     }
   ],
   "license": "LICENSE",
   "readme": "README.md",
-  "version": "2.1.1-rhapsody.2",
+  "version": "2.2.0",
   "compatibility": {
     "minimum": "14",
     "maximum": "14",
@@ -25,21 +23,33 @@
   "media": [
     {
       "type": "setup",
-      "url": "systems/legends/images/setup.webp",
-      "thumbnail": "systems/legends/images/setup.webp"
+      "url": "systems/avatar-legends/images/setup.webp",
+      "thumbnail": "systems/avatar-legends/images/setup.webp"
     }
   ],
   "url": "https://github.com/Rhapsody-Sky/FoundryVTT-Avatar-Legends",
   "manifest": "https://github.com/Rhapsody-Sky/FoundryVTT-Avatar-Legends/releases/latest/download/system.json",
-  "download": "https://github.com/Rhapsody-Sky/FoundryVTT-Avatar-Legends/releases/download/v2.1.1-rhapsody.2/legends-v2.1.1-rhapsody.2.zip",
-  "esmodules": ["legends.js"],
-  "styles": ["styles/legends.v2.css"],
+  "download": "https://github.com/Rhapsody-Sky/FoundryVTT-Avatar-Legends/releases/download/v2.2.0/avatar-legends-v2.2.0.zip",
+  "esmodules": [
+    "legends.js"
+  ],
+  "styles": [
+    "styles/legends.v2.css"
+  ],
   "documentTypes": {
     "Actor": {
       "player": {
-        "htmlFields": ["look", "notes", "description"]
+        "htmlFields": [
+          "look",
+          "notes",
+          "description"
+        ]
       },
-      "npc": { "htmlFields": ["description"] },
+      "npc": {
+        "htmlFields": [
+          "description"
+        ]
+      },
       "campaign": {
         "htmlFields": [
           "scope",
@@ -53,15 +63,51 @@
       }
     },
     "Item": {
-      "condition": { "htmlFields": ["description"] },
-      "feature": { "htmlFields": ["description"] },
-      "growth-question": { "htmlFields": ["description"] },
-      "moment-of-balance": { "htmlFields": ["description"] },
-      "move": { "htmlFields": ["description"] },
-      "npc-principle": { "htmlFields": ["description"] },
-      "playbook": { "htmlFields": ["description"] },
-      "status": { "htmlFields": ["description"] },
-      "technique": { "htmlFields": ["description"] }
+      "condition": {
+        "htmlFields": [
+          "description"
+        ]
+      },
+      "feature": {
+        "htmlFields": [
+          "description"
+        ]
+      },
+      "growth-question": {
+        "htmlFields": [
+          "description"
+        ]
+      },
+      "moment-of-balance": {
+        "htmlFields": [
+          "description"
+        ]
+      },
+      "move": {
+        "htmlFields": [
+          "description"
+        ]
+      },
+      "npc-principle": {
+        "htmlFields": [
+          "description"
+        ]
+      },
+      "playbook": {
+        "htmlFields": [
+          "description"
+        ]
+      },
+      "status": {
+        "htmlFields": [
+          "description"
+        ]
+      },
+      "technique": {
+        "htmlFields": [
+          "description"
+        ]
+      }
     }
   },
   "packs": [
@@ -70,7 +116,7 @@
       "type": "Item",
       "name": "playbooks",
       "path": "packs/playbooks",
-      "system": "legends",
+      "system": "avatar-legends",
       "private": false
     },
     {
@@ -78,7 +124,7 @@
       "type": "Item",
       "name": "wstag-playbooks",
       "path": "packs/wstag-playbooks",
-      "system": "legends",
+      "system": "avatar-legends",
       "private": false
     },
     {
@@ -86,7 +132,7 @@
       "type": "Item",
       "name": "common-items",
       "path": "packs/common-items",
-      "system": "legends",
+      "system": "avatar-legends",
       "private": false
     },
     {
@@ -94,7 +140,7 @@
       "type": "JournalEntry",
       "name": "reference",
       "path": "packs/reference",
-      "system": "legends",
+      "system": "avatar-legends",
       "private": false
     }
   ],

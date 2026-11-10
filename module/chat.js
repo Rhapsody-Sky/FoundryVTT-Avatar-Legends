@@ -31,7 +31,7 @@ async function onMoveRoll(event) {
     return
   }
 
-  const template = 'systems/legends/templates/dialog/v2/roll.hbs'
+  const template = 'systems/avatar-legends/templates/dialog/v2/roll.hbs'
 
   const title = game.i18n.format('legends.roll.stat', {
     stat: moveName,

@@ -89,7 +89,7 @@ export default class LegendsPlayerActorSheetV2 extends LegendsActorSheetV2 {
 
     const html = $(this.element)
 
-    const theme = game.settings.get('legends', 'sheetColour') ?? 'default'
+    const theme = game.settings.get('avatar-legends', 'sheetColour') ?? 'default'
     html.attr('data-theme', theme)
 
     html.find('.moveCategorySelect').change(this._onSelectMoveCategory.bind(this))
@@ -146,7 +146,7 @@ export default class LegendsPlayerActorSheetV2 extends LegendsActorSheetV2 {
 
     context.moveCategories = legends.moveCategories
     context.moves = this.document.itemTypes.move
-    context.selectedMoveCategory = this.actor.getFlag('legends', 'moveCategory') || 'all'
+    context.selectedMoveCategory = this.actor.getFlag('avatar-legends', 'moveCategory') || 'all'
     if (context.selectedMoveCategory !== 'all') {
       context.moves = context.moves.filter((move) => move.system.category == context.selectedMoveCategory)
     }
@@ -340,7 +340,7 @@ export default class LegendsPlayerActorSheetV2 extends LegendsActorSheetV2 {
 
   _onSelectMoveCategory(event) {
     event.preventDefault()
-    this.actor.setFlag('legends', 'moveCategory', event.currentTarget.value ?? 'all')
+    this.actor.setFlag('avatar-legends', 'moveCategory', event.currentTarget.value ?? 'all')
   }
   // #endregion
 
@@ -359,12 +359,12 @@ export default class LegendsPlayerActorSheetV2 extends LegendsActorSheetV2 {
 
     // Re-add default Growth Questions
     const growthQuestions = game.packs
-      .get('legends.common-items')
+      .get('avatar-legends.common-items')
       .index.filter((item) => item.type === 'growth-question')
       .sort((a, b) => (a.name > b.name ? 1 : -1))
 
     for (const growthQuestion of growthQuestions) {
-      const question = await fromUuid(`Compendium.legends.common-items.${growthQuestion._id}`)
+      const question = await fromUuid(`Compendium.avatar-legends.common-items.${growthQuestion._id}`)
       if (question) {
         // We await this to make sure they're added in the correct order
         await this.actor.createEmbeddedDocuments('Item', [question])

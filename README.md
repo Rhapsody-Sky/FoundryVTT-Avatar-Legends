@@ -16,6 +16,8 @@ This project continues [Paul Cosgrove / demondownload's original Legends system]
 
 ## Installation
 
+> Version 2.2.0 and the migration module are being tested. The published release still uses the old system ID; the instructions below apply to the upcoming release.
+
 In Foundry's Setup screen, open **Game Systems → Install System**, paste this URL into **Manifest URL**, and click **Install**:
 
 ```text
@@ -24,7 +26,7 @@ https://github.com/Rhapsody-Sky/FoundryVTT-Avatar-Legends/releases/latest/downlo
 
 **Already using the original system?** Follow the short [switching guide](docs/switching.md) / [Umstiegsanleitung](docs/umstieg.md). Back up your world before switching.
 
-Keep the system **locked** in Setup so Foundry does not replace it with the original system. Get updates from [this repository's releases](https://github.com/Rhapsody-Sky/FoundryVTT-Avatar-Legends/releases).
+The new system uses its own ID, `avatar-legends`. After switching, use Foundry's normal **Update** button under **Game Systems**; no update lock or manual ZIP replacement is needed.
 
 ## Help and feedback
 

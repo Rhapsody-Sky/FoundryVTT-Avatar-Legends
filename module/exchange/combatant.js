@@ -2,11 +2,11 @@ import { newRollApproach } from '../dice.js'
 
 export default class LegendsCombatant extends Combatant {
   async setApproach(approach) {
-    await this.setFlag('legends', 'exchangePhase', approach)
+    await this.setFlag('avatar-legends', 'exchangePhase', approach)
   }
 
   async resetApproach() {
-    this.setFlag('legends', 'exchangePhase', null)
+    this.setFlag('avatar-legends', 'exchangePhase', null)
     this.resetStance()
   }
 
@@ -14,14 +14,14 @@ export default class LegendsCombatant extends Combatant {
     if (this.isNpc) return
     if (this.currentPhase) {
       const result = await newRollApproach(this.actor, this.currentPhase)
-      await this.setFlag('legends', 'stanceRoll', result.total)
+      await this.setFlag('avatar-legends', 'stanceRoll', result.total)
       await this.update({ initiative: result.total })
     }
   }
 
   async resetStance() {
     if (this.isNpc) return
-    this.setFlag('legends', 'stanceRoll', null)
+    this.setFlag('avatar-legends', 'stanceRoll', null)
     this.update({ initiative: null })
   }
 
@@ -46,7 +46,7 @@ export default class LegendsCombatant extends Combatant {
   }
 
   get currentPhase() {
-    return this.getFlag('legends', 'exchangePhase')
+    return this.getFlag('avatar-legends', 'exchangePhase')
   }
 
   get effects() {

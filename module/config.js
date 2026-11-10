@@ -1,5 +1,5 @@
 export const legends = {
-  rootPath: 'systems/legends',
+  rootPath: 'systems/avatar-legends',
 }
 
 legends.stats = {
@@ -87,18 +87,18 @@ legends.campaignFocus = {
 }
 
 legends.defaultTokens = {
-  campaign: 'systems/legends/images/tokens/campaign.webp',
-  condition: 'systems/legends/images/tokens/condition.webp',
-  'moment-of-balance': 'systems/legends/images/tokens/moment-of-balance.webp',
-  move: 'systems/legends/images/tokens/move.webp',
-  npc: 'systems/legends/images/tokens/npc.webp',
-  player: 'systems/legends/images/tokens/player.webp',
-  status: 'systems/legends/images/tokens/condition.webp',
-  technique: 'systems/legends/images/tokens/technique.webp',
-  feature: 'systems/legends/images/tokens/feature.webp',
-  'npc-principle': 'systems/legends/images/tokens/npc-principle.webp',
-  'growth-question': 'systems/legends/images/tokens/growth-question.webp',
-  playbook: 'systems/legends/images/tokens/playbook.webp',
+  campaign: 'systems/avatar-legends/images/tokens/campaign.webp',
+  condition: 'systems/avatar-legends/images/tokens/condition.webp',
+  'moment-of-balance': 'systems/avatar-legends/images/tokens/moment-of-balance.webp',
+  move: 'systems/avatar-legends/images/tokens/move.webp',
+  npc: 'systems/avatar-legends/images/tokens/npc.webp',
+  player: 'systems/avatar-legends/images/tokens/player.webp',
+  status: 'systems/avatar-legends/images/tokens/condition.webp',
+  technique: 'systems/avatar-legends/images/tokens/technique.webp',
+  feature: 'systems/avatar-legends/images/tokens/feature.webp',
+  'npc-principle': 'systems/avatar-legends/images/tokens/npc-principle.webp',
+  'growth-question': 'systems/avatar-legends/images/tokens/growth-question.webp',
+  playbook: 'systems/avatar-legends/images/tokens/playbook.webp',
 }
 
 legends.moveCategories = {
@@ -138,21 +138,21 @@ legends.typeIcons = {
 }
 
 export const registerSystemSettings = () => {
-  game.settings.register('legends', 'systemMigrationVersion', {
+  game.settings.register('avatar-legends', 'systemMigrationVersion', {
     config: false,
     scope: 'world',
     type: String,
     default: '',
   })
 
-  game.settings.register('legends', 'archiveMessageDisplayed', {
+  game.settings.register('avatar-legends', 'archiveMessageDisplayed', {
     config: false,
     scope: 'client',
     type: Boolean,
     default: false,
   })
 
-  game.settings.register('legends', 'sheetColour', {
+  game.settings.register('avatar-legends', 'sheetColour', {
     config: true,
     scope: 'client',
     name: 'SETTINGS.sheetColour.label',
@@ -166,7 +166,7 @@ export const registerSystemSettings = () => {
     requiresReload: true,
   })
 
-  game.settings.register('legends', 'playerNotes', {
+  game.settings.register('avatar-legends', 'playerNotes', {
     config: true,
     scope: 'client',
     name: 'SETTINGS.playerNotes.label',
@@ -176,7 +176,7 @@ export const registerSystemSettings = () => {
     requiresReload: true,
   })
 
-  game.settings.register('legends', 'trainingIconsEnabled', {
+  game.settings.register('avatar-legends', 'trainingIconsEnabled', {
     config: true,
     scope: 'world',
     name: 'Training Icons',
@@ -186,7 +186,7 @@ export const registerSystemSettings = () => {
     requiresReload: true,
   })
 
-  game.settings.register('legends', 'exchangeTracker', {
+  game.settings.register('avatar-legends', 'exchangeTracker', {
     config: true,
     scope: 'world',
     name: 'SETTINGS.exchangeTracker.label',

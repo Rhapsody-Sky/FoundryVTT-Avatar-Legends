@@ -1,5 +1,12 @@
 # Changelog
 
+## v2.2.0 - unreleased
+
+- Use the independent system ID `avatar-legends` for native Foundry updates.
+- Add a separate migration module with a GM assistant, backup confirmation and resumable migration.
+- Preserve old system compendiums in the world, copy referenced system assets, and migrate settings, flags, links and unlinked-token descriptions.
+
+
 ## v2.1.1-rhapsody.2 - 2026-11-10
 
 - Simplify the displayed system title to Avatar Legends RPG. Maintainer credits and the unofficial-project notice remain in the documentation.

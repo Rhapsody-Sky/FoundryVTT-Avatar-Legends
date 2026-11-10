@@ -12,7 +12,7 @@ export const rollMove = async (uuid) => {
   const move = await fromUuid(uuid)
   const actor = move.parent || game.user.character || canvas.tokens.controlled[0]?.actor
 
-  const template = 'systems/legends/templates/dialog/v2/roll.hbs'
+  const template = 'systems/avatar-legends/templates/dialog/v2/roll.hbs'
 
   const title = game.i18n.format('legends.roll.stat', {
     stat: move.name,
@@ -70,7 +70,7 @@ export const rollMove = async (uuid) => {
  * @returns null
  */
 export const rollStat = async (actor, stat, options = {}) => {
-  const template = 'systems/legends/templates/dialog/v2/roll.hbs'
+  const template = 'systems/avatar-legends/templates/dialog/v2/roll.hbs'
   const title =
     options.title ??
     game.i18n.format('legends.roll.stat', {
@@ -97,7 +97,7 @@ export const rollStat = async (actor, stat, options = {}) => {
  * @returns Promise
  */
 export const rollApproach = async (actor, stat, approach) => {
-  const template = 'systems/legends/templates/dialog/v2/roll.hbs'
+  const template = 'systems/avatar-legends/templates/dialog/v2/roll.hbs'
   const title = game.i18n.format('legends.roll.stat', {
     stat: approach,
   })
@@ -121,7 +121,7 @@ export const newRollApproach = async (actor, approach) => {
     stat: approachName,
   })
 
-  const template = 'systems/legends/templates/dialog/v2/approach.hbs'
+  const template = 'systems/avatar-legends/templates/dialog/v2/approach.hbs'
   const stats = legends.approachStats[approach].map((stat) => ({
     key: stat,
     name: game.i18n.localize(`legends.stats.${stat}`),
@@ -138,7 +138,7 @@ export const newRollApproach = async (actor, approach) => {
 }
 
 export const rollPrinciple = async (actor, principle) => {
-  const template = 'systems/legends/templates/dialog/v2/roll.hbs'
+  const template = 'systems/avatar-legends/templates/dialog/v2/roll.hbs'
   const title = game.i18n.format('legends.roll.stat', {
     stat: principle,
   })
@@ -207,7 +207,7 @@ export const doRoll = async (actor, rollOptions, options = {}) => {
   const renderedRoll = await rollResult.render()
 
   // Setup the roll template
-  const messageTemplate = 'systems/legends/templates/chat/v2/roll.hbs'
+  const messageTemplate = 'systems/avatar-legends/templates/chat/v2/roll.hbs'
   const templateContext = {
     name: statName,
     move: move?.name || options.approach,
@@ -322,8 +322,8 @@ export const registerDiceSoNice = (dice3d) => {
   dice3d.addSystem({ id: 'legends-air', name: game.i18n.localize('legends.training.air') }, 'default')
   dice3d.addDicePreset({
     type: 'd6',
-    labels: ['1', '2', '3', '4', '5', 'systems/legends/images/dice/air.webp'],
-    bumpMaps: [, , , , , 'systems/legends/images/dice/air-b.webp'],
+    labels: ['1', '2', '3', '4', '5', 'systems/avatar-legends/images/dice/air.webp'],
+    bumpMaps: [, , , , , 'systems/avatar-legends/images/dice/air-b.webp'],
     system: 'legends-air',
     colorset: 'airbending',
   })
@@ -331,8 +331,8 @@ export const registerDiceSoNice = (dice3d) => {
   dice3d.addSystem({ id: 'legends-earth', name: game.i18n.localize('legends.training.earth') }, 'default')
   dice3d.addDicePreset({
     type: 'd6',
-    labels: ['1', '2', '3', '4', '5', 'systems/legends/images/dice/earth.webp'],
-    bumpMaps: [, , , , , 'systems/legends/images/dice/earth-b.webp'],
+    labels: ['1', '2', '3', '4', '5', 'systems/avatar-legends/images/dice/earth.webp'],
+    bumpMaps: [, , , , , 'systems/avatar-legends/images/dice/earth-b.webp'],
     system: 'legends-earth',
     colorset: 'earthbending',
   })
@@ -340,8 +340,8 @@ export const registerDiceSoNice = (dice3d) => {
   dice3d.addSystem({ id: 'legends-fire', name: game.i18n.localize('legends.training.fire') }, 'default')
   dice3d.addDicePreset({
     type: 'd6',
-    labels: ['1', '2', '3', '4', '5', 'systems/legends/images/dice/fire.webp'],
-    bumpMaps: [, , , , , 'systems/legends/images/dice/fire-b.webp'],
+    labels: ['1', '2', '3', '4', '5', 'systems/avatar-legends/images/dice/fire.webp'],
+    bumpMaps: [, , , , , 'systems/avatar-legends/images/dice/fire-b.webp'],
     system: 'legends-fire',
     colorset: 'firebending',
   })
@@ -355,8 +355,8 @@ export const registerDiceSoNice = (dice3d) => {
   )
   dice3d.addDicePreset({
     type: 'd6',
-    labels: ['1', '2', '3', '4', '5', 'systems/legends/images/dice/tech.webp'],
-    bumpMaps: [, , , , , 'systems/legends/images/dice/tech-b.webp'],
+    labels: ['1', '2', '3', '4', '5', 'systems/avatar-legends/images/dice/tech.webp'],
+    bumpMaps: [, , , , , 'systems/avatar-legends/images/dice/tech-b.webp'],
     system: 'legends-tech',
     colorset: 'technology',
   })
@@ -364,8 +364,8 @@ export const registerDiceSoNice = (dice3d) => {
   dice3d.addSystem({ id: 'legends-water', name: game.i18n.localize('legends.training.water') }, 'default')
   dice3d.addDicePreset({
     type: 'd6',
-    labels: ['1', '2', '3', '4', '5', 'systems/legends/images/dice/water.webp'],
-    bumpMaps: [, , , , , 'systems/legends/images/dice/water-b.webp'],
+    labels: ['1', '2', '3', '4', '5', 'systems/avatar-legends/images/dice/water.webp'],
+    bumpMaps: [, , , , , 'systems/avatar-legends/images/dice/water-b.webp'],
     system: 'legends-water',
     colorset: 'waterbending',
   })
@@ -379,8 +379,8 @@ export const registerDiceSoNice = (dice3d) => {
   )
   dice3d.addDicePreset({
     type: 'd6',
-    labels: ['1', '2', '3', '4', '5', 'systems/legends/images/dice/weapon.webp'],
-    bumpMaps: [, , , , , 'systems/legends/images/dice/weapon-b.webp'],
+    labels: ['1', '2', '3', '4', '5', 'systems/avatar-legends/images/dice/weapon.webp'],
+    bumpMaps: [, , , , , 'systems/avatar-legends/images/dice/weapon-b.webp'],
     system: 'legends-weapons',
     colorset: 'weapons',
   })

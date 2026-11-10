@@ -1,4 +1,5 @@
 import { legends, registerSystemSettings } from './module/config.js'
+import { migrateClientPreferences } from './module/client-migration.js'
 import LegendsItemV2 from './module/LegendsItem.v2.js'
 import LegendsActorV2 from './module/LegendsActor.v2.js'
 import LegendsPlayerActorSheetV2 from './module/sheets/LegendsPlayerActorSheet.v2.js'
@@ -31,6 +32,7 @@ const { Actors, Items } = foundry.documents.collections
 const { ActorSheet } = foundry.appv1.sheets
 
 Hooks.once('init', function () {
+  migrateClientPreferences(localStorage)
   console.info('legends | Initialising Avatar Legends RPG (Unofficial) system...')
 
   // Config
@@ -56,23 +58,23 @@ Hooks.once('init', function () {
   CONFIG.Item.dataModels.technique = LegendsTechniqueItemDataModel
 
   // Item sheets
-  Items.registerSheet('legends', LegendsItemSheetV2, { makeDefault: true })
-  Items.registerSheet('legends', LegendsPlaybookSheetV2, {
+  Items.registerSheet('avatar-legends', LegendsItemSheetV2, { makeDefault: true })
+  Items.registerSheet('avatar-legends', LegendsPlaybookSheetV2, {
     makeDefault: true,
     types: ['playbook'],
   })
 
   // Actor sheets
   Actors.unregisterSheet('core', ActorSheet)
-  Actors.registerSheet('legends', LegendsPlayerActorSheetV2, {
+  Actors.registerSheet('avatar-legends', LegendsPlayerActorSheetV2, {
     types: ['player'],
     makeDefault: true,
   })
-  Actors.registerSheet('legends', LegendsNpcActorSheetV2, {
+  Actors.registerSheet('avatar-legends', LegendsNpcActorSheetV2, {
     types: ['npc'],
     makeDefault: true,
   })
-  Actors.registerSheet('legends', LegendsCampaignActorSheetV2, {
+  Actors.registerSheet('avatar-legends', LegendsCampaignActorSheetV2, {
     types: ['campaign'],
     makeDefault: true,
   })
@@ -82,7 +84,7 @@ Hooks.once('init', function () {
   registerHandlebarsHelpers()
   setupEnrichers()
 
-  if (game.settings.get('legends', 'exchangeTracker')) {
+  if (game.settings.get('avatar-legends', 'exchangeTracker')) {
     CONFIG.Combat.documentClass = LegendsExchange
     CONFIG.Combatant.documentClass = LegendsCombatant
     CONFIG.ui.combat = LegendsExchangeTracker
@@ -97,23 +99,16 @@ Hooks.on('renderChatLog', (_app, html, _data) => {
 Hooks.once('ready', () => {
   if (!game.user.isGM) return
 
-  const currentVersion = game.settings.get('legends', 'systemMigrationVersion')
+  const currentVersion = game.settings.get('avatar-legends', 'systemMigrationVersion')
   const NEEDS_MIGRATION_VERSION = '1.0.10'
 
   const needsMigration = !currentVersion || foundry.utils.isNewerVersion(NEEDS_MIGRATION_VERSION, currentVersion)
 
   if (needsMigration) {
     Migrations.migrateWorld()
-    game.settings.set('legends', 'systemMigrationVersion', NEEDS_MIGRATION_VERSION)
+    game.settings.set('avatar-legends', 'systemMigrationVersion', NEEDS_MIGRATION_VERSION)
   }
 
-  const archiveMessageDisplayed = game.settings.get('legends', 'archiveMessageDisplayed')
-  if (!archiveMessageDisplayed) {
-    if (game.user.isGM) {
-      Chat.showArchiveMessage()
-      game.settings.set('legends', 'archiveMessageDisplayed', true)
-    }
-  }
 })
 
 Hooks.on('renderSettings', (_app, html) => {
