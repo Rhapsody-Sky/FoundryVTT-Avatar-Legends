@@ -9,6 +9,17 @@ globalThis.foundry = {
   data: { fields: Object.fromEntries(['StringField', 'NumberField', 'SchemaField', 'ArrayField', 'BooleanField', 'HTMLField'].map(k => [k, Field])) },
 }
 const { default: Player } = await import('../module/data/player_model.js')
+const { default: Npc } = await import('../module/data/npc_model.js')
+
+for (const Model of [Player, Npc]) {
+  test(`${Model.name} retains the remaining-fatigue token attribute`, () => {
+    const model = new Model()
+    model.fatigue = { value: 2, max: 5 }
+    assert.deepEqual(model.fatigueRemaining, { value: 3, max: 5 })
+    model.fatigue.value = 5
+    assert.deepEqual(model.fatigueRemaining, { value: 0, max: 5 })
+  })
+}
 
 for (const look of [undefined, null, '', '  ']) {
   test(`copies old description into empty look (${String(look)})`, () => {

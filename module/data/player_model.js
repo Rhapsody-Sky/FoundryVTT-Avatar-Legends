@@ -2,6 +2,10 @@ import { legends } from '../config.js'
 const { StringField, NumberField, SchemaField, ArrayField, BooleanField, HTMLField } = foundry.data.fields
 
 export default class LegendsPlayerDataModel extends foundry.abstract.TypeDataModel {
+  get fatigueRemaining() {
+    return { value: this.fatigue.max - this.fatigue.value, max: this.fatigue.max }
+  }
+
   static migrateData(source, options) {
     source = super.migrateData(source, options)
     // Our V14 1.4.0 sheet wrote this HTML to description; upstream V2 uses look.

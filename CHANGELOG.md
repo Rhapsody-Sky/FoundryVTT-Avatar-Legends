@@ -6,6 +6,11 @@
 - Base the fork on upstream 2.1.0, including ApplicationV2 sheets and the optional Exchange tracker.
 - Preserve legacy player description HTML and copy it into an empty V2 look field once without overwriting existing text.
 - Restore dedicated DialogV2 roll/cancel icons; upstream V2 editor layout already avoids the old enclosing-label bug.
+- Persist the legacy-description migration on actor updates so cleared text stays cleared after reload.
+- Restore the derived fatigue token bar for player and NPC actors.
+- Retain existing NPC-principle description HTML in the V2 data model.
+- Defer rich-text menu saves until focus handling finishes, avoiding a destroyed-editor error on Foundry 14.367.
+- Shorten the switching instructions to five steps.
 - Retain the V14 `system.rollable` migration update and fix a missing-move error that overwrote the notification function.
 - Add independent GitHub manifest URLs, validation, migration regression tests and reproducible package tooling.
 - No production rollout or Foundry UI acceptance claimed for this candidate.

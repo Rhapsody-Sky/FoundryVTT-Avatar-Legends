@@ -1,5 +1,6 @@
 import { legends } from '../config.js'
 import { enrich, viewNotesTab } from '../helpers.js'
+import { configureEditors } from '../editor.js'
 
 const { HandlebarsApplicationMixin } = foundry.applications.api
 const { ActorSheetV2 } = foundry.applications.sheets
@@ -60,6 +61,7 @@ export default class LegendsActorSheetV2 extends HandlebarsApplicationMixin(Acto
 
   async _onRender(context, options) {
     await super._onRender(context, options)
+    configureEditors(this.element)
 
     const isOwner = this.document.isOwner
 

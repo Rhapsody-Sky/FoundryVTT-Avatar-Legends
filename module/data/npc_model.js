@@ -2,6 +2,10 @@ import { legends } from '../config.js'
 const { StringField, NumberField, SchemaField, ArrayField, BooleanField, HTMLField } = foundry.data.fields
 
 export default class LegendsNpcDataModel extends foundry.abstract.TypeDataModel {
+  get fatigueRemaining() {
+    return { value: this.fatigue.max - this.fatigue.value, max: this.fatigue.max }
+  }
+
   static defineSchema() {
     return {
       fatigue: new SchemaField({
