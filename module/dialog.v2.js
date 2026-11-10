@@ -16,6 +16,7 @@ export const rollDialog = async (title, template, data = {}, fieldNames = []) =>
     buttons: [
       {
         label: 'legends.roll.dialog.submit',
+        icon: 'fas fa-dice',
         class: 'dialog-button yes',
         action: 'roll',
         callback: async (_event, button, _dialog) => {
@@ -26,6 +27,7 @@ export const rollDialog = async (title, template, data = {}, fieldNames = []) =>
       },
       {
         label: 'legends.dialog.cancel',
+        icon: 'fas fa-times',
         class: 'dialog-button no',
         action: 'cancel',
         callback: async (_event, _button, _dialog) => {

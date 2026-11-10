@@ -48,11 +48,7 @@ async function migrateMove(move) {
 
   if (rollStat && !rollable) {
     console.info(`legends | Migrating Move ${move.id}`)
-    move.update({
-      data: {
-        rollable: true,
-      },
-    })
+    await move.update({ 'system.rollable': true })
   }
 }
 

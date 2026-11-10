@@ -1,14 +1,20 @@
-# ! Archive Notice !
-
-v2.0.0, is my final major update for the Avatar Legends system
-
-You can see more details on the [project wiki](https://gitlab.com/pacosgrove1/legends/-/wikis/Archive-Notice).
-
-Thanks for using the system!
-
-# Avatar Legends RPG (Unofficial)
+# Avatar Legends RPG — Rhapsody (Unofficial)
 
 A FoundryVTT system for [Avatar Legends RPG](https://magpiegames.com/pages/avatarrpg) characters.
+
+## Origin and continuation
+
+This is Rhapsody's community continuation of **[Paul Cosgrove / demondownload's original Legends system](https://gitlab.com/pacosgrove1/legends)**, based on upstream **v2.1.0** (commit `173611c933b06033520e99b1d196724afbf81e90`). The upstream Git history is preserved in this repository.
+
+Paul announced v2.0.0 as his final major update; see his [archive notice](https://gitlab.com/pacosgrove1/legends/-/wikis/Archive-Notice). Thank you to Paul and everyone who contributed to the original project. This fork is maintained separately and is not an official release by Paul, Magpie Games, or the Avatar rights holders. Please report fork issues [here](https://github.com/Rhapsody-Sky/FoundryVTT-Avatar-Legends/issues), not to the retired upstream project.
+
+The code remains under the **MIT license**. [LICENSE](LICENSE) retains Paul Cosgrove's original copyright and permission notice alongside the notice for Rhapsody's contributions. Fonts, icons and franchise content retain their respective notices and terms listed below; the code license does not relicense those assets.
+
+## Current status
+
+The first Rhapsody version, `2.1.1-rhapsody.1`, is a **development candidate, not yet a published or production-validated release**. It includes upstream's ApplicationV2 sheets and optional Exchange tracker, restores the separate DialogV2 button icons, and adds a compatibility migration for character descriptions from our earlier V14 port.
+
+Existing non-empty `look` text is never overwritten. Legacy `description` text is retained and copied into an empty `look` field once; a saved migration marker prevents a deliberately cleared field from being repopulated. Test this on a copy of your world before upgrading. See [the release checklist](docs/releasing.md) for the remaining runtime checks.
 
 <img src="https://i.imgur.com/VA1c6cD.png" alt="Player character sheet" width="60%" />
 
@@ -20,14 +26,36 @@ Additional screenshots: https://imgur.com/a/wWJLdor
 - Campaign Worksheet
 - Supports Dice So Nice! for custom 3D dice
 - Compendia of publicly-available Playbooks and reference material
+- ApplicationV2 sheets and optional Exchange tracker from upstream v2.1.0
 
 ## Installation
 
-The system can be found in the FoundryVTT Game Systems directory within the application - click `Install System` and search for `avatar`, then click the `Install` button next to the **Avatar Legends RPG (Unofficial)** system.
+Requires **Foundry VTT 14**. Do not install the original directory entry expecting to receive this fork.
 
-To install the system manually, paste the manifest URL below into the `Install System` dialog on the Setup menu:
+After the first tested, non-prerelease GitHub release is published, the fork's installation manifest will be:
 
-- `https://gitlab.com/api/v4/projects/pacosgrove1%2Flegends/packages/generic/legends/latest/system.json`
+`https://github.com/Rhapsody-Sky/FoundryVTT-Avatar-Legends/releases/latest/download/system.json`
+
+**This URL is not available until that release exists.** Source archives are not the supported installation package; use the `legends-<version>.zip` release asset when available. Its contents belong directly in `Data/systems/legends`, not a repository-named folder.
+
+### Existing worlds and update safety
+
+The system ID remains `legends` to preserve world associations, settings and compendium UUIDs. Consequently this fork and upstream cannot be installed side-by-side in the same Foundry data directory. Back up the complete world and installed system before switching.
+
+Foundry can follow its official package index even when a different manifest URL is configured. Keep the system **locked** in Setup while using this fork; the native lock file is `Data/systems/legends/legends.lock`. A separate manifest alone does not guarantee isolation. Apply only reviewed fork releases deliberately, then restore the lock. A future separate-ID migration requires explicit handling of existing references and is not part of this release.
+
+Never downgrade a world already saved under a newer system without a matching backup. The production installation has not been changed by publishing this repository.
+
+## Development
+
+Node.js 22+ and Python 3.11+ are sufficient for the dependency-free checks and package builder:
+
+```sh
+npm test
+python scripts/package.py
+```
+
+The build writes a release ZIP, `system.json` and SHA256 checksums to `dist/`. CI runs checks and retains build artifacts; it does not publish a release or deploy to a server automatically. Upstream GitLab CI is retained only as history/reference and does not run on GitHub.
 
 ## Usage
 

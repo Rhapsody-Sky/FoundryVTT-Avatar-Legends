@@ -3,3 +3,6 @@
 .vscode/extensions.json
 package-lock.json
 CHECKLIST.md
+dist/
+node_modules/
+__pycache__/
