@@ -1,6 +1,6 @@
 {
   "id": "legends",
-  "title": "Avatar Legends RPG — Rhapsody (Unofficial)",
+  "title": "Avatar Legends RPG",
   "description": "A community continuation of Paul Cosgrove's unofficial Avatar Legends RPG system for Foundry VTT 14.",
   "authors": [
     {
@@ -16,7 +16,7 @@
   ],
   "license": "LICENSE",
   "readme": "README.md",
-  "version": "2.1.1-rhapsody.1",
+  "version": "2.1.1-rhapsody.2",
   "compatibility": {
     "minimum": "14",
     "maximum": "14",
@@ -31,7 +31,7 @@
   ],
   "url": "https://github.com/Rhapsody-Sky/FoundryVTT-Avatar-Legends",
   "manifest": "https://github.com/Rhapsody-Sky/FoundryVTT-Avatar-Legends/releases/latest/download/system.json",
-  "download": "https://github.com/Rhapsody-Sky/FoundryVTT-Avatar-Legends/releases/download/v2.1.1-rhapsody.1/legends-v2.1.1-rhapsody.1.zip",
+  "download": "https://github.com/Rhapsody-Sky/FoundryVTT-Avatar-Legends/releases/download/v2.1.1-rhapsody.2/legends-v2.1.1-rhapsody.2.zip",
   "esmodules": ["legends.js"],
   "styles": ["styles/legends.v2.css"],
   "documentTypes": {

@@ -1,4 +1,4 @@
-# Avatar Legends RPG — Rhapsody (Unofficial)
+# Avatar Legends RPG
 
 A FoundryVTT system for [Avatar Legends RPG](https://magpiegames.com/pages/avatarrpg) characters.
 
@@ -12,7 +12,7 @@ The code remains under the **MIT license**. [LICENSE](LICENSE) retains Paul Cosg
 
 ## Current status
 
-The first release of this continuation is **2.1.1-rhapsody.1** for Foundry VTT 14. It includes upstream's ApplicationV2 sheets and optional Exchange tracker, restores the separate DialogV2 button icons, and adds a compatibility migration for character descriptions from my earlier V14 port.
+The current release of this continuation is **2.1.1-rhapsody.2** for Foundry VTT 14. It includes upstream's ApplicationV2 sheets and optional Exchange tracker, restores the separate DialogV2 button icons, and adds a compatibility migration for character descriptions from my earlier V14 port.
 
 Existing non-empty `look` text is never overwritten. Legacy `description` text is retained and copied into an empty `look` field once; a saved migration marker prevents a deliberately cleared field from being repopulated. Migration from my earlier 1.4.0 port was tested on a world copy with Foundry 14.367; see the [test results and limits](docs/test-report-2026-11-10.md). Back up your world before upgrading.
 

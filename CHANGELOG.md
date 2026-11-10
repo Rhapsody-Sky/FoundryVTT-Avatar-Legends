@@ -1,5 +1,10 @@
 # Changelog
 
+## v2.1.1-rhapsody.2 - 2026-11-10
+
+- Simplify the displayed system title to Avatar Legends RPG. Maintainer credits and the unofficial-project notice remain in the documentation.
+- Metadata and documentation only; no gameplay or migration changes.
+
 ## v2.1.1-rhapsody.1 — 2026-11-10
 
 - Establish this continuation with preserved upstream history, MIT notice and contributor credits.
